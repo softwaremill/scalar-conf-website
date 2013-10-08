@@ -1,62 +1,303 @@
-<!doctype html>
-<!--[if lt IE 7 ]><html class="ie ie6 no-js" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7 no-js" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8 no-js" lang="en"> <![endif]-->
-<!--[if IE 9 ]><html class="ie ie9 no-js" lang="en"> <![endif]-->
-<!--[if gt IE 9]><!-->
-<html class="no-js" lang="en"><!--<![endif]-->
-  <head data-template-set="html5-reset">
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Scalar - a Scala conference</title>
-    <meta name="description" content=""/>
-    <meta name="keywords" content=""/>
-    <meta name="Copyright" content="Copyright (c) 2013, SoftwareMill Sp. z o.o. All Rights Reserved.">
-    <meta name="author" content="SoftwareMill"/>
-    <link rel="canonical" href="https://scalar-conf.com/"/>
-  </head>
-  <body>
+    <title>Scalar - first Scala conference in Central Europe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Scalar - first Scala conference in Central Europe" />
+    <meta name="keywords" content="Scalar, scala, typesafe, softwaremill, kick ass scala" />
+    <meta name="author" content="codeandcoder for softwaremill.com" />
+   
+ 
+    <!--  styles -->
+	<link rel="stylesheet" type="text/css" href="countdown/style.css">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="js/google-code-prettify/prettify.css" rel="stylesheet">
+	
+	 <link rel="stylesheet" type="text/css" href="backslide/css/backstyle2.css" /> 
+	 <link rel="stylesheet" type="text/css" href="backslide/css/demo.css" />
+	 <link rel="stylesheet" type="text/css" href="css/fonts.css" />
+	<!--JavaScript-->
 
-    <h1>
-      Scalar - first Scala conference in Central Europe
-    </h1>
+	<script type="text/javascript" src="http://www.dzyngiri.com/demo/Slick_contact_form_using_jQuery_and_php/js/jquery.js"></script>
+	
+	<script type="text/javascript" src="subscribe/contact_form.js"></script>
+	
+	<script type="text/javascript" src="subscribe/jquery.min.js"></script>
+	
+	<script type="text/javascript" src="backslide/js/modernizr.custom.86080.js"></script>
+    <!--  HTML5 shim, for IE6-8 support of HTML5 elements -->
+    
+    <script src="js/html5shiv.js"></script>
 
-    <div>
-      <p>
-        Scalar is a free-to-attend one-day Scala conference organised by the Polish Scala community.
-      </p>
-    </div>
+   </head>
 
-    <ul>
-      <li>
-        Date: 05.04.2013 (Saturday)
-      </li>
-      <li>
-        Place: Warsaw, Poland
-      </li>
-    </ul>
+    <body>
 
-    <div>
-      <p>
-        Interested? Drop your email address, we will send you updates.
-      </p>
+      <!-- Body Background
+     ================================================== -->
+	
+	  <ul class="cb-slideshow">
+            <li><span>Image 01</span><div><h3></h3></div></li>
+            <li><span>Image 02</span><div><h3></h3></div></li>
+            <li><span>Image 03</span><div><h3></h3></div></li>
+            <li><span>Image 04</span><div><h3></h3></div></li>
+            <li><span>Image 05</span><div><h3></h3></div></li>
+            <li><span>Image 06</span><div><h3></h3></div></li>
+       </ul>
+      
+	 <!-- Main Body Start
+    ================================================== -->
+
+ 
+   <div class="container">
+      <!-- HEADER Start
+    ================================================== -->
+        <div class="count-header">
+		  <div class="container-narrow">
+	        <div class="row-fluid">
+			
+               
+				  <div class="count-logo">
+				   <a href="#" >  <img src="images/logo.png" alt="Scalar Logo"></a>
+				  </div>
+				
+	       
+				
+				  <div class="header-social">
+				  <ul class="header-social-buttons">
+                       <li>
+                           <a href="https://www.facebook.com/scalarconference" target="_blank"> <img src="images/facebook.png" alt="facebook page"></a>
+                       </li>
+                       <li>
+                           <a href="https://twitter.com/scalar" target="_blank"> <img src="images/google.png" alt="google page"></a>
+                       </li>
+                       <li>
+                           <a href="https://twitter.com/scalar" target="_blank">  <img  src="images/linkedin.png" alt="linkedin page"></a>
+                       </li>
+                       <li>
+                           <a href="https://twitter.com/scalar" target="_blank">  <img src="images/pinterest.png" alt="pinterest page"></a>
+                       </li>
+	                   <li>
+                           <a href="https://twitter.com/scalar" target="_blank">  <img src="images/twitter.png" alt="twitter page"></a>
+                      </li>
+                  </ul>
+	             </div>
+			
+	         </div>
+			
+		</div>
+	
+	  </div>
+	
+	
+	  <!-- COUNTBOX Start
+    ================================================== -->
+        <div class="count-box">
+	      <div class="container-narrow">
+	       <div id="countdown">  
+		   
+            <ul class="count-box-circle ">
+	 
+             <li>
+      	       	 <input class="knob" id="days" data-readonly=true data-min="0" data-max="99" data-skin="tron" data-width="200" data-height="200" data-thickness="0.2" data-fgcolor="#FF574F">			
+			     <h2>DAYS</h2>
+             </li>
+             <li>
+        	     <input class="knob" id="hours" data-readonly=true data-min="0" data-max="24" data-skin="tron" data-width="200" data-height="200" data-thickness="0.2" data-fgcolor="#B3FF40">
+			      <h2>HOURS</h2>
+             </li>
+             <li>
+				<input class="knob" id="mins" data-readonly=true data-min="0" data-max="60" data-skin="tron" data-width="200" data-height="200" data-thickness="0.2" data-fgcolor="#575FFF">		
+			  <h2>MINS</h2>
+             </li>
+             <li>
+        		<input class="knob" id="secs" data-readonly=true data-min="0" data-max="60" data-skin="tron" data-width="200" data-height="200" data-thickness="0.2" data-fgcolor="#E957FF">
+			   <h2>SECS</h2>
+           </li>
+          </ul>
+          
+		  </div>
+		 </div>
+	    </div>
+		 
+		 
+		 
+		  <!-- SUBSCRIBE Start
+    ================================================== --> 
+	    <div class="count-subscribe">
+		 <div class="container-narrow">
+		  <div class="row-fluid">
+			
+                <div class="span6">
+				<div class="com-text">
+		          <h1> Scalar Conference</h1>
+				  <p>best bits for all scala people..</p>
+			    </div>
+			    </div>
+			  
+			 <div class="span6">
+			 <div class="count-form">
+			 
+			 <form action="http://softwaremill.us2.list-manage.com/subscribe/post?u=ba834c562d82d9aba5eaf90ba&amp;id=d075d2cd7b" method="post" novalidate="novalidate">
+         	<fieldset class="info_fieldset">
+            	<div id="note"></div>
+              	<div id="fields">
+        <input type="text" value="" name="EMAIL" class="textbox" id="mce-EMAIL" placeholder="Enter Your Email To Get Notified About Scalar Conference" required="true"/>
+        <input type="submit" value="Notify me" name="subscribe" id="mc-embedded-subscribe" class="button"/>
+      </div>
+      </fieldset>
+      </form> 
+			 </div>
+			 </div>
+		</div>
+			
+			
+	    </div>
+		</div>
+
+     <!-- ADDRESS Start
+    ================================================== -->
+	     <div class="count-address">
+		    <div class="container-narrow"> 
+          <p style="font-size: 130%;">Date: 05.04.2014 (Saturday)</p>
+		    </div>
+	     </div>
+
+		 
+	  <!-- ADDRESS Start
+    ================================================== -->
+	     <div class="count-address">
+		    <div class="container-narrow">  
+			 <p>  <img src="images/home.png" alt="address icon"> Warsaw, POLAND </p>
+       <!--<p><img src="images/mobile.png" alt="phone icon"> +48601689702</p>-->
+       <p> <img src="images/mail.png" alt="mail icon"> scalar@scalar-conf.com</p>
+		    </div>
+	     </div>
+  
+  
+  
+  
+	    
+
+  </div>
 
 
-      <form action="http://softwaremill.us2.list-manage.com/subscribe/post?u=ba834c562d82d9aba5eaf90ba&amp;id=d075d2cd7b"
-          method="post" novalidate="novalidate">
-        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="true"/>
-        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-      </form>
-    </div>
 
-    <div>
-      <p>
-        Want to help? Contact us at <a href="mailto:scalar@scalar-conf.com">scalar@scalar-conf.com</a>
-      </p>
-      <p>
-        Follow us on Twitter: <a href="https://twitter.com/scalarconf">@scalar</a>
-      </p>
-    </div>
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+ 
+    <script src="js/bootstrap-transition.js"></script>
+    <script src="js/bootstrap-button.js"></script> 
+    <script src="js/bootstrap-typeahead.js"></script>
+    <script src="js/bootstrap-affix.js"></script>
+    <script src="js/holder/holder.js"></script>
+    <script src="js/google-code-prettify/prettify.js"></script>
+    <script src="js/application.js"></script>
+	<script src="js/jquery.js"></script>
+	
+    <script type="text/javascript" src="countdown/js/jquery.min.js"></script>
+	<script type="text/javascript" src="countdown/js/jquery.knob.js"></script>
+	<script type="text/javascript" src="countdown/js/countdown.js"></script>
+	<script type="text/javascript" src="countdown/js/ext.js"></script>
+	
+    <!--
+    This script below is necessary. In future releases, I might merge it into the jquery.knob.js script.
+    -->
+    <script>
+            $(function() {
+
+                $(".knob").knob({
+                    change : function (value) {
+                        //console.log("change : " + value);
+                    },
+                    release : function (value) {
+                        //console.log(this.$.attr('value'));
+                        console.log("release : " + value);
+                    },
+                    cancel : function () {
+                        console.log("cancel : ", this);
+                    },
+                    draw : function () {
+
+                        // "tron" case
+                        if(this.$.data('skin') == 'tron') {
+
+                            var a = this.angle(this.cv)  // Angle
+                                , sa = this.startAngle          // Previous start angle
+                                , sat = this.startAngle         // Start angle
+                                , ea                            // Previous end angle
+                                , eat = sat + a                 // End angle
+                                , r = 1;
+
+                            this.g.lineWidth = this.lineWidth;
+
+                            this.o.cursor
+                                && (sat = eat - 0.3)
+                                && (eat = eat + 0.3);
+
+                            if (this.o.displayPrevious) {
+                                ea = this.startAngle + this.angle(this.v);
+                                this.o.cursor
+                                    && (sa = ea - 0.3)
+                                    && (ea = ea + 0.3);
+                                this.g.beginPath();
+                                this.g.strokeStyle = this.pColor;
+                                this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sa, ea, false);
+                                this.g.stroke();
+                            }
+
+                            this.g.beginPath();
+                            this.g.strokeStyle = r ? this.o.fgColor : this.fgColor ;
+                            this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sat, eat, false);
+                            this.g.stroke();
+
+                            this.g.lineWidth = 2;
+                            this.g.beginPath();
+                            this.g.strokeStyle = this.o.fgColor;
+                            this.g.arc( this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false);
+                            this.g.stroke();
+
+                            return false;
+                        }
+                    }
+                });
+
+                // Example of infinite knob, iPod click wheel
+                var v, up=0,down=0,i=0
+                    ,$idir = $("div.idir")
+                    ,$ival = $("div.ival")
+                    ,incr = function() { i++; $idir.show().html("+").fadeOut(); $ival.html(i); }
+                    ,decr = function() { i--; $idir.show().html("-").fadeOut(); $ival.html(i); };
+                $("input.infinite").knob(
+                                    {
+                                    min : 0
+                                    , max : 20
+                                    , stopper : false
+                                    , change : function () {
+                                                    if(v > this.cv){
+                                                        if(up){
+                                                            decr();
+                                                            up=0;
+                                                        }else{up=1;down=0;}
+                                                    } else {
+                                                        if(v < this.cv){
+                                                            if(down){
+                                                                incr();
+                                                                down=0;
+                                                            }else{down=1;up=0;}
+                                                        }
+                                                    }
+                                                    v = this.cv;
+                                                }
+                                    });
+            });
+        </script>
 
   </body>
 </html>

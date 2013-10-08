@@ -1,0 +1,247 @@
+ /*!
+ * ComingSoon - Responsive One Page Template
+ *
+ * Copyright 2013
+ * Created by: CodeandCoder
+ * URL: http://codeandcoder.com
+ * Designed and built based on Twitter Bootstrap. */
+
+/*
+===========================
+CONTENTS:
+
+01 count-header
+02 count-box
+03 count-subscribe
+04 count-address
+
+===========================
+*/
+
+
+/* Font
+-------------------------------------------------- */
+
+@import url(http://fonts.googleapis.com/css?family=The+Girl+Next+Door);
+@import url(http://fonts.googleapis.com/css?family=Oxygen:400,300);
+@font-face {
+	{
+	font-family: 'Infinity';
+	src:url('../fonts/Infinity.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	}
+}
+
+
+ 
+body {
+  position: relative;
+  padding-top: 40px;
+  background: #fff;
+  
+}
+
+
+h1,h2,p,body {
+
+  font-family: 'Oxygen', sans-serif;
+  color: #d4d3d3;
+  font-size:15px;
+  font-weight: normal;
+  
+  } 
+
+
+.container-narrow {
+   margin: 0 auto;
+   max-width: 850px;
+}
+
+
+/* count-header
+-------------------------------------------------- */
+
+.count-header{
+   padding:10px;
+   margin: auto;
+   text-align:center;
+   color: #fff;
+   display: block;
+}
+.count-logo {
+   
+     margin: 10px 5px 2px 5px;
+	 display: block;
+ }
+
+.header-social{
+  margin: 5px 10px 5px 10px;
+  display: block;
+
+}
+
+
+ .header-social img{
+    opacity: 0.6;
+	filter: alpha(opacity=60);
+ 
+	
+}
+.header-social img:hover{
+    opacity: 1;
+	filter: alpha(opacity=100);
+ 	
+	}
+
+.header-social-buttons li {
+ 
+  display: inline-block;
+  padding: 2px;
+  line-height: 1;
+  *display: inline;
+  *zoom: 1;
+  color:#ffffff;
+  
+}
+
+
+
+
+/* count-box
+-------------------------------------------------- */
+
+.count-box{
+   padding: 150px 0 20px 0;
+  }
+
+.count-box h2{
+   margin: -90px 0 80px 0;
+ }
+
+.count-box-circle li {
+  text-align:center;
+  display: inline-block;
+  padding: 5px 4px;
+  line-height: 1;
+  *display: inline;
+  *zoom: 1; 
+}
+
+/* count-subscribe
+-------------------------------------------------- */
+
+.count-subscribe{
+  margin: auto;
+  padding: 10px 0 10px 0; 
+  background: transparent url(../images/pattern.png) repeat top left;
+   border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;	
+ 
+}
+.com-text{ 
+   padding-right: 10px;
+}
+
+.com-text h1 {
+  text-align:right;
+  font-size: 60px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+  color: #fff;
+  text-shadow: 0 1px 4px #000000;
+  font-family: 'Infinity', sans-serif;
+}
+.com-text p {
+  text-align:right;
+  font-size: 15px;
+  font-weight: 200;
+  line-height: 2;
+  letter-spacing: -1px;
+font-family: 'The Girl Next Door', cursive;
+}
+  
+ .count-form{ 
+  vertical-align: middle;
+  padding: 25px 2px;
+  }
+  
+  
+.count-form input[type=text] {
+  font-weight: normal;
+   line-height: normal;
+	background: transparent url(../images/pattern.png) repeat top left;
+    font-family: 'Oxygen', sans-serif;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	float:left;
+	border: 1px solid #828181;
+	text-align: center;
+	vertical-align: middle;
+	margin-bottom:0 !important;
+}
+.count-form input[type=text]:focus {
+    font-family: 'Oxygen', sans-serif;
+	background: #828181;
+	color: #fff;
+	float:left;
+	 border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	
+	transition: background 0.25 ease-in;
+	-moz-transition: background 0.25 ease-in;
+	-webkit-transition: background 0.25 ease-in;
+}
+.count-form input[type=text] {
+	height: 30px;
+	width:50%;
+	
+}
+.count-form input[type=submit] {
+  font-weight: normal;
+   line-height: normal;
+	float:left;
+	font-family: 'Oxygen', sans-serif;
+    color: #d4d3d3;
+	width: 125px;
+	height: 40px;
+	letter-spacing: 0.05em;
+	margin: 0 0 0 -3px;
+	border: 1px solid #828181;
+	text-transform: none;
+	background: #4d4c4c !important;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	
+}
+.count-form input[type=submit]:hover, .count-form input[type=submit]:active {
+	background: #313030 !important;
+    font-family: 'Oxygen', sans-serif;
+}
+
+/* count-address
+-------------------------------------------------- */
+
+.count-address{
+   margin: auto;
+   text-align:center;
+   padding: 25px 0 5px 0;
+ 
+  
+  }
+
+.count-address p{
+   font-size: 15px;
+   padding-right: 5px;
+   display: inline-block;   
+   font-weight: normal;
+   line-height: normal;
+  }
+.count-address img{
+   padding: 0 1px 0 2px;
+  }
