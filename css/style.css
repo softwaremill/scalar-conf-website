@@ -22,7 +22,7 @@ CONTENTS:
 /* Font
 -------------------------------------------------- */
 
-@import url(http://fonts.googleapis.com/css?family=The+Girl+Next+Door);
+@import url(http://fonts.googleapis.com/css?family=Michroma);
 @import url(http://fonts.googleapis.com/css?family=Oxygen:400,300);
 @font-face {
 	{
@@ -160,7 +160,7 @@ h1,h2,p,body {
   font-weight: 200;
   line-height: 2;
   letter-spacing: -1px;
-font-family: 'The Girl Next Door', cursive;
+font-family: 'Michroma', sans-serif;
 }
   
  .count-form{ 
