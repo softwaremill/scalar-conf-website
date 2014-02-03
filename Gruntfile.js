@@ -13,8 +13,7 @@ module.exports = function(grunt) {
         },
         files: {
           'dist/index.html': ['jade/index.jade'],
-          'dist/news.html': ['jade/news.jade'],
-          'dist/news-all.html': ['jade/news-posts/all-news.jade']
+          'dist/news.html': ['jade/news.jade']
         }
       }
     },
