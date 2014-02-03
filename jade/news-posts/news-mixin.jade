@@ -1,0 +1,9 @@
+mixin article(title, date, dateISO, permalink)
+  div.news-post
+    header.post-header
+      a(href= permalink)
+        h1= title
+      time.post-date(datetime= dateISO)= date
+    
+    div.post-summary
+      block        

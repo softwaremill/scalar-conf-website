@@ -1,0 +1,31 @@
+section.organizer.row
+  div.centered-wrapper.small-12.medium-12.medium-centered.large-6.large-centered.columns
+    p Organized by
+    a(href="https://softwaremill.com/", target="_blank")
+      img#sml-logo(src='images/icons/sml-logo.svg')
+
+div.contact-links.row
+  div.small-12.medium-3.large-3.columns
+    a(href="http://lanyrd.com/2014/scalarconf/")
+      img(src='images/icons/lanyard.svg')
+      |&nbsp;lanyrd.com/crqyd
+  div.small-12.medium-3.large-3.columns
+    a(href="malto:scalar@scalar-conf.com")
+      img(src='images/icons/email.svg')
+      |&nbsp;scalar@scalar-conf.com
+  div.small-12.medium-3.large-3.columns
+    a(href="https://twitter.com/scalarconf")
+      img(src='images/icons/twitter.svg')
+      |&nbsp;@scalarconf
+  div.small-12.medium-3.large-3.columns
+    a(href="https://www.facebook.com/scalarconf")
+      img(src='images/icons/facebook.svg')
+      |&nbsp;facebook.com/scalarconf
+
+  //- Twitter
+  script
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+  //- Facebook
+  #fb-root
+  script
+    (function(d, s, id){var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));
