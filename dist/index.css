@@ -19,6 +19,7 @@ fieldset{border:none}
 .top-bar-section ul li>a{background:#2896b2;font-family:'Exo 2',sans-serif;padding-left:1em}
 .top-bar-section ul li.active>a{background:#1f7397;}
 .top-bar-section ul li.active>a:hover{background:#1e638b}
+.orbit-timer{opacity:0;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0)}
 #mce-EMAIL{background:transparent;border:2px solid #fff;-webkit-box-shadow:none;box-shadow:none;color:#fff;}
 #mce-EMAIL:focus{-webkit-box-shadow:inset 0 0 5px #2ca8bf;box-shadow:inset 0 0 5px #2ca8bf}
 #mc-embedded-subscribe:focus{background:#fff;color:#2184a4}
