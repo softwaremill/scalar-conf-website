@@ -68,6 +68,7 @@ section.row.sponsors .sponsors-slide a{display:inline-block;margin:0 1em 2em}
 .news-posts.row{background-image:none;padding-top:1em;}
 .news-posts.row:nth-child(odd){background-image:none}
 .news-posts.row .news-post{margin-bottom:5em;}
+.news-posts.row .news-post .post-header a{cursor:default}
 .news-posts.row .news-post .social>*{vertical-align:middle}
 .news-posts.row .news-post .fb-like{margin-left:10px}
 ::-webkit-input-placeholder{color:#fff}
