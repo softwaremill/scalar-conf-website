@@ -1,0 +1,10 @@
+Scalar uses Exo 2 font.
+
+It's published under Sil licence.
+
+
+You can find it on:
+
+Fontsquirrel - http://www.fontsquirrel.com/fonts/exo-2 (can be downloaded from here)
+
+Google Fonts - http://www.google.com/fonts/specimen/Exo+2#charset
