@@ -252,6 +252,40 @@ section.row
   padding: 0 0.5em;
 // End news section on index page
 
+
+// Start speakers section
+.speaker-box
+  padding: 0 .5rem 2.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  &:hover .speaker-photo
+    opacity: 0;
+    transform: scale(0.8);
+  &:hover .speaker-info
+    transform: translateY(0);
+
+.speaker-photo
+  max-width: 175px;
+  border-radius: 50%;
+  border: 3px solid white;
+  margin: 0 auto;
+  transition: opacity 450ms, border-color 100ms, transform 1500ms;
+
+  & img
+    border-radius: 50%;
+    -webkit-filter: grayscale(100%);
+
+.speaker-info
+  position: absolute;
+  top: 0;
+  transform: translateY(173px);
+  transition: transform 1000ms;
+
+
+// End speakers section
+
+
 // Start venue section
 .venue-address
   background: #32c1d0;
