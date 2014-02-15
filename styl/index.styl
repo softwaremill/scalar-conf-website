@@ -266,7 +266,8 @@ section.row
     transform: translateY(0);
 
 .speaker-photo
-  max-width: 175px;
+  background: #32c1d0;
+  max-width: 200px;
   border-radius: 50%;
   border: 3px solid white;
   margin: 0 auto;
@@ -307,22 +308,21 @@ section.row
     margin-bottom: 2.875rem;
     
   & h2
+    color: #002447;
     font-size: 1.25em;
     font-weight: 200;
     text-transform: uppercase;
     text-align: center;
+    -webkit-text-stroke: .6px rgba(0,36,71,0.8);
 
-  & .partners
+  & .partners,
+    .media-partners,
+    .silver-sponsors
     margin-bottom: 1.5rem;
     text-align: center;
 
-  & .media-partners
-    margin-bottom: 1.5rem;
-    text-align: center;
-
-  & .silver-sponsors
-    margin-bottom: 1.5rem;
-    text-align: center;
+    & a
+      margin: 0 1em 2em;
 
 .sponsors-slide
   & small

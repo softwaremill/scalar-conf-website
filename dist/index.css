@@ -58,16 +58,15 @@ section.row.sponsors .sponsors-slide a{display:inline-block;margin:0 1em 2em}
 .speaker-box{padding:0 .5rem 2.5rem;text-align:center;position:relative;overflow:hidden;}
 .speaker-box:hover .speaker-photo{opacity:0;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0);-webkit-transform:scale(.8);-moz-transform:scale(.8);-o-transform:scale(.8);-ms-transform:scale(.8);transform:scale(.8)}
 .speaker-box:hover .speaker-info{-webkit-transform:translateY(0);-moz-transform:translateY(0);-o-transform:translateY(0);-ms-transform:translateY(0);transform:translateY(0)}
-.speaker-photo{max-width:175px;-webkit-border-radius:50%;border-radius:50%;border:3px solid #fff;margin:0 auto;-webkit-transition:opacity 450ms, border-color 100ms, -webkit-transform 1500ms;-moz-transition:opacity 450ms, border-color 100ms, -moz-transform 1500ms;-o-transition:opacity 450ms, border-color 100ms, -o-transform 1500ms;-ms-transition:opacity 450ms, border-color 100ms, -ms-transform 1500ms;transition:opacity 450ms,border-color 100ms,transform 1500ms;}
+.speaker-photo{background:#32c1d0;max-width:200px;-webkit-border-radius:50%;border-radius:50%;border:3px solid #fff;margin:0 auto;-webkit-transition:opacity 450ms, border-color 100ms, -webkit-transform 1500ms;-moz-transition:opacity 450ms, border-color 100ms, -moz-transform 1500ms;-o-transition:opacity 450ms, border-color 100ms, -o-transform 1500ms;-ms-transition:opacity 450ms, border-color 100ms, -ms-transform 1500ms;transition:opacity 450ms,border-color 100ms,transform 1500ms;}
 .speaker-photo img{-webkit-border-radius:50%;border-radius:50%;-webkit-filter:grayscale(100%)}
 .speaker-info{position:absolute;top:0;-webkit-transform:translateY(173px);-moz-transform:translateY(173px);-o-transform:translateY(173px);-ms-transform:translateY(173px);transform:translateY(173px);-webkit-transition:-webkit-transform 1000ms;-moz-transition:-moz-transform 1000ms;-o-transition:-o-transform 1000ms;-ms-transition:-ms-transform 1000ms;transition:transform 1000ms}
 .venue-address{background:#32c1d0;margin:-2px 0 1em;padding:1rem}
 #google-maps-link{bottom:-15px;cursor:pointer;position:absolute;right:5px;z-index:10}
 #sponsors a.become-sponsor{margin-bottom:2.875rem}
-#sponsors h2{font-size:1.25em;font-weight:200;text-transform:uppercase;text-align:center}
-#sponsors .partners{margin-bottom:1.5rem;text-align:center}
-#sponsors .media-partners{margin-bottom:1.5rem;text-align:center}
-#sponsors .silver-sponsors{margin-bottom:1.5rem;text-align:center}
+#sponsors h2{color:#002447;font-size:1.25em;font-weight:200;text-transform:uppercase;text-align:center;-webkit-text-stroke:.6px rgba(0,36,71,0.8)}
+#sponsors .partners,#sponsors .media-partners,#sponsors .silver-sponsors{margin-bottom:1.5rem;text-align:center;}
+#sponsors .partners a,#sponsors .media-partners a,#sponsors .silver-sponsors a{margin:0 1em 2em}
 .sponsors-slide small{display:block}
 .organizer p{margin-top:1em}
 #sml-logo{margin-bottom:4em}
