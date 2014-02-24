@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dba36d0d-df7c-473d-b68a-64e73e46c2aa" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/team/buda.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/team/grajek.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/team/warski.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/team/wojciechowska.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/team/wozniak.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/team/zborowski.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/team/zuchowski.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jade/organisers.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jade/header.jade" afterPath="$PROJECT_DIR$/jade/header.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/index.css" afterPath="$PROJECT_DIR$/dist/index.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/index.html" afterPath="$PROJECT_DIR$/dist/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jade/index.jade" afterPath="$PROJECT_DIR$/jade/index.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styl/index.styl" afterPath="$PROJECT_DIR$/styl/index.styl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jade/organisers.jade" afterPath="$PROJECT_DIR$/jade/organisers.jade" />
     </list>
     <ignored path="scalar-conf-website.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -78,19 +68,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="organizer.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jade/organizer.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="51" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.jade" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jade/index.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="24" selection-start="695" selection-end="695" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+            <state line="21" column="22" selection-start="757" selection-end="757" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
               <folding />
             </state>
           </provider>
@@ -168,7 +149,7 @@
       <file leaf-file-name="organisers.jade" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jade/organisers.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="57" selection-start="895" selection-end="895" vertical-scroll-proportion="0.15069552" vertical-offset="0" max-vertical-offset="1294">
+            <state line="11" column="22" selection-start="776" selection-end="776" vertical-scroll-proportion="0.12751159" vertical-offset="0" max-vertical-offset="1294">
               <folding />
             </state>
           </provider>
@@ -604,12 +585,12 @@
       <created>1393240392405</created>
       <updated>1393240392405</updated>
       <workItem from="1393240393881" duration="205000" />
-      <workItem from="1393240624997" duration="6215000" />
+      <workItem from="1393240624997" duration="6555000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6420000" />
+    <option name="totallyTimeSpent" value="6760000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="2560" height="1414" extended-state="6" />
@@ -730,13 +711,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jade/organizer.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="51" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/styl/index.styl">
       <provider selected="true" editor-type-id="text-editor">
         <state line="436" column="12" selection-start="37676" selection-end="37676" vertical-scroll-proportion="0.0" vertical-offset="5561" max-vertical-offset="6885">
@@ -755,19 +729,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/jade/organizer.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="51" selection-start="238" selection-end="238" vertical-scroll-proportion="0.046838406" vertical-offset="0" max-vertical-offset="1281">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/jade/index.jade">
       <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="24" selection-start="695" selection-end="695" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+        <state line="21" column="22" selection-start="757" selection-end="757" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jade/organisers.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="57" selection-start="895" selection-end="895" vertical-scroll-proportion="0.15069552" vertical-offset="0" max-vertical-offset="1294">
+        <state line="11" column="22" selection-start="776" selection-end="776" vertical-scroll-proportion="0.12751159" vertical-offset="0" max-vertical-offset="1294">
           <folding />
         </state>
       </provider>
