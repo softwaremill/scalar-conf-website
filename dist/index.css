@@ -93,4 +93,14 @@ section.row.hero .conference-data time,section.row.hero .conference-data span{di
 }@media only screen and (min-width: 64.063em){.top-bar .name h1 a{padding:1em 0 0 1em;}
 .top-bar .name h1 a img{max-height:none}
 .top-bar-section ul{margin-top:3em}
-}
+}.circle{display:block;width:100px;height:100px;margin-left:30px;-webkit-background-size:cover;-moz-background-size:cover;background-size:cover;background-repeat:no-repeat;background-position:center center;-webkit-border-radius:99em;-moz-border-radius:99em;-webkit-border-radius:99em;border-radius:99em;border:3px solid #eee;-webkit-box-shadow:0 3px 2px rgba(0,0,0,0.3);box-shadow:0 3px 2px rgba(0,0,0,0.3)}
+.person{margin-bottom:15px}
+.person_name{margin-bottom:3px}
+.bio{padding-top:10px}
+.wojciechowska{background-image:url("images/team/wojciechowska.jpg")}
+.warski{background-image:url("images/team/warski.jpg")}
+.zuchos{background-image:url("images/team/zuchowski.jpg")}
+.grajek{background-image:url("images/team/grajek.jpg")}
+.buda{background-image:url("images/team/buda.jpg")}
+.zborowski{background-image:url("images/team/zborowski.jpg")}
+.wozniak{background-image:url("images/team/wozniak.jpg")}
