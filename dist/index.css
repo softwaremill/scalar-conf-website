@@ -55,12 +55,18 @@ section.row.sponsors .sponsors-slide a{display:inline-block;margin:0 1em 2em}
 .news-post h1{font-size:1.125rem;font-weight:700;text-align:left;text-transform:none;-webkit-text-stroke:0 transparent}
 .news-post time{color:#114476;font-size:.875rem;font-weight:400}
 .twitter-widget{padding:0 .5em}
-.speaker-box{padding:0 .5rem 2.5rem;text-align:center;position:relative;overflow:hidden;}
-.speaker-box:hover .speaker-photo{opacity:0;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0);-webkit-transform:scale(.8);-moz-transform:scale(.8);-o-transform:scale(.8);-ms-transform:scale(.8);transform:scale(.8)}
-.speaker-box:hover .speaker-info{-webkit-transform:translateY(0);-moz-transform:translateY(0);-o-transform:translateY(0);-ms-transform:translateY(0);transform:translateY(0)}
-.speaker-photo{background:#32c1d0;max-width:200px;-webkit-border-radius:50%;border-radius:50%;border:3px solid #fff;margin:0 auto;-webkit-transition:opacity 450ms, border-color 100ms, -webkit-transform 1500ms;-moz-transition:opacity 450ms, border-color 100ms, -moz-transform 1500ms;-o-transition:opacity 450ms, border-color 100ms, -o-transform 1500ms;-ms-transition:opacity 450ms, border-color 100ms, -ms-transform 1500ms;transition:opacity 450ms,border-color 100ms,transform 1500ms;}
-.speaker-photo img{-webkit-border-radius:50%;border-radius:50%;-webkit-filter:grayscale(100%)}
-.speaker-info{position:absolute;top:0;-webkit-transform:translateY(173px);-moz-transform:translateY(173px);-o-transform:translateY(173px);-ms-transform:translateY(173px);transform:translateY(173px);-webkit-transition:-webkit-transform 1000ms;-moz-transition:-moz-transform 1000ms;-o-transition:-o-transform 1000ms;-ms-transition:-ms-transform 1000ms;transition:transform 1000ms}
+.agenda-table{border-bottom:1px dotted #fff;margin-bottom:1rem;}
+.agenda-table .row{border-top:1px dotted #fff;border-left:1px dotted #fff;border-right:1px dotted #fff;}
+.agenda-table .row:hover{background:rgba(17,68,118,0.3);-webkit-transition:background 400ms;-moz-transition:background 400ms;-o-transition:background 400ms;-ms-transition:background 400ms;transition:background 400ms}
+.agenda-table .row.utility{text-transform:uppercase;color:#002447;}
+.agenda-table .row.utility .description{text-align:center}
+.agenda-table .row .time{border-bottom:1px dotted #fff;padding:1em;text-transform:uppercase;text-align:center}
+.agenda-table .row .description{padding:1em;}
+.agenda-table .row .description .talk{margin-bottom:1.32rem}
+.agenda-table .row .description h1{font-size:1em;text-align:left;margin-top:0;margin-bottom:0}
+.agenda-table .row .description h2{font-size:1em;text-transform:uppercase;margin-top:0;margin-bottom:0}
+.agenda-table .row .description p{margin-top:.66rem;margin-bottom:.66rem}
+.agenda-table .row .description .speaker-link{display:block}
 .venue-address{background:#32c1d0;margin:-2px 0 1em;padding:1rem}
 #google-maps-link{bottom:-15px;cursor:pointer;position:absolute;right:5px;z-index:10}
 #sponsors a.become-sponsor{margin-bottom:2.875rem}
@@ -83,13 +89,18 @@ section.row.sponsors .sponsors-slide a{display:inline-block;margin:0 1em 2em}
 :-moz-placeholder /* Firefox 18- */{color:#fff}
 ::-moz-placeholder /* Firefox 19+ */{color:#fff}
 :-ms-input-placeholder{color:#fff}
-@media only screen and (min-width: 40.063em){.top-bar-section ul{margin-top:.7em;}
+@media only screen and (min-width: 30em){.agenda-table .speaker-photo{float:left;width:149px;margin-right:1em}
+}@media only screen and (min-width: 40.063em){.top-bar-section ul{margin-top:.7em;}
 .top-bar-section ul li>a{color:#155380;font-size:1em;font-weight:600;-webkit-transition:color 250ms;-moz-transition:color 250ms;-o-transition:color 250ms;-ms-transition:color 250ms;transition:color 250ms}
 .top-bar-section li:not(.has-form) a:not(.button){background:transparent;}
 .top-bar-section li:not(.has-form) a:not(.button):hover{background:transparent}
 section.row.hero{padding-top:6.125em;}
 section.row.hero h1{font-size:2.25em}
 section.row.hero .conference-data time,section.row.hero .conference-data span{display:inline-block}
+.agenda-table .row.utility .description{text-align:left}
+.agenda-table .row .description{border-left:1px dotted #fff;}
+.agenda-table .row .description .speaker-photo{width:125px}
+.agenda-table .row .time{border-bottom:none}
 }@media only screen and (min-width: 64.063em){.top-bar .name h1 a{padding:1em 0 0 1em;}
 .top-bar .name h1 a img{max-height:none}
 .top-bar-section ul{margin-top:3em}
