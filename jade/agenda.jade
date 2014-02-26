@@ -1,0 +1,220 @@
+section#agenda.row
+  a.to-top(data-scroll, data-speed="800", data-easing="easeInOutCubic", href="#top")
+    img(src="images/icons/to-top.svg")
+    br
+    | to top
+  header.section-title
+    h1 Agenda
+  div.agenda-table.small-12.medium-12.large-12.columns
+    div.row.utility
+      div.time.small-12.medium-2.large-1.columns 8:00
+      div.description.small-12.medium-10.large-11.columns Registration
+    div.row.utility
+      div.time.small-12.medium-2.large-1.columns 8:50
+      div.description.small-12.medium-10.large-11.columns Welcome
+    div.row
+      div.time.small-12.medium-2.large-1.columns 9:00
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1 Database Access with Slick
+          p Slick is Typesafe's database query and access library for Scala. It allows you to work with stored data as if you were using Scala collections while at the same time giving you full control over when a database access happens and which data is transferred.
+          p Whereas most database libraries either require you to write SQL code or are based on an ORM (object-relational mapping) architecture, Slick bridges the gap between functional programming and declarative querying using a functional-relational mapping aproach. This talk gives you an overview of the design of Slick 2.0 and shows you how to use it.
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/stefan-zeiger.png")
+          div.speaker-bio
+            h2 Stefan Zeiger
+            a(href="https://twitter.com/StefanZeiger").speaker-link @StefanZeiger
+            p Stefan Zeiger is the tech lead for Slick. He joined Typesafe in 2011 after developing ScalaQuery, the predecessor to Slick, in order to work on the new project full-time. He has been a user of Java and the JVM platform professionally since 1996, working on a diverse range of projects from web servers to GUI frameworks and programming language design, and moving on from Java to Scala since 2008.
+    div.row
+      div.time.small-12.medium-2.large-1.columns 9:30
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1 ScalaJS and ReactJS
+          p In this session we will build a reactive web application using Play Framework on the server side and ScalaJS together with ReactJS on the client side.
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/matthias-nehlsen.png")
+          div.speaker-bio
+            h2 Matthias Nehlsen
+            a(href="https://twitter.com/matthiasnehlsen").speaker-link @matthiasnehlsen
+            p Software Engineer and Blogger from Hamburg, Germany.
+            p
+              a(href='http://matthiasnehlsen.com') matthiasnehlsen.com
+            p
+              a(herf='https://github.com/matthiasn') github.com/matthiasn
+    div.row.utility
+      div.time.small-12.medium-2.large-1.columns 10:00
+      div.description.small-12.medium-10.large-11.columns Coffee break
+    div.row
+      div.time.small-12.medium-2.large-1.columns 10:30
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1 Simple, fast &amp; agile REST with Spray.io
+          p Spray, once a stand-alone project, now part of Akka, is a toolkit for building and consuming REST services.
+          p In the talk we will build a simple REST service with Spray, and then consume it with a Spray-based client. No code can live without tests, so we'll take care of that as well.
+          p You'll see that building REST services can be really simple&mdash;no containers, minimal boilerplate, fast development time!
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/adam-warski.png")
+          div.speaker-bio
+            h2 Adam Warski
+            a(href="https://twitter.com/adamwarski").speaker-link @adamwarski
+            p I am one of the co-founders of 
+              a(href="https://softwaremill.com/") SoftwareMill
+              |, a company specialising in delivering customised software solutions. I code mostly using Scala and Java. I am involved in a number of open-source projects: as the founder and lead developer of Hibernate Envers, a Hibernate core module providing auditing capabilities, as well as the founder of ElasticMQ, Veripacks and MacWire. I have been a speaker at major conferences, such as Devoxx or Jazoon.
+            p Apart from writing closed- and open-source software, I am interested in improving the way we use functional and object-oriented programming. When not coding, I enjoy spending time with my family, hiking in the mountains or playing tennis.
+            p My blog: 
+              a(href="http://www.warski.org/blog") www.warski.org/blog
+    div.row
+      div.time.small-12.medium-2.large-1.columns 11:00
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1 Doing Crazy Algebra with Scala Types
+          p What would it mean to "add" or "multiply" types like Boolean and List[Int], or to apply the quadratic formula to a type, expand its power series, then use this to count binary trees? How could you interpret differentiating a type, and what's this got to do with zippers? I'll show how doing some crazy algebraic operations on Scala types can actually throw up some interesting, surprising and useful results!
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/john-pretty.png")
+          div.speaker-bio
+            h2 Jon Pretty
+            a(href="http://rapture.io").speaker-link rapture.io
+            p Jon has been an active member of the Scala community since 2004, when he launched the first commercial application in Scala. Since then, he's successfully deployed Scala in small businesses, large corporations, and government. Jon is the developer of the open-source Rapture I/O libraries.
+    div.row
+      div.time.small-12.medium-2.large-1.columns 11:30
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1 Real World ETL with Akka and Scala
+          p There are many ETL tools on the market, but for small to middle data acquisition tasks it is still convenient to write our own lightweight solutions. Combination of scripts and SQL is fun to code, but it quickly gets complicated as data volume grows or new types of sources must be integrated. Suddenly, scalability, resiliency and extensibility have to be taken into consideration. In this talk I will share my experiences of building an ETL application using Akka and Scala &mdash; tools that help you to smoothly achieve such requirements.
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/michal-wegrzyn.png")
+          div.speaker-bio
+            h2 Micha&#322; W&#0281;grzyn
+            a(href="http://www.linkedin.com/in/michalwegrzyn").speaker-link linkedin.com/in/michalwegrzyn
+            p I'm a Java programmer/architect who for the last two years has been working full time in Scala at CellVision AS/Norway. My daily responsibilities include designing telecom data processing systems for various customer-facing applications.
+    div.row.utility
+      div.time.small-12.medium-2.large-1.columns 12:00
+      div.description.small-12.medium-10.large-11.columns Lunch
+    div.row
+      div.time.small-12.medium-2.large-1.columns 13:00
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1 The Dark Side of Scala
+          p I love Scala. I really do. That being said we will spend half an hour looking at complexities, inconsistencies and obscure behavior in the language&mdash;syntax, standard library and ecosystem. Hopefully apart from complaining we will also learn how to get the most of the platform without too much frustration.
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/tomasz-nurkiewicz.png")
+          div.speaker-bio
+            h2 Tomasz Nurkiewicz
+            a(href="http://nurkiewicz.blogspot.com/").speaker-link nurkiewicz.blogspot.com
+            p Spent half of his life on programming, for the last 7 years professionally in Java land. Loves back-end, tolerates JavaScript. Passionate about alternative JVM languages. Disappointed with the quality of software written these days (so often by himself!), hates long methods and hidden side effects. Interested in charting, data analysis and reporting. Technical reviewer of "Learning Highcharts" and "Getting started with IntelliJ IDEA". Believes that computers were invented so that developers can automate boring and repetitive tasks. Also their own.
+            p On a daily basis writes in functional languages for financial sector. Crew member of 
+              a(herf="http://scala.net.pl/") scala.net.pl
+              |, involved in open-source. DZone's Most Valuable Blogger, used to be very active on StackOverflow, best speaker of last Confitura conference according to all attendees.
+            p Likes programming. Claims that code not tested automatically is not a feature but just a rumor.
+    div.row
+      div.time.small-12.medium-2.large-1.columns 13:30
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1 Event sourcing with akka-persistence
+          p Akka persistence is a new utility coming to Akka 2.x+. In the dawn of more and more event sourcing based applications being built, akka-persistence aims at simplifying event registration, replay and snapshoting. During this session we'll discover how to build reactive, event sourcing based apps using the new abstractions provided, and investigate how to implement your own journals to back these Persistent Stateful Actors.
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/konrad-malawski.png")
+          div.speaker-bio
+            h2 Konrad Malawski
+            a(href="https://twitter.com/ktosopl").speaker-link @ktosopl
+            p Konrad is a late-night passionate programmer, most fond of the JVM, with his current favourite being Scala. Other than that, he's a fan of automating every possible task and ridiculously long keyboard shortcuts. "After hours" he's still bound to programming&mdash;as a lead of the PolishJUG, and founder of Google Developers Group Krak&oacute;w or "Krak&oacute;w Scala" and helping hand of Software Craftsmanship Krak&oacute;w he's coding for fun and glory, speaking at conferences (JFokus, JavaOne 2013), or organising meetups ranging from small hackathons to big conferences like the annual GeeCON.
+            p In those rare times when he's not doing something code-related, he's collecting game consoles or playing tennis / squash. He bloggs and tweets.
+    div.row
+      div.time.small-12.medium-2.large-1.columns 14:00
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1 Underscore magic
+          p The hero of my 30 minutes talk will be the underscoere character, a kind of a joker, which can mean 'all' or 'nothing'.
+          p _ (0x5F in ASCII) will be the starting point for the discussion of interesting scala's features.
+          p We'll start with imports and variable declarations moving on to more advanced applications.
+          p Usage of underscore character can improve the readability of the code, while ignorance of _ can effectively slow down the work efficiency.
+          p Furthermore it can even completely discourage the language at first contact.
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/marcin-matuszak.png")
+          div.speaker-bio
+            h2 Marcin Matuszak
+            a(href="http://kodeabe.net/").speaker-link kodeabe.net
+            p Se&ntilde;or developer
+    div.row.utility
+      div.time.small-12.medium-2.large-1.columns 14:30
+      div.description.small-12.medium-10.large-11.columns Coffee
+    div.row
+      div.time.small-12.medium-2.large-1.columns 15:00
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1 Macro-Based Type Providers in Scala
+          p Language-integrated queries and type providers are two of the most promising applications of compile-time metaprogramming. While the former can be implemented almost trivially with macros in Scala, type providers have proven more elusive, and their implementation has become one of the most interesting challenges in Scala macro development.
+          p In this talk we will outline two approaches to bringing type providers to Scala. The first approach delivers "public" type providers&mdash;that is, type providers that generate publicly visible classes&mdash;and requires dedicated macro flavors (either type macros or macro annotations). The second approach ("anonymous" type providers) does not require new macro flavors, but is rather built on structural types and vanilla def macros.
+          p Which approach works best? Are these solutions mature enough to be used in everyday development? How do these two approaches compare to F#'s type providers? Join us for our talk to find out!
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/eugene-burmako.png")
+            img(src="images/speakers/travis-brown.png")
+          div.speaker-bio
+            h2 Eugene Burmako&nbsp;&amp; Travis&nbsp;Brown
+            a(href="https://twitter.com/xeno_by").speaker-link @xeno_by 
+            a(href="https://twitter.com/travisbrown").speaker-link @travisbrown
+            p Eugene Burmako is a third-year PhD student at Martin Odersky's research group at EPFL. He believes that metaprogramming can be applied to mainstream software development in a safe and disciplined way and is realizing this vision in the Scala macros project.
+            p Travis Brown is the Assistant Director of Research and Development at the Maryland Institute for Technology in the Humanities. He holds an M.A. in English from the University of Texas at Austin, is a contributor to a number of Scala projects, and maintains a blog on experimental uses of Scala macros and type-level programming (http://meta.plasm.us/).
+    div.row
+      div.time.small-12.medium-2.large-1.columns 15:30
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1 Scalaz&mdash;the good, the bad and the ugly
+          p Scalaz is one of very controversial Scala libraries. Half of Scala developers love it, other half gets scared when its name is mentioned :) I'll show useful Scalaz snippets for everyday coding. I'll also show a bit of cryptic (read bad) code you can write using it.
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/lukasz-kuczera.png")
+          div.speaker-bio
+            h2 &#321;ukasz Kuczera
+            a(href="http://www.linkedin.com/in/lkuczera").speaker-link linkedin.com/in/lkuczera
+            p &#321;ukasz is using Scala in commercial projects since 2010. He is commiting to the Lift web framework and working daily with startups building exciting software. In free time you can find him kitesurfing, climbing or snowboarding.
+    div.row.utility
+      div.time.small-12.medium-2.large-1.columns 16:00
+      div.description.small-12.medium-10.large-11.columns Coffee
+    div.row
+      div.time.small-12.medium-2.large-1.columns 16:30
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1 Lambda implementation in Scala 2.11 and Java 8
+          p Let's look under the hood and check how both Scala 2.11 and Java 8 implement lambdas on the JVM. Java 8 implements lambdas using different strategy compared to Scala and I'll explain how Scala is learning a new trick from Java. Being rather unusual event is worth highlighting on its own.
+          p We'll check whether Java 8 lambdas are more efficient than Scala counterparts by looking at runtime representation of both.
+          p Lastly, I'll explain what role invokedynamic instruction plays in Java 8's implementation of lambdas. To the surprise of many people, invokedynamic has nothing to do with invoking lambdas but enables evolution of lambda implementation on the JVM. We'll see how this interesting observation might affect future versions of both Java and Scala.
+          p Although the whole topic is fairly low-level, I'll try focus more on interesting tidbits and make it fun to follow.
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/grzegorz-kossakowski.png")
+          div.speaker-bio
+            h2 Grzegorz Kossakowski
+            a(href="https://twitter.com/gkossakowski").speaker-link @gkossakowski
+            p Grzegorz Kossakowski is a Scala compiler and tools hacker at Typesafe. A former Google Intern, Grzegorz worked on the Scala+GWT project and internal Android tools. Grzegorz holds a M.S. in Computer Science from the University of Warsaw and completed his master thesis under Martin Odersky through EPFL. A passionate Scala enthusiast, Grzegorz devotes his time at Typesafe to improving Scala compiler performance, build tool integration and Java interoperability.
+    div.row
+      div.time.small-12.medium-2.large-1.columns 17:00
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1 The Tale of the Glorious Lambdas &amp; the Were-Clusterz (i.e. Scala + Hadoop)
+          p At ICM UW* we perform a bleeding edge research on scholarly publishing. We have a Hadoop cluster and do fun stuff with it. We thought it'd be even funnier if we combined it with Scala to perform our analysis. So we did it. We shall tell you our story. The story of the good, the bad and the ugly in the world of the lambdas on elephants. Brace yourselves.
+          p * Interdisciplinary Centre for Mathematical and Computational Modelling, University of Warsaw
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/mateusz-fedoryszak.png")
+            img(src="images/speakers/michal-oniszczuk.png")
+          div.speaker-bio
+            h2 Mateusz Fedoryszak &amp; Micha&#322; Oniszczuk
+            a(href="http://rapture.io").speaker-link rapture.io
+            p Mateusz Fedoryszak studied Computer Science at MIMUW, meanwhile getting a taste of big data at Microsoft and True Knowledge (now Amazon subsidiary). Currently, works at ICM UW using Scala and Hadoop to spy on scientists. Enjoys snowboarding, loves Latin phrases.
+            p Micha&#322; Oniszczuk, a Computer Science student at MIMUW, is a great fan of strongly typed functional programming languages, esp. Haskell &amp; Scala. Firstly dived into the trecherous waters of large datasets by joining the Market Intelligence team on the Commodities Trading Floor at Merill Lynch in London, now sails these waters at ICM UW, equipped with lambdas at his hands. Loves cuban salsa &mdash; come for a latino dance party at La Playa in summer or Hula Kula in winter and you will surely meet him there.
+    div.row.utility
+      div.time.small-12.medium-2.large-1.columns 17:30
+      div.description.small-12.medium-10.large-11.columns Ending
+    div.row.utility
+      div.time.small-12.medium-2.large-1.columns 18:00+
+      div.description.small-12.medium-10.large-11.columns Party!
