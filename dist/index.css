@@ -44,7 +44,7 @@ section.row.hero .conference-data time{margin-right:1em}
 section.row.sponsors{background-image:none;padding-top:1em;}
 section.row.sponsors .sponsors-slide{text-align:center;}
 section.row.sponsors .sponsors-slide a{display:inline-block;margin:0 1em 2em}
-.to-top{margin:.7em 5px 0 0;opacity:.4;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";filter:alpha(opacity=40);position:absolute;right:0;text-align:center;text-transform:uppercase;-webkit-transition:opacity 500ms;-moz-transition:opacity 500ms;-o-transition:opacity 500ms;-ms-transition:opacity 500ms;transition:opacity 500ms;}
+.to-top{margin:.7em 5px 0 0;opacity:.4;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";filter:alpha(opacity=40);position:absolute;right:0;text-align:center;text-transform:uppercase;-webkit-transition:opacity 500ms;-moz-transition:opacity 500ms;-o-transition:opacity 500ms;-ms-transition:opacity 500ms;transition:opacity 500ms;z-index:99;}
 .to-top img{margin-bottom:4px;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-ms-backface-visibility:hidden;backface-visibility:hidden}
 .to-top:hover{opacity:1;-ms-filter:none;filter:none;color:#fff}
 .section-title{margin-bottom:2.875em;text-align:center;}
@@ -67,6 +67,7 @@ section.row.sponsors .sponsors-slide a{display:inline-block;margin:0 1em 2em}
 .agenda-table .row .description h2{font-size:1em;text-transform:uppercase;margin-top:0;margin-bottom:0}
 .agenda-table .row .description p{margin-top:.66rem;margin-bottom:.66rem}
 .agenda-table .row .description .speaker-link{display:block}
+.agenda-table .row .description .speaker-photo img{border:1px solid #fff}
 .venue-address{background:#32c1d0;margin:-2px 0 1em;padding:1rem}
 #google-maps-link{bottom:-15px;cursor:pointer;position:absolute;right:5px;z-index:10}
 #sponsors a.become-sponsor{margin-bottom:2.875rem}
@@ -75,10 +76,14 @@ section.row.sponsors .sponsors-slide a{display:inline-block;margin:0 1em 2em}
 #sponsors .partners a,#sponsors .media-partners a,#sponsors .silver-sponsors a{margin:0 1em 2em}
 .sponsors-slide small{display:block}
 .organizer p{margin-top:1em}
-#sml-logo{margin-bottom:4em}
+#sml-logo{margin-bottom:1em}
 .contact-links{margin-bottom:10rem;}
-.contact-links .columns{padding:0 .5em 1em}
+.contact-links .columns{padding:0 .5em 1em;text-align:center}
 .contact-links img{margin-right:.4em;vertical-align:middle}
+.team-table{margin-bottom:4rem;}
+.team-table .columns{padding:1rem}
+.team-table img{border:1px solid #fff}
+.team-table h2{font-size:1em;text-transform:uppercase;margin-top:0;margin-bottom:0}
 .news-posts.row{background-image:none;padding-top:1em;}
 .news-posts.row:nth-child(odd){background-image:none}
 .news-posts.row .news-post{margin-bottom:5em;}
@@ -90,6 +95,7 @@ section.row.sponsors .sponsors-slide a{display:inline-block;margin:0 1em 2em}
 ::-moz-placeholder /* Firefox 19+ */{color:#fff}
 :-ms-input-placeholder{color:#fff}
 @media only screen and (min-width: 30em){.agenda-table .speaker-photo{float:left;width:149px;margin-right:1em}
+.team-table img{float:left;width:149px;margin-right:.8em}
 }@media only screen and (min-width: 40.063em){.top-bar-section ul{margin-top:.7em;}
 .top-bar-section ul li>a{color:#155380;font-size:1em;font-weight:600;-webkit-transition:color 250ms;-moz-transition:color 250ms;-o-transition:color 250ms;-ms-transition:color 250ms;transition:color 250ms}
 .top-bar-section li:not(.has-form) a:not(.button){background:transparent;}
@@ -101,7 +107,10 @@ section.row.hero .conference-data time,section.row.hero .conference-data span{di
 .agenda-table .row .description{border-left:1px dotted #fff;}
 .agenda-table .row .description .speaker-photo{width:125px}
 .agenda-table .row .time{border-bottom:none}
+.team-table img{width:125px;}
+.team-table img [class*="column"]+[class*="column"]:last-child{float:left}
 }@media only screen and (min-width: 64.063em){.top-bar .name h1 a{padding:1em 0 0 1em;}
 .top-bar .name h1 a img{max-height:none}
 .top-bar-section ul{margin-top:3em}
+.team-table [class*="column"]+[class*="column"]:last-child{float:left}
 }

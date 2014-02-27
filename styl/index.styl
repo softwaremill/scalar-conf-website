@@ -209,6 +209,7 @@ section.row
   text-align: center;
   text-transform: uppercase;
   transition: opacity 500ms;
+  z-index: 99;
 
   & img
     margin-bottom: 4px;
@@ -306,6 +307,9 @@ section.row
 
       & .speaker-link
         display: block;
+
+      & .speaker-photo img
+        border: 1px solid white;
 // End agenda section
 
 
@@ -358,17 +362,33 @@ section.row
     margin-top: 1em;
 
 #sml-logo
-  margin-bottom: 4em;
+  margin-bottom: 1em;
 
 .contact-links
   margin-bottom: 10rem;
 
   & .columns
     padding: 0 .5em 1em;
+    text-align: center;
 
   & img
     margin-right: 0.4em;
     vertical-align: middle;
+
+.team-table
+  margin-bottom: 4rem;
+
+  & .columns
+    padding: 1rem;
+
+  & img
+    border: 1px solid white;
+
+  & h2
+    font-size: 1em;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 0;
 // End bottom part
 
 
@@ -411,6 +431,11 @@ section.row
       width: 149px;
       margin-right: 1em;
 
+  .team-table img
+    float: left;
+    width: 149px;
+    margin-right: 0.8em;
+
 @media only screen and (min-width: 40.063em)
   .top-bar-section ul
     margin-top: 0.7em;
@@ -449,6 +474,12 @@ section.row
     & .time
       border-bottom: none;
 
+  .team-table img
+    width: 125px;
+
+    & [class*="column"]+[class*="column"]:last-child
+      float: left;
+
 @media only screen and (min-width: 64.063em)
   .top-bar .name h1 a
     padding: 1em 0 0 1em;
@@ -458,4 +489,8 @@ section.row
 
   .top-bar-section ul
     margin-top: 3em;
-// Start Responsive styles
+
+  .team-table
+    & [class*="column"]+[class*="column"]:last-child
+      float: left;
+// End Responsive styles
