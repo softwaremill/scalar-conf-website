@@ -1,8 +1,47 @@
-section.organizer.row
-  div.centered-wrapper.small-12.medium-12.medium-centered.large-6.large-centered.columns
+section#organizer.organizer.row
+  a.to-top(data-scroll, data-speed="800", data-easing="easeInOutCubic", href="#top")
+    img(src="images/icons/to-top.svg")
+    br
+    | to top
+  div.centered-wrapper.small-12.medium-8.medium-centered.large-8.large-centered.columns
     p Organized by
     a(href="https://softwaremill.com/", target="_blank")
       img#sml-logo(src='images/icons/sml-logo.svg')
+  div.row
+    div.small-12.medium-12.medium-centered.large-8.large-centered.columns
+      div.team-table
+        div.row
+          div.small-12.medium-6.large-6.columns
+            img(src="images/team/gosia.png") 
+            h2 Małgorzata Wojciechowska
+            p Combines multiple skills: polish philology, landscape architecture, tour guiding and karate, to make Softwaremill a better place.
+          div.small-12.medium-6.large-6.columns
+            img(src="images/team/adam.png") 
+            h2 Adam Warski
+            p Programmer by day (scala), programmer by night (various). To his own surprise, sometimes writes a blog. Likes nice code.
+        div.row
+          div.small-12.medium-6.large-6.columns
+            img(src="images/team/lukasz.png") 
+            h2 Łukasz Żuchowski
+            p Software Wizard. Finds pleasure in finding solutions for business problems, with logic, Scala, Java and an occasional framework.
+          div.small-12.medium-6.large-6.columns
+            img(src="images/team/krzysztof.png")
+            h2 Krzysztof Grajek
+            p Passionate programmer, constantly looking for new things to learn and explore. He codes all the time unless doing something else.
+        div.row  
+          div.small-12.medium-6.large-6.columns
+            img(src="images/team/piotr.png") 
+            h2 Piotr Buda
+            p Isn't scared of any programming language, he tried everything from Flex to Scala, from just hacking to DDD. Likes to play games.
+          div.small-12.medium-6.large-6.columns
+            img(src="images/team/jan.png") 
+            h2 Jan Zborowski
+            p One of the few normal persons among the geeks. Connects the IT world with the non-IT surroundings.
+        div.row
+          div.small-12.medium-6.large-6.columns
+            img(src="images/team/mirek.png") 
+            h2 Mirek Woźniak
+            p Marketing Overlord, the court wordsmith. Mirek gets high on semantics and making people meet. Softwaremill's social media expert.
 
 div.contact-links.row
   div.small-12.medium-3.large-3.columns
@@ -20,7 +59,9 @@ div.contact-links.row
   div.small-12.medium-3.large-3.columns
     a(href="https://www.facebook.com/scalarconf")
       img(src='images/icons/facebook.svg')
-      |&nbsp;facebook.com/scalarconf
+      |&nbsp;facebook.com/
+      wbr
+      |scalarconf
 
   //- Twitter
   script
