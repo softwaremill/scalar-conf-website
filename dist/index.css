@@ -73,8 +73,8 @@ section.row.sponsors .sponsors-slide a{display:inline-block;margin:0 1em 2em}
 #google-maps-link{bottom:-15px;cursor:pointer;position:absolute;right:5px;z-index:10}
 #sponsors a.become-sponsor{margin-bottom:2.875rem}
 #sponsors h2{color:#002447;font-size:1.25em;font-weight:200;text-transform:uppercase;text-align:center;-webkit-text-stroke:.6px rgba(0,36,71,0.8)}
-#sponsors .partners,#sponsors .media-partners,#sponsors .silver-sponsors,#sponsors .just-sponsors{margin-bottom:1.5rem;text-align:center;}
-#sponsors .partners a,#sponsors .media-partners a,#sponsors .silver-sponsors a,#sponsors .just-sponsors a{margin:0 1em 2em}
+#sponsors .partners,#sponsors .media-partners,#sponsors .silver-sponsors,#sponsors .just-sponsors,#sponsors .party-sponsors{margin-bottom:1.5rem;text-align:center;}
+#sponsors .partners a,#sponsors .media-partners a,#sponsors .silver-sponsors a,#sponsors .just-sponsors a,#sponsors .party-sponsors a{margin:0 1em 2em}
 .sponsors-slide small{display:block}
 .organizer p{margin-top:1em}
 #sml-logo{margin-bottom:1em}
