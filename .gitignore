@@ -1,5 +1,5 @@
 node_modules/
-*DS_Strore*
+.DS_Store
 grunt-aws.json
 desktop.ini
 .dropbox
