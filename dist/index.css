@@ -64,7 +64,7 @@ section.row.main-organizers h2{color:#002447;font-size:1.25em;font-weight:200;te
 .news-post time{color:#114476;font-size:.875rem;font-weight:400}
 .twitter-widget{padding:0 .5em}
 .agenda-table{border-bottom:1px dotted #fff;margin-bottom:1rem;}
-.agenda-table .row{border-top:1px dotted #fff;border-left:1px dotted #fff;border-right:1px dotted #fff;}
+.agenda-table .row{border-top:1px dotted #fff;border-right:1px dotted #fff;}
 .agenda-table .row:hover{background:rgba(17,68,118,0.3);-webkit-transition:background 400ms;-moz-transition:background 400ms;-o-transition:background 400ms;-ms-transition:background 400ms;transition:background 400ms}
 .agenda-table .row.utility{text-transform:uppercase;color:#002447;}
 .agenda-table .row.utility .description{text-align:center}
