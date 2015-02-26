@@ -10,19 +10,9 @@ html(lang="en", itemscope, itemtype="http://schema.org/EducationEvent")
     meta(charset='utf-8')
     script(src="vendor/modernizr.js")
     script(src="app.js")
-    script(src="main.js")
     script(type="text/javascript", src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBB7KRf5xZaANv6l1NWiISb5bFQf1inQb0&sensor=true")
-    script(type="text/javascript")
-      function initialize() {
-        var mapOptions = {
-          center: { lat: 52.213628, lng: 21.003349},
-          zoom: 13,
-          disableDefaultUI: true,
-        };
-        var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-        map.setOptions({styles: styles});
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
+    script(src="gmaps.js")
+    script(src="main.js")
 
   body#top
 
@@ -30,3 +20,6 @@ html(lang="en", itemscope, itemtype="http://schema.org/EducationEvent")
 
     div#map
       img(src="http://maps.googleapis.com/maps/api/staticmap?center=108+The+Terrace,Wellington,New+Zealand&zoom=14&size=600x300&markers=color:red|108+The+Terrace,Wellington,New+Zealand&sensor=true",alt="Static fallback image showing the location of 108 The Terrace, Wellington",width="600",height="300")
+
+    script(type="text/javascript")
+      google.maps.event.addDomListener(window, 'load', initialize);
