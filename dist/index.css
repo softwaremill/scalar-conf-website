@@ -121,4 +121,17 @@ section.row.hero .conference-data time,section.row.hero .conference-data span{di
 .top-bar .name h1 a img{max-height:none}
 .top-bar-section ul{margin-top:3em}
 .team-table [class*="column"]+[class*="column"]:last-child{float:left}
+<<<<<<< master
 }
+=======
+}body,{height:100%}
+#map{width:100%;height:100%}
+.info-popup{color:#114476;text-shadow:none;width:250px;max-height:124px;padding-right:15px;overflow:auto;line-height:1.2;}
+.info-popup h6{color:#114476;font-weight:bold;-webkit-text-stroke:0;}
+.info-popup h6 img{margin-right:1px;vertical-align:initial;}
+.info-popup h6 img:first-child{margin-left:6px}
+.info-popup p{font-size:13px;margin-bottom:1em;text-shadow:none}
+.info-popup a{color:#2aaac0;text-shadow:none;}
+.info-popup a:hover{color:#2184a4;}
+.info-popup a:hover h6{color:#2184a4}
+>>>>>>> local
