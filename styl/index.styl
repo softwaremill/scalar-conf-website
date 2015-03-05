@@ -449,6 +449,112 @@ section.row
   color: white;
 :-ms-input-placeholder 
   color: white;
+  
+
+// Start Hotels Page
+#hotels-content
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+#map
+  position:absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 35%;
+  z-index:1;
+  display: none;
+  
+  & img
+    max-width: inherit;
+  
+.info-popup
+  color: #114476;
+  text-shadow: none;
+  width: 250px;
+  max-height: 124px;
+  padding-right: 15px;
+  overflow: auto;
+  line-height: 1.2;
+  
+  & h6
+    color: #114476;
+    font-weight: bold;
+    -webkit-text-stroke: 0;
+    
+    & img
+      margin-right: 1px;
+      vertical-align: initial;
+      &:first-child
+        margin-left: 6px;
+    
+  & p
+    font-size: 13px;
+    margin-bottom: 1em;
+    text-shadow: none;
+    
+  & a
+    color: #2aaac0;
+    text-shadow: none;
+    &:hover
+      color: #2184a4;
+      & h6
+        color: #2184a4;
+        
+#hotels section.header
+  width: 100%;
+  max-width: 100%;
+  height: 65px;
+  position: absolute;
+  z-index:3;
+  top:0;
+  left: 0;
+  right: 0;
+  background-color: rgba(125,214,224,0.8);
+  box-shadow: -1px 0px 7px rgba(0, 60, 86, 0.3);
+    
+#hotels-right-section
+  background-color: #199fb8;
+  overflow-y: auto;
+  position: absolute;
+  z-index:2;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom: 0;
+  box-shadow: -1px 0px 7px rgba(0, 60, 86, 0.3);
+  padding: 87px 1em 1em;
+  
+  & a
+    color: #9BECF4;
+    &:hover
+      color: #7cd9e2;
+  
+  & .hotel-info
+    margin-bottom: 2em;
+    
+    & p
+      margin-bottom: 0.5em;
+        
+    & h6 
+      & a
+        color: #004c76;
+        font-weight: bold;
+        margin-right: 3px;
+      & img
+        margin: 0 1px;
+        vertical-align: inherit;
+
+    & b
+      color: #004c76;
+      font-weight: 600;
+      & i
+        color: white;
+// End Hotels Page
 
 
 // Start Responsive styles
@@ -463,6 +569,10 @@ section.row
     float: left;
     width: 149px;
     margin-right: 0.8em;
+    
+  #hotels-right-section
+    padding: 87px 2em 2em;
+    
 
 @media only screen and (min-width: 40.063em)
   .top-bar-section ul
@@ -507,7 +617,15 @@ section.row
 
     & [class*="column"]+[class*="column"]:last-child
       float: left;
-
+  
+  #map
+    display: block;
+    
+  #hotels-right-section
+    left: 65%;
+    padding: 87px 1em 2em;
+  
+  
 @media only screen and (min-width: 64.063em)
   .top-bar .name h1 a
     padding: 1em 0 0 1em;
@@ -521,50 +639,10 @@ section.row
   .team-table
     & [class*="column"]+[class*="column"]:last-child
       float: left;
+      
+  #hotels section.header
+    height: 109px;
+    
+  #hotels-right-section
+    padding: 130px 2em 2em;
 // End Responsive styles
-
-
-body
-// html
-  height: 100%;
-
-#map
-  width: 100%;
-  height: 500px;
-  
-  & img
-    max-width: inherit;
-  
-.info-popup
-  color: #114476;
-  text-shadow: none;
-  width: 250px;
-  max-height: 124px;
-  padding-right: 15px;
-  overflow: auto;
-  line-height: 1.2;
-  
-  & h6
-    color: #114476;
-    font-weight: bold;
-    -webkit-text-stroke: 0;
-    
-    & img
-      margin-right: 1px;
-      vertical-align: initial;
-      &:first-child
-        margin-left: 6px;
-    
-  & p
-    font-size: 13px;
-    margin-bottom: 1em;
-    text-shadow: none;
-    
-  & a
-    color: #2aaac0;
-    text-shadow: none;
-    &:hover
-      color: #2184a4;
-      & h6
-        color: #2184a4;
-

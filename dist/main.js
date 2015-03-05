@@ -11,8 +11,9 @@ function initialize() {
 
 
   var mapOptions = {
-  zoom: 13,
-  center: centerLatlng
+    zoom: 13,
+    center: centerLatlng,
+    disableDefaultUI: true
   };
 
   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
