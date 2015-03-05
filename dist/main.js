@@ -1,6 +1,3 @@
-// var map = new google.maps.Map(document.getElementById('map'), mapOptions); 
-// map.setOptions({styles: styles});
-
 function initialize() {
   var centerLatlng = new google.maps.LatLng(52.221421, 21.004352);
   var libraryLatlng = new google.maps.LatLng(52.214325, 21.002829);
