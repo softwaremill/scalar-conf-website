@@ -1,0 +1,178 @@
+doctype html
+html(lang="en", itemscope, itemtype="http://schema.org/EducationEvent")
+  head
+    title Scalar - Scala Conference in Central Europe - 11th of April 2015, Warsaw, Poland.
+    link(rel="shortcut icon", href="images/favicon.ico")
+    link(href='http://fonts.googleapis.com/css?family=Exo+2:400,200,500,600,700&subset=latin,latin-ext', rel='stylesheet', type='text/css')
+    link(rel="stylesheet", href="index.css", media="Screen")
+    meta(itemprop="name", content="Scalar")
+    meta(name="viewport", content="initial-scale=1.0, width=device-width")
+    meta(charset='utf-8')
+    script(src="vendor/modernizr.js")
+    script(src="app.js")
+    script(type="text/javascript", src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBB7KRf5xZaANv6l1NWiISb5bFQf1inQb0&sensor=true")
+    script(src="gmaps.js")
+    script(src="main.js")
+
+  body#top#hotels
+    
+    include hotels-header
+    
+    div#hotels-content
+
+      div#hotels-right-section
+        p For your stay during the Scalar Conference, we recommend the following hotels, with a special discount for our participants:
+        div.hotel-info
+          h6
+            a(href='http://www.hotelmdm.com.pl/default-en.html') MDM Hotel
+            img(src='images/icons/star.svg')
+            img(src='images/icons/star.svg')
+            img(src='images/icons/star.svg')
+          p 
+            i Very good location, close to the conference venue as well as places worth seeing in Warsaw.
+          p
+            b Price:
+            |  251.64 PLN (68 USD) for single or double room (
+            b
+              i included:
+            |  8% VAT, breakfast, internet)
+          p
+            b Address:
+            |  pl. Konstytucji 1
+          p
+            b Email: 
+            a(href='mailto:hotel.mdml@syren.com.pl') hotel.mdml@syren.com.pl
+          p
+            b Promo Code:
+            |  scalar 2015
+          p
+            a(href='http://warszawa.jakdojade.pl/?fn=plac+Konstytucji+1&fc=52.22139:21.01635&tn=BIBLIOTEKA+NARODOWA&ts=BIBLIOTEKA+NARODOWA&tc=52.21311:21.00624&d=11.04.15&h=09:00&ia=false&t=0&n=0&ri=0&cid=3000&as=true&locale=en#tabId=0&') How to get to conference venue
+
+        div.hotel-info
+          h6
+            a(href='http://www.reytan.pl/en/core/home.php?_PageID=39176') Reytan Hotel
+            img(src='images/icons/star.svg')
+            img(src='images/icons/star.svg')
+            img(src='images/icons/star.svg')
+          p
+            b Price:
+            |  180 PLN (49 USD) for single room &amp; 240 PLN (65 USD) for double room (
+            b
+              i included:
+            |  8% VAT, breakfast)
+          p
+            b Address:
+            |  ul. Tadeusza Rejtana 6
+          p
+            b Email:
+            |  
+            a(href='mailto:rez@reytan.pl') rez@reytan.pl
+          p
+            b Promo Code:
+            |  scalar 2015
+          p
+            a(href='https://www.google.pl/maps/dir/HOTEL+REYTAN,+Tadeusza+Rejtana,+Warsaw/Biblioteka+Narodowa,+aleja+Niepodleg%C5%82o%C5%9Bci,+Warsaw/@52.211123,21.0026936,15z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x471ecab7cbed96f5:0xb9663a16f2048772!2m2!1d21.020343!2d52.208003!1m5!1m1!1s0x471eccc3d4b32f9d:0x9140378313c7f946!2m2!1d21.003451!2d52.213658!3e3') How to get to conference venue
+
+        div.hotel-info
+          h6
+            a(href='http://www.ibis.com/gb/hotel-3714-ibis-warszawa-stare-miasto-old-town/index.shtml') Ibis Hotel
+            img(src='images/icons/star.svg')
+            img(src='images/icons/star.svg')
+            img(src='images/icons/star.svg')
+          p 
+            i Located very close to the Old Town.
+          p
+            b Price:
+            |  157.25 PLN (43 USD) for single or double room (
+            b
+              i included:
+            |  8% VAT), breakfast is 34 PLN per person
+          p
+            b Address:
+            |  ul. Muranowska 2
+          p
+            b Email:
+            |  
+            a(href='mailto:h3714-re@accor.com') h3714-re@accor.com
+          p
+            b Promo Code:
+            |  scalar 2015
+          p
+            a(href='http://warszawa.jakdojade.pl/index.html?fn=Muranowska+2&fc=52.25409:20.99863&tn=BIBLIOTEKA+NARODOWA&ts=BIBLIOTEKA+NARODOWA&tc=52.21311:21.00624&d=11.04.15&h=09:00&ia=false&t=0&n=0&ri=0&cid=3000&as=true#tabId=0&') How to get to conference venue
+
+        div.hotel-info
+          h6
+            a(href='http://www.rialto.pl/en/') Rialto Hotel
+            img(src='images/icons/star.svg')
+            img(src='images/icons/star.svg')
+            img(src='images/icons/star.svg')
+            img(src='images/icons/star.svg')
+            img(src='images/icons/star.svg')
+          p 
+            i A bit of luxury in the first boutique hotel in Warsaw.
+          p
+            b Price:
+            |  360 PLN (97 USD) for single room &amp; 460 PLN (124 USD) for double room (
+            b
+              i included:
+            |  8% VAT, breakfast, internet, sauna, gym)
+          p.address
+            b Address:
+            |  ul. Wilcza 73
+          p
+            b Email:
+            |  
+            a(href='mailto:reservations@rialto.pl') reservations@rialto.pl
+          p
+            b Promo Code:
+            |  scalar 2015
+          p
+            a(href='https://www.google.pl/maps/dir/Hotel+Rialto,+Wilcza+73,+00-670+Warszawa/Biblioteka+Narodowa,+aleja+Niepodleg%C5%82o%C5%9Bci,+Warsaw/@52.218091,20.9972494,15z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x471eccec43b7a925:0xc3ff25a2c4c6653e!2m2!1d21.008214!2d52.22327!1m5!1m1!1s0x471eccc3d4b32f9d:0x9140378313c7f946!2m2!1d21.003451!2d52.213658!3e3') How to get to conference venue
+        p Cheaper options in a very good location:
+        p 
+          a(href="http://www.chillouthostel.pl/pl/?lang=en") Chillout Hostel
+          |, ul. Poznanska 7 
+        p 
+          a(href="http://www.hostelwitt.pl/eng/") Hostel Witt
+          |, ul. Emilii Plater 9/11
+        p Useful links:
+        p 
+          a(href="http://warsawtour.pl/en") What to see in Warsaw
+        p 
+          a(href="http://www.ztm.waw.pl/?l=2") Public transport
+        p 
+          a(href="http://warszawa.jakdojade.pl/?locale=en") jakdojade.pl
+        p 
+          a(href="http://www.warsawtour.pl/en/warsaw-essentials/getting-around/taxis-1728.html") Taxi
+        p 
+          a(href="http://rozklad-pkp.pl/en") Railway timetable
+        p 
+          a(href="http://www.lotnisko-chopina.pl/en/passenger?cl=en&set_language=en") Warsaw Chopin Airport
+
+      div#map
+        img(src="http://maps.googleapis.com/maps/api/staticmap?center=108+The+Terrace,Wellington,New+Zealand&zoom=14&size=600x300&markers=color:red|108+The+Terrace,Wellington,New+Zealand&sensor=true",alt="Static fallback image showing the location of 108 The Terrace, Wellington",width="600",height="1000")
+
+
+
+    script(type="text/javascript")
+      //- var w = window.innerWidth-15;
+      var h = window.innerHeight;
+      //- document.getElementById("map").style.width = w+"px";
+      document.getElementById("hotels-content").style.height = h+"px";
+
+    script(type="text/javascript")
+      google.maps.event.addDomListener(window, 'load', initialize);
+
+    script(src="vendor/jquery.js")
+    script(src="vendor/fastclick.js")
+    script(src="foundation.min.js")
+    script(src="vendor/smooth-scroll.js")
+
+    script
+      $(document).foundation();
+    script
+      smoothScroll.init({
+        speed: 800,
+        easing: 'easeInOutCubic',
+        updateURL: false
+      });

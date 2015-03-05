@@ -102,8 +102,30 @@ section.row.main-organizers h2{color:#002447;font-size:1.25em;font-weight:200;te
 :-moz-placeholder /* Firefox 18- */{color:#fff}
 ::-moz-placeholder /* Firefox 19+ */{color:#fff}
 :-ms-input-placeholder{color:#fff}
+#hotels-content{position:absolute;z-index:0;top:0;bottom:0;left:0;right:0}
+#map{position:absolute;top:0;bottom:0;left:0;right:35%;z-index:1;display:none;}
+#map img{max-width:inherit}
+.info-popup{color:#114476;text-shadow:none;width:250px;max-height:124px;padding-right:15px;overflow:auto;line-height:1.2;}
+.info-popup h6{color:#114476;font-weight:bold;-webkit-text-stroke:0;}
+.info-popup h6 img{margin-right:1px;vertical-align:initial;}
+.info-popup h6 img:first-child{margin-left:6px}
+.info-popup p{font-size:13px;margin-bottom:1em;text-shadow:none}
+.info-popup a{color:#2aaac0;text-shadow:none;}
+.info-popup a:hover{color:#2184a4;}
+.info-popup a:hover h6{color:#2184a4}
+#hotels section.header{width:100%;max-width:100%;height:65px;position:absolute;z-index:3;top:0;left:0;right:0;background-color:rgba(125,214,224,0.8);-webkit-box-shadow:-1px 0 7px rgba(0,60,86,0.3);box-shadow:-1px 0 7px rgba(0,60,86,0.3)}
+#hotels-right-section{background-color:#199fb8;overflow-y:auto;position:absolute;z-index:2;left:0;right:0;top:0;bottom:0;-webkit-box-shadow:-1px 0 7px rgba(0,60,86,0.3);box-shadow:-1px 0 7px rgba(0,60,86,0.3);padding:87px 1em 1em;}
+#hotels-right-section a{color:#9becf4;}
+#hotels-right-section a:hover{color:#7cd9e2}
+#hotels-right-section .hotel-info{margin-bottom:2em;}
+#hotels-right-section .hotel-info p{margin-bottom:.5em}
+#hotels-right-section .hotel-info h6 a{color:#004c76;font-weight:bold;margin-right:3px}
+#hotels-right-section .hotel-info h6 img{margin:0 1px;vertical-align:inherit}
+#hotels-right-section .hotel-info b{color:#004c76;font-weight:600;}
+#hotels-right-section .hotel-info b i{color:#fff}
 @media only screen and (min-width: 30em){.agenda-table .speaker-photo{float:left;width:149px;margin-right:1em}
 .team-table img{float:left;width:149px;margin-right:.8em}
+#hotels-right-section{padding:87px 2em 2em}
 }@media only screen and (min-width: 40.063em){.top-bar-section ul{margin-top:.7em;}
 .top-bar-section ul li>a{color:#155380;font-size:1em;font-weight:600;-webkit-transition:color 250ms;-moz-transition:color 250ms;-o-transition:color 250ms;-ms-transition:color 250ms;transition:color 250ms}
 .top-bar-section li:not(.has-form) a:not(.button){background:transparent;}
@@ -117,21 +139,12 @@ section.row.hero .conference-data time,section.row.hero .conference-data span{di
 .agenda-table .row .time{border-bottom:none}
 .team-table img{width:125px;}
 .team-table img [class*="column"]+[class*="column"]:last-child{float:left}
+#map{display:block}
+#hotels-right-section{left:65%;padding:87px 1em 2em}
 }@media only screen and (min-width: 64.063em){.top-bar .name h1 a{padding:1em 0 0 1em;}
 .top-bar .name h1 a img{max-height:none}
 .top-bar-section ul{margin-top:3em}
 .team-table [class*="column"]+[class*="column"]:last-child{float:left}
-<<<<<<< master
+#hotels section.header{height:109px}
+#hotels-right-section{padding:130px 2em 2em}
 }
-=======
-}body,{height:100%}
-#map{width:100%;height:100%}
-.info-popup{color:#114476;text-shadow:none;width:250px;max-height:124px;padding-right:15px;overflow:auto;line-height:1.2;}
-.info-popup h6{color:#114476;font-weight:bold;-webkit-text-stroke:0;}
-.info-popup h6 img{margin-right:1px;vertical-align:initial;}
-.info-popup h6 img:first-child{margin-left:6px}
-.info-popup p{font-size:13px;margin-bottom:1em;text-shadow:none}
-.info-popup a{color:#2aaac0;text-shadow:none;}
-.info-popup a:hover{color:#2184a4;}
-.info-popup a:hover h6{color:#2184a4}
->>>>>>> local
