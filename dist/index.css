@@ -5,6 +5,8 @@ body{background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABUEAAAXqCAYAA
 h1,h2,h3,h4,h5,h6{font-family:'Exo 2','Exo 2.0',sans-serif}
 h1{font-size:2.25em;font-weight:200;text-align:center;text-transform:uppercase}
 p{font-size:.875rem;line-height:1.48}
+a{color:#9becf4;}
+a:hover{color:#7cd9e2}
 button,.button{border:2px solid #fff;color:#2184a4;font-family:inherit;font-size:.875rem;padding:.375rem 1rem;}
 button:hover,.button:hover{background:transparent;color:#fff}
 button.postfix,.button.postfix{border:2px solid #fff}
@@ -64,17 +66,20 @@ section.header li.tweet-btn iframe{margin-top:.75rem}
 .news-post time{color:#114476;font-size:.875rem;font-weight:400}
 .twitter-widget{padding:0 .5em}
 .agenda-table{border-bottom:1px dotted #fff;margin-bottom:1rem;}
-.agenda-table .row{border-top:1px dotted #fff;border-right:1px dotted #fff;}
+.agenda-table .row{border-top:1px dotted #fff;border-left:1px dotted #fff;border-right:1px dotted #fff;}
 .agenda-table .row:hover{background:rgba(17,68,118,0.3);-webkit-transition:background 400ms;-moz-transition:background 400ms;-o-transition:background 400ms;-ms-transition:background 400ms;transition:background 400ms}
 .agenda-table .row.utility{text-transform:uppercase;color:#002447;}
 .agenda-table .row.utility .description{text-align:center}
 .agenda-table .row .time{border-bottom:1px dotted #fff;padding:1em;text-transform:uppercase;text-align:center}
 .agenda-table .row .description{padding:1em;}
 .agenda-table .row .description .talk{margin-bottom:1.32rem}
-.agenda-table .row .description h1{font-size:1em;text-align:left;margin-top:0;margin-bottom:0}
+.agenda-table .row .description h1{font-size:1em;text-align:left;margin-top:0;margin-bottom:1em}
 .agenda-table .row .description h2{font-size:1em;text-transform:uppercase;margin-top:0;margin-bottom:0}
-.agenda-table .row .description p{margin-top:.66rem;margin-bottom:.66rem}
-.agenda-table .row .description .speaker-link{display:block}
+.agenda-table .row .description p{margin-top:.33rem;margin-bottom:.33rem;}
+.agenda-table .row .description p a{color:#9becf4;}
+.agenda-table .row .description p a:hover{color:#7cd9e2}
+.agenda-table .row .description ul{margin-bottom:.33rem;font-size:.875rem}
+.agenda-table .row .description .speaker-link{display:block;margin-bottom:1em}
 .agenda-table .row .description .speaker-photo img{border:1px solid #fff}
 .venue-address{background:#32c1d0;margin:-2px 0 1em;padding:1rem}
 #google-maps-link{bottom:-15px;cursor:pointer;position:absolute;right:5px;z-index:10}
