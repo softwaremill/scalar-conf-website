@@ -272,6 +272,11 @@ section.header li.tweet-btn iframe
     color: #114476;
     font-size: .875rem;
     font-weight: 400;
+    
+  & a
+    color: #9becf4;
+    &:hover
+      color: #7cd9e2;
 
 .twitter-widget
   padding: 0 0.5em;
@@ -285,7 +290,7 @@ section.header li.tweet-btn iframe
   
   & .row
     border-top: 1px dotted white;
-    // border-left: 1px dotted white;
+    border-left: 1px dotted white;
     border-right: 1px dotted white;
     &:hover
       background: rgba(17, 68, 118, .3);
@@ -314,7 +319,7 @@ section.header li.tweet-btn iframe
         font-size: 1em;
         text-align: left;
         margin-top: 0;
-        margin-bottom: 0;
+        margin-bottom: 1em;
 
       & h2
         font-size: 1em;
@@ -323,14 +328,24 @@ section.header li.tweet-btn iframe
         margin-bottom: 0;
 
       & p
-        margin-top: 0.66rem;
-        margin-bottom: 0.66rem;
+        margin-top: 0.33rem;
+        margin-bottom: 0.33rem;
+      
+      & ul
+        margin-bottom: 0.33rem;
+        font-size: .875rem;
 
       & .speaker-link
         display: block;
+        margin-bottom: 1em;
 
       & .speaker-photo img
         border: 1px solid white;
+        
+      & a
+        color: #9becf4;
+        &:hover
+          color: #7cd9e2;
 // End agenda section
 
 
@@ -580,6 +595,7 @@ section.header li.tweet-btn iframe
 
   .top-bar-section li:not(.has-form) a:not(.button)
     background: transparent;
+    padding: 0 5px;
     &:hover
       background: transparent;
 
@@ -633,6 +649,9 @@ section.header li.tweet-btn iframe
   .team-table
     & [class*="column"]+[class*="column"]:last-child
       float: left;
+  
+  .top-bar-section li:not(.has-form) a:not(.button)
+    padding: 0 15px;
       
   #hotels section.header
     height: 109px;
