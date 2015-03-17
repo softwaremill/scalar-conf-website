@@ -10,6 +10,8 @@ html(lang="en", itemscope, itemtype="http://schema.org/EducationEvent")
     meta(charset='utf-8')
     script(src="vendor/modernizr.js")
     script(src="app.js")
+    script(type="text/javascript", src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBB7KRf5xZaANv6l1NWiISb5bFQf1inQb0&sensor=true")
+    script(src="venue-section.js")
 
   body#top
     include header
@@ -17,8 +19,12 @@ html(lang="en", itemscope, itemtype="http://schema.org/EducationEvent")
     include eventbrite
     include news-section
     include agenda
+    include venue
     include main-organizers
     include organizer
+
+    script(type="text/javascript")
+      google.maps.event.addDomListener(window, 'load', initialize);
 
     script(src="vendor/jquery.js")
     script(src="vendor/fastclick.js")

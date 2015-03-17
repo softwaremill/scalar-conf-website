@@ -81,8 +81,13 @@ section.header li.tweet-btn iframe{margin-top:.75rem}
 .agenda-table .row .description .speaker-photo img{border:1px solid #fff}
 .agenda-table .row .description a{color:#9becf4;}
 .agenda-table .row .description a:hover{color:#7cd9e2}
-.venue-address{background:#32c1d0;margin:-2px 0 1em;padding:1rem}
-#google-maps-link{bottom:-15px;cursor:pointer;position:absolute;right:5px;z-index:10}
+#venue header p{max-width:500px;margin-left:auto;margin-right:auto;}
+#venue header p a{color:#9becf4;}
+#venue header p a:hover{color:#7cd9e2}
+#venue-map{height:400px;}
+#venue-map img{max-width:inherit}
+#entrance-photo{position:relative}
+.image-note{background-color:#32c1d1;padding:.7em}
 #sponsors a.become-sponsor{margin-bottom:2.875rem}
 #sponsors h2{color:#002447;font-size:1.25em;font-weight:200;text-transform:uppercase;text-align:center}
 #sponsors .partners,#sponsors .media-partners,#sponsors .silver-sponsors,#sponsors .just-sponsors,#sponsors .party-sponsors{margin-bottom:1.5rem;text-align:center;}
@@ -131,6 +136,7 @@ section.header li.tweet-btn iframe{margin-top:.75rem}
 @media only screen and (min-width: 30em){.agenda-table .speaker-photo{float:left;width:149px;margin-right:1em}
 .team-table img{float:left;width:149px;margin-right:.8em}
 #hotels-right-section{padding:87px 2em 2em}
+.image-note{position:absolute;bottom:0;right:0}
 }@media only screen and (min-width: 40.063em){.top-bar-section ul{margin-top:.7em;}
 .top-bar-section ul li>a{color:#155380;font-size:1em;font-weight:600;-webkit-transition:color 250ms;-moz-transition:color 250ms;-o-transition:color 250ms;-ms-transition:color 250ms;transition:color 250ms}
 .top-bar-section li:not(.has-form) a:not(.button){background:transparent;padding:0 5px;}
