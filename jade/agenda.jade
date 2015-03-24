@@ -30,17 +30,17 @@ section#agenda.row
       div.time.small-12.medium-2.large-1.columns 9:30
       div.description.small-12.medium-10.large-11.columns
         div.talk
-          h1 MLlib&mdash;Machine Learning with Scala
-          p During this presentation I will show what can be done with a use of Scala and MLlib in Machine Learning area.
-          p The presentation will contain introduction to MLlib and practical sample implementation.
-          p Main goal of this presentation is to highlight general concept of this library, how to use and how extend it.
+          h1 Graphs &amp; gremlins
+          p NoSQL databases are here for good. Historically relational databases are with us at least from '80. Their underlying model is well understood and there are lots of proven tools / standards around them. It's mid 2010 now. There is a plethora of different database models that could be used. Still there is a lot of myths about NoSQL databases&mdash;especially connected with the trade-offs you need to make if you use them (e.g. lack of transactionality or flexibility etc). 
+          p Here comes graph database model. I wanted to show you how to deal with graph databases from Scala. We'll use scala-blueprints and gremlin-scala libraries. I wanted to convince you that you can use graph model without sacrificing features you know from relational databases and even achieve greater level of flexibility and much improved performance in certain cases. Graph databases is a vast subject so I will focus only on trying to convince you that graph databases and all the infrastructure and emerging standards around them are mature enough to be successfully used at least in probably most small to medium sized projects. Also, thanks to available Scala libraries, it's also fun.
+          p I will use OrientDB&mdash;in my opinion the most approachable graph database available these days.
         div.speaker
           div.speaker-photo
-            img(src="images/speakers/radoslaw-gniadek.png")
+            img(src="images/speakers/pawel-dolega.png")
           div.speaker-bio
-            h2 Radosław Gniadek
-            a(target="_blank", href="https://www.linkedin.com/in/radoslawgniadek").speaker-link linkedin.com/in/radoslawgniadek
-            p Radoslaw Gniadek is a Senior Software Developer with 8 years of professional experience. During this time worked on many projects that used JVM based technologies. Currently works on development of online gaming systems.
+            h2 Paweł Dolega
+            a(target="_blank", href="https://twitter.com/pdolega").speaker-link @pdolega
+            p Paweł Dolega is co-founder and software engineer at Nexelem&mdash;Scala / Java oriented software house based in Krakow, Poland. He worked previously in big Polish companies delivering classic enterprise applications and later as virtualization subject matter expert at IBM. For last 5 years he is happy to work as team lead / software engineer&mdash;usually in Scala, Java EE and AngularJS.
     div.row.utility
       div.time.small-12.medium-2.large-1.columns 10:00
       div.description.small-12.medium-10.large-11.columns Coffee break
@@ -198,17 +198,16 @@ section#agenda.row
       div.time.small-12.medium-2.large-1.columns 17:00
       div.description.small-12.medium-10.large-11.columns
         div.talk
-          h1 Graphs &amp; gremlins
-          p NoSQL databases are here for good. Historically relational databases are with us at least from '80. Their underlying model is well understood and there are lots of proven tools / standards around them. It's mid 2010 now. There is a plethora of different database models that could be used. Still there is a lot of myths about NoSQL databases&mdash;especially connected with the trade-offs you need to make if you use them (e.g. lack of transactionality or flexibility etc). 
-          p Here comes graph database model. I wanted to show you how to deal with graph databases from Scala. We'll use scala-blueprints and gremlin-scala libraries. I wanted to convince you that you can use graph model without sacrificing features you know from relational databases and even achieve greater level of flexibility and much improved performance in certain cases. Graph databases is a vast subject so I will focus only on trying to convince you that graph databases and all the infrastructure and emerging standards around them are mature enough to be successfully used at least in probably most small to medium sized projects. Also, thanks to available Scala libraries, it's also fun.
-          p I will use OrientDB&mdash;in my opinion the most approachable graph database available these days.
+          h1 Delimited dependently-typed monadic checked exceptions in Scala
+          p Scala does not have checked exceptions: the compiler will not consider a failure to handle exceptions as an error. This is, perhaps, the single area in which Java offers better static safety than Scala, but offers no way for this checking to be turned off when it's not wanted, which frequently leads to the compiler being a hindrance rather than a help to developers. 
+          p Jon will demonstrate how Scala's type system can be persuaded to enforce checked exceptions, with negligible syntactic burden at the call site, supporting validation-style aggregation of exceptions, and with the flexibility to be turned on and off as desired.
         div.speaker
           div.speaker-photo
-            img(src="images/speakers/pawel-dolega.png")
+            img(src="images/speakers/jon-pretty.png")
           div.speaker-bio
-            h2 Paweł Dolega
-            a(target="_blank", href="https://twitter.com/pdolega").speaker-link @pdolega
-            p Paweł Dolega is co-founder and software engineer at Nexelem&mdash;Scala / Java oriented software house based in Krakow, Poland. He worked previously in big Polish companies delivering classic enterprise applications and later as virtualization subject matter expert at IBM. For last 5 years he is happy to work as team lead / software engineer&mdash;usually in Scala, Java EE and AngularJS.
+            h2 Jon Pretty
+            a(target="_blank", href="http://rapture.io/").speaker-link rapture.io
+            p Jon is a longstanding contributor to the Scala community, having launched the first commercial applications written in Scala over ten years ago. He is best known for his work on Rapture, and his contributions to Typelevel Scala.
     div.row
       div.time.small-12.medium-2.large-1.columns 17:30
       div.description.small-12.medium-10.large-11.columns
