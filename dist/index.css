@@ -133,6 +133,7 @@ section.header li.tweet-btn iframe{margin-top:.75rem}
 #hotels-right-section .hotel-info h6 img{margin:0 1px;vertical-align:inherit}
 #hotels-right-section .hotel-info b{color:#004c76;font-weight:600;}
 #hotels-right-section .hotel-info b i{color:#fff}
+#stats > .columns{text-align:center}
 @media only screen and (min-width: 30em){.agenda-table .speaker-photo{float:left;width:149px;margin-right:1em}
 .team-table img{float:left;width:149px;margin-right:.8em}
 #hotels-right-section{padding:87px 2em 2em}
