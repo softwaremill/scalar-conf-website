@@ -134,6 +134,8 @@ section.header li.tweet-btn iframe{margin-top:.75rem}
 #hotels-right-section .hotel-info b{color:#004c76;font-weight:600;}
 #hotels-right-section .hotel-info b i{color:#fff}
 #stats > .columns{text-align:center}
+div.video-wrapper{position:relative;padding-bottom:56.25%;padding-top:25px;height:0;margin-bottom:2em;}
+div.video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%}
 @media only screen and (min-width: 30em){.agenda-table .speaker-photo{float:left;width:149px;margin-right:1em}
 .team-table img{float:left;width:149px;margin-right:.8em}
 #hotels-right-section{padding:87px 2em 2em}
