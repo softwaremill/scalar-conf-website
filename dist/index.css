@@ -8,7 +8,7 @@ p{font-size:.875rem;line-height:1.48}
 button,.button{border:2px solid #fff;color:#2184a4;font-family:inherit;font-size:.875rem;padding:.375rem 1rem;}
 button:hover,.button:hover{background:transparent;color:#fff}
 button.postfix,.button.postfix{border:2px solid #fff}
-button.big-button,.button.big-button{padding:.5rem 3.5rem;font-size:1rem;margin:0 1rem}
+button.big-button,.button.big-button{padding:.5rem 3.5rem;font-size:1rem;margin:0 1rem 1rem}
 fieldset{border:none}
 .top-bar{background:transparent;height:59px;}
 .top-bar .name{height:59px;}
@@ -99,10 +99,10 @@ section.header li.tweet-btn iframe{margin-top:.75rem}
 .contact-links{margin-bottom:10rem;}
 .contact-links .columns{padding:0 .5em 1em;text-align:center}
 .contact-links img{margin-right:.4em;vertical-align:middle}
-.team-table{margin-bottom:4rem;}
-.team-table .columns{padding:1rem}
-.team-table img{border:1px solid #fff}
-.team-table h2{font-size:1em;text-transform:uppercase;margin-top:0;margin-bottom:0}
+.team-table{margin-bottom:4rem;text-align:center;}
+.team-table .team-member{padding:.75rem;width:33.3333%;display:inline-block;vertical-align:top;max-width:165px;text-align:left}
+.team-table img{border:1px solid #fff;margin-bottom:.5rem}
+.team-table h2{font-size:.75em;text-transform:uppercase;margin-top:0;margin-bottom:0}
 .news-posts.row{background-image:none;padding-top:1em;}
 .news-posts.row:nth-child(odd){background-image:none}
 .news-posts.row .news-post{margin-bottom:5em;}
@@ -137,8 +137,10 @@ section.header li.tweet-btn iframe{margin-top:.75rem}
 #stats > .columns{text-align:center}
 div.video-wrapper{position:relative;padding-bottom:56.25%;padding-top:25px;height:0;margin-bottom:2em;}
 div.video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%}
+.typesafe{display:block;text-align:center;}
+.typesafe small{display:block}
 @media only screen and (min-width: 30em){.agenda-table .speaker-photo{float:left;width:149px;margin-right:1em}
-.team-table img{float:left;width:149px;margin-right:.8em}
+.team-table img{float:left;width:149px}
 #hotels-right-section{padding:87px 2em 2em}
 .image-note{position:absolute;bottom:0;right:0}
 }@media only screen and (min-width: 40.063em){.top-bar-section ul{margin-top:.7em;}
@@ -156,6 +158,8 @@ section.row.hero .conference-data time,section.row.hero .conference-data span{di
 .team-table img [class*="column"]+[class*="column"]:last-child{float:left}
 #map{display:block}
 #hotels-right-section{left:65%;padding:87px 1em 2em}
+}@media only screen and (min-width: 54.375em){.team-table .team-member{max-width:137px}
+}@media only screen and (min-width: 62.875em){.team-table .team-member{max-width:155px}
 }@media only screen and (min-width: 64.063em){.top-bar .name h1 a{padding:1em 0 0 1em;}
 .top-bar .name h1 a img{max-height:none}
 .top-bar-section ul{margin-top:3em}
