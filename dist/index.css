@@ -58,6 +58,11 @@ section.header li.tweet-btn iframe{margin-top:.75rem}
 .to-top:hover{opacity:1;-ms-filter:none;filter:none;color:#fff}
 .section-title{margin-bottom:2.875em;text-align:center;}
 .section-title small{font-size:.8125em;text-transform:uppercase}
+#call-for-papers{background-image:none;padding-top:6em}
+#typesafe-sml{background-image:none;padding-top:3em;}
+#typesafe-sml a{margin:0 1em 2em;display:inline-block;text-align:center;}
+#typesafe-sml a small{display:block}
+#newsletters-form{background-image:none;padding-top:5em}
 #news a.read-more{margin-left:.75em}
 .news-post{padding:0 .75em;margin-bottom:1em;}
 .news-post .post-header{margin-bottom:1em}
