@@ -97,6 +97,7 @@ section.header li.tweet-btn iframe{margin-top:.75rem}
 #sponsors a.become-sponsor{margin-bottom:2.875rem}
 #sponsors h2{color:#002447;font-size:1.25em;font-weight:200;text-transform:uppercase;text-align:center}
 #sponsors a{display:inline-block;margin:0 1em 2em;}
+#sponsors a img{max-height:100px}
 #sponsors a small{display:block}
 #sponsors .partners,#sponsors .media-partners,#sponsors .silver-sponsors,#sponsors .just-sponsors,#sponsors .party-sponsors{margin-bottom:1.5rem;text-align:center;}
 #sponsors .partners a,#sponsors .media-partners a,#sponsors .silver-sponsors a,#sponsors .just-sponsors a,#sponsors .party-sponsors a{margin:0 1em 2em}
