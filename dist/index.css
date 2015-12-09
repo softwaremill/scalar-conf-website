@@ -61,6 +61,7 @@ section.header li.tweet-btn iframe{margin-top:.75rem}
 #call-for-papers{background-image:none;padding-top:6em}
 #typesafe-sml{background-image:none;padding-top:3em;}
 #typesafe-sml a{margin:0 1em 2em;display:inline-block;text-align:center;}
+#typesafe-sml a img{max-height:100px}
 #typesafe-sml a small{display:block}
 #newsletters-form{background-image:none;padding-top:5em}
 #news a.read-more{margin-left:.75em}
