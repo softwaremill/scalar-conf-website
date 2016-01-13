@@ -10,8 +10,6 @@ html(lang="en", itemscope, itemtype="http://schema.org/EducationEvent")
     meta(charset='utf-8')
     script(src="vendor/modernizr.js")
     script(src="app.js")
-    script(type="text/javascript", src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBB7KRf5xZaANv6l1NWiISb5bFQf1inQb0&sensor=true")
-    script(src="venue-section.js")
 
   body#top
     include header
@@ -19,20 +17,16 @@ html(lang="en", itemscope, itemtype="http://schema.org/EducationEvent")
     include call-for-papers
     include typesafe-sml
     include newsletters-form
+    include speakers
     include past-editions
     include main-organizers
     include organizer
     
-    script(type="text/javascript")
-      google.maps.event.addDomListener(window, 'load', initialize);
 
     script(src="vendor/jquery.js")
     script(src="vendor/fastclick.js")
-    script(src="foundation.min.js")
     script(src="vendor/smooth-scroll.js")
 
-    script
-      $(document).foundation();
     script
       smoothScroll.init({
         speed: 800,
