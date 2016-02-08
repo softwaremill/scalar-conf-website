@@ -14,17 +14,22 @@ html(lang="en", itemscope, itemtype="http://schema.org/EducationEvent")
   body#top
     include header
     include hero
-    include typesafe-sml
     include newsletters-form
+    include sponsors-slider
     include speakers
     include past-editions
-    include main-organizers
+    include sponsors
     include organizer
     
 
     script(src="vendor/jquery.js")
     script(src="vendor/fastclick.js")
     script(src="vendor/smooth-scroll.js")
+
+    script(src="vendor/foundation.min.js")
+
+    script
+      $(document).foundation();
 
     script
       smoothScroll.init({
