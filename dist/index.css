@@ -112,6 +112,8 @@ section.header li.tweet-btn iframe{margin-top:.75rem}
 .team-table .team-member{padding:.75rem;width:33.3333%;display:inline-block;vertical-align:top;max-width:165px;text-align:left}
 .team-table img{border:1px solid #fff;margin-bottom:.5rem}
 .team-table h2{font-size:.75em;text-transform:uppercase;margin-top:0;margin-bottom:0}
+#register .big-button{background:#002447;border-color:#002447;border-width:3px;color:#fff;padding-top:.75rem;padding-bottom:.75rem;}
+#register .big-button:hover{background:transparent;color:#002447}
 .news-posts.row{background-image:none;padding-top:1em;}
 .news-posts.row:nth-child(odd){background-image:none}
 .news-posts.row .news-post{margin-bottom:5em;}
@@ -161,8 +163,9 @@ div.video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%}
 section.row.hero{padding-top:6.125em;}
 section.row.hero h1{font-size:2.25em}
 section.row.hero .conference-data time,section.row.hero .conference-data span{display:inline-block}
-.agenda-table .row.utility .description{text-align:left;}
-.agenda-table .row.utility .description .speaker-photo{width:125px}
+.agenda-table .row.utility .description{text-align:left}
+.agenda-table .row .description{border-left:1px dotted #fff;}
+.agenda-table .row .description .speaker-photo{width:125px}
 .agenda-table .row .time{border-bottom:none}
 .team-table img{width:125px;}
 .team-table img [class*="column"]+[class*="column"]:last-child{float:left}
