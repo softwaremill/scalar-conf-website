@@ -16,18 +16,24 @@ section#agenda.row
       div.time.small-12.medium-2.large-1.columns 9:00
       div.description.small-12.medium-10.large-11.columns
         div.talk
-          h1 Shapeless ? Easy !
-          p Shapeless is known for being difficult to grasp, even for experienced Scala developers. In this talk, I will do my best to show you that this difficulty is somehow overrated. 
-          p Of course we'll only scratch the surface there. But hopefully, you'll take home enough hints to begin your own exploration of what this powerful tool enables.
+          h1 Having a cake and eating it too. Introduction to Typeclasses.
+          p Being in a Scala community, you've probably heard about type classes. Very basic concept that both commonly used among many Scala libraries and at the same time very fundamental to understand any theoretical concepts behind Functional Programming. This short talk is all about explaining what Type classes are, how to use them and how to create them, with strong emphasis on answering the question "why should I even care?". We will focus on both on prons and cons, however speaker will probably be a bit biased towards the former.
+          p We will follow story of couple of developers, struggling with conceptual design problem. As many before them, they will eventually reinvent the wheel. The solution they will end up with, is what we call a Type class.
+          p This is a "from zero to hero" talk. Preferable audience are people who want to:
+          p 1. understand any shapeless/scalaz/cats presentation out there (this presentation will give you ability to survive first 10 minutes of mentioned talks)
+          p 2. be enlightened that "monads are just type classes with some laws" (this is not a monad tutorial though)
+          p 3. get the "aha!" moment, realising that they've been using Type classes from time to time, without knowing it 
         div.speaker
           div.speaker-photo
-            img(src="images/speakers/kasas.png")
+            img(src="images/speakers/szulc.png")
           div.speaker-bio
-            h2 Valentin Kasas
-            a(href="https://twitter.com/ValentinKasas").speaker-link @ValentinKasas
-            p After having spent half a dozen years writing boilerplatey C++ and Java code, discovering Scala was a bliss. Ever since, I look for every occasion to train my FP muscles, and to share my sheer enthusiasm about Scala.
-            p Blog at 
-              a(href="http://kanaka.io/blog") kanaka.io/blog
+            h2 Pawel Szulc
+            a(href="https://twitter.com/rabbitonweb").speaker-link @rabbitonweb
+            p Pawel Szulc is primarily a programmer. Always was and always will be. Experienced professionally in JVM ecosystem, currently having tons of fun with Scala, Erlang, Clojure and Haskell. By day working on (not that) BigData problems with Akka Stream &mp; Apache Spark, by night hacking whatever he finds interesting at that given moment. Humble apprentice of Functional Programming. Runs a blog 
+              a(href="http://www.rabbitonweb.com") rabbitonweb.com
+              | .
+            p Github 
+              a(href="http://github.com/rabbitonweb") github.com/rabbitonweb
               | .
     div.row
       div.time.small-12.medium-2.large-1.columns 9:30
@@ -82,21 +88,6 @@ section#agenda.row
       div.time.small-12.medium-2.large-1.columns 11:00
       div.description.small-12.medium-10.large-11.columns
         div.talk
-          h1 Scala SWAT: Tackling 1 Billion Member Social Network
-          p Enabling blazing fast search on a 1 billion member social network demands special weapons and tactics. Let me take you on a journey around the edges of existing technologies. I'll tell you how we took advantage of the Scala ecosystem and modern tools to realize persistence and processing of such a data set.
-          p About this conversation:
-          p Case study focused on the client requirements and tools we have made use of to meet them. Thoughts, injuries and ideas about real life fast &amp; big data challenge brought to you directly from the trenches.
-        div.speaker
-          div.speaker-photo
-            img(src="images/speakers/bankowski.png")
-          div.speaker-bio
-            h2 Artur Bańkowski
-            a(href="https://twitter.com/abankowski").speaker-link @abankowski
-            p Artur is a software architect mainly focused on backend of Web applications and APIs. He’s fascinated with Fast Data challenges and distributed architecture. His current weapon of choice is Scala though can write either JavaScript or PHP when in danger. Artur works in Evojam, softwarehouse committed to quality and scalability.
-    div.row
-      div.time.small-12.medium-2.large-1.columns 11:30
-      div.description.small-12.medium-10.large-11.columns
-        div.talk
           h1 Incremental compiler: taming scalac
           p In the wild, Scalac  is an enormous beast. When run freely compilation takes ages even for simple changes in your project. Luckily, in the end of stone age of scala tooling first incremental compilers emerged and time spent on scala compilation’s become less and less noticeable...
           p In this talk I want to explain what incremental compiler is and how it works in sbt world. Further down the road I will show how name hashing reduces amount of compiled files. In the end we will ask ourselves if we can do any better (and by what cost). 
@@ -113,6 +104,20 @@ section#agenda.row
             p Blog 
               a(href="http://blog.typosafe.pl") typosafe.pl
               | .
+    div.row
+      div.time.small-12.medium-2.large-1.columns 11:30
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1 akka-cluster-etcd
+          p Modern container-based cluster computing frameworks like Mesos, Kubernetes, or EC2 Container Service usually execute services on nodes not known beforehand. This creates a problem for Akka Cluster deployments, where seed nodes need to be established.
+          p In this talk we present a zero-configuration deployment scenario for Akka Cluster using etc.d as a distributed configuration store.
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/bilas.png")
+          div.speaker-bio
+            h2 Maciej Biłas
+            a(href="https://twitter.com/maciejb").speaker-link @maciejb
+            p Maciej Biłas is a software engineer at Adform Research. He spent over 3 years developing production Scala code and many more in the JVM ecosystem. Makes data run in the pipes during the day.
     div.row.utility
       div.time.small-12.medium-2.large-1.columns 12:00
       div.description.small-12.medium-10.large-11.columns Lunch
@@ -133,16 +138,19 @@ section#agenda.row
       div.time.small-12.medium-2.large-1.columns 14:00
       div.description.small-12.medium-10.large-11.columns
         div.talk
-          h1 akka-cluster-etcd
-          p Modern container-based cluster computing frameworks like Mesos, Kubernetes, or EC2 Container Service usually execute services on nodes not known beforehand. This creates a problem for Akka Cluster deployments, where seed nodes need to be established.
-          p In this talk we present a zero-configuration deployment scenario for Akka Cluster using etc.d as a distributed configuration store.
+          h1 Shapeless ? Easy !
+          p Shapeless is known for being difficult to grasp, even for experienced Scala developers. In this talk, I will do my best to show you that this difficulty is somehow overrated. 
+          p Of course we'll only scratch the surface there. But hopefully, you'll take home enough hints to begin your own exploration of what this powerful tool enables.
         div.speaker
           div.speaker-photo
-            img(src="images/speakers/bilas.png")
+            img(src="images/speakers/kasas.png")
           div.speaker-bio
-            h2 Maciej Biłas
-            a(href="https://twitter.com/maciejb").speaker-link @maciejb
-            p Maciej Biłas is a software engineer at Adform Research. He spent over 3 years developing production Scala code and many more in the JVM ecosystem. Makes data run in the pipes during the day.
+            h2 Valentin Kasas
+            a(href="https://twitter.com/ValentinKasas").speaker-link @ValentinKasas
+            p After having spent half a dozen years writing boilerplatey C++ and Java code, discovering Scala was a bliss. Ever since, I look for every occasion to train my FP muscles, and to share my sheer enthusiasm about Scala.
+            p Blog at 
+              a(href="http://kanaka.io/blog") kanaka.io/blog
+              | .
     div.row
       div.time.small-12.medium-2.large-1.columns 14:30
       div.description.small-12.medium-10.large-11.columns
@@ -208,22 +216,20 @@ section#agenda.row
             a(href="https://twitter.com/nmcborst").speaker-link @nmcborst
             p Marco Borst and Slava Schmidt are freelance Scala Developers.  For Zalando SE they created Play-Swagger, an open source plugin that lets Play developers treat Swagger API specifications as the single source of thruth. This work did fuel their interest in protocol languages, the state of the art in API specifications and the safety that this specifications can provide in real world scenarios.  They have experience presenting at multiple conferences and meetups from 2013 on, most notably the Java User Group Taiwan, Innovation Days, ScalaDay, QALab and JavaDay in the Ukraine, JavaDay in Belarus, the Scala User Group in Berlin and the Scala World Unconference in the UK.
     div.row
-      div.time.small-12.medium-2.large-1.columns 17:00
+      div.time.small-12.medium-2.large-1.columns 17:30
       div.description.small-12.medium-10.large-11.columns
         div.talk
-          h1 TBA
+          h1 Scala SWAT: Tackling 1 Billion Member Social Network
+          p Enabling blazing fast search on a 1 billion member social network demands special weapons and tactics. Let me take you on a journey around the edges of existing technologies. I'll tell you how we took advantage of the Scala ecosystem and modern tools to realize persistence and processing of such a data set.
+          p About this conversation:
+          p Case study focused on the client requirements and tools we have made use of to meet them. Thoughts, injuries and ideas about real life fast &amp; big data challenge brought to you directly from the trenches.
         div.speaker
           div.speaker-photo
-            img(src="images/speakers/szulc.png")
+            img(src="images/speakers/bankowski.png")
           div.speaker-bio
-            h2 Pawel Szulc
-            a(href="https://twitter.com/rabbitonweb").speaker-link @rabbitonweb
-            p Pawel Szulc is primarily a programmer. Always was and always will be. Experienced professionally in JVM ecosystem, currently having tons of fun with Scala, Erlang, Clojure and Haskell. By day working on (not that) BigData problems with Akka Stream &mp; Apache Spark, by night hacking whatever he finds interesting at that given moment. Humble apprentice of Functional Programming. Runs a blog 
-              a(href="http://www.rabbitonweb.com") rabbitonweb.com
-              | .
-            p Github 
-              a(href="http://github.com/rabbitonweb") github.com/rabbitonweb
-              | .
+            h2 Artur Bańkowski
+            a(href="https://twitter.com/abankowski").speaker-link @abankowski
+            p Artur is a software architect mainly focused on backend of Web applications and APIs. He’s fascinated with Fast Data challenges and distributed architecture. His current weapon of choice is Scala though can write either JavaScript or PHP when in danger. Artur works in Evojam, softwarehouse committed to quality and scalability.
     div.row.utility
       div.time.small-12.medium-2.large-1.columns 18:00
       div.description.small-12.medium-10.large-11.columns Ending
