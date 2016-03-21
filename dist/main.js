@@ -57,7 +57,7 @@ function initialize() {
 // ============================================
 
   var RadissonWindow = new google.maps.InfoWindow({
-  content: '<div class="info-popup"><a href="https://www.radissonblu.com/en#/map-results"><h6>Radisson Blu Centrum Hotel<br><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/></h6></a><p>Very close to the venue of the conference, planty of luxury in a very good price.</p><p><b>Price:</b> 312,12 PLN PLN for single &amp; 376,92 PLN for double room (<b><i>included:</i></b> 8% VAT, breakfast and Internet)</p><p><b>Address:</b> Grzybowska 24</p><p><b>Email:</b> <a href="mailto:reservations.warsaw@radissonblu.com">reservations.warsaw@radissonblu.com</a></p><p><b>Promo Code:</b> scalar 2016</p></div>'
+  content: '<div class="info-popup"><a href="https://www.radissonblu.com/en/hotel-warsaw"><h6>Radisson Blu Centrum Hotel<br><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/></h6></a><p>Very close to the venue of the conference, planty of luxury in a very good price.</p><p><b>Price:</b> 312,12 PLN PLN for single &amp; 376,92 PLN for double room (<b><i>included:</i></b> 8% VAT, breakfast and Internet)</p><p><b>Address:</b> ul. Grzybowska 24</p><p><b>Email:</b> <a href="mailto:reservations.warsaw@radissonblu.com">reservations.warsaw@radissonblu.com</a></p><p><b>Promo Code:</b> scalar 2016</p></div>'
   });
 
   var RadissonMarker = new google.maps.Marker({
@@ -74,7 +74,7 @@ function initialize() {
   // ============================================
 
   var IbisCetrumWindow = new google.maps.InfoWindow({
-  content: '<div class="info-popup"><a href="http://www.accorhotels.com/gb/hotel-2894-ibis-warszawa-centrum/index.shtml"><h6>IBIS Warszawa Centrum<img src="images/icons/star.svg"/><img src="images/icons/star.svg"/></h6></a><p></p><p><b>Price:</b> 165 PLN for single room &amp; 185 PLN for double room (<b><i>included:</i></b> 8% VAT, breakfast and Internet)</p><p><b>Address:</b> Ave Solidarnosci 165</p><p><b>Email:</b> <a href="mailto:H2894@accor.com">H2894@accor.com</a></p><p><b>Promo Code:</b> scalar 2016</p></div>'
+  content: '<div class="info-popup"><a href="http://www.accorhotels.com/gb/hotel-2894-ibis-warszawa-centrum/index.shtml"><h6>IBIS Warszawa Centrum<img src="images/icons/star.svg"/><img src="images/icons/star.svg"/></h6></a><p></p><p><b>Price:</b> 165 PLN for single room &amp; 185 PLN for double room (<b><i>included:</i></b> 8% VAT, breakfast and Internet)</p><p><b>Address:</b> al. Solidarnosci 165</p><p><b>Email:</b> <a href="mailto:H2894@accor.com">H2894@accor.com</a></p><p><b>Promo Code:</b> scalar 2016</p></div>'
   });
 
   var IbisCetrumMarker = new google.maps.Marker({
