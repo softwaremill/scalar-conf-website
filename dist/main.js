@@ -57,7 +57,7 @@ function initialize() {
 // ============================================
 
   var RadissonWindow = new google.maps.InfoWindow({
-  content: '<div class="info-popup"><a href="https://www.radissonblu.com/en#/map-results"><h6>Radisson Blu Centrum Hotel<br><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/></h6></a><p>Very close to the venue of the conference, planty of luxury in a very good price.</p><p><b>Price:</b> 312,12 PLN PLN for single &amp; 376,92 PLN for double room (<b><i>included:</i></b> 8% VAT, breakfast and Internet)</p><p><b>Address:</b> Grzybowska 24</p><p><b>Email:</b> <a href="mailto:reservations.warsaw@radissonblu.com">reservations.warsaw@radissonblu.com</a></p><p><b>Promo Code:</b> scalar 2016</p><p><a href="http://warszawa.jakdojade.pl/?fn=plac+Konstytucji+1&fc=52.22139:21.01635&tn=BIBLIOTEKA+NARODOWA&ts=BIBLIOTEKA+NARODOWA&tc=52.21311:21.00624&d=11.04.15&h=09:00&ia=false&t=0&n=0&ri=0&cid=3000&as=true&locale=en#tabId=0&">How to get to conference venue</a></p></div>'
+  content: '<div class="info-popup"><a href="https://www.radissonblu.com/en#/map-results"><h6>Radisson Blu Centrum Hotel<br><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/></h6></a><p>Very close to the venue of the conference, planty of luxury in a very good price.</p><p><b>Price:</b> 312,12 PLN PLN for single &amp; 376,92 PLN for double room (<b><i>included:</i></b> 8% VAT, breakfast and Internet)</p><p><b>Address:</b> Grzybowska 24</p><p><b>Email:</b> <a href="mailto:reservations.warsaw@radissonblu.com">reservations.warsaw@radissonblu.com</a></p><p><b>Promo Code:</b> scalar 2016</p></div>'
   });
 
   var RadissonMarker = new google.maps.Marker({
@@ -74,7 +74,7 @@ function initialize() {
   // ============================================
 
   var IbisCetrumWindow = new google.maps.InfoWindow({
-  content: '<div class="info-popup"><a href="http://www.accorhotels.com/gb/hotel-2894-ibis-warszawa-centrum/index.shtml"><h6>IBIS Warszawa Centrum<img src="images/icons/star.svg"/><img src="images/icons/star.svg"/></h6></a><p></p><p><b>Price:</b> 165 PLN for single room &amp; 185 PLN for double room (<b><i>included:</i></b> 8% VAT, breakfast and Internet)</p><p><b>Address:</b> Ave Solidarnosci 165</p><p><b>Email:</b> <a href="mailto:H2894@accor.com">H2894@accor.com</a></p><p><b>Promo Code:</b> scalar 2016</p><p><a href="https://www.google.pl/maps/dir/HOTEL+REYTAN,+Tadeusza+Rejtana,+Warsaw/Biblioteka+Narodowa,+aleja+Niepodleg%C5%82o%C5%9Bci,+Warsaw/@52.211123,21.0026936,15z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x471ecab7cbed96f5:0xb9663a16f2048772!2m2!1d21.020343!2d52.208003!1m5!1m1!1s0x471eccc3d4b32f9d:0x9140378313c7f946!2m2!1d21.003451!2d52.213658!3e3">How to get to conference venue</a></p></div>'
+  content: '<div class="info-popup"><a href="http://www.accorhotels.com/gb/hotel-2894-ibis-warszawa-centrum/index.shtml"><h6>IBIS Warszawa Centrum<img src="images/icons/star.svg"/><img src="images/icons/star.svg"/></h6></a><p></p><p><b>Price:</b> 165 PLN for single room &amp; 185 PLN for double room (<b><i>included:</i></b> 8% VAT, breakfast and Internet)</p><p><b>Address:</b> Ave Solidarnosci 165</p><p><b>Email:</b> <a href="mailto:H2894@accor.com">H2894@accor.com</a></p><p><b>Promo Code:</b> scalar 2016</p></div>'
   });
 
   var IbisCetrumMarker = new google.maps.Marker({
@@ -91,7 +91,7 @@ function initialize() {
   // ============================================
 
   var ibisWindow = new google.maps.InfoWindow({
-  content: '<div class="info-popup"><a href="http://www.accorhotels.com/gb/hotel-3714-ibis-warszawa-stare-miasto-old-town/index.shtml"><h6>Ibis Hotel<img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/></h6></a><p>Located very close to the Old Town.</p><p><b>Price:</b> 165 PLN for single &amp; 185 PLN for double room (<b><i>included:</i></b> 8% VAT, breakfast and Internet)</p><p><b>Address:</b> ul. Muranowska 2</p><p><b>Email:</b> <a href="mailto:h3714-re@accor.com">h3714-re@accor.com</a></p><p><b>Promo Code:</b> scalar 2016</p> <p><a href="http://warszawa.jakdojade.pl/index.html?fn=Muranowska+2&fc=52.25409:20.99863&tn=BIBLIOTEKA+NARODOWA&ts=BIBLIOTEKA+NARODOWA&tc=52.21311:21.00624&d=11.04.15&h=09:00&ia=false&t=0&n=0&ri=0&cid=3000&as=true#tabId=0&">How to get to conference venue</a></p></div>'
+  content: '<div class="info-popup"><a href="http://www.accorhotels.com/gb/hotel-3714-ibis-warszawa-stare-miasto-old-town/index.shtml"><h6>Ibis Hotel<img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/></h6></a><p>Located very close to the Old Town.</p><p><b>Price:</b> 165 PLN for single &amp; 185 PLN for double room (<b><i>included:</i></b> 8% VAT, breakfast and Internet)</p><p><b>Address:</b> ul. Muranowska 2</p><p><b>Email:</b> <a href="mailto:h3714-re@accor.com">h3714-re@accor.com</a></p><p><b>Promo Code:</b> scalar 2016</p></div>'
   });
 
   var ibisMarker = new google.maps.Marker({
