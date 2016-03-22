@@ -8,7 +8,7 @@ function initialize() {
 
 
   var mapOptions = {
-    zoom: 12,
+    zoom: 13,
     center: centerLatlng,
     disableDefaultUI: true
   };
@@ -40,7 +40,7 @@ function initialize() {
 // ============================================
 
   var ConfWindow = new google.maps.InfoWindow({
-  content: '<div class="info-popup"><h6>Centrum Konferencyjne Muranow</h6><p>Scalar conference venue</p><img src="images/museum_photoXS.png"/></div>'
+  content: '<div class="info-popup"><h6>Centrum Konferencyjne Muranow</h6><p>Scalar conference venue</p></div>'
   });
 
   var ConfMarker = new google.maps.Marker({
@@ -91,7 +91,7 @@ function initialize() {
   // ============================================
 
   var ibisWindow = new google.maps.InfoWindow({
-  content: '<div class="info-popup"><a href="http://www.accorhotels.com/gb/hotel-3714-ibis-warszawa-stare-miasto-old-town/index.shtml"><h6>Ibis Hotel<img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/></h6></a><p>Located very close to the Old Town.</p><p><b>Price:</b> 165 PLN for single &amp; 185 PLN for double room (<b><i>included:</i></b> 8% VAT, breakfast and Internet)</p><p><b>Address:</b> ul. Muranowska 2</p><p><b>Email:</b> <a href="mailto:h3714-re@accor.com">h3714-re@accor.com</a></p><p><b>Promo Code:</b> scalar 2016</p></div>'
+  content: '<div class="info-popup"><a href="http://www.accorhotels.com/gb/hotel-3714-ibis-warszawa-stare-miasto-old-town/index.shtml"><h6>Ibis Hotel<img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/></h6></a><p>Located very close to the Old Town.</p><p><b>Price:</b> 180 PLN for single &amp; 200 PLN for double room (<b><i>included:</i></b> 8% VAT, breakfast and Internet)</p><p><b>Address:</b> ul. Muranowska 2</p><p><b>Email:</b> <a href="mailto:h3714-re@accor.com">h3714-re@accor.com</a></p><p><b>Promo Code:</b> scalar 2016</p></div>'
   });
 
   var ibisMarker = new google.maps.Marker({
