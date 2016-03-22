@@ -12,7 +12,13 @@
     "included": "8% VAT, breakfast and Internet included",
     "address": "ul. Grzybowska 24",
     "email": "reservations.warsaw@radissonblu.com",
-    "promo_code": "scalar 2016"
+    "promo_code": "scalar 2016",
+    "coordinates": 
+      {
+        "latitude": 52.236786,
+        "longitude": 20.998371
+      }
+
   },
   {
     "title": "IBIS Stare Miasto",
@@ -27,7 +33,12 @@
     "included": "8% VAT, breakfast and Internet included",
     "address": "ul. Muranowska 2",
     "email": "H3714@accor.com",
-    "promo_code": "scalar 2016"
+    "promo_code": "scalar 2016",
+    "coordinates": 
+      {
+        "latitude": 52.254208,
+        "longitude": 20.998931
+      }
   },
   {
     "title": "IBIS Warszawa Centrum",
@@ -42,6 +53,11 @@
     "included": "8% VAT, breakfast and Internet included",
     "address": "al. Solidarnosci 165",
     "email": "H2894@accor.com",
-    "promo_code": "scalar 2016"
+    "promo_code": "scalar 2016",
+    "coordinates": 
+      {
+        "latitude": 52.208000,
+        "longitude": 21.020285
+      }
   }
 ] 

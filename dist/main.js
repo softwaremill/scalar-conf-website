@@ -4,7 +4,6 @@ function initialize() {
   var RadissonLatlng = new google.maps.LatLng(52.236786, 20.998371);
   var IbisCetrumLatlng = new google.maps.LatLng(52.208000, 21.020285);
   var IbisLatlng = new google.maps.LatLng(52.254208,  20.998931);
-  var RialtoLatlng = new google.maps.LatLng(52.223247, 21.008117);
 
 
   var mapOptions = {
