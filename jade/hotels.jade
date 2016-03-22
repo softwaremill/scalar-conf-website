@@ -11,6 +11,8 @@ html(lang="en", itemscope, itemtype="http://schema.org/EducationEvent")
     script(src="vendor/modernizr.js")
     script(src="app.js")
     script(type="text/javascript", src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBB7KRf5xZaANv6l1NWiISb5bFQf1inQb0&sensor=true")
+    script.
+      window.hotelsList = JSON.parse('!{JSON.stringify(hotels)}')
     script(src="main.js")
 
   body#top#hotels
@@ -21,82 +23,107 @@ html(lang="en", itemscope, itemtype="http://schema.org/EducationEvent")
 
       div#hotels-right-section
         p For your stay during the Scalar Conference, we recommend the following hotels, with a special discount for our participants:
-        div.hotel-info
-          h6
-            a(href='https://www.radissonblu.com/en/hotel-warsaw') Hotel Radisson Blu Centrum Hotel
-            img(src='images/icons/star.svg')
-            img(src='images/icons/star.svg')
-            img(src='images/icons/star.svg')
-            img(src='images/icons/star.svg')
-            img(src='images/icons/star.svg')
-          p 
-            i Very close to the venue of the conference, planty of luxury in a very good price.
-          p
-            b Price:
-            |  312,12 PLN / single room &amp; 376,92 PLN / double room 
-            b
-              i 
-            |  (8% VAT, breakfast and Internet included)
-          p
-            b Address:
-            |  ul. Grzybowska 24
-          p
-            b Email: 
-            a(href='mailto: reservations.warsaw@radissonblu.com')  reservations.warsaw@radissonblu.com
-          p
-            b Promo Code:
-            |  scalar 2016
+
+        - each hotel in hotels
+          div.hotel-info
+            h6
+              a(href=' #{hotel.website} ', target="_blank") #{hotel.title} 
+
+              - var n = 0
+              span
+                while n < hotel.stars
+                  - n++
+                  img(src='images/icons/star.svg')
+
+              p 
+                i #{hotel.description}
+              p
+                b Price:
+                |  #{hotel.price.single} PLN / single room &amp; #{hotel.price.double} PLN / double room (#{hotel.included})
+              p
+                b Address:
+                |  #{hotel.address}
+              p
+                b Email: 
+                a(href='mailto:#{hotel.email}') #{hotel.email}
+              p
+                b Promo Code:
+                |  #{hotel.promo_code}
+
+        //- div.hotel-info
+        //-   h6
+        //-     a(href='https://www.radissonblu.com/en/hotel-warsaw') Hotel Radisson Blu Centrum Hotel
+        //-     img(src='images/icons/star.svg')
+        //-     img(src='images/icons/star.svg')
+        //-     img(src='images/icons/star.svg')
+        //-     img(src='images/icons/star.svg')
+        //-     img(src='images/icons/star.svg')
+        //-   p 
+        //-     i Very close to the venue of the conference, planty of luxury in a very good price.
+        //-   p
+        //-     b Price:
+        //-     |  312,12 PLN / single room &amp; 376,92 PLN / double room 
+        //-     b
+        //-       i 
+        //-     |  (8% VAT, breakfast and Internet included)
+        //-   p
+        //-     b Address:
+        //-     |  ul. Grzybowska 24
+        //-   p
+        //-     b Email: 
+        //-     a(href='mailto: reservations.warsaw@radissonblu.com')  reservations.warsaw@radissonblu.com
+        //-   p
+        //-     b Promo Code:
+        //-     |  scalar 2016
           
-        div.hotel-info
-          h6
-            a(href='http://www.accorhotels.com/gb/hotel-2894-ibis-warszawa-centrum/index.shtml') IBIS Warszawa Centrum
-            img(src='images/icons/star.svg')
-            img(src='images/icons/star.svg')
-          p
-            i Very good location, close to the conference venue as well as places worth seeing in Warsaw. 
-          p
-            b Price:
-            |  165,00 PLN / single room &amp; 185,00 PLN / double room 
-            b
-              i
-            |  (8% VAT , breakfast and Internet included)
-          p
-            b Address:
-            |  al. Solidarnosci 165
-          p
-            b Email:
-            |  
-            a(href='mailto:H2894@accor.com') H2894@accor.com
-          p
-            b Promo Code:
-            |  scalar 2016
+        //- div.hotel-info
+        //-   h6
+        //-     a(href='http://www.accorhotels.com/gb/hotel-2894-ibis-warszawa-centrum/index.shtml') IBIS Warszawa Centrum
+        //-     img(src='images/icons/star.svg')
+        //-     img(src='images/icons/star.svg')
+        //-   p
+        //-     i Very good location, close to the conference venue as well as places worth seeing in Warsaw. 
+        //-   p
+        //-     b Price:
+        //-     |  165,00 PLN / single room &amp; 185,00 PLN / double room 
+        //-     b
+        //-       i
+        //-     |  (8% VAT , breakfast and Internet included)
+        //-   p
+        //-     b Address:
+        //-     |  al. Solidarnosci 165
+        //-   p
+        //-     b Email:
+        //-     |  
+        //-     a(href='mailto:H2894@accor.com') H2894@accor.com
+        //-   p
+        //-     b Promo Code:
+        //-     |  scalar 2016
         
-        div.hotel-info
-          h6
-            a(href='http://www.accorhotels.com/gb/hotel-3714-ibis-warszawa-stare-miasto-old-town/index.shtml') IBIS Stare Miasto
-            img(src='images/icons/star.svg')
-            img(src='images/icons/star.svg')
-            img(src='images/icons/star.svg')
-          p 
-            i Located very close to the Old Town.
-          p
-            b Price:
-            |  165,00 PLN/ single room &amp; 185,00 PLN/ double room 
-            b
-              i
-            |  (8% VAT,breakfast and Internet included)
-          p
-            b Address:
-            |  ul. Muranowska 2
-          p
-            b Email:
-            |  
-            a(href='mailto:H3714@accor.com') H3714@accor.com
-          p
-            b Promo Code:
-            |  scalar 2016
-         //- p 
-             a(href='https://www.google.pl/maps/dir/Hotel+Rialto,+Wilcza+73,+00-670+Warszawa/Biblioteka+Narodowa,+aleja+Niepodleg%C5%82o%C5%9Bci,+Warsaw/@52.218091,20.9972494,15z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x471eccec43b7a925:0xc3ff25a2c4c6653e!2m2!1d21.008214!2d52.22327!1m5!1m1!1s0x471eccc3d4b32f9d:0x9140378313c7f946!2m2!1d21.003451!2d52.213658!3e3') How to get to conference venue -//    
+        //- div.hotel-info
+        //-   h6
+        //-     a(href='http://www.accorhotels.com/gb/hotel-3714-ibis-warszawa-stare-miasto-old-town/index.shtml') IBIS Stare Miasto
+        //-     img(src='images/icons/star.svg')
+        //-     img(src='images/icons/star.svg')
+        //-     img(src='images/icons/star.svg')
+        //-   p 
+        //-     i Located very close to the Old Town.
+        //-   p
+        //-     b Price:
+        //-     |  165,00 PLN/ single room &amp; 185,00 PLN/ double room 
+        //-     b
+        //-       i
+        //-     |  (8% VAT,breakfast and Internet included)
+        //-   p
+        //-     b Address:
+        //-     |  ul. Muranowska 2
+        //-   p
+        //-     b Email:
+        //-     |  
+        //-     a(href='mailto:H3714@accor.com') H3714@accor.com
+        //-   p
+        //-     b Promo Code:
+        //-     |  scalar 2016
         p Other options in a very good location:
         p 
           a(href="http://www.campanile.com/pl") Campanile Hotel

@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Radisson Blu Centrum",
+    "website": "https://www.radissonblu.com/en/hotel-warsaw",
+    "stars": 5,
+    "description": "Very close to the venue of the conference, planty of luxury in a very good price.",
+    "price":
+      {
+        "single": 312.12,
+        "double": 376.92
+      },
+    "included": "8% VAT, breakfast and Internet included",
+    "address": "ul. Grzybowska 24",
+    "email": "reservations.warsaw@radissonblu.com",
+    "promo_code": "scalar 2016"
+  },
+  {
+    "title": "IBIS Stare Miasto",
+    "website": "http://www.accorhotels.com/gb/hotel-3714-ibis-warszawa-stare-miasto-old-town/index.shtml",
+    "stars": 3,
+    "description": "Located very close to the Old Town.",
+    "price":
+      {
+        "single": 165,
+        "double": 185
+      },
+    "included": "8% VAT, breakfast and Internet included",
+    "address": "ul. Muranowska 2",
+    "email": "H3714@accor.com",
+    "promo_code": "scalar 2016"
+  },
+  {
+    "title": "IBIS Warszawa Centrum",
+    "website": "http://www.accorhotels.com/gb/hotel-2894-ibis-warszawa-centrum/index.shtml",
+    "stars": 2,
+    "description": "Very good location, close to the conference venue as well as places worth seeing in Warsaw.",
+    "price":
+      {
+        "single": 165,
+        "double": 185
+      },
+    "included": "8% VAT, breakfast and Internet included",
+    "address": "al. Solidarnosci 165",
+    "email": "H2894@accor.com",
+    "promo_code": "scalar 2016"
+  }
+] 

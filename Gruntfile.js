@@ -8,7 +8,8 @@ module.exports = function(grunt) {
       compile: {
         options: {
           data: {
-            debug: false
+            debug: false,
+            hotels: grunt.file.readJSON('hotels.json')
           }
         },
         files: {
