@@ -55,12 +55,35 @@ function initialize() {
 
 // ============================================
 
+  for (var i = 0; i < hotelsList.length; i++) {
+
+    var name = i+1;
+
+    var hotelWindow+name = new google.maps.InfoWindow({
+      content: '<div class="info-popup"><a href='+hotelsList[i].website+'><h6>'+hotelsList[i].title+'<br><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/></h6></a><p>'+hotelsList[i].description+'</p><p><b>Price:</b> '+hotelsList[i].price.single+' PLN for single &amp; '+hotelsList[i].price.double+' PLN for double room (<b><i>included:</i></b> '+hotelsList[i].included+')</p><p><b>Address:</b> '+hotelsList[i].address+'</p><p><b>Email:</b> <a href="mailto:'+hotelsList[i].email+'">'+hotelsList[i].email+'</a></p><p><b>Promo Code:</b>'+hotelsList[i].promo_code+'</p></div>'
+    });
+
+    var hotelMarker+name = new google.maps.Marker({
+      position: new google.maps.LatLng(hotelsList[i].latitude, hotelsList[i].longitude);,
+      map: map,
+      icon: regularMarker,
+      title: hotelsList[i].title
+    });
+
+    google.maps.event.addListener(hotelMarker+name, 'click', function() {
+      hotelWindow+name.open(map, hotelMarker+name);
+    });
+
+  };
+
+// ============================================
+
   var RadissonWindow = new google.maps.InfoWindow({
-  content: '<div class="info-popup"><a href="https://www.radissonblu.com/en/hotel-warsaw"><h6>Radisson Blu Centrum Hotel<br><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/></h6></a><p>Very close to the venue of the conference, planty of luxury in a very good price.</p><p><b>Price:</b> 312,12 PLN PLN for single &amp; 376,92 PLN for double room (<b><i>included:</i></b> 8% VAT, breakfast and Internet)</p><p><b>Address:</b> ul. Grzybowska 24</p><p><b>Email:</b> <a href="mailto:reservations.warsaw@radissonblu.com">reservations.warsaw@radissonblu.com</a></p><p><b>Promo Code:</b> scalar 2016</p></div>'
+  content: '<div class="info-popup"><a href='+hotelsList[0].website+'><h6>'+hotelsList[0].title+'<br><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/></h6></a><p>'+hotelsList[0].description+'</p><p><b>Price:</b> '+hotelsList[0].price.single+' PLN for single &amp; '+hotelsList[0].price.double+' PLN for double room (<b><i>included:</i></b> '+hotelsList[0].included+')</p><p><b>Address:</b> '+hotelsList[0].address+'</p><p><b>Email:</b> <a href="mailto:'+hotelsList[0].email+'">'+hotelsList[0].email+'</a></p><p><b>Promo Code:</b>'+hotelsList[0].promo_code+'</p></div>'
   });
 
-  var RadissonMarker = new google.maps.Marker({
-    position: RadissonLatlng,
+  var hotelMarker = new google.maps.Marker({
+    position: hotelsList[0].website,
     map: map,
     icon: regularMarker,
     title: 'RasissonBlu Centrum Hotel'

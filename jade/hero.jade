@@ -7,7 +7,7 @@ section.hero.row
   div.conference-data.centered-wrapper.small-12.medium-12.large-12.columns
     time(itemprop="startDate", datetime="2014-04-05")
       img(src="images/icons/calendar.svg")
-      |&nbsp;16.04.2016
+      |&nbsp;#{conf_info.day}.#{conf_info.month_num}.#{conf_info.year}
     span(itemprop="location")
       img(src="images/icons/map.svg")
-      |&nbsp;Warsaw,&nbsp;Poland
+      |&nbsp;#{conf_info.city},&nbsp;#{conf_info.country}

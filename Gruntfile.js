@@ -9,7 +9,8 @@ module.exports = function(grunt) {
         options: {
           data: {
             debug: false,
-            hotels: grunt.file.readJSON('hotels.json')
+            hotels: grunt.file.readJSON('hotels.json'),
+            conf_info: grunt.file.readJSON('conf-info.json')
           }
         },
         files: {
