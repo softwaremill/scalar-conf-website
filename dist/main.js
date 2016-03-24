@@ -1,13 +1,13 @@
 function initialize() {
   var centerLatlng = new google.maps.LatLng(52.221421, 21.004352);
   var ConfLatlng = new google.maps.LatLng(52.249499, 20.993205);
-  var RadissonLatlng = new google.maps.LatLng(52.236786, 20.998371);
-  var IbisCetrumLatlng = new google.maps.LatLng(52.208000, 21.020285);
-  var IbisLatlng = new google.maps.LatLng(52.254208,  20.998931);
+  // var RadissonLatlng = new google.maps.LatLng(52.236786, 20.998371);
+  // var IbisCetrumLatlng = new google.maps.LatLng(52.208000, 21.020285);
+  // var IbisLatlng = new google.maps.LatLng(52.254208,  20.998931);
 
 
   var mapOptions = {
-    zoom: 11,
+    zoom: 13,
     center: centerLatlng,
     disableDefaultUI: true
   };
@@ -57,75 +57,77 @@ function initialize() {
 
   for (var i = 0; i < hotelsList.length; i++) {
 
-    var name = i+1;
+    (function(i){
+      var infoWindow = new google.maps.InfoWindow({
+        content: '<div class="info-popup"><a href='+hotelsList[i].website+'><h6>'+hotelsList[i].title+'<br><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/></h6></a><p>'+hotelsList[i].description+'</p><p><b>Price:</b> '+hotelsList[i].price.single+' PLN for single &amp; '+hotelsList[i].price.double+' PLN for double room (<b><i>included:</i></b> '+hotelsList[i].included+')</p><p><b>Address:</b> '+hotelsList[i].address+'</p><p><b>Email:</b> <a href="mailto:'+hotelsList[i].email+'">'+hotelsList[i].email+'</a></p><p><b>Promo Code:</b>'+hotelsList[i].promo_code+'</p></div>'
+      });
 
-    var hotelWindow+name = new google.maps.InfoWindow({
-      content: '<div class="info-popup"><a href='+hotelsList[i].website+'><h6>'+hotelsList[i].title+'<br><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/></h6></a><p>'+hotelsList[i].description+'</p><p><b>Price:</b> '+hotelsList[i].price.single+' PLN for single &amp; '+hotelsList[i].price.double+' PLN for double room (<b><i>included:</i></b> '+hotelsList[i].included+')</p><p><b>Address:</b> '+hotelsList[i].address+'</p><p><b>Email:</b> <a href="mailto:'+hotelsList[i].email+'">'+hotelsList[i].email+'</a></p><p><b>Promo Code:</b>'+hotelsList[i].promo_code+'</p></div>'
-    });
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(hotelsList[i].coordinates.latitude, hotelsList[i].coordinates.longitude),
+        map: map,
+        icon: regularMarker,
+        title: hotelsList[i].title
+      });
 
-    var hotelMarker+name = new google.maps.Marker({
-      position: new google.maps.LatLng(hotelsList[i].latitude, hotelsList[i].longitude);,
-      map: map,
-      icon: regularMarker,
-      title: hotelsList[i].title
-    });
+      google.maps.event.addListener(marker, 'click', function() {
+        infoWindow.open(map,marker);
+        console.log(infoWindow);
+      });
 
-    google.maps.event.addListener(hotelMarker+name, 'click', function() {
-      hotelWindow+name.open(map, hotelMarker+name);
-    });
-
+      console.log(marker, infoWindow);
+    })(i)
   };
 
 // ============================================
 
-  var RadissonWindow = new google.maps.InfoWindow({
-  content: '<div class="info-popup"><a href='+hotelsList[0].website+'><h6>'+hotelsList[0].title+'<br><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/></h6></a><p>'+hotelsList[0].description+'</p><p><b>Price:</b> '+hotelsList[0].price.single+' PLN for single &amp; '+hotelsList[0].price.double+' PLN for double room (<b><i>included:</i></b> '+hotelsList[0].included+')</p><p><b>Address:</b> '+hotelsList[0].address+'</p><p><b>Email:</b> <a href="mailto:'+hotelsList[0].email+'">'+hotelsList[0].email+'</a></p><p><b>Promo Code:</b>'+hotelsList[0].promo_code+'</p></div>'
-  });
+  // var RadissonWindow = new google.maps.InfoWindow({
+  // content: '<div class="info-popup"><a href='+hotelsList[0].website+'><h6>'+hotelsList[0].title+'<br><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/></h6></a><p>'+hotelsList[0].description+'</p><p><b>Price:</b> '+hotelsList[0].price.single+' PLN for single &amp; '+hotelsList[0].price.double+' PLN for double room (<b><i>included:</i></b> '+hotelsList[0].included+')</p><p><b>Address:</b> '+hotelsList[0].address+'</p><p><b>Email:</b> <a href="mailto:'+hotelsList[0].email+'">'+hotelsList[0].email+'</a></p><p><b>Promo Code:</b>'+hotelsList[0].promo_code+'</p></div>'
+  // });
 
-  var hotelMarker = new google.maps.Marker({
-    position: hotelsList[0].website,
-    map: map,
-    icon: regularMarker,
-    title: 'RasissonBlu Centrum Hotel'
-  });
+  // var hotelMarker = new google.maps.Marker({
+  //   position: hotelsList[0].website,
+  //   map: map,
+  //   icon: regularMarker,
+  //   title: 'RasissonBlu Centrum Hotel'
+  // });
 
-  google.maps.event.addListener(RadissonMarker, 'click', function() {
-  RadissonWindow.open(map, RadissonMarker);
-  });
-
-  // ============================================
-
-  var IbisCetrumWindow = new google.maps.InfoWindow({
-  content: '<div class="info-popup"><a href="http://www.accorhotels.com/gb/hotel-2894-ibis-warszawa-centrum/index.shtml"><h6>IBIS Warszawa Centrum<img src="images/icons/star.svg"/><img src="images/icons/star.svg"/></h6></a><p></p><p><b>Price:</b> 165 PLN for single room &amp; 185 PLN for double room (<b><i>included:</i></b> 8% VAT, breakfast and Internet)</p><p><b>Address:</b> al. Solidarnosci 165</p><p><b>Email:</b> <a href="mailto:H2894@accor.com">H2894@accor.com</a></p><p><b>Promo Code:</b> scalar 2016</p></div>'
-  });
-
-  var IbisCetrumMarker = new google.maps.Marker({
-    position: IbisCetrumLatlng,
-    map: map,
-    icon: regularMarker,
-    title: 'IBIS Warszawa Centrum'
-  });
-
-  google.maps.event.addListener(IbisCetrumMarker, 'click', function() {
-  IbisCetrumWindow.open(map, IbisCetrumMarker);
-  });
+  // google.maps.event.addListener(RadissonMarker, 'click', function() {
+  // RadissonWindow.open(map, RadissonMarker);
+  // });
 
   // ============================================
 
-  var ibisWindow = new google.maps.InfoWindow({
-  content: '<div class="info-popup"><a href="http://www.accorhotels.com/gb/hotel-3714-ibis-warszawa-stare-miasto-old-town/index.shtml"><h6>Ibis Hotel<img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/></h6></a><p>Located very close to the Old Town.</p><p><b>Price:</b> 165 PLN for single &amp; 185 PLN for double room (<b><i>included:</i></b> 8% VAT, breakfast and Internet)</p><p><b>Address:</b> ul. Muranowska 2</p><p><b>Email:</b> <a href="mailto:h3714-re@accor.com">h3714-re@accor.com</a></p><p><b>Promo Code:</b> scalar 2016</p></div>'
-  });
+  // var IbisCetrumWindow = new google.maps.InfoWindow({
+  // content: '<div class="info-popup"><a href="http://www.accorhotels.com/gb/hotel-2894-ibis-warszawa-centrum/index.shtml"><h6>IBIS Warszawa Centrum<img src="images/icons/star.svg"/><img src="images/icons/star.svg"/></h6></a><p></p><p><b>Price:</b> 165 PLN for single room &amp; 185 PLN for double room (<b><i>included:</i></b> 8% VAT, breakfast and Internet)</p><p><b>Address:</b> al. Solidarnosci 165</p><p><b>Email:</b> <a href="mailto:H2894@accor.com">H2894@accor.com</a></p><p><b>Promo Code:</b> scalar 2016</p></div>'
+  // });
 
-  var ibisMarker = new google.maps.Marker({
-    position: IbisLatlng,
-    map: map,
-    icon: regularMarker,
-    title: 'Ibis Hotel'
-  });
+  // var IbisCetrumMarker = new google.maps.Marker({
+  //   position: IbisCetrumLatlng,
+  //   map: map,
+  //   icon: regularMarker,
+  //   title: 'IBIS Warszawa Centrum'
+  // });
 
-  google.maps.event.addListener(ibisMarker, 'click', function() {
-  ibisWindow.open(map, ibisMarker);
-  });
+  // google.maps.event.addListener(IbisCetrumMarker, 'click', function() {
+  // IbisCetrumWindow.open(map, IbisCetrumMarker);
+  // });
+
+  // ============================================
+
+  // var ibisWindow = new google.maps.InfoWindow({
+  // content: '<div class="info-popup"><a href="http://www.accorhotels.com/gb/hotel-3714-ibis-warszawa-stare-miasto-old-town/index.shtml"><h6>Ibis Hotel<img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/></h6></a><p>Located very close to the Old Town.</p><p><b>Price:</b> 165 PLN for single &amp; 185 PLN for double room (<b><i>included:</i></b> 8% VAT, breakfast and Internet)</p><p><b>Address:</b> ul. Muranowska 2</p><p><b>Email:</b> <a href="mailto:h3714-re@accor.com">h3714-re@accor.com</a></p><p><b>Promo Code:</b> scalar 2016</p></div>'
+  // });
+
+  // var ibisMarker = new google.maps.Marker({
+  //   position: IbisLatlng,
+  //   map: map,
+  //   icon: regularMarker,
+  //   title: 'Ibis Hotel'
+  // });
+
+  // google.maps.event.addListener(ibisMarker, 'click', function() {
+  // ibisWindow.open(map, ibisMarker);
+  // });
 
   // ============================================
 /*
