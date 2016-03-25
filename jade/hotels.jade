@@ -1,15 +1,9 @@
 doctype html
 html(lang="en", itemscope, itemtype="http://schema.org/EducationEvent")
-  head
-    title Scalar - Scala Conference in Central Europe - #{conf_info.date}, Warsaw, Poland.
-    link(rel="shortcut icon", href="images/favicon.ico")
-    link(href='http://fonts.googleapis.com/css?family=Exo+2:400,200,500,600,700&subset=latin,latin-ext', rel='stylesheet', type='text/css')
-    link(rel="stylesheet", href="index.css", media="Screen")
-    meta(itemprop="name", content="Scalar")
-    meta(name="viewport", content="initial-scale=1.0, width=device-width")
-    meta(charset='utf-8')
-    script(src="vendor/modernizr.js")
-    script(src="app.js")
+  
+  include head
+
+  block append head
     script(type="text/javascript", src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBB7KRf5xZaANv6l1NWiISb5bFQf1inQb0&sensor=true")
     script.
       window.hotelsList = JSON.parse('!{JSON.stringify(hotels)}')
@@ -25,15 +19,17 @@ html(lang="en", itemscope, itemtype="http://schema.org/EducationEvent")
         p For your stay during the Scalar Conference, we recommend the following hotels, with a special discount for our participants:
 
         - each hotel in hotels
-          div.hotel-info
-            h6
-              a(href=' #{hotel.website} ', target="_blank") #{hotel.title} 
+          if !hotel.venue
 
-              - var n = 0
-              span
-                while n < hotel.stars
-                  - n++
-                  img(src='images/icons/star.svg')
+            div.hotel-info
+              h6
+                a(href=' #{hotel.website} ', target="_blank") #{hotel.title} 
+
+                - var n = 0
+                span
+                  while n < hotel.stars
+                    - n++
+                    img(src='images/icons/star.svg')
 
               p 
                 i #{hotel.description}
@@ -49,6 +45,7 @@ html(lang="en", itemscope, itemtype="http://schema.org/EducationEvent")
               p
                 b Promo Code:
                 |  #{hotel.promo_code}
+
 
         p Other options in a very good location:
         p 

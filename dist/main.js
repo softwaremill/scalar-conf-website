@@ -1,11 +1,9 @@
 function initialize() {
+  // Center of map, change coordinates, if you want the map to be positioned differently
   var centerLatlng = new google.maps.LatLng(52.221421, 21.004352);
-  var ConfLatlng = new google.maps.LatLng(52.249499, 20.993205);
-  // var RadissonLatlng = new google.maps.LatLng(52.236786, 20.998371);
-  // var IbisCetrumLatlng = new google.maps.LatLng(52.208000, 21.020285);
-  // var IbisLatlng = new google.maps.LatLng(52.254208,  20.998931);
 
 
+  // Here you can change map zoom
   var mapOptions = {
     zoom: 13,
     center: centerLatlng,
@@ -14,10 +12,14 @@ function initialize() {
 
   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
+
+  // Styles for map at the bottom of this file
   map.setOptions({styles: styles});
+
 
 // ============================================
 
+  // Styles for map markers
   var regularMarker = {
   path: 'M13,1 C6.4,1,1,6.1,1,12.5S13,33,13,33s12-14.2,12-20.5S19.6,1,13,1z',
   fillColor: '#7dd9e2',
@@ -27,7 +29,7 @@ function initialize() {
   strokeWeight: 2
   };
 
-  var ConfMarker = {
+  var venueMarker = {
   path: 'M13,1 C6.4,1,1,6.1,1,12.5S13,33,13,33s12-14.2,12-20.5S19.6,1,13,1z',
   fillColor: '#114476',
   fillOpacity: 1,
@@ -38,116 +40,59 @@ function initialize() {
 
 // ============================================
 
-  var ConfWindow = new google.maps.InfoWindow({
-  content: '<div class="info-popup"><h6>Centrum Konferencyjne Muranow</h6><p>Scalar conference venue</p><img src="images/museum_photoXS.png"/></div>'
-  });
-
-  var ConfMarker = new google.maps.Marker({
-  position: ConfLatlng,
-  map: map,
-  icon: ConfMarker,
-  title: 'Centrum Konferencyjne Muranow - Conference venue'
-  });
-
-  google.maps.event.addListener(ConfMarker, 'click', function() {
- ConfWindow.open(map, ConfMarker);
-  });
-
-// ============================================
-
   for (var i = 0; i < hotelsList.length; i++) {
 
-    (function(i){
-      var infoWindow = new google.maps.InfoWindow({
-        content: '<div class="info-popup"><a href='+hotelsList[i].website+'><h6>'+hotelsList[i].title+'<br><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/></h6></a><p>'+hotelsList[i].description+'</p><p><b>Price:</b> '+hotelsList[i].price.single+' PLN for single &amp; '+hotelsList[i].price.double+' PLN for double room (<b><i>included:</i></b> '+hotelsList[i].included+')</p><p><b>Address:</b> '+hotelsList[i].address+'</p><p><b>Email:</b> <a href="mailto:'+hotelsList[i].email+'">'+hotelsList[i].email+'</a></p><p><b>Promo Code:</b>'+hotelsList[i].promo_code+'</p></div>'
-      });
+    // If it's a venue, create a venue marker and popup
+    if (hotelsList[i].venue == true) {
 
-      var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(hotelsList[i].coordinates.latitude, hotelsList[i].coordinates.longitude),
-        map: map,
-        icon: regularMarker,
-        title: hotelsList[i].title
-      });
+      (function(i){
 
-      google.maps.event.addListener(marker, 'click', function() {
-        infoWindow.open(map,marker);
-        console.log(infoWindow);
-      });
+        var venueWindow = new google.maps.InfoWindow({
+        content: '<div class="info-popup"><h6>'+hotelsList[i].title+'</h6><p>'+hotelsList[i].description+'</p><p><b>Address: </b>'+hotelsList[i].address+'</p></div>'
+        });
 
-      console.log(marker, infoWindow);
-    })(i)
+        var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(hotelsList[i].coordinates.latitude, hotelsList[i].coordinates.longitude),
+          map: map,
+          icon: venueMarker,
+          title: hotelsList[i].title
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+          venueWindow.open(map, marker);
+        });
+
+      })(i)
+
+    } else {
+
+      // If it's a hotel, create a hotel marker and popup
+      (function(i){
+
+        var infoWindow = new google.maps.InfoWindow({
+          content: '<div class="info-popup"><a href='+hotelsList[i].website+'><h6>'+hotelsList[i].title+'<br><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/></h6></a><p>'+hotelsList[i].description+'</p><p><b>Price:</b> '+hotelsList[i].price.single+' PLN for single &amp; '+hotelsList[i].price.double+' PLN for double room (<b><i>included:</i></b> '+hotelsList[i].included+')</p><p><b>Address:</b> '+hotelsList[i].address+'</p><p><b>Email:</b> <a href="mailto:'+hotelsList[i].email+'">'+hotelsList[i].email+'</a></p><p><b>Promo Code: </b>'+hotelsList[i].promo_code+'</p></div>'
+        });
+
+        var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(hotelsList[i].coordinates.latitude, hotelsList[i].coordinates.longitude),
+          map: map,
+          icon: regularMarker,
+          title: hotelsList[i].title
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+          infoWindow.open(map,marker);
+        });
+
+      })(i)
+
+    }
   };
+}
 
 // ============================================
 
-  // var RadissonWindow = new google.maps.InfoWindow({
-  // content: '<div class="info-popup"><a href='+hotelsList[0].website+'><h6>'+hotelsList[0].title+'<br><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/></h6></a><p>'+hotelsList[0].description+'</p><p><b>Price:</b> '+hotelsList[0].price.single+' PLN for single &amp; '+hotelsList[0].price.double+' PLN for double room (<b><i>included:</i></b> '+hotelsList[0].included+')</p><p><b>Address:</b> '+hotelsList[0].address+'</p><p><b>Email:</b> <a href="mailto:'+hotelsList[0].email+'">'+hotelsList[0].email+'</a></p><p><b>Promo Code:</b>'+hotelsList[0].promo_code+'</p></div>'
-  // });
-
-  // var hotelMarker = new google.maps.Marker({
-  //   position: hotelsList[0].website,
-  //   map: map,
-  //   icon: regularMarker,
-  //   title: 'RasissonBlu Centrum Hotel'
-  // });
-
-  // google.maps.event.addListener(RadissonMarker, 'click', function() {
-  // RadissonWindow.open(map, RadissonMarker);
-  // });
-
-  // ============================================
-
-  // var IbisCetrumWindow = new google.maps.InfoWindow({
-  // content: '<div class="info-popup"><a href="http://www.accorhotels.com/gb/hotel-2894-ibis-warszawa-centrum/index.shtml"><h6>IBIS Warszawa Centrum<img src="images/icons/star.svg"/><img src="images/icons/star.svg"/></h6></a><p></p><p><b>Price:</b> 165 PLN for single room &amp; 185 PLN for double room (<b><i>included:</i></b> 8% VAT, breakfast and Internet)</p><p><b>Address:</b> al. Solidarnosci 165</p><p><b>Email:</b> <a href="mailto:H2894@accor.com">H2894@accor.com</a></p><p><b>Promo Code:</b> scalar 2016</p></div>'
-  // });
-
-  // var IbisCetrumMarker = new google.maps.Marker({
-  //   position: IbisCetrumLatlng,
-  //   map: map,
-  //   icon: regularMarker,
-  //   title: 'IBIS Warszawa Centrum'
-  // });
-
-  // google.maps.event.addListener(IbisCetrumMarker, 'click', function() {
-  // IbisCetrumWindow.open(map, IbisCetrumMarker);
-  // });
-
-  // ============================================
-
-  // var ibisWindow = new google.maps.InfoWindow({
-  // content: '<div class="info-popup"><a href="http://www.accorhotels.com/gb/hotel-3714-ibis-warszawa-stare-miasto-old-town/index.shtml"><h6>Ibis Hotel<img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/></h6></a><p>Located very close to the Old Town.</p><p><b>Price:</b> 165 PLN for single &amp; 185 PLN for double room (<b><i>included:</i></b> 8% VAT, breakfast and Internet)</p><p><b>Address:</b> ul. Muranowska 2</p><p><b>Email:</b> <a href="mailto:h3714-re@accor.com">h3714-re@accor.com</a></p><p><b>Promo Code:</b> scalar 2016</p></div>'
-  // });
-
-  // var ibisMarker = new google.maps.Marker({
-  //   position: IbisLatlng,
-  //   map: map,
-  //   icon: regularMarker,
-  //   title: 'Ibis Hotel'
-  // });
-
-  // google.maps.event.addListener(ibisMarker, 'click', function() {
-  // ibisWindow.open(map, ibisMarker);
-  // });
-
-  // ============================================
-/*
-  var rialtoWindow = new google.maps.InfoWindow({
-  content: '<div class="info-popup"><a href="http://www.rialto.pl/en/"><h6>Rialto Hotel<img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/><img src="images/icons/star.svg"/></h6></a><p>A bit of luxury in the first boutique hotel in Warsaw.</p><p><b>Price:</b> 360 PLN (97 USD) for single room &amp; 460 PLN (124 USD) for double room (<b><i>included:</i></b> 8% VAT, breakfast, internet, sauna, gym)</p><p class="address"><b>Address:</b> ul. Wilcza 73</p><p><b>Email:</b> <a href="mailto:reservations@rialto.pl">reservations@rialto.pl</a></p><p><b>Promo Code:</b> scalar 2015</p><p><a href="https://www.google.pl/maps/dir/Hotel+Rialto,+Wilcza+73,+00-670+Warszawa/Biblioteka+Narodowa,+aleja+Niepodleg%C5%82o%C5%9Bci,+Warsaw/@52.218091,20.9972494,15z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x471eccec43b7a925:0xc3ff25a2c4c6653e!2m2!1d21.008214!2d52.22327!1m5!1m1!1s0x471eccc3d4b32f9d:0x9140378313c7f946!2m2!1d21.003451!2d52.213658!3e3">How to get to conference venue</a></p></div>'
-  });
-
-  var rialtoMarker = new google.maps.Marker({
-    position: RialtoLatlng,
-    map: map,
-    icon: regularMarker,
-    title: 'Rialto Hotel'
-  });
-
-  google.maps.event.addListener(rialtoMarker, 'click', function() {
-  rialtoWindow.open(map, rialtoMarker);
-  });
-*/
-}
-
+// MAP STYLES - makes map blue
 var styles = [
 {
   "featureType": "administrative",

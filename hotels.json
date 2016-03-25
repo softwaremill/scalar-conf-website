@@ -1,5 +1,17 @@
 [
   {
+    "venue": true,
+    "title": "Centrum Konferencyjne Muranow",
+    "description": "Conference venue.",
+    "address": "ul. Anielewicza 6",
+    "coordinates": 
+      {
+        "latitude": 52.249499,
+        "longitude": 20.993205
+      }
+  },
+  { 
+    "venue": false,
     "title": "Radisson Blu Centrum",
     "website": "https://www.radissonblu.com/en/hotel-warsaw",
     "stars": 5,
@@ -20,6 +32,7 @@
       }
   },
   {
+    "venue": false,
     "title": "IBIS Stare Miasto",
     "website": "http://www.accorhotels.com/gb/hotel-3714-ibis-warszawa-stare-miasto-old-town/index.shtml",
     "stars": 3,
@@ -40,6 +53,7 @@
       }
   },
   {
+    "venue": false,
     "title": "IBIS Warszawa Centrum",
     "website": "http://www.accorhotels.com/gb/hotel-2894-ibis-warszawa-centrum/index.shtml",
     "stars": 2,
