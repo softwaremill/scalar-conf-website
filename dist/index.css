@@ -105,7 +105,7 @@ section.header li.tweet-btn iframe{margin-top:.75rem}
 #sponsors .partners a,#sponsors .media-partners a,#sponsors .silver-sponsors a,#sponsors .just-sponsors a,#sponsors .party-sponsors a{margin:0 1em 2em}
 .sponsors-slide small{display:block}
 .gadget .columns{text-align:center}
-.gadget img{margin-right:.4em;vertical-align:middle;margin-top:10rem}
+.gadget img{padding-bottom:0}
 .gadget p{font-size:.75em;margin-top:0;margin-bottom:0;text-aligin:center}
 .organizer p{margin-top:1em}
 #sml-logo{margin-bottom:1em}
