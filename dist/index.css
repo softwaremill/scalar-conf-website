@@ -155,6 +155,7 @@ ol{padding-left:2rem;margin-left:0;}
 ol li{font-size:.875rem;margin-bottom:.875rem}
 ol p{margin-bottom:.875rem;margin-top:.875rem}
 section.souvenirs-page{background:none;padding-top:0}
+section.souvenirs-page.row:nth-child(odd){background:none}
 .souvenirs-page .mug-row img{margin-right:0}
 .souvenirs-page .mug-row p{margin-left:-23px}
 .souvenirs-page .mug-row img,.souvenirs-page .shirt-row img{margin-bottom:1rem}
