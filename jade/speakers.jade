@@ -13,28 +13,25 @@ section#agenda.row
       div.time.small-12.medium-2.large-1.columns 8:50
       div.description.small-12.medium-10.large-11.columns Welcome
     div.row
-      div.time.small-12.medium-2.large-1.columns 9:00
+      div.time.small-12.medium-2.large-1.columns #{agenda.time}
       div.description.small-12.medium-10.large-11.columns
         div.talk
-          h1 Having a cake and eating it too. Introduction to Typeclasses.
-          p Being in a Scala community, you've probably heard about type classes. Very basic concept that both commonly used among many Scala libraries and at the same time very fundamental to understand any theoretical concepts behind Functional Programming. This short talk is all about explaining what Type classes are, how to use them and how to create them, with strong emphasis on answering the question "why should I even care?". We will focus on both on prons and cons, however speaker will probably be a bit biased towards the former.
-          p We will follow story of couple of developers, struggling with conceptual design problem. As many before them, they will eventually reinvent the wheel. The solution they will end up with, is what we call a Type class.
-          p This is a "from zero to hero" talk. Preferable audience are people who want to:
-          p 1. understand any shapeless/scalaz/cats presentation out there (this presentation will give you ability to survive first 10 minutes of mentioned talks)
-          p 2. be enlightened that "monads are just type classes with some laws" (this is not a monad tutorial though)
-          p 3. get the "aha!" moment, realising that they've been using Type classes from time to time, without knowing it 
+          <p>Being in a Scala community, you've probably heard about type classes. Very basic concept that both commonly used among many Scala libraries and at the same time very fundamental to understand any theoretical concepts behind Functional Programming.</p>
+          <p>This short talk is all about explaining what Type classes are, how to use them and how to create them, with strong emphasis on answering the question 'why should I even care?'. We will focus on both on prons and cons, however speaker will probably be a bit biased towards the former.</p>
         div.speaker
           div.speaker-photo
             img(src="images/speakers/szulc.png")
           div.speaker-bio
-            h2 Pawel Szulc
-            a(href="https://twitter.com/rabbitonweb").speaker-link @rabbitonweb
-            p Pawel Szulc is primarily a programmer. Always was and always will be. Experienced professionally in JVM ecosystem, currently having tons of fun with Scala, Erlang, Clojure and Haskell. By day working on (not that) BigData problems with Akka Stream &mp; Apache Spark, by night hacking whatever he finds interesting at that given moment. Humble apprentice of Functional Programming. Runs a blog 
-              a(href="http://www.rabbitonweb.com") rabbitonweb.com
-              | .
-            p Github 
-              a(href="http://github.com/rabbitonweb") github.com/rabbitonweb
-              | .
+            :markdown
+              ## Pawel Szulc
+              [@rabbitonweb](href="https://twitter.com/rabbitonweb")
+
+              Pawel Szulc is primarily a programmer. Always was and always will be. Experienced professionally in JVM ecosystem, currently having tons of fun with Scala, Erlang, Clojure and Haskell. By day working on (not that) BigData problems with Akka Stream &mp; Apache Spark, by night hacking whatever he finds interesting at that given moment. Humble apprentice of Functional Programming.
+
+              Runs a blog [rabbitonweb.com](href="http://www.rabbitonweb.com").
+              
+              Github [github.com/rabbitonweb](href="http://github.com/rabbitonweb").
+
     div.row
       div.time.small-12.medium-2.large-1.columns 9:30
       div.description.small-12.medium-10.large-11.columns

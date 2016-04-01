@@ -2,7 +2,11 @@
   "name": "scalar-conference-website",
   "version": "1.0.0",
   "description": "scalar-conference-website",
-  "dependencies": {},
+  "dependencies": {
+    "html-minifier": "^1.4.0",
+    "markdown-js": "0.0.3",
+    "metamd": "^0.3.0"
+  },
   "devDependencies": {
     "grunt-cli": "~0.1.6",
     "jade": "~0.28.2",
