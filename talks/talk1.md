@@ -3,6 +3,7 @@ speaker_twitter: rabbitonweb
 speaker_github: 
 speaker_website: www.rabbitonweb.com
 speaker_bio: Pawel Szulc is primarily a programmer. Always was and always will be. Experienced professionally in JVM ecosystem, currently having tons of fun with Scala, Erlang, Clojure and Haskell. By day working on (not that) BigData problems with Akka Stream ∓ Apache Spark, by night hacking whatever he finds interesting at that given moment. Humble apprentice of Functional Programming.
+speaker_photo: images/speakers/szulc.png
 talk_title: Having a cake and eating it too. Introduction to Typeclasses
 
 

@@ -3,6 +3,7 @@ speaker_twitter: ValentinKasas
 speaker_github: 
 speaker_website: kanaka.io/blog
 speaker_bio: After having spent half a dozen years writing boilerplatey C++ and Java code, discovering Scala was a bliss. Ever since, I look for every occasion to train my FP muscles, and to share my sheer enthusiasm about Scala.
+speaker_photo: images/speakers/kasas.png
 talk_title: Shapeless ? Easy !
 
 

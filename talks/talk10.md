@@ -3,6 +3,7 @@ speaker_twitter: gosubpl
 speaker_github: gosubpl
 speaker_website:
 speaker_bio: Jan is a Scala & Java developer at GFT Poland. He is very interested in how software works on low detail level and does not find big frameworks appealing. This is the main reason why he loves Scala, a very expressive language that allows one to build the right abstraction quickly without loosing the control on details.
+speaker_photo: images/speakers/pustelnik.png
 talk_title: Cool toolz in the Scalaz and Cats toolboxes
 
 

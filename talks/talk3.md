@@ -4,6 +4,7 @@ speaker_github:
 speaker_website: 
 speaker_bio: I am a software developer living in Berlin, working for Zalando. I am the creator of the specs2 library for software specifications in Scala.
 Scala has has been my gateway drug to functional programming and to many "unknown unknowns". When I manage to go from "unknown unknowns" to "known knowns" I try to spread the word.
+speaker_photo: images/speakers/torreborre.jpg
 talk_title: The Eff monad, one monad to rule them all
 
 

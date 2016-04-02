@@ -79,4 +79,24 @@
     "break": true,
     "data": "Break"
   },
+  {
+    "time": "17:00",
+    "break": false,
+    "data": "talks/talk11.md"
+  },
+  {
+    "time": "17:30",
+    "break": false,
+    "data": "talks/talk12.md"
+  },
+  {
+    "time": "18:00",
+    "break": true,
+    "data": "Ending"
+  },
+  {
+    "time": "18:30",
+    "break": true,
+    "data": "Party!"
+  }
 ]

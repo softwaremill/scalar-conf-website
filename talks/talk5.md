@@ -3,6 +3,7 @@ speaker_twitter: maciejb
 speaker_github: 
 speaker_website: 
 speaker_bio: Maciej Biłas is a software engineer at Adform Research. He spent over 3 years developing production Scala code and many more in the JVM ecosystem. Makes data run in the pipes during the day.
+speaker_photo: images/speakers/bilas.png
 talk_title: akka-cluster-etcd
 
 

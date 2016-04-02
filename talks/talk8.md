@@ -3,6 +3,7 @@ speaker_twitter: MiraLak
 speaker_github: 
 speaker_website:
 speaker_bio: Amira Lakhal is an Agile Java Scala developer at Valtech France. She is passionate about functional languages and Big Data. She is one of the Duchess France leaders where she helps women in IT to became role models.
+speaker_photo: images/speakers/lakhal.jpg
 talk_title: IOT, timeseries and prediction with Android, Cassandra and Spark
 
 

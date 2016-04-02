@@ -3,6 +3,7 @@ speaker_twitter: RomanowskiKr
 speaker_github: romanowski
 speaker_website: typosafe.pl
 speaker_bio: Krzysztof is Scala specialist @ Virtuslab where he has spent endless hours debugging Scala IDE, SBT, IntelliJ or even Scala compiler itself. Author of expression evaluator engine for Scala IDE.
+speaker_photo: images/speakers/romanowski.png
 talk_title: Incremental compiler: taming scalac
 
 

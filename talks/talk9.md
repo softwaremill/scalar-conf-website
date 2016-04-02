@@ -3,6 +3,7 @@ speaker_twitter: darkdimius
 speaker_github: 
 speaker_website:
 speaker_bio: Dmytro Petrashko is a programming languages and algorithms researcher and a doctoral assistant at EPFL. He is currently working on a doctorate as a research assistant in the School of Computer and Communication Sciences at the EPFL in Switzerland, on experimental Dotty compiler for Scala. Previously he was working on ScalaBlitz—macro generated collections for Scala.
+speaker_photo: images/speakers/petrashko.png
 talk_title: Making sense of initialization order in Scala
 
 

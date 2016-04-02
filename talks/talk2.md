@@ -3,6 +3,7 @@ speaker_twitter: sirthias
 speaker_github: 
 speaker_website: 
 speaker_bio: Among many other things Mathias is the original author of spray.io, which was acquired by Typesafe in 2013. As a long-time and active member of the Java and Scala open-source communities he is especially excited about everything performance-, scalability- and web-related.
+speaker_photo: images/speakers/doenitz.jpg
 talk_title: Swave - a fresh Reactive Streams Implementation
 
 
