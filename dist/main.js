@@ -5,7 +5,7 @@ function initialize() {
 
   // Here you can change map zoom
   var mapOptions = {
-    zoom: 13,
+    zoom: 14,
     center: centerLatlng,
     disableDefaultUI: true
   };

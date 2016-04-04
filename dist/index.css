@@ -104,6 +104,10 @@ section.header li.tweet-btn iframe{margin-top:.75rem}
 #sponsors .partners,#sponsors .media-partners,#sponsors .silver-sponsors,#sponsors .just-sponsors,#sponsors .party-sponsors{margin-bottom:1.5rem;text-align:center;}
 #sponsors .partners a,#sponsors .media-partners a,#sponsors .silver-sponsors a,#sponsors .just-sponsors a,#sponsors .party-sponsors a{margin:0 1em 2em}
 .sponsors-slide small{display:block}
+.mug-row .columns,.shirt-row .columns{text-align:center}
+.mug-row img,.shirt-row img{width:100%;margin-bottom:2rem}
+.mug-row img{max-width:194px;margin-right:-30px}
+.shirt-row img{max-width:323px}
 .organizer p{margin-top:1em}
 #sml-logo{margin-bottom:1em}
 .contact-links{margin-bottom:10rem;}
@@ -146,6 +150,29 @@ section.header li.tweet-btn iframe{margin-top:.75rem}
 #hotels-right-section .hotel-info h6 img{margin:0 1px;vertical-align:inherit}
 #hotels-right-section .hotel-info b{color:#004c76;font-weight:600;}
 #hotels-right-section .hotel-info b i{color:#fff}
+.blue-text{color:#114476}
+ol{padding-left:2rem;margin-left:0;}
+ol li{font-size:.875rem;margin-bottom:.875rem}
+ol p{margin-bottom:.875rem;margin-top:.875rem}
+section.souvenirs-page{background:none;padding-top:0}
+section.souvenirs-page.row:nth-child(odd){background:none}
+.souvenirs-page .mug-row img{margin-right:0}
+.souvenirs-page .mug-row p{margin-left:-23px}
+.souvenirs-page .mug-row img,.souvenirs-page .shirt-row img{margin-bottom:1rem}
+.souvenirs-page .mug-row p,.souvenirs-page .shirt-row p{margin-bottom:2rem}
+.souvenirs-page .mug-row p,.souvenirs-page .shirt-row p{font-weight:300}
+.all-caps{text-transform:uppercase;font-size:.75rem;font-weight:400}
+.souvenirs-page h2{color:#002447;font-size:1.25em;font-weight:200;text-transform:uppercase;text-align:center;padding-bottom:1.5rem}
+.souvenirs-page .mug-row,.souvenirs-page .ngos{padding-top:2rem}
+.ngos > .columns{text-align:center}
+.ngo-logo{display:block;text-align:center;margin-bottom:2rem;margin-top:2rem;}
+.ngo-logo img{max-width:170px}
+.ngo-info,.transfer-info{padding:0 1rem;}
+.ngo-info h3,.transfer-info h3{font-size:1.25rem;text-align:center}
+.transfer-info{margin-top:1rem;}
+.transfer-info p{margin:0;}
+.transfer-info p.blue-text{font-size:1rem}
+.thanks{margin:4rem auto}
 #stats > .columns{text-align:center}
 div.video-wrapper{position:relative;padding-bottom:56.25%;padding-top:25px;height:0;margin-bottom:2em;}
 div.video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%}

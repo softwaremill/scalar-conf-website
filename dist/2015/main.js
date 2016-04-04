@@ -8,7 +8,7 @@ function initialize() {
 
 
   var mapOptions = {
-    zoom: 13,
+    zoom: 12,
     center: centerLatlng,
     disableDefaultUI: true
   };
