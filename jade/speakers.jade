@@ -20,17 +20,69 @@ section#agenda.row
           div.description.small-12.medium-10.large-11.columns
             div.talk 
               h1 #{timespan.data.talk_title}
+              //- != is escaping for precompiled html from json
               != timespan.data.talk_description
+
             div.speaker
-              div.speaker-photo
-                img(src= '#{timespan.data.speaker_photo}')
-              div.speaker-bio
-                h2 #{timespan.data.speaker}
-                a(href="https://twitter.com/#{timespan.data.speaker_twitter}").speaker-link @#{timespan.data.speaker_twitter}
-                p #{timespan.data.speaker_bio}
 
+              //- If there are several speaker per talk
+              if Array.isArray(timespan.data.speaker) == true
 
-                //- TODO:
-                //- Check if there are 2 speakers - what to do?
-                //- Check if there is a twitter link
-                //- Check if there are other social networks links - how to show them
+                div.speaker-photo
+                  //- For every speaker create a photo
+                  - for (var x = 0; x < timespan.data.speaker_photo.length; x++)
+                    img(src= '#{timespan.data.speaker_photo[x]}')
+
+                div.speaker-bio
+
+                    h2 
+                      //- Show speakers names
+                      - for (var x = 0; x < timespan.data.speaker.length; x++)
+                        span #{timespan.data.speaker[x]} 
+                        
+                        //- Add ampersand between names
+                        unless x == timespan.data.speaker.length-1
+                          span &amp; 
+
+                    //- Check if speakers have twitters/twitters
+                    if (timespan.data.speaker_twitter != "")
+
+                      //- For every twitter - create link
+                      - for (var x = 0; x < timespan.data.speaker_twitter.length; x++)
+
+                        a(href="https://twitter.com/#{timespan.data.speaker_twitter[x]}").speaker-link @#{timespan.data.speaker_twitter[x]}
+
+                    //- Check if speakers have github/githubs
+                    if (timespan.data.speaker_github != "")
+                      p Gihub: 
+                        - for (var x = 0; x < timespan.data.speaker_github.length; x++)
+                          a(href="https://github.com/#{timespan.data.speaker_github[x]}").speaker-link #{timespan.data.speaker_github[x]}
+
+                    //- Check if speakers have website/websites
+                    if (timespan.data.speaker_website != "")
+                      - for (var x = 0; x < timespan.data.speaker_website.length; x++)
+                        a(href="//#{timespan.data.speaker_website[x]}").speaker-link #{timespan.data.speaker_website[x]}
+
+                    //- If there are several bios, write all of them down
+                    - for (var x = 0; x < timespan.data.speaker_bio.length; x++)
+                      p #{timespan.data.speaker_bio[x]}
+
+              else
+                //- If there is only one speaker per talk
+                div.speaker-photo
+                  img(src= '#{timespan.data.speaker_photo}')
+
+                div.speaker-bio
+                  h2 #{timespan.data.speaker}
+
+                  if (timespan.data.speaker_twitter != "")
+                    a(href="https://twitter.com/#{timespan.data.speaker_twitter}").speaker-link @#{timespan.data.speaker_twitter}
+
+                  if (timespan.data.speaker_github != "")
+                    p Gihub: 
+                      a(href="https://github.com/#{timespan.data.speaker_github}").speaker-link #{timespan.data.speaker_github}
+
+                  if (timespan.data.speaker_website != "")
+                    a(href="//#{timespan.data.speaker_website}").speaker-link #{timespan.data.speaker_website}
+
+                  p #{timespan.data.speaker_bio}
