@@ -62,7 +62,7 @@ This will install grunt command globally and make it available for all your futu
 
 ## 3. Development
 
-**Every time before you start development!**
+**Every time before you start development.**
 
 In console navigate to `scalar-conf-website` folder and run 
 
@@ -77,65 +77,86 @@ This command tells grunt to watch for any changes in folders `jade`, `styl`, `js
 TODO: Set up auto-reload
 
 
-### 3.1. Updating agenda
+### 3.1. Updating conference info
+
+When the new confernce is announced, in `dist` folder collect all `.html`, `.css` and `.js` files as well as `images` and `vendor` folders into the new folder, name new folder with a year (ex. `2016`). 
+
+After that you can start development in `.jade` / `.styl` / '.js'. New `.html`, `.css` and '.js' files will be compiled automatically into 'dist' folder.
+
+To update general data about conference change data in `conf-info.json` file.
+
+```
+  {
+    "day": "16",
+    "month": "April",
+    "month_num": "04",
+    "year": 2016,
+    "city": "Warsaw",
+    "country": "Poland"
+  }
+```
+It will update data on all pages, titles, as well as twitter/facebook buttons.
+
+
+### 3.2. Updating agenda
 
 There are several files responsible for compiling agenda for the website.
 
 - `agenda-timeline.json` contains all the info about talks & breaks times. 
 
-  For breaks (coffee / lunch) `"break":true`.
+    For breaks (coffee / lunch) `"break":true`.
 
-  For talks `"break": false` and `data` field should link to the `talks/talk*.md` file of corresponding talk.
+    For talks `"break": false` and `data` field should link to the `talks/talk*.md` file of corresponding talk.
 
-  ```
-    {
-      "time": "8:50",
-      "break": true,
-      "data": "Welcome"
-    },
-    {
-      "time": "9:00",
-      "break": false,
-      "data": "talks/talk1.md"
-    }
-    ...
-  ```
+    ```
+      {
+        "time": "8:50",
+        "break": true,
+        "data": "Welcome"
+      },
+      {
+        "time": "9:00",
+        "break": false,
+        "data": "talks/talk1.md"
+      },
+      ...
+    ```
 
 - `talks/talk*.md` files for each talk. Files contain metadata about author.
 
-  Any metadata reference (`speaker`, `speaker_twitter`, `speaker_bio`, `talk_title`, etc.) **can not** contain paragraphs.
-  Talk description (body of `.md` file) can contain paragraphs.
+    Any metadata reference (`speaker`, `speaker_twitter`, `speaker_bio`, `talk_title`, etc.) **can not** contain paragraphs.
+    Talk description (body of `.md` file) can contain paragraphs.
 
-  ```
-    speaker: Jan Pustelnik
-    speaker_twitter: gosubpl
-    speaker_github: gosubpl
-    speaker_website:
-    speaker_bio: Jan is a Scala & Java developer ...
-    speaker_photo: images/speakers/pustelnik.png
-    talk_title: Cool toolz in the Scalaz and Cats toolboxes
-
-
-
-    In this talk we intend to show that the two libraries: Scalaz and Cats ...
-  ```
-
-  For talks with **multiple speakers** divide info about speakers with `|`. 
-  There is no restriction of how many speakers the talk can have.
-
-  ```
-    speaker: Marco Borst | Slava Schmidt
-    speaker_twitter: nmcborst | second_speaker_twitter
-    speaker_github:
-    speaker_website: 
-    speaker_bio: Marco Borst is a freelance developer ... | Slava Schmidt is ...
-    speaker_photo: images/speakers/borst.png | images/speakers/schmidt.png
-    talk_title: Contract First, Session Types Later!
+    ```
+      speaker: Jan Pustelnik
+      speaker_twitter: gosubpl
+      speaker_github: gosubpl
+      speaker_website:
+      speaker_bio: Jan is a Scala & Java developer ...
+      speaker_photo: images/speakers/pustelnik.png
+      talk_title: Cool toolz in the Scalaz and Cats toolboxes
 
 
 
-    This talk's about how actors should communicate ...
-  ```
+      In this talk we intend to show that the two libraries: Scalaz and Cats ...
+    ```
+
+    For talks with **multiple speakers** divide info about speakers with `|`. 
+    There is no restriction of how many speakers the talk can have.
+
+    ```
+      speaker: Marco Borst | Slava Schmidt
+      speaker_twitter: nmcborst
+      speaker_github:
+      speaker_website: 
+      speaker_bio: Marco Borst is a freelance developer ... | Slava Schmidt is ...
+      speaker_photo: images/speakers/borst.png | images/speakers/schmidt.png
+      talk_title: Contract First, Session Types Later!
+
+
+
+      This talk's about how actors should communicate ...
+    ```
 
 - `agenda.js` script compiles `agenda-final.json` file, which contains all information about talk with precompiled HTML for talk description. 
 *You don't manually change this file.*
@@ -148,7 +169,7 @@ There are several files responsible for compiling agenda for the website.
 To update agenda, update each talk in `talks` folder. Update `agenda-timeline.json` file, if needed.
 
 
-### 3.2 Updating hotels/venues
+### 3.3 Updating hotels/venues
 
 All information about hotels/venues is in `hotels.json` file.
 
@@ -184,13 +205,13 @@ All information about hotels/venues is in `hotels.json` file.
         "latitude": 52.236786,
         "longitude": 20.998371
       }
-  }
+  },
   ...
 ```
 
 `jade/hotels.jade` is responsible for visual representation of the data received from `hotels.json`.
 
-Sometimes, positing of the map and map zoom need to be adjusted. They can be ajusted in `dist/main.js` file.
+Positing of the map and map zoom can be ajusted in `dist/main.js` file.
 
 ```
   // Center of map, change coordinates, if you want the map to be positioned differently
@@ -228,13 +249,17 @@ Colors/style of map can be changed at the bottom of the same file
         "color": "#2aaac0"
       }
     ]
-  }
+  },
   ...
 ```
 
+#### Overview
+
+To update hotels, update information about hotels in `hotels.json`.
 
 
-### 3.3 Writing new news
+
+### 3.4 Writing new news
 
 Every news post is saved as 'numbered' file (1.jade, 2.jade ... n.jade). To create new news post simply create new numbered file (for example the last one is 3.jade, so you need to create 4.jade file).
 
