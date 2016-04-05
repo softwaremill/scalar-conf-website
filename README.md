@@ -1,30 +1,31 @@
 Scalar Conference Website
 ===================
 
-Scalar - one-day free-to-attend conference about Scala. 
-Held in Warsaw Poland, on April 5, 2014.
+Scalar is one-day free-to-attend conference about Scala. 
+Held in Warsaw Poland, sometime in April since 2014.
 
-Want to become sponsor?
-Contact scalar@scalar-conf.com
+Want to become a sponsor?
+Contact [mailto:scalar@scalar-conf.com](scalar@scalar-conf.com)
 
-Organized by https://softwaremill.com
+Organized by [https://softwaremill.com](softwaremill.com)
+
 
 ## Overview
 
-This website uses [Grunt](http://gruntjs.com/0)+[Jade](http://jade-lang.com/)+[Stylus](http://learnboost.github.io/stylus/)+[foundation](http://foundation.zurb.com/index.html) for faster development.
+Development uses [Grunt](http://gruntjs.com/0)+[Jade](http://jade-lang.com/)+[Stylus](http://learnboost.github.io/stylus/)+[foundation](http://foundation.zurb.com/index.html).
 
 - **Jade** compiles into HTML.
 - **Stylus** compiles into CSS.
-- **Grunt** is used for compiling both jade and stylus into HTML and CSS.
+- **Grunt** is used for compiling both jade, stylus into HTML and CSS and concat js files.
 
-**NOTE: Never update HTML or CSS directly, as updates will be removed next time while compilation.**
+**NOTE: Never update HTML or CSS directly, as updates will be removed during next compilation.**
 
 
 ## Running project for the first time
 
 ### NodeJS
 
-To work on project (update anyhting on website) first you need [Node.js](http://nodejs.org/) to be installed. 
+To work on project (update anything on website) you need [Node.js](http://nodejs.org/) to be installed. 
 To check, if it's installed, run command `node -v` in console. 
 If you see version - than you have it installed. 
 
@@ -39,26 +40,26 @@ In console navigate to `scalar-conf-website` folder and run
   npm install
 ```
 
-This will install all required dependencies for this project.
+This will install all required dependencies for the project.
 
 
 ### GruntJS
 
-There is Getting Started guide for grunt [gruntjs.com/getting-started](http://gruntjs.com/getting-started).
+There is a Getting Started guide for grunt [gruntjs.com/getting-started](http://gruntjs.com/getting-started).
 It is advised to install Grunt.js globally. In order to do that, please run
 
 ```
   npm install -g grunt-cli
 ```
 
-This will install grunt command globally and make it available.
+This will install grunt command globally and make it available for all your future projects.
 
-**NOTE: All described above you need to do only once - when you try to run project for the first time. Any next time you'll have everything installed already, so you just need to proceed to development.**
+**NOTE: All described above you need to do only once - when you run project for the first time.**
 
 
-## Updating news
+## Development
 
-**Every time before you start doing any changes!** 
+**Every time before you start development!** 
 In console navigate to `scalar-conf-website` folder and run 
 
 ```
@@ -67,7 +68,70 @@ In console navigate to `scalar-conf-website` folder and run
 
 This command tells grunt to watch for any changes in forlders `jade`, `styl`, `js` and compile new versions of HTML, CSS, JS into `dist` folder. Leave it running while you change, write or update files.
 
-Now you are ready to change *.jade files.
+*To see the changes you are making - open `dist/index.html` in your browser and reload after every change.*
+TODO: Set up auto-reload
+
+
+## Updating agenda
+
+There are several files responsible for compiling agenda for the website.
+
+- `agenda-timeline.json` contains all the info about talks & breaks times. 
+
+For breaks (coffee/lunch) `"break":true`
+For talks `"break": false` and `data` field should link to the `talk/talk*.md` file of corresponding talk.
+
+```
+  {
+    "time": "8:50",
+    "break": true,
+    "data": "Welcome"
+  },
+  {
+    "time": "9:00",
+    "break": false,
+    "data": "talks/talk1.md"
+  }
+```
+
+- `talks/talk*.md` files for each of talks. Files contain metadata about author.
+
+```
+  speaker: Jan Pustelnik
+  speaker_twitter: gosubpl
+  speaker_github: gosubpl
+  speaker_website:
+  speaker_bio: Jan is a Scala & Java developer ...
+  speaker_photo: images/speakers/pustelnik.png
+  talk_title: Cool toolz in the Scalaz and Cats toolboxes
+
+
+
+  In this talk we intend to show that the two libraries: Scalaz and Cats ...
+```
+
+For talks with multiple speakers divide info about speakers with `|`. 
+There is no restriction of how many speakers the talk can have.
+
+```
+  speaker: Marco Borst | Slava Schmidt
+  speaker_twitter: nmcborst | second_speaker_twitter
+  speaker_github:
+  speaker_website: 
+  speaker_bio: Marco Borst and Slava Schmidt are ...
+  speaker_photo: images/speakers/borst.png | images/speakers/schmidt.png
+  talk_title: Contract First, Session Types Later!
+
+
+
+  This talk's about how actors should communicate ...
+```
+
+- `agenda.js` script that compiles `agenda-final.json` file, that contains all information about talk with precompiled HTML for talk description. 
+You don't manually change this file.
+
+- 'jade/agenda.jade' file is responsible for visiaul implementation of agenda on website.
+
 
 ### Writing new news
 
