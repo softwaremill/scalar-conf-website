@@ -2,15 +2,15 @@ Scalar Conference Website
 ===================
 
 Scalar is one-day free-to-attend conference about Scala. 
-Held in Warsaw Poland, sometime in April since 2014.
+Held in Warsaw Poland, every April since 2014.
 
 Want to become a sponsor?
-Contact [mailto:scalar@scalar-conf.com](scalar@scalar-conf.com)
+Contact [scalar@scalar-conf.com](mailto:scalar@scalar-conf.com)
 
-Organized by [https://softwaremill.com](softwaremill.com)
+Organized by [softwaremill.com](https://softwaremill.com)
 
 
-## Overview
+## 1. Overview
 
 Development uses [Grunt](http://gruntjs.com/0)+[Jade](http://jade-lang.com/)+[Stylus](http://learnboost.github.io/stylus/)+[foundation](http://foundation.zurb.com/index.html).
 
@@ -18,18 +18,20 @@ Development uses [Grunt](http://gruntjs.com/0)+[Jade](http://jade-lang.com/)+[St
 - **Stylus** compiles into CSS.
 - **Grunt** is used for compiling both jade, stylus into HTML and CSS and concat js files.
 
-**NOTE: Never update HTML or CSS directly, as updates will be removed during next compilation.**
+
+**NOTE:** Never update HTML or CSS directly, as updates will be removed during next compilation.
 
 
-## Running project for the first time
+## 2. Running project for the first time
 
 ### NodeJS
 
-To work on project (update anything on website) you need [Node.js](http://nodejs.org/) to be installed. 
+For development you need [Node.js](http://nodejs.org/) to be installed. 
 To check, if it's installed, run command `node -v` in console. 
-If you see version - than you have it installed. 
 
-If not - go to [http://nodejs.org/](nodejs.org) and install it from there.
+If you see a version - you have it installed. 
+
+If not - go to [nodejs.org](http://nodejs.org/) and install it from there.
 
 
 ### Install dependencies
@@ -45,8 +47,8 @@ This will install all required dependencies for the project.
 
 ### GruntJS
 
-There is a Getting Started guide for grunt [gruntjs.com/getting-started](http://gruntjs.com/getting-started).
-It is advised to install Grunt.js globally. In order to do that, please run
+There is a [Getting Started](http://gruntjs.com/getting-started) guide for Grunt.
+It is advised to install Grunt.js globally. In order to do that run
 
 ```
   npm install -g grunt-cli
@@ -54,86 +56,185 @@ It is advised to install Grunt.js globally. In order to do that, please run
 
 This will install grunt command globally and make it available for all your future projects.
 
-**NOTE: All described above you need to do only once - when you run project for the first time.**
+
+**NOTE:** All described above you need to do only once - before you run project for the first time.
 
 
-## Development
+## 3. Development
 
-**Every time before you start development!** 
+**Every time before you start development!**
+
 In console navigate to `scalar-conf-website` folder and run 
 
 ```
   grunt watch
 ```
 
-This command tells grunt to watch for any changes in forlders `jade`, `styl`, `js` and compile new versions of HTML, CSS, JS into `dist` folder. Leave it running while you change, write or update files.
+This command tells grunt to watch for any changes in folders `jade`, `styl`, `js` and compile new versions of HTML, CSS, JS into `dist` folder. Leave it running while you change, write or update files.
 
 *To see the changes you are making - open `dist/index.html` in your browser and reload after every change.*
+
 TODO: Set up auto-reload
 
 
-## Updating agenda
+### 3.1. Updating agenda
 
 There are several files responsible for compiling agenda for the website.
 
 - `agenda-timeline.json` contains all the info about talks & breaks times. 
 
-For breaks (coffee/lunch) `"break":true`
-For talks `"break": false` and `data` field should link to the `talk/talk*.md` file of corresponding talk.
+  For breaks (coffee / lunch) `"break":true`.
+
+  For talks `"break": false` and `data` field should link to the `talks/talk*.md` file of corresponding talk.
+
+  ```
+    {
+      "time": "8:50",
+      "break": true,
+      "data": "Welcome"
+    },
+    {
+      "time": "9:00",
+      "break": false,
+      "data": "talks/talk1.md"
+    }
+    ...
+  ```
+
+- `talks/talk*.md` files for each talk. Files contain metadata about author.
+
+  Any metadata reference (`speaker`, `speaker_twitter`, `speaker_bio`, `talk_title`, etc.) **can not** contain paragraphs.
+  Talk description (body of `.md` file) can contain paragraphs.
+
+  ```
+    speaker: Jan Pustelnik
+    speaker_twitter: gosubpl
+    speaker_github: gosubpl
+    speaker_website:
+    speaker_bio: Jan is a Scala & Java developer ...
+    speaker_photo: images/speakers/pustelnik.png
+    talk_title: Cool toolz in the Scalaz and Cats toolboxes
+
+
+
+    In this talk we intend to show that the two libraries: Scalaz and Cats ...
+  ```
+
+  For talks with **multiple speakers** divide info about speakers with `|`. 
+  There is no restriction of how many speakers the talk can have.
+
+  ```
+    speaker: Marco Borst | Slava Schmidt
+    speaker_twitter: nmcborst | second_speaker_twitter
+    speaker_github:
+    speaker_website: 
+    speaker_bio: Marco Borst is a freelance developer ... | Slava Schmidt is ...
+    speaker_photo: images/speakers/borst.png | images/speakers/schmidt.png
+    talk_title: Contract First, Session Types Later!
+
+
+
+    This talk's about how actors should communicate ...
+  ```
+
+- `agenda.js` script compiles `agenda-final.json` file, which contains all information about talk with precompiled HTML for talk description. 
+*You don't manually change this file.*
+
+- `jade/agenda.jade` file is responsible for visual implementation of agenda on website.
+
+
+#### Overview
+
+To update agenda, update each talk in `talks` folder. Update `agenda-timeline.json` file, if needed.
+
+
+### 3.2 Updating hotels/venues
+
+All information about hotels/venues is in `hotels.json` file.
 
 ```
   {
-    "time": "8:50",
-    "break": true,
-    "data": "Welcome"
+    "venue": true,
+    "title": "Centrum Konferencyjne Muranow",
+    "description": "Conference venue.",
+    "address": "ul. Anielewicza 6",
+    "coordinates": 
+      {
+        "latitude": 52.249499,
+        "longitude": 20.993205
+      }
+  },
+  { 
+    "venue": false,
+    "title": "Radisson Blu Centrum",
+    "website": "https://www.radissonblu.com/en/hotel-warsaw",
+    "stars": 5,
+    "description": "Very close to the venue of the conference, planty of luxury in a very good price.",
+    "price":
+      {
+        "single": 312.12,
+        "double": 376.92
+      },
+    "included": "8% VAT, breakfast and Internet included",
+    "address": "ul. Grzybowska 24",
+    "email": "reservations.warsaw@radissonblu.com",
+    "promo_code": "scalar 2016",
+    "coordinates": 
+      {
+        "latitude": 52.236786,
+        "longitude": 20.998371
+      }
+  }
+  ...
+```
+
+`jade/hotels.jade` is responsible for visual representation of the data received from `hotels.json`.
+
+Sometimes, positing of the map and map zoom need to be adjusted. They can be ajusted in `dist/main.js` file.
+
+```
+  // Center of map, change coordinates, if you want the map to be positioned differently
+  var centerLatlng = new google.maps.LatLng(52.221421, 21.004352);
+
+
+  // Here you can change map zoom
+  var mapOptions = {
+    zoom: 14,
+    center: centerLatlng,
+    disableDefaultUI: true
+  };
+  ...
+```
+
+Colors/style of map can be changed at the bottom of the same file
+
+```
+  // MAP STYLES - makes map blue
+  var styles = [
+  {
+    "featureType": "administrative",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#114476"
+      }
+    ]
   },
   {
-    "time": "9:00",
-    "break": false,
-    "data": "talks/talk1.md"
+    "featureType": "administrative",
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#2aaac0"
+      }
+    ]
   }
+  ...
 ```
 
-- `talks/talk*.md` files for each of talks. Files contain metadata about author.
-
-```
-  speaker: Jan Pustelnik
-  speaker_twitter: gosubpl
-  speaker_github: gosubpl
-  speaker_website:
-  speaker_bio: Jan is a Scala & Java developer ...
-  speaker_photo: images/speakers/pustelnik.png
-  talk_title: Cool toolz in the Scalaz and Cats toolboxes
 
 
-
-  In this talk we intend to show that the two libraries: Scalaz and Cats ...
-```
-
-For talks with multiple speakers divide info about speakers with `|`. 
-There is no restriction of how many speakers the talk can have.
-
-```
-  speaker: Marco Borst | Slava Schmidt
-  speaker_twitter: nmcborst | second_speaker_twitter
-  speaker_github:
-  speaker_website: 
-  speaker_bio: Marco Borst and Slava Schmidt are ...
-  speaker_photo: images/speakers/borst.png | images/speakers/schmidt.png
-  talk_title: Contract First, Session Types Later!
-
-
-
-  This talk's about how actors should communicate ...
-```
-
-- `agenda.js` script that compiles `agenda-final.json` file, that contains all information about talk with precompiled HTML for talk description. 
-You don't manually change this file.
-
-- 'jade/agenda.jade' file is responsible for visiaul implementation of agenda on website.
-
-
-### Writing new news
+### 3.3 Writing new news
 
 Every news post is saved as 'numbered' file (1.jade, 2.jade ... n.jade). To create new news post simply create new numbered file (for example the last one is 3.jade, so you need to create 4.jade file).
 
