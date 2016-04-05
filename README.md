@@ -24,7 +24,7 @@ Development uses [Grunt](http://gruntjs.com/0)+[Jade](http://jade-lang.com/)+[St
 
 ## 2. Running project for the first time
 
-### NodeJS
+### 2.1 NodeJS
 
 For development you need [Node.js](http://nodejs.org/) to be installed. 
 To check, if it's installed, run command `node -v` in console. 
@@ -34,7 +34,7 @@ If you see a version - you have it installed.
 If not - go to [nodejs.org](http://nodejs.org/) and install it from there.
 
 
-### Install dependencies
+### 2.2 Install dependencies
 
 In console navigate to `scalar-conf-website` folder and run 
 
@@ -45,7 +45,7 @@ In console navigate to `scalar-conf-website` folder and run
 This will install all required dependencies for the project.
 
 
-### GruntJS
+### 2.3 GruntJS
 
 There is a [Getting Started](http://gruntjs.com/getting-started) guide for Grunt.
 It is advised to install Grunt.js globally. In order to do that run
