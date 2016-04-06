@@ -81,7 +81,7 @@ TODO: Set up auto-reload
 
 When the new confernce is announced, in `dist` folder collect all `.html`, `.css` and `.js` files as well as `images` and `vendor` folders into the new folder, name new folder with a year (ex. `2016`). 
 
-After that you can start development in `.jade` / `.styl` / '.js'. New `.html`, `.css` and '.js' files will be compiled automatically into 'dist' folder.
+After that you can start development in `.jade`, `.styl` or `.js`. New `.html`, `.css` and `.js` files will be compiled automatically into `dist` folder.
 
 To update general data about conference change data in `conf-info.json` file.
 
@@ -142,7 +142,7 @@ There are several files responsible for compiling agenda for the website.
     ```
 
     For talks with **multiple speakers** divide info about speakers with `|`. 
-    There is no restriction of how many speakers the talk can have.
+    There is no restriction on how many speakers the talk can have.
 
     ```
       speaker: Marco Borst | Slava Schmidt
@@ -211,7 +211,7 @@ All information about hotels/venues is in `hotels.json` file.
 
 `jade/hotels.jade` is responsible for visual representation of the data received from `hotels.json`.
 
-Positing of the map and map zoom can be ajusted in `dist/main.js` file.
+Zoom and positioning of the map can be ajusted in `dist/main.js` file.
 
 ```
   // Center of map, change coordinates, if you want the map to be positioned differently
@@ -227,7 +227,7 @@ Positing of the map and map zoom can be ajusted in `dist/main.js` file.
   ...
 ```
 
-Colors/style of map can be changed at the bottom of the same file
+Colors/style of the map can be changed at the bottom of the same file.
 
 ```
   // MAP STYLES - makes map blue
@@ -255,7 +255,7 @@ Colors/style of map can be changed at the bottom of the same file
 
 #### Overview
 
-To update hotels, update information about hotels in `hotels.json`.
+To update hotels/venue, update information in `hotels.json`.
 
 
 
