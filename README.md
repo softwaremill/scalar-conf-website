@@ -24,7 +24,7 @@ Development uses [Grunt](http://gruntjs.com/0)+[Jade](http://jade-lang.com/)+[St
 
 ## 2. Running project for the first time
 
-### 2.1 NodeJS
+#### 2.1 NodeJS
 
 For development you need [Node.js](http://nodejs.org/) to be installed. 
 To check, if it's installed, run command `node -v` in console. 
@@ -34,7 +34,7 @@ If you see a version - you have it installed.
 If not - go to [nodejs.org](http://nodejs.org/) and install it from there.
 
 
-### 2.2 Install dependencies
+#### 2.2 Install dependencies
 
 In console navigate to `scalar-conf-website` folder and run 
 
@@ -45,7 +45,7 @@ In console navigate to `scalar-conf-website` folder and run
 This will install all required dependencies for the project.
 
 
-### 2.3 GruntJS
+#### 2.3 GruntJS
 
 There is a [Getting Started](http://gruntjs.com/getting-started) guide for Grunt.
 It is advised to install Grunt.js globally. In order to do that run
@@ -77,7 +77,7 @@ This command tells grunt to watch for any changes in folders `jade`, `styl`, `js
 TODO: Set up auto-reload
 
 
-### 3.1. Updating conference info
+#### 3.1. Updating conference info
 
 When the new confernce is announced, in `dist` folder collect all `.html`, `.css` and `.js` files as well as `images` and `vendor` folders into the new folder, name new folder with a year (ex. `2016`). 
 
@@ -98,7 +98,7 @@ To update general data about conference change data in `conf-info.json` file.
 It will update data on all pages, titles, as well as twitter/facebook buttons.
 
 
-### 3.2. Updating agenda
+#### 3.2. Updating agenda
 
 There are several files responsible for compiling agenda for the website.
 
@@ -164,12 +164,12 @@ There are several files responsible for compiling agenda for the website.
 - `jade/agenda.jade` file is responsible for visual implementation of agenda on website.
 
 
-#### Overview
+##### Overview
 
 To update agenda, update each talk in `talks` folder. Update `agenda-timeline.json` file, if needed.
 
 
-### 3.3 Updating hotels/venues
+#### 3.3 Updating hotels/venues
 
 All information about hotels/venues is in `hotels.json` file.
 
@@ -253,13 +253,13 @@ Colors/style of the map can be changed at the bottom of the same file.
   ...
 ```
 
-#### Overview
+##### Overview
 
 To update hotels/venue, update information in `hotels.json`.
 
 
 
-### 3.4 Writing new news
+#### 3.4 Writing new news
 
 Every news post is saved as 'numbered' file (1.jade, 2.jade ... n.jade). To create new news post simply create new numbered file (for example the last one is 3.jade, so you need to create 4.jade file).
 
