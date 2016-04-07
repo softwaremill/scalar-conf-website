@@ -1,0 +1,104 @@
+<!DOCTYPE html><html lang="en" itemscope itemtype="http://schema.org/EducationEvent"><head><title>Scalar - Scala Conference in Central Europe - 16th of April 2016, Warsaw, Poland.</title><link rel="shortcut icon" href="images/favicon.ico"><link href="http://fonts.googleapis.com/css?family=Exo+2:400,200,500,600,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css"><link rel="stylesheet" href="index.css" media="Screen"><meta itemprop="name" content="Scalar"><meta name="viewport" content="initial-scale=1.0, width=device-width"><meta charset="utf-8"><script src="vendor/modernizr.js"></script><script src="app.js"></script></head><body id="top"><section class="header row"><div class="small-12 medium-12 large-12 columns"><nav data-topbar class="top-bar"><ul class="title-area"><li class="name"><h1><a href="http://scalar-conf.com/"><img src="images/scalar-logo.svg"></a></h1></li><li class="toggle-topbar menu-icon"><a href=""></a></li></ul><section class="top-bar-section"><ul class="right"><li><a data-scroll href="http://www.scalar-conf.com#news">News</a></li><li><a data-scroll href="http://www.scalar-conf.com#blog">Blog</a></li><li><a data-scroll href="http://www.scalar-conf.com#agenda">Agenda</a></li><li><a data-scroll href="http://www.scalar-conf.com#venue">Venue</a></li><li><a data-scroll href="http://www.scalar-conf.com#souvenirs">Souvenirs</a></li><li><a data-scroll href="http://www.scalar-conf.com#organizer">Team</a></li><li><a data-scroll href="http://www.scalar-conf.com/#sponsors">Sponsors</a></li><li><a href="http://scalar-conf.com/2015/">2015</a></li><li><a href="http://scalar-conf.com/2014/">2014</a></li><li class="tweet-btn"><a href="https://twitter.com/share" data-url="http://scalar-conf.com/" data-text="Check out #Scala @scalarconf on 16th April 2016 in Warsaw, Poland!" data-hashtags="scalarconf" class="twitter-share-button">Tweet</a></li></ul></section></nav></div></section><section class="news-posts row"><header class="section-title"><h1>Blog</h1></header><div class="small-10 medium-10 medium-centered large-10 large-centered columns"><div id="algebraic-data-types-in-a-hybrid-paradigm-language" class="news-post"><header class="post-header"><h1>Algebraic data types in a hybrid paradigm language</h1></header><time datetime="2016-04-06" class="post-date">April 6, 2016</time><div class="post-summary"><p>Scala, being a hybrid language, provides programmers with a flexibility to choose the best tool for their job. Whether one wants a quick and dirty imperative hack or a super-smart clean functional solution to his problem, there is a choice. This is arguably one of main reasons behind Scala&#39;s increasing popularity. It feels light years ahead of Java on one hand and so much more flexible and convenient than Haskell on the other. Add JVM to the equation and it seems like the perfect blend of different programming styles.
+​
+There is one gotcha, though. A consequence of the balance between functional and imperative programming in Scala is the somewhat obscured nature of several functional programming concepts that feel perfectly natural and clear when approached from a strictly functional angle, but when used in Scala, they kind of loose their charm and their advantages become less apparent.
+​
+One of such concepts is algebraic data types (ADT). Let&#39;s take a closer look at what they are, at their features, and how they are realized in Scala.
+​</p>
+<h2 id="algebraic-data-types">Algebraic data types</h2>
+<p>Simply put, algebraic data type is a type composed from other types with relations of sum and product. Product types are tuples or records, <code>A B</code>, that is types that are a collection of others. Sum types are alternatives, <code>A | B</code>, with boolean being a good example - it takes two possible values of True or False, but not at the same time. Think enums.
+​
+The key here is the ability to express very complex types with just these two simple combinations. With composition being a core feature of ADT, it is also decomposition that plays a key role. Decomposition allows compilers to extract components of ADT and apply pattern matching to analyze their building blocks.
+​
+Methods, access modifiers and all other features known from the object oriented world are out of scope of algebraic data types.
+​</p>
+<h2 id="an-example">An example</h2>
+<p>A classic example of ADT is a linked list, which facilitates sum and product. Please consider the following implementation of it in Scala:
+​</p>
+<div class="highlight"><pre><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">AdtList</span><span class="o">[</span><span class="kt">+A</span><span class="o">]</span>
+<span class="nc">case</span> <span class="k">object</span> <span class="nc">Nil</span> <span class="k">extends</span> <span class="nc">AdtList</span><span class="o">[</span><span class="kt">Nothing</span><span class="o">]</span>
+<span class="k">case</span> <span class="k">class</span> <span class="nc">El</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">value</span><span class="k">:</span> <span class="kt">A</span><span class="o">,</span> <span class="n">tail</span><span class="k">:</span> <span class="kt">AdtList</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span> <span class="k">extends</span> <span class="nc">AdtList</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
+</pre></div>
+<p>​
+What the above is trying to express is the fact that <code>AdtList</code> is an alternative (sum) of  <code>El</code> representing a list element with a (product) reference to the rest of list elements and <code>Nil</code> representing the end of a list. 
+​
+But having the above description of ADT in mind, the Scala implementation provided is somehow confusing. There is much more of classic object oriented concepts here than any other. Please compare with how this could be declared in Haskell:
+​</p>
+<div class="highlight"><pre><span class="n">data</span> <span class="nc">AdtList</span> <span class="n">a</span> <span class="k">=</span> <span class="nc">Nil</span> <span class="o">|</span> <span class="nc">El</span> <span class="n">a</span> <span class="o">(</span><span class="nc">AdtList</span> <span class="n">a</span><span class="o">)</span>
+</pre></div>
+<p>​
+Much simpler. And even if you are not familiar with Haskell, this should be rather easy to grasp. Most importantly, <code>|</code> is used to express an alternative of <code>Nil</code> and product of <code>El</code> and the rest of the list.
+​
+Let&#39;s go back to the above Scala implementation and the rationale behind it. 
+​</p>
+<h4 id="sealed-traits">Sealed traits</h4>
+<p>One of the key features of ADT is the ability to reason on the structure of it based solely on their definition. It is not possible with classes, because of inheritance. One never knows what inherits its type.
+This is where the <code>sealed</code> keyword becomes useful. It allows for a type to be extended by types declared in the same file only. The consequence of this is that the Scala compiler knows all possible types that are directly based on the type being extended. In our case, <code>Nil</code> and <code>El</code> are the only two types that can directly inherit from <code>AdtList</code>. When used with pattern matching, it allows the compiler to find out if the match/case clause handles all possible incarnations of a type. In the following example:
+​</p>
+<div class="highlight"><pre><span class="k">val</span> <span class="n">list</span><span class="k">:</span> <span class="kt">AdtList</span><span class="o">[</span><span class="k">_</span><span class="o">]</span> <span class="k">=</span> <span class="nc">El</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="nc">El</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="nc">El</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="nc">Nil</span><span class="o">)))</span>
+<span class="n">list</span> <span class="k">match</span> <span class="o">{</span>
+  <span class="k">case</span> <span class="nc">Nil</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="s">&quot;Nil&quot;</span><span class="o">)</span>
+<span class="o">}</span>
+</pre></div>
+<p>, thanks to the <code>sealed</code> keyword, the compiler is able to raise a warning:
+​</p>
+<div class="highlight"><pre>Warning:(20, 5) match may not be exhaustive.
+It would fail on the following input: El(_, _)
+ list match {
+ ^
+</pre></div>
+<p>So the sealed keyword is a very convenient language feature to use in the case described, but it is worth noting that, in Scala, it has nothing to do with ADT per se. It is needed just because the object-oriented type system is used to model ADT.
+​</p>
+<h4 id="case-classes-for-sum-types">Case classes for sum types</h4>
+<p>​
+<code>Nil</code> and <code>El</code> extending <code>AdtList</code> are used to model the sum (variant, alternative) nature of the <code>AdtList</code>. 
+​
+The case keyword is used to enable auto-generated implementation of the <code>unapply</code> method that allows for decomposition with pattern matching. 
+​
+<code>Nil</code> is an <code>object</code>, because it has no type parameters and can be made a singleton (an OO-pattern, by the way) for convenience. It extends <code>AdtList[Nothing]</code> as this enables <code>Nil</code> to be a member of a list of any type (<code>Nothing</code> is a subtype of every other type in Scala).
+​
+<code>El</code> is on the product type side of things as it consists of two elements. <code>El</code> is also recursive, as its second element is of type <code>AdtList</code> - one of very important features of ADT.
+​
+At this point, we are 100% deep down into the object oriented world. We have already used inheritance and plain old Java (behind the scenes) objects to model ADT, which is (or at least used to be) very much on the functional side of the programming world. In consequence, what one is tempted to think is that ADT is a kind of a design pattern used to model some specific data structures looking like enums on steroids due to pattern matching.
+​
+It is going to get even worse, when we start to use our new AdtList and try to introduce some convenience extensions.
+​</p>
+<h2 id="methods-in-algebraic-data-types">Methods in algebraic data types</h2>
+<p>As already stated, ADTs do not feature methods (it simply is out of scope), but there is nothing that stops us from doing this in Scala. Please recall the above example of creation of <code>AdtList</code>:
+​</p>
+<div class="highlight"><pre><span class="k">val</span> <span class="n">list</span><span class="k">:</span> <span class="kt">AdtList</span><span class="o">[</span><span class="k">_</span><span class="o">]</span> <span class="k">=</span> <span class="nc">El</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="nc">El</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="nc">El</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="nc">Nil</span><span class="o">)))</span>
+</pre></div>
+<p>​
+This is not a very readable way to construct a list. The obvious solution here is introduction of infix operator, say <code>::</code>, to get right-associativity with a colon. The most natural place for it to reside is the <code>AdtList</code> trait, which becomes:
+​</p>
+<div class="highlight"><pre><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">AdtList</span><span class="o">[</span><span class="kt">+A</span><span class="o">]</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="o">::[</span><span class="kt">B</span> <span class="k">&gt;:</span> <span class="kt">A</span><span class="o">](</span><span class="n">el</span><span class="k">:</span> <span class="kt">B</span><span class="o">)</span> <span class="k">=</span> <span class="nc">El</span><span class="o">(</span><span class="n">el</span><span class="o">,</span> <span class="k">this</span><span class="o">)</span>
+<span class="o">}</span>
+</pre></div>
+<p>The construction of <code>AdtList</code> can now be vastly simplified:</p>
+<div class="highlight"><pre><span class="k">val</span> <span class="n">list</span> <span class="k">=</span> <span class="mi">1</span> <span class="o">::</span> <span class="mi">2</span> <span class="o">::</span> <span class="mi">3</span> <span class="o">::</span> <span class="nc">Nil</span>
+</pre></div>
+<p>Arguably, it takes us even further from the original ADT concept. Readability is much better, but there is code that exists only to improve the style.
+​</p>
+<h2 id="why-bother-">Why bother?</h2>
+<p>If there is no chance for a clean implementation of ADTs in Scala, at least without macros, why bother?
+​
+There are a few reasons. Pattern matching itself is probably the most praised Scala feature by Java developers and these are algebraic data types that brought it to the language. 
+​
+What follows it, is the ability to extend handling of ADTs without actually modifying type definitions as methods that operate on ADT are separate from it and there is a known set of variants of ADT. In an object oriented approach, it requires introduction of a new virtual method and possibly modification of all inherited classes.
+​
+Also, pattern matching effectively allows for multiple dispatch, which in case of object oriented design is achieved with the notorious visitor pattern, infamous for significantly reducing code readability.
+​
+Obviously, there are cases where an object oriented approach is a much better choice. It is much easier to add a new type variant by inheriting a class and implementing a few virtual methods than extending ADT, as this requires modification of all match/case functions.
+​</p>
+<h2 id="wrapping-up">Wrapping up</h2>
+<p>​
+The blend of object oriented and functional features in Scala is what makes people want to incorporate it in their projects. It allows for Java developers to gradually add functional programming skills to their portfolio without impeding their performance on the way and dumping all the experience they earned on Java assignments. The thing that may be an obstacle in functional paradigm adoption, though, may be this very feature of Scala - being an approachable hybrid.
+​
+Features like ADT, type classes, applicative functors and monads are somehow tricky to achieve with Scala. This is why frameworks like Scalaz and Cats pop up. This is getting much better, with Cats especially, but for the price of using macros, which raises fears of Scala becoming the C++ of the JVM.
+​
+This is not necessarily a bad thing, but it is just worth keeping in mind, that, as in case of flatMap for monads, there is much more to ADTs than just addition of unapply.</p>
+<div class="social"><a href="https://twitter.com/share" data-url="http://scalar-conf.com/blog.html#algebraic-data-types-in-a-hybrid-paradigm-language" data-text="Algebraic data types in a hybrid paradigm language" data-via="scalarconf" data-related="scalarconf" data-count="none" data-hashtags="scalarconf" class="twitter-share-button">Tweet</a><div data-href="http://scalar-conf.com/blog.html#algebraic-data-types-in-a-hybrid-paradigm-language" data-width="225" data-layout="button" data-action="like" data-show-faces="false" data-share="false" class="fb-like"></div></div></div></div></div></section><section id="organizer" class="organizer row"><a data-scroll href="#top" class="to-top"><img src="images/icons/to-top.svg"><br>to top</a><div class="small-12 medium-8 medium-centered large-8 large-centered columns"><header class="section-title"><h1>Team</h1><small>Organized by <a href="https://softwaremill.com/">Softwaremill.com</a></small></header></div><div class="row"><div class="team-table"><div class="team-member"><img src="images/team/ludwikowski.jpg"><h2>Andrzej Ludwikowski</h2></div><div class="team-member"><img src="images/team/chmielarz.jpg"><h2>Michał Chmielarz</h2></div><div class="team-member"><img src="images/team/kos.jpg"><h2>Daniel Kos</h2></div><div class="team-member"><img src="images/team/grajek.jpg"><h2>Krzysztof Grajek</h2></div><div class="team-member"><img src="images/team/kunicki.jpg"><h2>Jacek Kunicki</h2></div><div class="team-member"><img src="images/team/zborowski.jpg"><h2>Jan Zborowski</h2></div><div class="team-member"><img src="images/team/warski.jpg"><h2>Adam Warski</h2></div><div class="team-member"><img src="images/team/wojciechowska.jpg"><h2>Małgorzata Wojciechowska</h2></div><div class="team-member"><img src="images/team/gorska.jpg"><h2>Sylwia Górska</h2></div><div class="team-member"><img src="images/team/no-img.jpg"><h2>Bartek Andrzejczak</h2></div><div class="team-member"><img src="images/team/zuchowski.jpg"><h2>Łukasz Żuchowski</h2></div><div class="team-member"><img src="images/team/bohdan.jpg"><h2>Katarzyna Leszczynśka-Bohdan</h2></div></div></div></section><div class="contact-links row"><div class="small-12 medium-4 large-4 columns"><a href="mailto:scalar@scalar-conf.com"><img src="images/icons/email.svg">&nbsp;scalar@scalar-conf.com</a></div><div class="small-12 medium-4 large-4 columns"><a href="https://twitter.com/scalarconf"><img src="images/icons/twitter.svg">&nbsp;@scalarconf</a></div><div class="small-12 medium-4 large-4 columns"><a href="https://www.facebook.com/scalarconf"><img src="images/icons/facebook.svg">&nbsp;facebook.com/<wbr></wbr>scalarconf</a></div><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script><div id="fb-root"></div><script>(function(d, s, id){var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script></div><script src="vendor/jquery.js"></script><script src="vendor/fastclick.js"></script><script src="foundation.min.js"></script><script src="vendor/smooth-scroll.js"></script><script>$(document).foundation();</script><script>smoothScroll.init({
+  speed: 800,
+  easing: 'easeInOutCubic',
+  updateURL: false
+});</script></body></html>

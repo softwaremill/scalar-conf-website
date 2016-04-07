@@ -1,5 +1,19 @@
 module.exports = function(grunt) {
 
+  var marked = require('marked');
+  var renderer = new marked.Renderer();
+  var execSync = require('child_process').execSync;
+  renderer.code = function(code, lexer) {
+    if(!lexer) lexer = 'text';
+    var result = execSync("pygmentize -l " + lexer + " -f html", { input: code });
+    return result.toString();
+  }
+
+  marked.setOptions({
+    renderer: renderer
+  });
+    
+
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -14,8 +28,12 @@ module.exports = function(grunt) {
         files: {
           'dist/index.html': ['jade/index.jade'],
           'dist/news.html': ['jade/news.jade'],
+          'dist/blog.html': ['jade/blog.jade'],
           'dist/hotels.html': ['jade/hotels.jade'],
           'dist/support.html': ['jade/support.jade']
+        },
+        filters: {
+          markdown: marked
         }
       }
     },
@@ -53,7 +71,7 @@ module.exports = function(grunt) {
 
     watch: {
       src: {
-        files: ['jade/*.jade', 'jade/news-posts/*.jade', 'styl/*.styl', 'js/*.js'],
+        files: ['jade/*.jade', 'jade/news-posts/*.jade', 'jade/blog-posts/*.jade', 'styl/*.styl', 'js/*.js'],
         tasks: ['build']
       }
     }

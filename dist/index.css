@@ -186,7 +186,7 @@ div.video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%}
 .image-note{position:absolute;bottom:0;right:0}
 }@media only screen and (min-width: 40.063em){.top-bar-section ul{margin-top:.7em;}
 .top-bar-section ul li>a{color:#155380;font-size:1em;font-weight:600;-webkit-transition:color 250ms;-moz-transition:color 250ms;-o-transition:color 250ms;-ms-transition:color 250ms;transition:color 250ms}
-.top-bar-section li:not(.has-form) a:not(.button){background:transparent;padding:0 5px;}
+.top-bar-section li:not(.has-form) a:not(.button){background:transparent;padding:0 4px;}
 .top-bar-section li:not(.has-form) a:not(.button):hover{background:transparent}
 section.row.hero{padding-top:6.125em;}
 section.row.hero h1{font-size:2.25em}
@@ -205,7 +205,71 @@ section.row.hero .conference-data time,section.row.hero .conference-data span{di
 .top-bar .name h1 a img{max-height:none}
 .top-bar-section ul{margin-top:3em}
 .team-table [class*="column"]+[class*="column"]:last-child{float:left}
-.top-bar-section li:not(.has-form) a:not(.button){padding:0 15px}
+.top-bar-section li:not(.has-form) a:not(.button){padding:0 12px}
 #hotels section.header{height:109px}
 #hotels-right-section{padding:130px 2em 2em}
-}
+}.news-posts code{color:#339}
+.news-posts .highlight{background:#2c2c2c;margin-bottom:16px;padding:16px;-moz-border-radius:5px;-webkit-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;overflow:auto}
+.news-posts .highlight .hll{background-color:#ffc}
+.news-posts .highlight{background:#f8f8f8 !important}
+.news-posts .highlight .c{color:#408080;font-style:italic}
+.news-posts .highlight .err{border:1px solid #f00}
+.news-posts .highlight .k{color:#008000;font-weight:bold}
+.news-posts .highlight .o{color:#666}
+.news-posts .highlight .cm{color:#408080;font-style:italic}
+.news-posts .highlight .cp{color:#bc7a00}
+.news-posts .highlight .c1{color:#408080;font-style:italic}
+.news-posts .highlight .cs{color:#408080;font-style:italic}
+.news-posts .highlight .gd{color:#a00000}
+.news-posts .highlight .ge{font-style:italic}
+.news-posts .highlight .gr{color:#f00}
+.news-posts .highlight .gh{color:#000080;font-weight:bold}
+.news-posts .highlight .gi{color:#00a000}
+.news-posts .highlight .go{color:#888}
+.news-posts .highlight .gp{color:#000080;font-weight:bold}
+.news-posts .highlight .gs{font-weight:bold}
+.news-posts .highlight .gu{color:#800080;font-weight:bold}
+.news-posts .highlight .gt{color:#04d}
+.news-posts .highlight .kc{color:#008000;font-weight:bold}
+.news-posts .highlight .kd{color:#008000;font-weight:bold}
+.news-posts .highlight .kn{color:#008000;font-weight:bold}
+.news-posts .highlight .kp{color:#008000}
+.news-posts .highlight .kr{color:#008000;font-weight:bold}
+.news-posts .highlight .kt{color:#b00040}
+.news-posts .highlight .m{color:#666}
+.news-posts .highlight .s{color:#ba2121}
+.news-posts .highlight .na{color:#7d9029}
+.news-posts .highlight .nb{color:#008000}
+.news-posts .highlight .nc{color:#00f;font-weight:bold}
+.news-posts .highlight .no{color:#800}
+.news-posts .highlight .nd{color:#a2f}
+.news-posts .highlight .ni{color:#999;font-weight:bold}
+.news-posts .highlight .ne{color:#d2413a;font-weight:bold}
+.news-posts .highlight .nf{color:#00f}
+.news-posts .highlight .nl{color:#a0a000}
+.news-posts .highlight .nn{color:#00f;font-weight:bold}
+.news-posts .highlight .nt{color:#008000;font-weight:bold}
+.news-posts .highlight .nv{color:#19177c}
+.news-posts .highlight .ow{color:#a2f;font-weight:bold}
+.news-posts .highlight .w{color:#bbb}
+.news-posts .highlight .mb{color:#666}
+.news-posts .highlight .mf{color:#666}
+.news-posts .highlight .mh{color:#666}
+.news-posts .highlight .mi{color:#666}
+.news-posts .highlight .mo{color:#666}
+.news-posts .highlight .sb{color:#ba2121}
+.news-posts .highlight .sc{color:#ba2121}
+.news-posts .highlight .sd{color:#ba2121;font-style:italic}
+.news-posts .highlight .s2{color:#ba2121}
+.news-posts .highlight .se{color:#b62;font-weight:bold}
+.news-posts .highlight .sh{color:#ba2121}
+.news-posts .highlight .si{color:#b68;font-weight:bold}
+.news-posts .highlight .sx{color:#008000}
+.news-posts .highlight .sr{color:#b68}
+.news-posts .highlight .s1{color:#ba2121}
+.news-posts .highlight .ss{color:#19177c}
+.news-posts .highlight .bp{color:#008000}
+.news-posts .highlight .vc{color:#19177c}
+.news-posts .highlight .vg{color:#19177c}
+.news-posts .highlight .vi{color:#19177c}
+.news-posts .highlight .il{color:#666}
