@@ -208,7 +208,8 @@ section.row.hero .conference-data time,section.row.hero .conference-data span{di
 .top-bar-section li:not(.has-form) a:not(.button){padding:0 12px}
 #hotels section.header{height:109px}
 #hotels-right-section{padding:130px 2em 2em}
-}.news-posts code{color:#339}
+}.news-posts .post-summary{margin-top:10px}
+.news-posts code{color:#339}
 .news-posts .highlight{background:#2c2c2c;margin-bottom:16px;padding:16px;-moz-border-radius:5px;-webkit-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;overflow:auto}
 .news-posts .highlight .hll{background-color:#ffc}
 .news-posts .highlight{background:#f8f8f8 !important}
