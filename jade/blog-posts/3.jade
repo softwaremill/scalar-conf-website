@@ -1,0 +1,301 @@
+- var title = 'EasyDI – Who wants some cake?'
+- var permalink = 'easydi-who-wants-some-cake'
+- var date = 'April 11, 2016'
+- var dateISO = '2016-04-11'
+
+- var link = 'http://scalar-conf.com/blog.html#'+ permalink
+
++article(title, date, dateISO, permalink)
+  :markdown
+
+    **Guest post by [Zalando](https://tech.zalando.com/)**
+
+    Scala developers have lots of options when it comes to doing [Dependency Injection](https://en.wikipedia.org/wiki/Dependency_injection) (or DI). The usual Java libraries can be used, like [Spring](http://docs.spring.io/autorepo/docs/spring/3.2.x/spring-framework-reference/html/beans.html), or [Guice](https://github.com/google/guice) for Play developers.
+
+    But Scala being Scala, there are other options. You can use libraries leveraging macros, like [MacWire](https://github.com/adamw/macwire), or use the Scala type system and the infamous [“Cake pattern”](http://jonasboner.com/real-world-scala-dependency-injection-di) and its [many variations](http://www.warski.org/blog/2010/12/di-in-scala-cake-pattern) using traits, with or without self-types.
+
+    Unfortunately, many teams have been burnt by the Cake Pattern and are looking for other solutions, often returning to more or less involved DI libraries.
+
+    I want to take a step back and propose another approach for DI that is both simple and flexible, using basic Scala features and … a special library, which is not a DI library at all!
+
+    Back to requirements
+    --------------------
+
+    What are the basic things we can expect from DI?
+
+    * A way to define components
+    * A way to configure them from files
+    * The possibility to substitute some of them for testing, regardless of their nesting
+    * The possibility to declare some of them as singletons
+
+    Can we do that with some simple Scala? With just case classes and traits used as interfaces? Or to put it differently: What’s wrong with constructor injection again?
+
+    Define components
+    -----------------
+
+    With case classes and constructor injection we can declare our components like this:
+
+    ```scala
+    case class ZalandoNotifier(config: NotifierConfig, email: EmailService) {
+
+      // we only send an email for orders having a high level of
+      // priority as defined in the config file
+      def orderReady(order: Order): Future[Status] =
+        if (config.sendFor(order.getPriority)) email.send(order.emailAddress, "Your order is ready!")
+        else Future.delay(Status.ok) // scalaz Future
+
+    }
+
+    // a trait used as a simple interface
+    trait EmailService {
+
+      // send an email to a given address
+      // return Ok if the email could be sent
+      def send(address: String, body: String): Future[Status]
+
+    }
+
+    // a specific implementation of the EmailService
+    case class JavaMailEmailService(smtpHost: String, smtpPort: Int) extends EmailService {
+      def send(address: String, body: String): Future[Status] =
+        ??? // use the JavaMail api to implement this
+    }
+    ```
+
+    Create components
+    -----------------
+
+    Creating the `ZalandoNotifier` service from a configuration file is not very hard. Let’s pretend we have the following classes to read from configuration files:
+
+    ```scala
+    // a configuration file
+    trait Config {
+      def get[A](key: String): ConfigError Xor A
+    }
+
+    // Abstract data type for possible errors
+    // happening when reading configuration files
+    sealed trait ConfigError
+    case class MissingKey(key: String) extends ConfigError
+
+    object ConfigError {
+
+      def render(e: ConfigError): String =
+        e match {
+          case MissingKey(key) => s"Key $key not found"
+        }
+
+    }
+    ```
+
+    The `Xor` type is an `Either` type from the cats library. See [here](http://underscore.io/blog/posts/2015/06/10/an-introduction-to-cats.html) for an introduction to cats, `Xor` and the `|@|` notation used below.
+
+    Creating the `ZalandoNotifier` service from the configuration file requires reading the `NotifierConfig`, the `EmailService`, and creating a `ZalandoNotifier` from those 2 instances:
+
+    ```scala
+    case class NotifierConfig(priority: Int) {
+      def sendFor(p: Int): Boolean = p >= priority
+    }
+
+    // create a NotifierConfig from file
+    object NotifierConfig {
+
+      def fromConfig(config: Config): ConfigError Xor NotifierConfig =
+        config.get[Int]("priority").map(NotifierConfig.apply)
+
+    }
+
+    // create an EmailService from file
+    object EmailService {
+
+      // The default EmailService instance is using the Java email API
+      def fromConfig(config: Config): ConfigError Xor EmailService =
+        (config.get[String]("smtp-host") |@|
+         config.get[Int]("smtp-port")).map(JavaEmailService.apply)
+    }
+
+    // create the ZalandoNotifier from its components
+    object ZalandoNotifier {
+
+      def fromConfig(config: Config): ConfigError Xor EmailService =
+         (NotifierConfig.fromConfig(config) |@|
+          EmailService.fromConfig(config)).map(ZalandoNotifier.apply)
+    }
+    ```
+
+    Assembling the `ZalandoNotifier` from its components is very simple here, we just combine the two parts into one. We could have a more complex `fromConfig` method using a `for` comprehension and injecting different `EmailService` instances based on a configuration parameter.
+    
+    We have now assembled components from values in a configuration file, taking care of possible configuration errors. What is the next difficulty?
+
+    Testing
+    -------
+
+    The next difficulty is this one. Suppose we have a bigger application using the `ZalandoNotifier` and we want to switch out the `JavaEmailService` with a mock implementation for testing. Using a naive approach for constructor injection, we might want to do this:
+
+    ```scala
+    def createApplication(
+      orderService: OrderService,
+      notifierConfig: NotifierConfig,
+      emailService: EmailService): Application =
+        Application(orderService, ZalandoNotifier(notifierConfig, emailService))
+
+
+    def testApplication = {
+      // use a mocked email service
+      val app = createApplication(OrderService(), NotifierConfig(10), MockedEmailService())
+      // test the application now
+    }
+    ```
+
+    This is really problematic because we think we need to expose all the components and their dependencies to the top-level of the application to be able to build the exact component graph we want and substitute other components. This is tedious and breaks all encapsulation.
+
+    Fortunately, there exists a library precisely aimed at replacing objects in graph: [Kiama](https://bitbucket.org/inkytonik/kiama).
+
+    Kiama
+    -----
+
+    [Kiama](https://bitbucket.org/inkytonik/kiama) is a library for language processing, a toolbox for parsing computer languages, analysing and interpreting them.
+
+    We are going to use one feature of Kiama: Tree rewriting. As you probably know, computer languages are being parsed into [Abstract Syntax Trees](https://en.wikipedia.org/wiki/Abstract_syntax_tree) (ASTs). Most of the time these trees are being rewritten to simpler trees, in order to remove some syntactic sugar or to optimise some constructs. For example, a tree representing collection operations might rewrite two consecutive `map` operations into one for efficiency (a *[fusion](https://en.wikipedia.org/wiki/Map_(higher-order_function)#Optimizations)* operation).
+
+    And what is an “application”, if not a tree of services and configuration objects? So, with the help of Kiama, we can “rewrite” the application to replace some of its parts:
+
+    ```scala
+    // return true if A implements the list of types defined by a given class tag */
+    def implements(a: Any)(implicit ct: ClassTag[_]): Boolean = {
+      val types: List[Class[_]] =
+        ct.runtimeClass +: ct.runtimeClass.getInterfaces.toList
+
+      types.forall(t => t.isAssignableFrom(a.getClass))
+    }
+
+    // a Kiama Strategy to replace any node having the same type as T
+    // with another instance
+    def replaceStrategy[T : ClassTag](t: T): Strategy =
+      strategy[Any] {
+        case v if implements(v) => Some(t)
+        case other => None
+      }
+    ```
+
+    A Strategy in Kiama is more or less a partial function taking one of the nodes in the tree and returning an `Option[A]` if it succeeds and `None` if it doesn’t. You can then use combinators to define where and how you want to apply this `Strategy`. For example:
+
+    ```scala
+    // use the strategy everywhere you can, from top to down
+    def replaceWithStrategy[G](strategy: Strategy, graph: G): G =
+      rewrite(everywheretd(strategy))(graph)
+
+    replaceWithStrategy(replaceStrategy[EmailService](mock), application)
+    ```
+
+    Or, with a bit of syntactic sugar:
+
+    ```scala
+    application.replace[EmailService](mock)
+    ```
+
+    It really isn’t that difficult to write tests!
+
+    You can also conceive much more targeted replacements:
+
+    ```scala
+    case class Leg(foot: String)
+    case class Robot(left: Leg, right: Leg)
+    case class Application(robot: Robot, house: House)
+
+    // just replace one leg of the robot!
+    application.replace {
+      case Robot(left, right) => Robot(Leg(Foot("repaired")), right)
+    }
+    ```
+
+    Now that we know how to deal with testing, what else do we want to do? Singletons!
+
+    Singletons
+    ----------
+
+    Applications are not just simple trees, but rather directed acyclic graphs where some nodes are being shared. For example, many Scala applications need to share an `ExecutionContext` (and / or an `ActionSystem`, a `Materializer` if working with [Akka](http://akka.io/)). Duplicating these contexts would waste resources.
+
+    When we build the application from the configuration file, we use independent `fromConfig` methods where each component knows how to read the file and create itself. What if 2 components need an `ExecutionContext`?
+
+    ```scala
+    // Delay the evaluation of the ExecutionContext
+    case class ExecutionService(ec: Eval[ExecutionContext])
+
+    object ExecutionService {
+      def create(config: Config): ExecutionService = {
+        lazy val system: ActorSystem = ActorSystem("xxx", config)
+        lazy val executionContext: ExecutionContext = system.dispatcher
+        ExecutionService(Eval.later(executionContext))
+      }
+    }
+
+    // First component
+    case class Service1(config: C1, es: ExecutionService)
+
+    object Service1 {
+      def fromConfig(config: Config): ConfigError Xor Service1 =
+        C1.fromConfig(config).map(c1 => Service1(c1, ExecutionService.create)
+    }
+
+    // Second component
+    case class Service2(config: C2, es: ExecutionService)
+
+    object Service2 {
+      def fromConfig(config: Config): ConfigError Xor Service2 =
+        C2.fromConfig(config).map(c2 => Service2(c2, ExecutionService.create)
+    }
+
+    // The main Application
+    case Application(s1: Service1, s2: Service2)
+
+    object Application {
+      def fromConfig(config: Config): ConfigError Xor Application =
+        (Service1.fromConfig(config) |@|
+         Service2.fromConfig(config)).map(Application.apply)
+
+    }
+    ```
+
+    Here we are duplicating the `ExecutionService` component in the `Application` instance, this can’t be good.
+
+    This could also be worse because at this stage we haven’t consumed any resource. The `ExecutionContext` is encapsulated in an `ExecutionService` using the `cats.Eval` type to delay any evaluation of the `ExecutionContext`. Is there a way to use only one instance of the `ExecutionService`? Yes, indeed, with one more `Strategy`:
+
+    ```scala
+    // store the first instance of the target type and replace all nodes of the same type with that one
+    def singletonStrategy[T : ClassTag]: Strategy = {
+      var t: Option[T] = None
+       strategy[Any] {
+         case v if implements(v)(implicitly[ClassTag[T]]) =>
+           t match {
+             case Some(singleton) => Some(singleton)
+             case None => t = Some(v.asInstanceOf[T])
+               Some(v)
+           }
+
+         case other => None
+       }
+    }
+    ```
+
+    And with a bit of syntactic sugar, creating the full application becomes:
+
+    ```scala
+    object Application {
+      def fromConfig(config: Config): ConfigError Xor Application =
+        (Service1.fromConfig(config) |@|
+         Service2.fromConfig(config)).map(Application.apply).map(_.singleton[ExecutionService])
+
+    }
+    ```
+
+    Conclusion
+    ----------
+
+    The technique presented here is really minimal: No annotations, no [modules/bindings](https://github.com/google/guice/wiki/Bindings), no type system trickery. In addition, we can use other tools in the Kiama toolbox, like [attribute grammars](http://wiki.kiama.googlecode.com/hg-history/02d6b58d5156633aea5e0dac9b5dec4dd0461d4a/papers/SCP11.pdf), to implement a topological sort in a few lines and start services in order.
+
+    The main drawback is the necessity to instantiate a full graph of objects before being able to modify it (the `fromConfig` methods). On the other hand, specifying how every component can be instantiated from the configuration file (and testing that!) needs to be done anyway.
+
+    I wouldn’t be surprised if large applications had new, unforeseen requirements that I’m not addressing right now, but simple applications can definitely use this technique and larger applications could explore more Kiama strategies.
+
+    I also hope that this post gave you an incentive to explore Kiama (in version 2.0.0 as of now), as it’s an awesome library full of possibilities.
