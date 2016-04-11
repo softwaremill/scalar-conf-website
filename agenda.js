@@ -7,7 +7,7 @@ var metamd = require('metamd');
 var timeline = JSON.parse(fs.readFileSync('agenda-timeline.json', 'utf-8'));
 var timelineData = [];
 
-// For each item 
+// For each item in agenda-timeline
 for (var i = 0; i < timeline.length; i++) {
 
   var timespan = {};
@@ -28,7 +28,7 @@ for (var i = 0; i < timeline.length; i++) {
 
     timespan.data = {};
 
-    // Check if there are 2 or more speakers, create an array for speaker info
+    // Check if there are 2 or more speakers, create an array for each item in speaker info
     if (talkData.getData('speaker').indexOf("|") != "-1") {
 
       var speakers = talkData.getData('speaker').split("|").map(function (s) { return s.trim();});
@@ -46,6 +46,8 @@ for (var i = 0; i < timeline.length; i++) {
       timespan.data.speaker_photo =  photos;
 
     } else {
+
+      // If the speaker is only one
 
       timespan.data.speaker = talkData.getData('speaker').trim();
       timespan.data.speaker_twitter = talkData.getData('speaker_twitter').trim();
