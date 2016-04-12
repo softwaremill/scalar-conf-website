@@ -1,291 +1,228 @@
-<!DOCTYPE html><html lang="en" itemscope itemtype="http://schema.org/EducationEvent"><head><title>Scalar - Scala Conference in Central Europe - 16th of April 2016, Warsaw, Poland.</title><link rel="shortcut icon" href="images/favicon.ico"><link href="http://fonts.googleapis.com/css?family=Exo+2:400,200,500,600,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css"><link rel="stylesheet" href="index.css" media="Screen"><meta itemprop="name" content="Scalar"><meta name="viewport" content="initial-scale=1.0, width=device-width"><meta charset="utf-8"><script src="vendor/modernizr.js"></script><script src="app.js"></script></head><body id="top"><section class="header row"><div class="small-12 medium-12 large-12 columns"><nav data-topbar class="top-bar"><ul class="title-area"><li class="name"><h1><a href="http://scalar-conf.com/"><img src="images/scalar-logo.svg"></a></h1></li><li class="toggle-topbar menu-icon"><a href=""></a></li></ul><section class="top-bar-section"><ul class="right"><li><a data-scroll href="http://www.scalar-conf.com#news">News</a></li><li><a data-scroll href="http://www.scalar-conf.com#blog">Blog</a></li><li><a data-scroll href="http://www.scalar-conf.com#agenda">Agenda</a></li><li><a data-scroll href="http://www.scalar-conf.com#venue">Venue</a></li><li><a data-scroll href="http://www.scalar-conf.com#souvenirs">Souvenirs</a></li><li><a data-scroll href="http://www.scalar-conf.com#organizer">Team</a></li><li><a data-scroll href="http://www.scalar-conf.com/#sponsors">Sponsors</a></li><li><a href="http://scalar-conf.com/2015/">2015</a></li><li><a href="http://scalar-conf.com/2014/">2014</a></li><li class="tweet-btn"><a href="https://twitter.com/share" data-url="http://scalar-conf.com/" data-text="Check out #Scala @scalarconf on 16th April 2016 in Warsaw, Poland!" data-hashtags="scalarconf" class="twitter-share-button">Tweet</a></li></ul></section></nav></div></section><section class="news-posts row"><header class="section-title"><h1>Blog</h1></header><div class="small-10 medium-10 medium-centered large-10 large-centered columns"><div id="easydi-who-wants-some-cake" class="news-post"><header class="post-header"><h1>EasyDI – Who wants some cake?</h1></header><time datetime="2016-04-11" class="post-date">April 11, 2016</time><div class="post-summary"><p><strong>Guest post by <a href="https://tech.zalando.com/">Zalando</a></strong></p>
-
+<!DOCTYPE html><html lang="en" itemscope itemtype="http://schema.org/EducationEvent"><head><title>Scalar - Scala Conference in Central Europe - 16th of April 2016, Warsaw, Poland.</title><link rel="shortcut icon" href="images/favicon.ico"><link href="http://fonts.googleapis.com/css?family=Exo+2:400,200,500,600,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css"><link rel="stylesheet" href="index.css" media="Screen"><meta itemprop="name" content="Scalar"><meta name="viewport" content="initial-scale=1.0, width=device-width"><meta charset="utf-8"><script src="vendor/modernizr.js"></script><script src="app.js"></script></head><body id="top"><section class="header row"><div class="small-12 medium-12 large-12 columns"><nav data-topbar class="top-bar"><ul class="title-area"><li class="name"><h1><a href="http://scalar-conf.com/"><img src="images/scalar-logo.svg"></a></h1></li><li class="toggle-topbar menu-icon"><a href=""></a></li></ul><section class="top-bar-section"><ul class="right"><li><a data-scroll href="http://www.scalar-conf.com#news">News</a></li><li><a data-scroll href="http://www.scalar-conf.com#blog">Blog</a></li><li><a data-scroll href="http://www.scalar-conf.com#agenda">Agenda</a></li><li><a data-scroll href="http://www.scalar-conf.com#venue">Venue</a></li><li><a data-scroll href="http://www.scalar-conf.com#souvenirs">Souvenirs</a></li><li><a data-scroll href="http://www.scalar-conf.com#organizer">Team</a></li><li><a data-scroll href="http://www.scalar-conf.com/#sponsors">Sponsors</a></li><li><a href="http://scalar-conf.com/2015/">2015</a></li><li><a href="http://scalar-conf.com/2014/">2014</a></li><li class="tweet-btn"><a href="https://twitter.com/share" data-url="http://scalar-conf.com/" data-text="Check out #Scala @scalarconf on 16th April 2016 in Warsaw, Poland!" data-hashtags="scalarconf" class="twitter-share-button">Tweet</a></li></ul></section></nav></div></section><section class="news-posts row"><header class="section-title"><h1>Blog</h1></header><div class="small-10 medium-10 medium-centered large-10 large-centered columns"><div id="easydi-who-wants-some-cake" class="news-post"><header class="post-header"><h1>EasyDI – Who wants some cake?</h1></header><time datetime="2016-04-11" class="post-date">April 11, 2016</time><div class="post-summary"><p><strong>Guest post by Eric Torreborre (<a href="https://tech.zalando.com/">Zalando</a>).</strong></p>
 <p>Scala developers have lots of options when it comes to doing <a href="https://en.wikipedia.org/wiki/Dependency_injection">Dependency Injection</a> (or DI). The usual Java libraries can be used, like <a href="http://docs.spring.io/autorepo/docs/spring/3.2.x/spring-framework-reference/html/beans.html">Spring</a>, or <a href="https://github.com/google/guice">Guice</a> for Play developers.</p>
-
 <p>But Scala being Scala, there are other options. You can use libraries leveraging macros, like <a href="https://github.com/adamw/macwire">MacWire</a>, or use the Scala type system and the infamous <a href="http://jonasboner.com/real-world-scala-dependency-injection-di">“Cake pattern”</a> and its <a href="http://www.warski.org/blog/2010/12/di-in-scala-cake-pattern">many variations</a> using traits, with or without self-types.</p>
-
 <p>Unfortunately, many teams have been burnt by the Cake Pattern and are looking for other solutions, often returning to more or less involved DI libraries.</p>
-
 <p>I want to take a step back and propose another approach for DI that is both simple and flexible, using basic Scala features and … a special library, which is not a DI library at all!</p>
-
-<h2>Back to requirements</h2>
-
+<h2 id="back-to-requirements">Back to requirements</h2>
 <p>What are the basic things we can expect from DI?</p>
-
 <ul>
 <li>A way to define components</li>
 <li>A way to configure them from files</li>
 <li>The possibility to substitute some of them for testing, regardless of their nesting</li>
 <li>The possibility to declare some of them as singletons</li>
 </ul>
-
 <p>Can we do that with some simple Scala? With just case classes and traits used as interfaces? Or to put it differently: What’s wrong with constructor injection again?</p>
-
-<h2>Define components</h2>
-
+<h2 id="define-components">Define components</h2>
 <p>With case classes and constructor injection we can declare our components like this:</p>
+<div class="highlight"><pre><span class="k">case</span> <span class="k">class</span> <span class="nc">ZalandoNotifier</span><span class="o">(</span><span class="n">config</span><span class="k">:</span> <span class="kt">NotifierConfig</span><span class="o">,</span> <span class="n">email</span><span class="k">:</span> <span class="kt">EmailService</span><span class="o">)</span> <span class="o">{</span>
 
-<p>```scala
-case class ZalandoNotifier(config: NotifierConfig, email: EmailService) {</p>
+  <span class="c1">// we only send an email for orders having a high level of</span>
+  <span class="c1">// priority as defined in the config file</span>
+  <span class="k">def</span> <span class="n">orderReady</span><span class="o">(</span><span class="n">order</span><span class="k">:</span> <span class="kt">Order</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">Status</span><span class="o">]</span> <span class="k">=</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">config</span><span class="o">.</span><span class="n">sendFor</span><span class="o">(</span><span class="n">order</span><span class="o">.</span><span class="n">getPriority</span><span class="o">))</span> <span class="n">email</span><span class="o">.</span><span class="n">send</span><span class="o">(</span><span class="n">order</span><span class="o">.</span><span class="n">emailAddress</span><span class="o">,</span> <span class="s">&quot;Your order is ready!&quot;</span><span class="o">)</span>
+    <span class="k">else</span> <span class="nc">Future</span><span class="o">.</span><span class="n">delay</span><span class="o">(</span><span class="nc">Status</span><span class="o">.</span><span class="n">ok</span><span class="o">)</span> <span class="c1">// scalaz Future</span>
 
-<p>// we only send an email for orders having a high level of
-  // priority as defined in the config file
-  def orderReady(order: Order): Future[Status] =
-    if (config.sendFor(order.getPriority)) email.send(order.emailAddress, "Your order is ready!")
-    else Future.delay(Status.ok) // scalaz Future</p>
+<span class="o">}</span>
 
-<p>}</p>
+<span class="c1">// a trait used as a simple interface</span>
+<span class="k">trait</span> <span class="nc">EmailService</span> <span class="o">{</span>
 
-<p>// a trait used as a simple interface
-trait EmailService {</p>
+  <span class="c1">// send an email to a given address</span>
+  <span class="c1">// return Ok if the email could be sent</span>
+  <span class="k">def</span> <span class="n">send</span><span class="o">(</span><span class="n">address</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">body</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">Status</span><span class="o">]</span>
 
-<p>// send an email to a given address
-  // return Ok if the email could be sent
-  def send(address: String, body: String): Future[Status]</p>
+<span class="o">}</span>
 
-<p>}</p>
-
-<p>// a specific implementation of the EmailService
-case class JavaMailEmailService(smtpHost: String, smtpPort: Int) extends EmailService {
-  def send(address: String, body: String): Future[Status] =
-    ??? // use the JavaMail api to implement this
-}
-```</p>
-
-<h2>Create components</h2>
-
+<span class="c1">// a specific implementation of the EmailService</span>
+<span class="k">case</span> <span class="k">class</span> <span class="nc">JavaMailEmailService</span><span class="o">(</span><span class="n">smtpHost</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">smtpPort</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">EmailService</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">send</span><span class="o">(</span><span class="n">address</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">body</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">Status</span><span class="o">]</span> <span class="k">=</span>
+    <span class="o">???</span> <span class="c1">// use the JavaMail api to implement this</span>
+<span class="o">}</span>
+</pre></div>
+<h2 id="create-components">Create components</h2>
 <p>Creating the <code>ZalandoNotifier</code> service from a configuration file is not very hard. Let’s pretend we have the following classes to read from configuration files:</p>
+<div class="highlight"><pre><span class="c1">// a configuration file</span>
+<span class="k">trait</span> <span class="nc">Config</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">get</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">key</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">ConfigError</span> <span class="kt">Xor</span> <span class="kt">A</span>
+<span class="o">}</span>
 
-<p>```scala
-// a configuration file
-trait Config {
-  def get<a href="key: String">A</a>: ConfigError Xor A
-}</p>
+<span class="c1">// Abstract data type for possible errors</span>
+<span class="c1">// happening when reading configuration files</span>
+<span class="k">sealed</span> <span class="k">trait</span> <span class="nc">ConfigError</span>
+<span class="k">case</span> <span class="k">class</span> <span class="nc">MissingKey</span><span class="o">(</span><span class="n">key</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">ConfigError</span>
 
-<p>// Abstract data type for possible errors
-// happening when reading configuration files
-sealed trait ConfigError
-case class MissingKey(key: String) extends ConfigError</p>
+<span class="k">object</span> <span class="nc">ConfigError</span> <span class="o">{</span>
 
-<p>object ConfigError {</p>
+  <span class="k">def</span> <span class="n">render</span><span class="o">(</span><span class="n">e</span><span class="k">:</span> <span class="kt">ConfigError</span><span class="o">)</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span>
+    <span class="n">e</span> <span class="k">match</span> <span class="o">{</span>
+      <span class="k">case</span> <span class="nc">MissingKey</span><span class="o">(</span><span class="n">key</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="s">s&quot;Key </span><span class="si">$key</span><span class="s"> not found&quot;</span>
+    <span class="o">}</span>
 
-<p>def render(e: ConfigError): String =
-    e match {
-      case MissingKey(key) => s"Key $key not found"
-    }</p>
-
-<p>}
-```</p>
-
+<span class="o">}</span>
+</pre></div>
 <p>The <code>Xor</code> type is an <code>Either</code> type from the cats library. See <a href="http://underscore.io/blog/posts/2015/06/10/an-introduction-to-cats.html">here</a> for an introduction to cats, <code>Xor</code> and the <code>|@|</code> notation used below.</p>
-
 <p>Creating the <code>ZalandoNotifier</code> service from the configuration file requires reading the <code>NotifierConfig</code>, the <code>EmailService</code>, and creating a <code>ZalandoNotifier</code> from those 2 instances:</p>
+<div class="highlight"><pre><span class="k">case</span> <span class="k">class</span> <span class="nc">NotifierConfig</span><span class="o">(</span><span class="n">priority</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">sendFor</span><span class="o">(</span><span class="n">p</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="n">p</span> <span class="o">&gt;=</span> <span class="n">priority</span>
+<span class="o">}</span>
 
-<p>```scala
-case class NotifierConfig(priority: Int) {
-  def sendFor(p: Int): Boolean = p >= priority
-}</p>
+<span class="c1">// create a NotifierConfig from file</span>
+<span class="k">object</span> <span class="nc">NotifierConfig</span> <span class="o">{</span>
 
-<p>// create a NotifierConfig from file
-object NotifierConfig {</p>
+  <span class="k">def</span> <span class="n">fromConfig</span><span class="o">(</span><span class="n">config</span><span class="k">:</span> <span class="kt">Config</span><span class="o">)</span><span class="k">:</span> <span class="kt">ConfigError</span> <span class="kt">Xor</span> <span class="kt">NotifierConfig</span> <span class="o">=</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="o">[</span><span class="kt">Int</span><span class="o">](</span><span class="s">&quot;priority&quot;</span><span class="o">).</span><span class="n">map</span><span class="o">(</span><span class="nc">NotifierConfig</span><span class="o">.</span><span class="n">apply</span><span class="o">)</span>
 
-<p>def fromConfig(config: Config): ConfigError Xor NotifierConfig =
-    config.get[Int]("priority").map(NotifierConfig.apply)</p>
+<span class="o">}</span>
 
-<p>}</p>
+<span class="c1">// create an EmailService from file</span>
+<span class="k">object</span> <span class="nc">EmailService</span> <span class="o">{</span>
 
-<p>// create an EmailService from file
-object EmailService {</p>
+  <span class="c1">// The default EmailService instance is using the Java email API</span>
+  <span class="k">def</span> <span class="n">fromConfig</span><span class="o">(</span><span class="n">config</span><span class="k">:</span> <span class="kt">Config</span><span class="o">)</span><span class="k">:</span> <span class="kt">ConfigError</span> <span class="kt">Xor</span> <span class="kt">EmailService</span> <span class="o">=</span>
+    <span class="o">(</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="o">[</span><span class="kt">String</span><span class="o">](</span><span class="s">&quot;smtp-host&quot;</span><span class="o">)</span> <span class="o">|@|</span>
+     <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="o">[</span><span class="kt">Int</span><span class="o">](</span><span class="s">&quot;smtp-port&quot;</span><span class="o">)).</span><span class="n">map</span><span class="o">(</span><span class="nc">JavaEmailService</span><span class="o">.</span><span class="n">apply</span><span class="o">)</span>
+<span class="o">}</span>
 
-<p>// The default EmailService instance is using the Java email API
-  def fromConfig(config: Config): ConfigError Xor EmailService =
-    (config.get[String]("smtp-host") |@|
-     config.get[Int]("smtp-port")).map(JavaEmailService.apply)
-}</p>
+<span class="c1">// create the ZalandoNotifier from its components</span>
+<span class="k">object</span> <span class="nc">ZalandoNotifier</span> <span class="o">{</span>
 
-<p>// create the ZalandoNotifier from its components
-object ZalandoNotifier {</p>
-
-<p>def fromConfig(config: Config): ConfigError Xor EmailService =
-     (NotifierConfig.fromConfig(config) |@|
-      EmailService.fromConfig(config)).map(ZalandoNotifier.apply)
-}
-```</p>
-
+  <span class="k">def</span> <span class="n">fromConfig</span><span class="o">(</span><span class="n">config</span><span class="k">:</span> <span class="kt">Config</span><span class="o">)</span><span class="k">:</span> <span class="kt">ConfigError</span> <span class="kt">Xor</span> <span class="kt">EmailService</span> <span class="o">=</span>
+     <span class="o">(</span><span class="nc">NotifierConfig</span><span class="o">.</span><span class="n">fromConfig</span><span class="o">(</span><span class="n">config</span><span class="o">)</span> <span class="o">|@|</span>
+      <span class="nc">EmailService</span><span class="o">.</span><span class="n">fromConfig</span><span class="o">(</span><span class="n">config</span><span class="o">)).</span><span class="n">map</span><span class="o">(</span><span class="nc">ZalandoNotifier</span><span class="o">.</span><span class="n">apply</span><span class="o">)</span>
+<span class="o">}</span>
+</pre></div>
 <p>Assembling the <code>ZalandoNotifier</code> from its components is very simple here, we just combine the two parts into one. We could have a more complex <code>fromConfig</code> method using a <code>for</code> comprehension and injecting different <code>EmailService</code> instances based on a configuration parameter.</p>
-
 <p>We have now assembled components from values in a configuration file, taking care of possible configuration errors. What is the next difficulty?</p>
-
-<h2>Testing</h2>
-
+<h2 id="testing">Testing</h2>
 <p>The next difficulty is this one. Suppose we have a bigger application using the <code>ZalandoNotifier</code> and we want to switch out the <code>JavaEmailService</code> with a mock implementation for testing. Using a naive approach for constructor injection, we might want to do this:</p>
+<div class="highlight"><pre><span class="k">def</span> <span class="n">createApplication</span><span class="o">(</span>
+  <span class="n">orderService</span><span class="k">:</span> <span class="kt">OrderService</span><span class="o">,</span>
+  <span class="n">notifierConfig</span><span class="k">:</span> <span class="kt">NotifierConfig</span><span class="o">,</span>
+  <span class="n">emailService</span><span class="k">:</span> <span class="kt">EmailService</span><span class="o">)</span><span class="k">:</span> <span class="kt">Application</span> <span class="o">=</span>
+    <span class="nc">Application</span><span class="o">(</span><span class="n">orderService</span><span class="o">,</span> <span class="nc">ZalandoNotifier</span><span class="o">(</span><span class="n">notifierConfig</span><span class="o">,</span> <span class="n">emailService</span><span class="o">))</span>
 
-<p>```scala
-def createApplication(
-  orderService: OrderService,
-  notifierConfig: NotifierConfig,
-  emailService: EmailService): Application =
-    Application(orderService, ZalandoNotifier(notifierConfig, emailService))</p>
 
-<p>def testApplication = {
-  // use a mocked email service
-  val app = createApplication(OrderService(), NotifierConfig(10), MockedEmailService())
-  // test the application now
-}
-```</p>
-
+<span class="k">def</span> <span class="n">testApplication</span> <span class="k">=</span> <span class="o">{</span>
+  <span class="c1">// use a mocked email service</span>
+  <span class="k">val</span> <span class="n">app</span> <span class="k">=</span> <span class="n">createApplication</span><span class="o">(</span><span class="nc">OrderService</span><span class="o">(),</span> <span class="nc">NotifierConfig</span><span class="o">(</span><span class="mi">10</span><span class="o">),</span> <span class="nc">MockedEmailService</span><span class="o">())</span>
+  <span class="c1">// test the application now</span>
+<span class="o">}</span>
+</pre></div>
 <p>This is really problematic because we think we need to expose all the components and their dependencies to the top-level of the application to be able to build the exact component graph we want and substitute other components. This is tedious and breaks all encapsulation.</p>
-
 <p>Fortunately, there exists a library precisely aimed at replacing objects in graph: <a href="https://bitbucket.org/inkytonik/kiama">Kiama</a>.</p>
-
-<h2>Kiama</h2>
-
+<h2 id="kiama">Kiama</h2>
 <p><a href="https://bitbucket.org/inkytonik/kiama">Kiama</a> is a library for language processing, a toolbox for parsing computer languages, analysing and interpreting them.</p>
-
 <p>We are going to use one feature of Kiama: Tree rewriting. As you probably know, computer languages are being parsed into <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">Abstract Syntax Trees</a> (ASTs). Most of the time these trees are being rewritten to simpler trees, in order to remove some syntactic sugar or to optimise some constructs. For example, a tree representing collection operations might rewrite two consecutive <code>map</code> operations into one for efficiency (a <em><a href="https://en.wikipedia.org/wiki/Map_(higher-order_function">fusion</a>#Optimizations)</em> operation).</p>
-
 <p>And what is an “application”, if not a tree of services and configuration objects? So, with the help of Kiama, we can “rewrite” the application to replace some of its parts:</p>
+<div class="highlight"><pre><span class="c1">// return true if A implements the list of types defined by a given class tag */</span>
+<span class="k">def</span> <span class="n">implements</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">Any</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">ct</span><span class="k">:</span> <span class="kt">ClassTag</span><span class="o">[</span><span class="k">_</span><span class="o">])</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="k">val</span> <span class="n">types</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Class</span><span class="o">[</span><span class="k">_</span><span class="o">]]</span> <span class="k">=</span>
+    <span class="n">ct</span><span class="o">.</span><span class="n">runtimeClass</span> <span class="o">+:</span> <span class="n">ct</span><span class="o">.</span><span class="n">runtimeClass</span><span class="o">.</span><span class="n">getInterfaces</span><span class="o">.</span><span class="n">toList</span>
 
-<p>```scala
-// return true if A implements the list of types defined by a given class tag */
-def implements(a: Any)(implicit ct: ClassTag[<em>]): Boolean = {
-  val types: List[Class[</em>]] =
-    ct.runtimeClass +: ct.runtimeClass.getInterfaces.toList</p>
+  <span class="n">types</span><span class="o">.</span><span class="n">forall</span><span class="o">(</span><span class="n">t</span> <span class="k">=&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">isAssignableFrom</span><span class="o">(</span><span class="n">a</span><span class="o">.</span><span class="n">getClass</span><span class="o">))</span>
+<span class="o">}</span>
 
-<p>types.forall(t => t.isAssignableFrom(a.getClass))
-}</p>
-
-<p>// a Kiama Strategy to replace any node having the same type as T
-// with another instance
-def replaceStrategy<a href="t: T">T : ClassTag</a>: Strategy =
-  strategy[Any] {
-    case v if implements(v) => Some(t)
-    case other => None
-  }
-```</p>
-
+<span class="c1">// a Kiama Strategy to replace any node having the same type as T</span>
+<span class="c1">// with another instance</span>
+<span class="k">def</span> <span class="n">replaceStrategy</span><span class="o">[</span><span class="kt">T</span> <span class="kt">:</span> <span class="kt">ClassTag</span><span class="o">](</span><span class="n">t</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span><span class="k">:</span> <span class="kt">Strategy</span> <span class="o">=</span>
+  <span class="n">strategy</span><span class="o">[</span><span class="kt">Any</span><span class="o">]</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="n">v</span> <span class="k">if</span> <span class="n">implements</span><span class="o">(</span><span class="n">v</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Some</span><span class="o">(</span><span class="n">t</span><span class="o">)</span>
+    <span class="k">case</span> <span class="n">other</span> <span class="k">=&gt;</span> <span class="nc">None</span>
+  <span class="o">}</span>
+</pre></div>
 <p>A Strategy in Kiama is more or less a partial function taking one of the nodes in the tree and returning an <code>Option[A]</code> if it succeeds and <code>None</code> if it doesn’t. You can then use combinators to define where and how you want to apply this <code>Strategy</code>. For example:</p>
+<div class="highlight"><pre><span class="c1">// use the strategy everywhere you can, from top to down</span>
+<span class="k">def</span> <span class="n">replaceWithStrategy</span><span class="o">[</span><span class="kt">G</span><span class="o">](</span><span class="n">strategy</span><span class="k">:</span> <span class="kt">Strategy</span><span class="o">,</span> <span class="n">graph</span><span class="k">:</span> <span class="kt">G</span><span class="o">)</span><span class="k">:</span> <span class="kt">G</span> <span class="o">=</span>
+  <span class="n">rewrite</span><span class="o">(</span><span class="n">everywheretd</span><span class="o">(</span><span class="n">strategy</span><span class="o">))(</span><span class="n">graph</span><span class="o">)</span>
 
-<p>```scala
-// use the strategy everywhere you can, from top to down
-def replaceWithStrategy<a href="strategy: Strategy, graph: G">G</a>: G =
-  rewrite(everywheretd(strategy))(graph)</p>
-
-<p>replaceWithStrategy(replaceStrategy<a href="mock">EmailService</a>, application)
-```</p>
-
+<span class="n">replaceWithStrategy</span><span class="o">(</span><span class="n">replaceStrategy</span><span class="o">[</span><span class="kt">EmailService</span><span class="o">](</span><span class="n">mock</span><span class="o">),</span> <span class="n">application</span><span class="o">)</span>
+</pre></div>
 <p>Or, with a bit of syntactic sugar:</p>
-
-<p><code>scala
-application.replace[EmailService](mock)
-</code></p>
-
+<div class="highlight"><pre><span class="n">application</span><span class="o">.</span><span class="n">replace</span><span class="o">[</span><span class="kt">EmailService</span><span class="o">](</span><span class="n">mock</span><span class="o">)</span>
+</pre></div>
 <p>It really isn’t that difficult to write tests!</p>
-
 <p>You can also conceive much more targeted replacements:</p>
+<div class="highlight"><pre><span class="k">case</span> <span class="k">class</span> <span class="nc">Leg</span><span class="o">(</span><span class="n">foot</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span>
+<span class="k">case</span> <span class="k">class</span> <span class="nc">Robot</span><span class="o">(</span><span class="n">left</span><span class="k">:</span> <span class="kt">Leg</span><span class="o">,</span> <span class="n">right</span><span class="k">:</span> <span class="kt">Leg</span><span class="o">)</span>
+<span class="k">case</span> <span class="k">class</span> <span class="nc">Application</span><span class="o">(</span><span class="n">robot</span><span class="k">:</span> <span class="kt">Robot</span><span class="o">,</span> <span class="n">house</span><span class="k">:</span> <span class="kt">House</span><span class="o">)</span>
 
-<p>```scala
-case class Leg(foot: String)
-case class Robot(left: Leg, right: Leg)
-case class Application(robot: Robot, house: House)</p>
-
-<p>// just replace one leg of the robot!
-application.replace {
-  case Robot(left, right) => Robot(Leg(Foot("repaired")), right)
-}
-```</p>
-
+<span class="c1">// just replace one leg of the robot!</span>
+<span class="n">application</span><span class="o">.</span><span class="n">replace</span> <span class="o">{</span>
+  <span class="k">case</span> <span class="nc">Robot</span><span class="o">(</span><span class="n">left</span><span class="o">,</span> <span class="n">right</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Robot</span><span class="o">(</span><span class="nc">Leg</span><span class="o">(</span><span class="nc">Foot</span><span class="o">(</span><span class="s">&quot;repaired&quot;</span><span class="o">)),</span> <span class="n">right</span><span class="o">)</span>
+<span class="o">}</span>
+</pre></div>
 <p>Now that we know how to deal with testing, what else do we want to do? Singletons!</p>
-
-<h2>Singletons</h2>
-
+<h2 id="singletons">Singletons</h2>
 <p>Applications are not just simple trees, but rather directed acyclic graphs where some nodes are being shared. For example, many Scala applications need to share an <code>ExecutionContext</code> (and / or an <code>ActionSystem</code>, a <code>Materializer</code> if working with <a href="http://akka.io/">Akka</a>). Duplicating these contexts would waste resources.</p>
-
 <p>When we build the application from the configuration file, we use independent <code>fromConfig</code> methods where each component knows how to read the file and create itself. What if 2 components need an <code>ExecutionContext</code>?</p>
+<div class="highlight"><pre><span class="c1">// Delay the evaluation of the ExecutionContext</span>
+<span class="k">case</span> <span class="k">class</span> <span class="nc">ExecutionService</span><span class="o">(</span><span class="n">ec</span><span class="k">:</span> <span class="kt">Eval</span><span class="o">[</span><span class="kt">ExecutionContext</span><span class="o">])</span>
 
-<p>```scala
-// Delay the evaluation of the ExecutionContext
-case class ExecutionService(ec: Eval[ExecutionContext])</p>
+<span class="k">object</span> <span class="nc">ExecutionService</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">create</span><span class="o">(</span><span class="n">config</span><span class="k">:</span> <span class="kt">Config</span><span class="o">)</span><span class="k">:</span> <span class="kt">ExecutionService</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="k">lazy</span> <span class="k">val</span> <span class="n">system</span><span class="k">:</span> <span class="kt">ActorSystem</span> <span class="o">=</span> <span class="nc">ActorSystem</span><span class="o">(</span><span class="s">&quot;xxx&quot;</span><span class="o">,</span> <span class="n">config</span><span class="o">)</span>
+    <span class="k">lazy</span> <span class="k">val</span> <span class="n">executionContext</span><span class="k">:</span> <span class="kt">ExecutionContext</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">dispatcher</span>
+    <span class="nc">ExecutionService</span><span class="o">(</span><span class="nc">Eval</span><span class="o">.</span><span class="n">later</span><span class="o">(</span><span class="n">executionContext</span><span class="o">))</span>
+  <span class="o">}</span>
+<span class="o">}</span>
 
-<p>object ExecutionService {
-  def create(config: Config): ExecutionService = {
-    lazy val system: ActorSystem = ActorSystem("xxx", config)
-    lazy val executionContext: ExecutionContext = system.dispatcher
-    ExecutionService(Eval.later(executionContext))
-  }
-}</p>
+<span class="c1">// First component</span>
+<span class="k">case</span> <span class="k">class</span> <span class="nc">Service1</span><span class="o">(</span><span class="n">config</span><span class="k">:</span> <span class="kt">C1</span><span class="o">,</span> <span class="n">es</span><span class="k">:</span> <span class="kt">ExecutionService</span><span class="o">)</span>
 
-<p>// First component
-case class Service1(config: C1, es: ExecutionService)</p>
+<span class="k">object</span> <span class="nc">Service1</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">fromConfig</span><span class="o">(</span><span class="n">config</span><span class="k">:</span> <span class="kt">Config</span><span class="o">)</span><span class="k">:</span> <span class="kt">ConfigError</span> <span class="kt">Xor</span> <span class="kt">Service1</span> <span class="o">=</span>
+    <span class="n">C1</span><span class="o">.</span><span class="n">fromConfig</span><span class="o">(</span><span class="n">config</span><span class="o">).</span><span class="n">map</span><span class="o">(</span><span class="n">c1</span> <span class="k">=&gt;</span> <span class="nc">Service1</span><span class="o">(</span><span class="n">c1</span><span class="o">,</span> <span class="nc">ExecutionService</span><span class="o">.</span><span class="n">create</span><span class="o">)</span>
+<span class="o">}</span>
 
-<p>object Service1 {
-  def fromConfig(config: Config): ConfigError Xor Service1 =
-    C1.fromConfig(config).map(c1 => Service1(c1, ExecutionService.create)
-}</p>
+<span class="c1">// Second component</span>
+<span class="k">case</span> <span class="k">class</span> <span class="nc">Service2</span><span class="o">(</span><span class="n">config</span><span class="k">:</span> <span class="kt">C2</span><span class="o">,</span> <span class="n">es</span><span class="k">:</span> <span class="kt">ExecutionService</span><span class="o">)</span>
 
-<p>// Second component
-case class Service2(config: C2, es: ExecutionService)</p>
+<span class="k">object</span> <span class="nc">Service2</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">fromConfig</span><span class="o">(</span><span class="n">config</span><span class="k">:</span> <span class="kt">Config</span><span class="o">)</span><span class="k">:</span> <span class="kt">ConfigError</span> <span class="kt">Xor</span> <span class="kt">Service2</span> <span class="o">=</span>
+    <span class="n">C2</span><span class="o">.</span><span class="n">fromConfig</span><span class="o">(</span><span class="n">config</span><span class="o">).</span><span class="n">map</span><span class="o">(</span><span class="n">c2</span> <span class="k">=&gt;</span> <span class="nc">Service2</span><span class="o">(</span><span class="n">c2</span><span class="o">,</span> <span class="nc">ExecutionService</span><span class="o">.</span><span class="n">create</span><span class="o">)</span>
+<span class="o">}</span>
 
-<p>object Service2 {
-  def fromConfig(config: Config): ConfigError Xor Service2 =
-    C2.fromConfig(config).map(c2 => Service2(c2, ExecutionService.create)
-}</p>
+<span class="c1">// The main Application</span>
+<span class="k">case</span> <span class="nc">Application</span><span class="o">(</span><span class="n">s1</span><span class="k">:</span> <span class="kt">Service1</span><span class="o">,</span> <span class="n">s2</span><span class="k">:</span> <span class="kt">Service2</span><span class="o">)</span>
 
-<p>// The main Application
-case Application(s1: Service1, s2: Service2)</p>
+<span class="k">object</span> <span class="nc">Application</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">fromConfig</span><span class="o">(</span><span class="n">config</span><span class="k">:</span> <span class="kt">Config</span><span class="o">)</span><span class="k">:</span> <span class="kt">ConfigError</span> <span class="kt">Xor</span> <span class="kt">Application</span> <span class="o">=</span>
+    <span class="o">(</span><span class="nc">Service1</span><span class="o">.</span><span class="n">fromConfig</span><span class="o">(</span><span class="n">config</span><span class="o">)</span> <span class="o">|@|</span>
+     <span class="nc">Service2</span><span class="o">.</span><span class="n">fromConfig</span><span class="o">(</span><span class="n">config</span><span class="o">)).</span><span class="n">map</span><span class="o">(</span><span class="nc">Application</span><span class="o">.</span><span class="n">apply</span><span class="o">)</span>
 
-<p>object Application {
-  def fromConfig(config: Config): ConfigError Xor Application =
-    (Service1.fromConfig(config) |@|
-     Service2.fromConfig(config)).map(Application.apply)</p>
-
-<p>}
-```</p>
-
+<span class="o">}</span>
+</pre></div>
 <p>Here we are duplicating the <code>ExecutionService</code> component in the <code>Application</code> instance, this can’t be good.</p>
-
 <p>This could also be worse because at this stage we haven’t consumed any resource. The <code>ExecutionContext</code> is encapsulated in an <code>ExecutionService</code> using the <code>cats.Eval</code> type to delay any evaluation of the <code>ExecutionContext</code>. Is there a way to use only one instance of the <code>ExecutionService</code>? Yes, indeed, with one more <code>Strategy</code>:</p>
+<div class="highlight"><pre><span class="c1">// store the first instance of the target type and replace all nodes of the same type with that one</span>
+<span class="k">def</span> <span class="n">singletonStrategy</span><span class="o">[</span><span class="kt">T</span> <span class="kt">:</span> <span class="kt">ClassTag</span><span class="o">]</span><span class="k">:</span> <span class="kt">Strategy</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="k">var</span> <span class="n">t</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="k">=</span> <span class="nc">None</span>
+   <span class="n">strategy</span><span class="o">[</span><span class="kt">Any</span><span class="o">]</span> <span class="o">{</span>
+     <span class="k">case</span> <span class="n">v</span> <span class="k">if</span> <span class="n">implements</span><span class="o">(</span><span class="n">v</span><span class="o">)(</span><span class="n">implicitly</span><span class="o">[</span><span class="kt">ClassTag</span><span class="o">[</span><span class="kt">T</span><span class="o">]])</span> <span class="k">=&gt;</span>
+       <span class="n">t</span> <span class="k">match</span> <span class="o">{</span>
+         <span class="k">case</span> <span class="nc">Some</span><span class="o">(</span><span class="n">singleton</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Some</span><span class="o">(</span><span class="n">singleton</span><span class="o">)</span>
+         <span class="k">case</span> <span class="nc">None</span> <span class="k">=&gt;</span> <span class="n">t</span> <span class="k">=</span> <span class="nc">Some</span><span class="o">(</span><span class="n">v</span><span class="o">.</span><span class="n">asInstanceOf</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span>
+           <span class="nc">Some</span><span class="o">(</span><span class="n">v</span><span class="o">)</span>
+       <span class="o">}</span>
 
-<p>```scala
-// store the first instance of the target type and replace all nodes of the same type with that one
-def singletonStrategy[T : ClassTag]: Strategy = {
-  var t: Option[T] = None
-   strategy[Any] {
-     case v if implements(v)(implicitly[ClassTag[T]]) =>
-       t match {
-         case Some(singleton) => Some(singleton)
-         case None => t = Some(v.asInstanceOf[T])
-           Some(v)
-       }</p>
-
-<pre><code> case other =&gt; None
-</code></pre>
-
-<p>}
-}
-```</p>
-
+     <span class="k">case</span> <span class="n">other</span> <span class="k">=&gt;</span> <span class="nc">None</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
 <p>And with a bit of syntactic sugar, creating the full application becomes:</p>
+<div class="highlight"><pre><span class="k">object</span> <span class="nc">Application</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">fromConfig</span><span class="o">(</span><span class="n">config</span><span class="k">:</span> <span class="kt">Config</span><span class="o">)</span><span class="k">:</span> <span class="kt">ConfigError</span> <span class="kt">Xor</span> <span class="kt">Application</span> <span class="o">=</span>
+    <span class="o">(</span><span class="nc">Service1</span><span class="o">.</span><span class="n">fromConfig</span><span class="o">(</span><span class="n">config</span><span class="o">)</span> <span class="o">|@|</span>
+     <span class="nc">Service2</span><span class="o">.</span><span class="n">fromConfig</span><span class="o">(</span><span class="n">config</span><span class="o">)).</span><span class="n">map</span><span class="o">(</span><span class="nc">Application</span><span class="o">.</span><span class="n">apply</span><span class="o">).</span><span class="n">map</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">singleton</span><span class="o">[</span><span class="kt">ExecutionService</span><span class="o">])</span>
 
-<p>```scala
-object Application {
-  def fromConfig(config: Config): ConfigError Xor Application =
-    (Service1.fromConfig(config) |@|
-     Service2.fromConfig(config)).map(Application.apply).map(_.singleton[ExecutionService])</p>
-
-<p>}
-```</p>
-
-<h2>Conclusion</h2>
-
+<span class="o">}</span>
+</pre></div>
+<h2 id="conclusion">Conclusion</h2>
 <p>The technique presented here is really minimal: No annotations, no <a href="https://github.com/google/guice/wiki/Bindings">modules/bindings</a>, no type system trickery. In addition, we can use other tools in the Kiama toolbox, like <a href="http://wiki.kiama.googlecode.com/hg-history/02d6b58d5156633aea5e0dac9b5dec4dd0461d4a/papers/SCP11.pdf">attribute grammars</a>, to implement a topological sort in a few lines and start services in order.</p>
-
 <p>The main drawback is the necessity to instantiate a full graph of objects before being able to modify it (the <code>fromConfig</code> methods). On the other hand, specifying how every component can be instantiated from the configuration file (and testing that!) needs to be done anyway.</p>
-
 <p>I wouldn’t be surprised if large applications had new, unforeseen requirements that I’m not addressing right now, but simple applications can definitely use this technique and larger applications could explore more Kiama strategies.</p>
-
-<p>I also hope that this post gave you an incentive to explore Kiama (in version 2.0.0 as of now), as it’s an awesome library full of possibilities.</p></div></div><div id="10-key-facts-about-adform" class="news-post"><header class="post-header"><h1>10 Key Facts About Adform</h1></header><time datetime="2016-04-07" class="post-date">April 7, 2016</time><div class="post-summary"><p><strong>Guest post by <a href="http://site.adform.com/">Adform</a></strong></p>
-
+<p>I also hope that this post gave you an incentive to explore Kiama (in version 2.0.0 as of now), as it’s an awesome library full of possibilities.</p>
+</div></div><div id="10-key-facts-about-adform" class="news-post"><header class="post-header"><h1>10 Key Facts About Adform</h1></header><time datetime="2016-04-07" class="post-date">April 7, 2016</time><div class="post-summary"><p><strong>Guest post by <a href="http://site.adform.com/">Adform</a></strong></p>
 <ol>
 <li>Adform is an independent and open full-stack ad-tech platform servicing media agencies, trading desks, brands and publishers globally while providing a unified, data-driven ecosystem. </li>
 <li>We are responsible for ensuring that billions of ads are seen by the right consumers at the right time every day, which means we need a robust development and IT team to make that happen.</li>
@@ -296,86 +233,72 @@ It handles more than 1 million QPS with capacity for more than 1.5 million. In t
 <li>The Adform Platform is distributed on hardware servers across five data centers (three in the EU, one in the US and one in APAC).</li>
 <li>The Adform Research team has access to a real-time data stream, totaling 5 TB/day, allowing them to validate their ideas with current data.</li>
 <li>The Adform Research infrastructure consists of a 180+ TB HP Vertica cluster (18 servers, 360 CPUs, 4.5 TB RAM and 375 TB total storage capacity), which is at the data scientists’ disposal.</li>
-<li>Adform has a few numbers to share:
-<ul><li>7 million clicks registered per day</li>
+<li>Adform has a few numbers to share:<ul>
+<li>7 million clicks registered per day</li>
 <li>1.7 billion unique cookies and approximately 6 billion unique cookie profiles stored in Aerospike</li>
 <li>2 billion ad-serving transactions per day</li>
 <li>3000+ high-performance servers</li>
-<li>complex calculations per request processed in less than 100 ms</li></ul></li>
+<li>complex calculations per request processed in less than 100 ms</li>
+</ul>
+</li>
 <li>In December 2015, Adform raised $21.5M to fund the global growth of its independent and open full-stack ad-tech platform. It has big expansion plans for its offices in Poland, Lithuania, Belarus, Denmark and the UK. </li>
-</ol><img src="images/sponsors/adform-blogpost.jpg"><br><br><p>If you’re an entrepreneur at heart, if you’re always seeking a new horizon, then you’ll find a happy professional home at Adform. Do you want to participate in the growing ad-tech sector too?</p>
-
+</ol>
+<img src="images/sponsors/adform-blogpost.jpg"><br><br><p>If you’re an entrepreneur at heart, if you’re always seeking a new horizon, then you’ll find a happy professional home at Adform. Do you want to participate in the growing ad-tech sector too?</p>
 <p>Drop us a line or check out our open positions <a href="http://join.adform.com/open-positions/all/poland/">here</a>.</p>
-
 <p>See you at the conference!</p>
-
-<p>Adform Team</p><div class="social"><a href="https://twitter.com/share" data-url="http://scalar-conf.com/blog.html#10-key-facts-about-adform" data-text="10 Key Facts About Adform" data-via="scalarconf" data-related="scalarconf" data-count="none" data-hashtags="scalarconf" class="twitter-share-button">Tweet</a><div data-href="http://scalar-conf.com/blog.html#10-key-facts-about-adform" data-width="225" data-layout="button" data-action="like" data-show-faces="false" data-share="false" class="fb-like"></div></div></div></div><div id="algebraic-data-types-in-a-hybrid-paradigm-language" class="news-post"><header class="post-header"><h1>Algebraic data types in a hybrid paradigm language</h1></header><time datetime="2016-04-06" class="post-date">April 6, 2016</time><div class="post-summary"><p><strong>Guest post by <a href="http://www.gft.com/">GFT</a></strong></p>
-
+<p>Adform Team</p>
+<div class="social"><a href="https://twitter.com/share" data-url="http://scalar-conf.com/blog.html#10-key-facts-about-adform" data-text="10 Key Facts About Adform" data-via="scalarconf" data-related="scalarconf" data-count="none" data-hashtags="scalarconf" class="twitter-share-button">Tweet</a><div data-href="http://scalar-conf.com/blog.html#10-key-facts-about-adform" data-width="225" data-layout="button" data-action="like" data-show-faces="false" data-share="false" class="fb-like"></div></div></div></div><div id="algebraic-data-types-in-a-hybrid-paradigm-language" class="news-post"><header class="post-header"><h1>Algebraic data types in a hybrid paradigm language</h1></header><time datetime="2016-04-06" class="post-date">April 6, 2016</time><div class="post-summary"><p><strong>Guest post by <a href="http://www.gft.com/">GFT</a></strong></p>
 <p>Scala, being a hybrid language, provides programmers with a flexibility to choose the best tool for their job. Whether one wants a quick and dirty imperative hack or a super-smart clean functional solution to his problem, there is a choice. This is arguably one of main reasons behind Scala&#39;s increasing popularity. It feels light years ahead of Java on one hand and so much more flexible and convenient than Haskell on the other. Add JVM to the equation and it seems like the perfect blend of different programming styles.
 ​
 There is one gotcha, though. A consequence of the balance between functional and imperative programming in Scala is the somewhat obscured nature of several functional programming concepts that feel perfectly natural and clear when approached from a strictly functional angle, but when used in Scala, they kind of loose their charm and their advantages become less apparent.
 ​
 One of such concepts is algebraic data types (ADT). Let&#39;s take a closer look at what they are, at their features, and how they are realized in Scala.
 ​</p>
-
-<h2>Algebraic data types</h2>
-
+<h2 id="algebraic-data-types">Algebraic data types</h2>
 <p>Simply put, algebraic data type is a type composed from other types with relations of sum and product. Product types are tuples or records, <code>A B</code>, that is types that are a collection of others. Sum types are alternatives, <code>A | B</code>, with boolean being a good example - it takes two possible values of True or False, but not at the same time. Think enums.
 ​
 The key here is the ability to express very complex types with just these two simple combinations. With composition being a core feature of ADT, it is also decomposition that plays a key role. Decomposition allows compilers to extract components of ADT and apply pattern matching to analyze their building blocks.
 ​
 Methods, access modifiers and all other features known from the object oriented world are out of scope of algebraic data types.
 ​</p>
-
-<h2>An example</h2>
-
+<h2 id="an-example">An example</h2>
 <p>A classic example of ADT is a linked list, which facilitates sum and product. Please consider the following implementation of it in Scala:
-​
-<code>scala
-sealed trait AdtList[+A]
-case object Nil extends AdtList[Nothing]
-case class El[A](value: A, tail: AdtList[A]) extends AdtList[A]
-</code>
-​
+​</p>
+<div class="highlight"><pre><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">AdtList</span><span class="o">[</span><span class="kt">+A</span><span class="o">]</span>
+<span class="nc">case</span> <span class="k">object</span> <span class="nc">Nil</span> <span class="k">extends</span> <span class="nc">AdtList</span><span class="o">[</span><span class="kt">Nothing</span><span class="o">]</span>
+<span class="k">case</span> <span class="k">class</span> <span class="nc">El</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">value</span><span class="k">:</span> <span class="kt">A</span><span class="o">,</span> <span class="n">tail</span><span class="k">:</span> <span class="kt">AdtList</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span> <span class="k">extends</span> <span class="nc">AdtList</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
+</pre></div>
+<p>​
 What the above is trying to express is the fact that <code>AdtList</code> is an alternative (sum) of  <code>El</code> representing a list element with a (product) reference to the rest of list elements and <code>Nil</code> representing the end of a list. 
 ​
 But having the above description of ADT in mind, the Scala implementation provided is somehow confusing. There is much more of classic object oriented concepts here than any other. Please compare with how this could be declared in Haskell:
-​
-<code>scala
-data AdtList a = Nil | El a (AdtList a)
-</code>
-​
+​</p>
+<div class="highlight"><pre><span class="n">data</span> <span class="nc">AdtList</span> <span class="n">a</span> <span class="k">=</span> <span class="nc">Nil</span> <span class="o">|</span> <span class="nc">El</span> <span class="n">a</span> <span class="o">(</span><span class="nc">AdtList</span> <span class="n">a</span><span class="o">)</span>
+</pre></div>
+<p>​
 Much simpler. And even if you are not familiar with Haskell, this should be rather easy to grasp. Most importantly, <code>|</code> is used to express an alternative of <code>Nil</code> and product of <code>El</code> and the rest of the list.
 ​
 Let&#39;s go back to the above Scala implementation and the rationale behind it. 
 ​</p>
-
-<h4>Sealed traits</h4>
-
+<h4 id="sealed-traits">Sealed traits</h4>
 <p>One of the key features of ADT is the ability to reason on the structure of it based solely on their definition. It is not possible with classes, because of inheritance. One never knows what inherits its type.
 This is where the <code>sealed</code> keyword becomes useful. It allows for a type to be extended by types declared in the same file only. The consequence of this is that the Scala compiler knows all possible types that are directly based on the type being extended. In our case, <code>Nil</code> and <code>El</code> are the only two types that can directly inherit from <code>AdtList</code>. When used with pattern matching, it allows the compiler to find out if the match/case clause handles all possible incarnations of a type. In the following example:
-​
-<code>scala
-val list: AdtList[_] = El(1, El(2, El(3, Nil)))
-list match {
-  case Nil =&gt; println("Nil")
-}
-</code></p>
-
+​</p>
+<div class="highlight"><pre><span class="k">val</span> <span class="n">list</span><span class="k">:</span> <span class="kt">AdtList</span><span class="o">[</span><span class="k">_</span><span class="o">]</span> <span class="k">=</span> <span class="nc">El</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="nc">El</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="nc">El</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="nc">Nil</span><span class="o">)))</span>
+<span class="n">list</span> <span class="k">match</span> <span class="o">{</span>
+  <span class="k">case</span> <span class="nc">Nil</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="s">&quot;Nil&quot;</span><span class="o">)</span>
+<span class="o">}</span>
+</pre></div>
 <p>, thanks to the <code>sealed</code> keyword, the compiler is able to raise a warning:
-​
-<code>
-Warning:(20, 5) match may not be exhaustive.
+​</p>
+<div class="highlight"><pre>Warning:(20, 5) match may not be exhaustive.
 It would fail on the following input: El(_, _)
  list match {
  ^
-</code></p>
-
+</pre></div>
 <p>So the sealed keyword is a very convenient language feature to use in the case described, but it is worth noting that, in Scala, it has nothing to do with ADT per se. It is needed just because the object-oriented type system is used to model ADT.
 ​</p>
-
-<h4>Case classes for sum types</h4>
-
+<h4 id="case-classes-for-sum-types">Case classes for sum types</h4>
 <p>​
 <code>Nil</code> and <code>El</code> extending <code>AdtList</code> are used to model the sum (variant, alternative) nature of the <code>AdtList</code>. 
 ​
@@ -389,34 +312,24 @@ At this point, we are 100% deep down into the object oriented world. We have alr
 ​
 It is going to get even worse, when we start to use our new AdtList and try to introduce some convenience extensions.
 ​</p>
-
-<h2>Methods in algebraic data types</h2>
-
+<h2 id="methods-in-algebraic-data-types">Methods in algebraic data types</h2>
 <p>As already stated, ADTs do not feature methods (it simply is out of scope), but there is nothing that stops us from doing this in Scala. Please recall the above example of creation of <code>AdtList</code>:
-​
-<code>scala
-val list: AdtList[_] = El(1, El(2, El(3, Nil)))
-</code>
-​
+​</p>
+<div class="highlight"><pre><span class="k">val</span> <span class="n">list</span><span class="k">:</span> <span class="kt">AdtList</span><span class="o">[</span><span class="k">_</span><span class="o">]</span> <span class="k">=</span> <span class="nc">El</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="nc">El</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="nc">El</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="nc">Nil</span><span class="o">)))</span>
+</pre></div>
+<p>​
 This is not a very readable way to construct a list. The obvious solution here is introduction of infix operator, say <code>::</code>, to get right-associativity with a colon. The most natural place for it to reside is the <code>AdtList</code> trait, which becomes:
-​
-<code>scala
-sealed trait AdtList[+A] {
-  def ::[B &gt;: A](el: B) = El(el, this)
-}
-</code></p>
-
+​</p>
+<div class="highlight"><pre><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">AdtList</span><span class="o">[</span><span class="kt">+A</span><span class="o">]</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="o">::[</span><span class="kt">B</span> <span class="k">&gt;:</span> <span class="kt">A</span><span class="o">](</span><span class="n">el</span><span class="k">:</span> <span class="kt">B</span><span class="o">)</span> <span class="k">=</span> <span class="nc">El</span><span class="o">(</span><span class="n">el</span><span class="o">,</span> <span class="k">this</span><span class="o">)</span>
+<span class="o">}</span>
+</pre></div>
 <p>The construction of <code>AdtList</code> can now be vastly simplified:</p>
-
-<p><code>scala
-val list = 1 :: 2 :: 3 :: Nil
-</code></p>
-
+<div class="highlight"><pre><span class="k">val</span> <span class="n">list</span> <span class="k">=</span> <span class="mi">1</span> <span class="o">::</span> <span class="mi">2</span> <span class="o">::</span> <span class="mi">3</span> <span class="o">::</span> <span class="nc">Nil</span>
+</pre></div>
 <p>Arguably, it takes us even further from the original ADT concept. Readability is much better, but there is code that exists only to improve the style.
 ​</p>
-
-<h2>Why bother?</h2>
-
+<h2 id="why-bother-">Why bother?</h2>
 <p>If there is no chance for a clean implementation of ADTs in Scala, at least without macros, why bother?
 ​
 There are a few reasons. Pattern matching itself is probably the most praised Scala feature by Java developers and these are algebraic data types that brought it to the language. 
@@ -427,15 +340,14 @@ Also, pattern matching effectively allows for multiple dispatch, which in case o
 ​
 Obviously, there are cases where an object oriented approach is a much better choice. It is much easier to add a new type variant by inheriting a class and implementing a few virtual methods than extending ADT, as this requires modification of all match/case functions.
 ​</p>
-
-<h2>Wrapping up</h2>
-
+<h2 id="wrapping-up">Wrapping up</h2>
 <p>​
 The blend of object oriented and functional features in Scala is what makes people want to incorporate it in their projects. It allows for Java developers to gradually add functional programming skills to their portfolio without impeding their performance on the way and dumping all the experience they earned on Java assignments. The thing that may be an obstacle in functional paradigm adoption, though, may be this very feature of Scala - being an approachable hybrid.
 ​
 Features like ADT, type classes, applicative functors and monads are somehow tricky to achieve with Scala. This is why frameworks like Scalaz and Cats pop up. This is getting much better, with Cats especially, but for the price of using macros, which raises fears of Scala becoming the C++ of the JVM.
 ​
-This is not necessarily a bad thing, but it is just worth keeping in mind, that, as in case of flatMap for monads, there is much more to ADTs than just addition of unapply.</p><div class="social"><a href="https://twitter.com/share" data-url="http://scalar-conf.com/blog.html#algebraic-data-types-in-a-hybrid-paradigm-language" data-text="Algebraic data types in a hybrid paradigm language" data-via="scalarconf" data-related="scalarconf" data-count="none" data-hashtags="scalarconf" class="twitter-share-button">Tweet</a><div data-href="http://scalar-conf.com/blog.html#algebraic-data-types-in-a-hybrid-paradigm-language" data-width="225" data-layout="button" data-action="like" data-show-faces="false" data-share="false" class="fb-like"></div></div></div></div></div></section><section id="organizer" class="organizer row"><a data-scroll href="#top" class="to-top"><img src="images/icons/to-top.svg"><br>to top</a><div class="small-12 medium-8 medium-centered large-8 large-centered columns"><header class="section-title"><h1>Team</h1><small>Organized by <a href="https://softwaremill.com/">Softwaremill.com</a></small></header></div><div class="row"><div class="team-table"><div class="team-member"><img src="images/team/ludwikowski.jpg"><h2>Andrzej Ludwikowski</h2></div><div class="team-member"><img src="images/team/chmielarz.jpg"><h2>Michał Chmielarz</h2></div><div class="team-member"><img src="images/team/kos.jpg"><h2>Daniel Kos</h2></div><div class="team-member"><img src="images/team/grajek.jpg"><h2>Krzysztof Grajek</h2></div><div class="team-member"><img src="images/team/kunicki.jpg"><h2>Jacek Kunicki</h2></div><div class="team-member"><img src="images/team/zborowski.jpg"><h2>Jan Zborowski</h2></div><div class="team-member"><img src="images/team/warski.jpg"><h2>Adam Warski</h2></div><div class="team-member"><img src="images/team/wojciechowska.jpg"><h2>Małgorzata Wojciechowska</h2></div><div class="team-member"><img src="images/team/gorska.jpg"><h2>Sylwia Górska</h2></div><div class="team-member"><img src="images/team/no-img.jpg"><h2>Bartek Andrzejczak</h2></div><div class="team-member"><img src="images/team/zuchowski.jpg"><h2>Łukasz Żuchowski</h2></div><div class="team-member"><img src="images/team/bohdan.jpg"><h2>Katarzyna Leszczynśka-Bohdan</h2></div></div></div></section><div class="contact-links row"><div class="small-12 medium-4 large-4 columns"><a href="mailto:scalar@scalar-conf.com"><img src="images/icons/email.svg">&nbsp;scalar@scalar-conf.com</a></div><div class="small-12 medium-4 large-4 columns"><a href="https://twitter.com/scalarconf"><img src="images/icons/twitter.svg">&nbsp;@scalarconf</a></div><div class="small-12 medium-4 large-4 columns"><a href="https://www.facebook.com/scalarconf"><img src="images/icons/facebook.svg">&nbsp;facebook.com/<wbr></wbr>scalarconf</a></div><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script><div id="fb-root"></div><script>(function(d, s, id){var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script></div><script src="vendor/jquery.js"></script><script src="vendor/fastclick.js"></script><script src="foundation.min.js"></script><script src="vendor/smooth-scroll.js"></script><script>$(document).foundation();</script><script>smoothScroll.init({
+This is not necessarily a bad thing, but it is just worth keeping in mind, that, as in case of flatMap for monads, there is much more to ADTs than just addition of unapply.</p>
+<div class="social"><a href="https://twitter.com/share" data-url="http://scalar-conf.com/blog.html#algebraic-data-types-in-a-hybrid-paradigm-language" data-text="Algebraic data types in a hybrid paradigm language" data-via="scalarconf" data-related="scalarconf" data-count="none" data-hashtags="scalarconf" class="twitter-share-button">Tweet</a><div data-href="http://scalar-conf.com/blog.html#algebraic-data-types-in-a-hybrid-paradigm-language" data-width="225" data-layout="button" data-action="like" data-show-faces="false" data-share="false" class="fb-like"></div></div></div></div></div></section><section id="organizer" class="organizer row"><a data-scroll href="#top" class="to-top"><img src="images/icons/to-top.svg"><br>to top</a><div class="small-12 medium-8 medium-centered large-8 large-centered columns"><header class="section-title"><h1>Team</h1><small>Organized by <a href="https://softwaremill.com/">Softwaremill.com</a></small></header></div><div class="row"><div class="team-table"><div class="team-member"><img src="images/team/ludwikowski.jpg"><h2>Andrzej Ludwikowski</h2></div><div class="team-member"><img src="images/team/chmielarz.jpg"><h2>Michał Chmielarz</h2></div><div class="team-member"><img src="images/team/kos.jpg"><h2>Daniel Kos</h2></div><div class="team-member"><img src="images/team/grajek.jpg"><h2>Krzysztof Grajek</h2></div><div class="team-member"><img src="images/team/kunicki.jpg"><h2>Jacek Kunicki</h2></div><div class="team-member"><img src="images/team/zborowski.jpg"><h2>Jan Zborowski</h2></div><div class="team-member"><img src="images/team/warski.jpg"><h2>Adam Warski</h2></div><div class="team-member"><img src="images/team/wojciechowska.jpg"><h2>Małgorzata Wojciechowska</h2></div><div class="team-member"><img src="images/team/gorska.jpg"><h2>Sylwia Górska</h2></div><div class="team-member"><img src="images/team/no-img.jpg"><h2>Bartek Andrzejczak</h2></div><div class="team-member"><img src="images/team/zuchowski.jpg"><h2>Łukasz Żuchowski</h2></div><div class="team-member"><img src="images/team/bohdan.jpg"><h2>Katarzyna Leszczynśka-Bohdan</h2></div></div></div></section><div class="contact-links row"><div class="small-12 medium-4 large-4 columns"><a href="mailto:scalar@scalar-conf.com"><img src="images/icons/email.svg">&nbsp;scalar@scalar-conf.com</a></div><div class="small-12 medium-4 large-4 columns"><a href="https://twitter.com/scalarconf"><img src="images/icons/twitter.svg">&nbsp;@scalarconf</a></div><div class="small-12 medium-4 large-4 columns"><a href="https://www.facebook.com/scalarconf"><img src="images/icons/facebook.svg">&nbsp;facebook.com/<wbr></wbr>scalarconf</a></div><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script><div id="fb-root"></div><script>(function(d, s, id){var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script></div><script src="vendor/jquery.js"></script><script src="vendor/fastclick.js"></script><script src="foundation.min.js"></script><script src="vendor/smooth-scroll.js"></script><script>$(document).foundation();</script><script>smoothScroll.init({
   speed: 800,
   easing: 'easeInOutCubic',
   updateURL: false
