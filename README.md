@@ -159,7 +159,8 @@ There are several files responsible for compiling agenda for the website.
     ```
 
 - `agenda.js` script compiles `agenda-final.json` file, which contains all information about talk with precompiled HTML for talk description. 
-*You don't manually change this file.*
+
+*You don't manually change `agenda-final.json` file.*
 
 - `jade/agenda.jade` file is responsible for visual implementation of agenda on website.
 

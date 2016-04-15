@@ -1,0 +1,76 @@
+section#organizer.organizer.row
+  
+  include to-top-btn
+  
+  div.small-12.medium-8.medium-centered.large-8.large-centered.columns
+    header.section-title
+      h1 Team
+      small Organized by 
+        a(href="https://softwaremill.com/") Softwaremill.com
+  div.row
+    div.team-table
+      div.team-member
+        img(src="images/team/ludwikowski.jpg") 
+        h2 Andrzej Ludwikowski
+      div.team-member
+        img(src="images/team/chmielarz.jpg") 
+        h2 Michał Chmielarz
+      div.team-member
+        img(src="images/team/kos.jpg")
+        h2 Daniel Kos
+      div.team-member
+        img(src="images/team/grajek.jpg") 
+        h2 Krzysztof Grajek
+      div.team-member
+        img(src="images/team/kunicki.jpg") 
+        h2 Jacek Kunicki
+      div.team-member
+        img(src="images/team/zborowski.jpg") 
+        h2 Jan Zborowski
+      div.team-member
+        img(src="images/team/warski.jpg") 
+        h2 Adam Warski
+      div.team-member
+        img(src="images/team/wojciechowska.jpg") 
+        h2 Małgorzata Wojciechowska
+      div.team-member
+        img(src="images/team/gorska.jpg") 
+        h2 Sylwia Górska
+      div.team-member
+        img(src="images/team/no-img.jpg") 
+        h2 Bartek Andrzejczak
+      div.team-member
+        img(src="images/team/zuchowski.jpg") 
+        h2 Łukasz Żuchowski
+      div.team-member
+        img(src="images/team/bohdan.jpg") 
+        h2 Katarzyna Leszczynśka-Bohdan
+          
+
+div.contact-links.row
+  //- div.small-12.medium-3.large-3.columns
+  //-   a(href="http://lanyrd.com/2014/scalarconf/")
+  //-     img(src='images/icons/lanyard.svg')
+  //-     |&nbsp;lanyrd.com/crqyd
+  div.small-12.medium-4.large-4.columns
+    a(href="mailto:scalar@scalar-conf.com")
+      img(src='images/icons/email.svg')
+      |&nbsp;scalar@scalar-conf.com
+  div.small-12.medium-4.large-4.columns
+    a(href="https://twitter.com/scalarconf")
+      img(src='images/icons/twitter.svg')
+      |&nbsp;@scalarconf
+  div.small-12.medium-4.large-4.columns
+    a(href="https://www.facebook.com/scalarconf")
+      img(src='images/icons/facebook.svg')
+      |&nbsp;facebook.com/
+      wbr
+      |scalarconf
+
+  //- Twitter
+  script
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+  //- Facebook
+  #fb-root
+  script
+    (function(d, s, id){var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));

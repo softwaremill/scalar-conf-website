@@ -1,0 +1,44 @@
+doctype html
+html(lang="en", itemscope, itemtype="http://schema.org/EducationEvent")
+  head
+    title Scalar - Scala Conference in Central Europe - 11th of April 2015, Warsaw, Poland.
+    link(rel="shortcut icon", href="images/favicon.ico")
+    link(href='http://fonts.googleapis.com/css?family=Exo+2:400,200,500,600,700&subset=latin,latin-ext', rel='stylesheet', type='text/css')
+    link(rel="stylesheet", href="index.css", media="Screen")
+    meta(itemprop="name", content="Scalar")
+    meta(name="viewport", content="initial-scale=1.0, width=device-width")
+    meta(charset='utf-8')
+    script(src="vendor/modernizr.js")
+    script(src="app.js")
+
+  body#top
+    include ../parts/header-for-news.jade
+    
+    section.news-posts.row
+      header.section-title
+        h1 News
+      div.small-12.medium-8.medium-centered.large-6.large-centered.columns
+
+        //- include news-posts/news-mixin.jade
+        //- include news-posts/social-mixin.jade
+
+        //- include news-posts/4.jade
+        //- include news-posts/3.jade
+        //- include news-posts/2.jade
+        //- include news-posts/1.jade
+
+    include ../parts/organizer.jade
+
+    script(src="vendor/jquery.js")
+    script(src="vendor/fastclick.js")
+    script(src="foundation.min.js")
+    script(src="vendor/smooth-scroll.js")
+
+    script
+      $(document).foundation();
+    script
+      smoothScroll.init({
+        speed: 800,
+        easing: 'easeInOutCubic',
+        updateURL: false
+      });

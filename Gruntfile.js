@@ -11,14 +11,15 @@ module.exports = function(grunt) {
             debug: false,
             hotels: grunt.file.readJSON('hotels.json'),
             conf_info: grunt.file.readJSON('conf-info.json'),
-            agenda: grunt.file.readJSON('agenda-final.json')
+            agenda: grunt.file.readJSON('agenda-final.json'),
+            news: grunt.file.readJSON('news.json')
           }
         },
         files: {
-          'dist/index.html': ['jade/index.jade'],
-          'dist/news.html': ['jade/news.jade'],
-          'dist/hotels.html': ['jade/hotels.jade'],
-          'dist/support.html': ['jade/support.jade']
+          'dist/index.html': ['pug/pages/index.pug'],
+          'dist/news/news.html': ['pug/pages/news.pug'],
+          'dist/hotels.html': ['pug/pages/hotels.pug'],
+          'dist/support.html': ['pug/pages/support.pug']
         }
       }
     },
@@ -26,12 +27,12 @@ module.exports = function(grunt) {
     stylus: {
       compile: {
         options: {
-          paths: ['styl'], // folder, where files to be imported are located
-          urlfunc: 'url', // use embedurl('test.png') in our code to trigger Data URI embedding
+          paths: ['styl'], // source files folder
+          urlfunc: 'url', // dataURI
           'include css': true
         },
         files: {
-          'dist/index.css': 'styl/index.styl' // 1:1 compile
+          'dist/index.css': 'styl/index.styl'
         }
       }
     },
@@ -56,7 +57,7 @@ module.exports = function(grunt) {
 
     watch: {
       src: {
-        files: ['jade/*.jade', 'jade/news-posts/*.jade', 'styl/*.styl', 'js/*.js'],
+        files: ['pug/**/**.pug', 'pug/**/**.jade', 'styl/*.styl', 'js/*.js'],
         tasks: ['build']
       }
     }
