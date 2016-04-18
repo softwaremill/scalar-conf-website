@@ -19,7 +19,8 @@ module.exports = function(grunt) {
           'dist/index.html': ['pug/pages/index.pug'],
           'dist/news/index.html': ['pug/pages/news.pug'],
           'dist/hotels.html': ['pug/pages/hotels.pug'],
-          'dist/support.html': ['pug/pages/support.pug']
+          'dist/support.html': ['pug/pages/support.pug'],
+          'dist/index2.html': ['pug/pages/index2.pug']
         }
       }
     },

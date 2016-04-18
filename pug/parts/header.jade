@@ -1,31 +1,32 @@
-section.header.row
-  div.small-12.medium-12.large-12.columns
-    nav.top-bar(data-topbar)
-      ul.title-area
-        li.name
-          h1
-            a(href="http://scalar-conf.com/")
-              img(src="images/scalar-logo.svg")
-        li.toggle-topbar.menu-icon
-          a(href="")
+block top-nav
+  section.header.row
+    div.small-12.medium-12.large-12.columns
+      nav.top-bar(data-topbar)
+        ul.title-area
+          li.name
+            h1
+              a(href="http://scalar-conf.com/")
+                img(src="images/scalar-logo.svg")
+          li.toggle-topbar.menu-icon
+            a(href="")
 
-      section.top-bar-section
-        ul.right
-          li
-            a(data-scroll, href="#news") News
-          li
-            a(data-scroll, href="#agenda") Agenda
-          li
-            a(data-scroll, href="#venue") Venue
-          li
-            a(data-scroll, href="#souvenirs") Souvenirs
-          li
-            a(data-scroll, href="#sponsors") Sponsors
-          li
-            a(data-scroll, href="#organizer") Team
-          li
-            a(href="http://scalar-conf.com/2015/") 2015
-          li
-            a(href="http://scalar-conf.com/2014/") 2014
-          li.tweet-btn
-            a(href="https://twitter.com/share", class="twitter-share-button", data-url="http://scalar-conf.com/", data-text="Check out #Scala @scalarconf on #{conf_info.month} #{conf_info.day}, #{conf_info.year} in #{conf_info.city}, #{conf_info.country}!", data-hashtags="scalarconf") Tweet
+        section.top-bar-section
+          ul.right
+            li
+              a(data-scroll, href="#news") News
+            li
+              a(data-scroll, href="#agenda") Agenda
+            li
+              a(data-scroll, href="#venue") Venue
+            li
+              a(data-scroll, href="#souvenirs") Souvenirs
+            li
+              a(data-scroll, href="#sponsors") Sponsors
+            li
+              a(data-scroll, href="#organizer") Team
+            li
+              a(href="http://scalar-conf.com/2015/") 2015
+            li
+              a(href="http://scalar-conf.com/2014/") 2014
+            li.tweet-btn
+              a(href="https://twitter.com/share", class="twitter-share-button", data-url="http://scalar-conf.com/", data-text="Check out #Scala @scalarconf on #{conf_info.month} #{conf_info.day}, #{conf_info.year} in #{conf_info.city}, #{conf_info.country}!", data-hashtags="scalarconf") Tweet

@@ -47,12 +47,25 @@ fs.readdir('./news', function(err, filenames) {
       var conf_info = JSON.parse(fs.readFileSync('conf-info.json', 'utf-8'));
       locals.conf_info = conf_info;
 
+      function merge(obj1, obj2) {
+        var result = {};
+        for(var key in obj1) 
+          result[key] = obj1[key];
+        for(var key in obj2) 
+          result[key] = obj2[key];
+        return result;
+      }
 
-      // Using news template, pass object with data and render an html
-      var html = pug.renderFile('./jade/templates/news-post-template.jade', locals);
+      locals.filename= "./pug/templates/news-post-template.pug";
+
+
+      // Use news template, pass object with data and render an html
+      var html = pug.renderFile('./pug/templates/news-post-template.pug', locals);
+
 
       // Write html file into dist/news folder
       fs.writeFileSync('dist/news/'+link+'.html', html);
+      console.log('New version created!');
 
     }
 
