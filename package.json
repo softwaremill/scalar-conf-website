@@ -2,7 +2,10 @@
   "name": "scalar-conference-website",
   "version": "1.0.0",
   "description": "scalar-conference-website",
-  "dependencies": {},
+  "dependencies": {
+    "jade": "^0.28.2",
+    "pug": "^2.0.0-alpha6"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-cli": "~0.1.6",
