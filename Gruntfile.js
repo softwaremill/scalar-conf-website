@@ -79,7 +79,6 @@ module.exports = function(grunt) {
 
   });
 
-  // grunt.loadNpmTasks('grunt-contrib-jade');
   grunt.loadNpmTasks('grunt-contrib-pug');
   grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-contrib-concat');
