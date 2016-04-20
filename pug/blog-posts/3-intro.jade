@@ -1,14 +1,14 @@
-- var title = 'EasyDI – Who wants some cake?'
-- var permalink = 'easydi-who-wants-some-cake'
-- var date = 'April 11, 2016'
-- var dateISO = '2016-04-11'
+div.news-post#easydi-who-wants-some-cake
+  header.post-header
+    h1 EasyDI – Who wants some cake?
+    time.post-date(datetime="2016-04-11") April 11, 2016
 
-- var link = 'http://scalar-conf.com/blog.html#'+ permalink
+  div.post-summary
+    :markdown
+      Scala developers have lots of options when it comes to doing [Dependency Injection](https://en.wikipedia.org/wiki/Dependency_injection) (or DI). The usual Java libraries can be used, like [Spring](http://docs.spring.io/autorepo/docs/spring/3.2.x/spring-framework-reference/html/beans.html), or [Guice](https://github.com/google/guice) for Play developers.
 
-+article(title, date, dateISO, permalink)
-  :markdown
-    Scala developers have lots of options when it comes to doing [Dependency Injection](https://en.wikipedia.org/wiki/Dependency_injection) (or DI). The usual Java libraries can be used, like [Spring](http://docs.spring.io/autorepo/docs/spring/3.2.x/spring-framework-reference/html/beans.html), or [Guice](https://github.com/google/guice) for Play developers.
+      But Scala being Scala, there are other options. You can use libraries leveraging macros, like [MacWire](https://github.com/adamw/macwire), or use the Scala type system and the infamous [“Cake pattern”](http://jonasboner.com/real-world-scala-dependency-injection-di) and its [many variations](http://www.warski.org/blog/2010/12/di-in-scala-cake-pattern) using traits, with or without self-types.
 
-    But Scala being Scala, there are other options. You can use libraries leveraging macros, like [MacWire](https://github.com/adamw/macwire), or use the Scala type system and the infamous [“Cake pattern”](http://jonasboner.com/real-world-scala-dependency-injection-di) and its [many variations](http://www.warski.org/blog/2010/12/di-in-scala-cake-pattern) using traits, with or without self-types.
-
-  +social(link, title)
+  div.social
+    a(href="https://twitter.com/share", class="twitter-share-button", data-url="http://scalar-conf.com/blog.html#1easydi-who-wants-some-cake", data-text="EasyDI – Who wants some cake?", data-via="scalarconf", data-related="scalarconf", data-count="none", data-hashtags="scalarconf") Tweet
+    div.fb-like(data-href="http://scalar-conf.com/blog.html#easydi-who-wants-some-cake", data-width="225", data-layout="button", data-action="like", data-show-faces="false", data-share="false")
