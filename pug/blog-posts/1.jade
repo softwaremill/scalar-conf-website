@@ -1,0 +1,143 @@
+div.news-post#algebraic-data-types-in-a-hybrid-paradigm-language
+  header.post-header
+     h1 Algebraic data types in a hybrid paradigm language
+    time.post-date(datetime="2016-04-06") April 6, 2016
+  
+  div.post-summary
+    :marked
+      **Guest post by [GFT](http://www.gft.com/)**
+
+      Scala, being a hybrid language, provides programmers with a flexibility to choose the best tool for their job. Whether one wants a quick and dirty imperative hack or a super-smart clean functional solution to his problem, there is a choice. This is arguably one of main reasons behind Scala's increasing popularity. It feels light years ahead of Java on one hand and so much more flexible and convenient than Haskell on the other. Add JVM to the equation and it seems like the perfect blend of different programming styles.
+      ​
+
+      There is one gotcha, though. A consequence of the balance between functional and imperative programming in Scala is the somewhat obscured nature of several functional programming concepts that feel perfectly natural and clear when approached from a strictly functional angle, but when used in Scala, they kind of loose their charm and their advantages become less apparent.
+      ​
+
+      One of such concepts is algebraic data types (ADT). Let's take a closer look at what they are, at their features, and how they are realized in Scala.
+      ​
+
+      Algebraic data types
+      --------------------
+      Simply put, algebraic data type is a type composed from other types with relations of sum and product. Product types are tuples or records, `A B`, that is types that are a collection of others. Sum types are alternatives, `A | B`, with boolean being a good example - it takes two possible values of True or False, but not at the same time. Think enums.
+      ​
+
+      The key here is the ability to express very complex types with just these two simple combinations. With composition being a core feature of ADT, it is also decomposition that plays a key role. Decomposition allows compilers to extract components of ADT and apply pattern matching to analyze their building blocks.
+      ​
+
+      Methods, access modifiers and all other features known from the object oriented world are out of scope of algebraic data types.
+      ​
+
+      An example
+      ----------
+      A classic example of ADT is a linked list, which facilitates sum and product. Please consider the following implementation of it in Scala:
+      ​
+
+      ```scala
+      sealed trait AdtList[+A]
+      case object Nil extends AdtList[Nothing]
+      case class El[A](value: A, tail: AdtList[A]) extends AdtList[A]
+      ```
+      ​
+      What the above is trying to express is the fact that `AdtList` is an alternative (sum) of  `El` representing a list element with a (product) reference to the rest of list elements and `Nil` representing the end of a list. 
+      ​
+      But having the above description of ADT in mind, the Scala implementation provided is somehow confusing. There is much more of classic object oriented concepts here than any other. Please compare with how this could be declared in Haskell:
+      ​
+
+      ```scala
+      data AdtList a = Nil | El a (AdtList a)
+      ```
+      ​
+      Much simpler. And even if you are not familiar with Haskell, this should be rather easy to grasp. Most importantly, `|` is used to express an alternative of `Nil` and product of `El` and the rest of the list.
+      ​
+      Let's go back to the above Scala implementation and the rationale behind it. 
+      ​
+      #### Sealed traits
+      One of the key features of ADT is the ability to reason on the structure of it based solely on their definition. It is not possible with classes, because of inheritance. One never knows what inherits its type.
+      This is where the `sealed` keyword becomes useful. It allows for a type to be extended by types declared in the same file only. The consequence of this is that the Scala compiler knows all possible types that are directly based on the type being extended. In our case, `Nil` and `El` are the only two types that can directly inherit from `AdtList`. When used with pattern matching, it allows the compiler to find out if the match/case clause handles all possible incarnations of a type. In the following example:
+      ​
+
+      ```scala
+      val list: AdtList[_] = El(1, El(2, El(3, Nil)))
+      list match {
+        case Nil => println("Nil")
+      }
+      ```
+
+      , thanks to the `sealed` keyword, the compiler is able to raise a warning:
+      ​
+
+      ```
+      Warning:(20, 5) match may not be exhaustive.
+      It would fail on the following input: El(_, _)
+       list match {
+       ^
+      ```
+
+      So the sealed keyword is a very convenient language feature to use in the case described, but it is worth noting that, in Scala, it has nothing to do with ADT per se. It is needed just because the object-oriented type system is used to model ADT.
+      ​
+      #### Case classes for sum types
+      ​
+      `Nil` and `El` extending `AdtList` are used to model the sum (variant, alternative) nature of the `AdtList`. 
+      ​
+      The case keyword is used to enable auto-generated implementation of the `unapply` method that allows for decomposition with pattern matching. 
+      ​
+      `Nil` is an `object`, because it has no type parameters and can be made a singleton (an OO-pattern, by the way) for convenience. It extends `AdtList[Nothing]` as this enables `Nil` to be a member of a list of any type (`Nothing` is a subtype of every other type in Scala).
+      ​
+      `El` is on the product type side of things as it consists of two elements. `El` is also recursive, as its second element is of type `AdtList` - one of very important features of ADT.
+      ​
+      At this point, we are 100% deep down into the object oriented world. We have already used inheritance and plain old Java (behind the scenes) objects to model ADT, which is (or at least used to be) very much on the functional side of the programming world. In consequence, what one is tempted to think is that ADT is a kind of a design pattern used to model some specific data structures looking like enums on steroids due to pattern matching.
+      ​
+      It is going to get even worse, when we start to use our new AdtList and try to introduce some convenience extensions.
+      ​
+      Methods in algebraic data types
+      -------------------
+      As already stated, ADTs do not feature methods (it simply is out of scope), but there is nothing that stops us from doing this in Scala. Please recall the above example of creation of `AdtList`:
+      ​
+
+      ```scala
+      val list: AdtList[_] = El(1, El(2, El(3, Nil)))
+      ```
+      ​
+      This is not a very readable way to construct a list. The obvious solution here is introduction of infix operator, say `::`, to get right-associativity with a colon. The most natural place for it to reside is the `AdtList` trait, which becomes:
+      ​
+
+      ```scala
+      sealed trait AdtList[+A] {
+        def ::[B >: A](el: B) = El(el, this)
+      }
+      ```
+
+      The construction of `AdtList` can now be vastly simplified:
+      
+      
+      ```scala
+      val list = 1 :: 2 :: 3 :: Nil
+      ```
+
+      Arguably, it takes us even further from the original ADT concept. Readability is much better, but there is code that exists only to improve the style.
+      ​
+      Why bother?
+      -------------------
+      If there is no chance for a clean implementation of ADTs in Scala, at least without macros, why bother?
+      ​
+      There are a few reasons. Pattern matching itself is probably the most praised Scala feature by Java developers and these are algebraic data types that brought it to the language. 
+      ​
+      What follows it, is the ability to extend handling of ADTs without actually modifying type definitions as methods that operate on ADT are separate from it and there is a known set of variants of ADT. In an object oriented approach, it requires introduction of a new virtual method and possibly modification of all inherited classes.
+      ​
+      Also, pattern matching effectively allows for multiple dispatch, which in case of object oriented design is achieved with the notorious visitor pattern, infamous for significantly reducing code readability.
+      ​
+      Obviously, there are cases where an object oriented approach is a much better choice. It is much easier to add a new type variant by inheriting a class and implementing a few virtual methods than extending ADT, as this requires modification of all match/case functions.
+      ​
+      Wrapping up
+      -----------
+      ​
+      The blend of object oriented and functional features in Scala is what makes people want to incorporate it in their projects. It allows for Java developers to gradually add functional programming skills to their portfolio without impeding their performance on the way and dumping all the experience they earned on Java assignments. The thing that may be an obstacle in functional paradigm adoption, though, may be this very feature of Scala - being an approachable hybrid.
+      ​
+      Features like ADT, type classes, applicative functors and monads are somehow tricky to achieve with Scala. This is why frameworks like Scalaz and Cats pop up. This is getting much better, with Cats especially, but for the price of using macros, which raises fears of Scala becoming the C++ of the JVM.
+      ​
+      This is not necessarily a bad thing, but it is just worth keeping in mind, that, as in case of flatMap for monads, there is much more to ADTs than just addition of unapply.
+
+  div.social
+    a(href="https://twitter.com/share", class="twitter-share-button", data-url="http://scalar-conf.com/blog.html#algebraic-data-types-in-a-hybrid-paradigm-language", data-text="Algebraic data types in a hybrid paradigm language", data-via="scalarconf", data-related="scalarconf", data-count="none", data-hashtags="scalarconf") Tweet
+    div.fb-like(data-href="http://scalar-conf.com/blog.html#algebraic-data-types-in-a-hybrid-paradigm-language", data-width="225", data-layout="button", data-action="like", data-show-faces="false", data-share="false")
+  

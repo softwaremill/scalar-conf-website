@@ -18,7 +18,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    jade: {
+    pug: {
       compile: {
         options: {
           data: {
@@ -26,14 +26,15 @@ module.exports = function(grunt) {
           }
         },
         files: {
-          'dist/index.html': ['jade/index.jade'],
-          'dist/news.html': ['jade/news.jade'],
-          'dist/blog.html': ['jade/blog.jade'],
-          'dist/hotels.html': ['jade/hotels.jade'],
-          'dist/support.html': ['jade/support.jade']
+          'dist/index.html': ['pug/index.pug'],
+          'dist/news.html': ['pug/news.pug'],
+          'dist/blog.html': ['pug/blog.pug'],
+          'dist/hotels.html': ['pug/hotels.pug'],
+          'dist/support.html': ['pug/support.pug'],
+          'dist/support.html': ['pug/support.pug']
         },
         filters: {
-          markdown: marked
+          marked: marked
         }
       }
     },
@@ -71,20 +72,20 @@ module.exports = function(grunt) {
 
     watch: {
       src: {
-        files: ['jade/*.jade', 'jade/news-posts/*.jade', 'jade/blog-posts/*.jade', 'styl/*.styl', 'js/*.js'],
+        files: ['pug/*.jade', 'pug/*.pug', 'pug/news-posts/*.jade', 'pug/blog-posts/*.jade', 'styl/*.styl', 'js/*.js'],
         tasks: ['build']
       }
     }
 
   });
 
-  grunt.loadNpmTasks('grunt-contrib-jade');
+  grunt.loadNpmTasks('grunt-contrib-pug');
   grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('build', ['jade:compile', 'stylus:compile', 'concat:dist']);
+  grunt.registerTask('build', ['pug:compile', 'stylus:compile', 'concat:dist']);
   // grunt.registerTask('deploy', ['jade:compile', 'stylus:compile', 'concat:dist', 'uglify:my_target', 's3:upload']);
 
 };
