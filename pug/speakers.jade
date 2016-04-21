@@ -1,8 +1,8 @@
-section#agenda.row
-  a.to-top(data-scroll, href="#top")
-    img(src="images/icons/to-top.svg")
-    br
-    | to top
+- var section_name = "agenda"
+
+extends ../pug/templates/section-layout
+
+block section-content
   header.section-title
     h1 Agenda
   div.agenda-table.small-12.medium-12.large-12.columns
