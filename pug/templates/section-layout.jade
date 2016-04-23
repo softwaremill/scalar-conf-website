@@ -1,7 +1,8 @@
-section(id= section_name).row
-  a.to-top(data-scroll, href="#top")
-    img(src="images/icons/to-top.svg")
-    br
-    | to top
+mixin section(id)
+  section(id= id).row
+    a.to-top(data-scroll, href="#top")
+      img(src="images/icons/to-top.svg")
+      br
+      | to top
 
-  block section-content
+    block
