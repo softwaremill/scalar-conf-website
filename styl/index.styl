@@ -772,18 +772,7 @@ section.souvenirs-page.row:nth-child(odd)
   & p
     margin-bottom: 0.15rem;
     text-align: left;
-    
-  & .info-color-1
-    opacity: 1;
-    
-  & .info-color-2
-    opacity: 0.8;
-    
-  & .info-color-3
-    opacity: 0.63;
-    
-  & .info-color-4
-    opacity: 0.53;
+    font-size: 1rem;
     
   & span.percent
     font-weight: 200;
@@ -807,9 +796,33 @@ section.souvenirs-page.row:nth-child(odd)
       
   & .circle-text
     position: absolute;
-    top: 202px;
+    top: 190px;
     left: 50%;
-    margin-left: -70px;
+    margin-left: -74px;
+    
+  & .num-text
+    position: relative;
+    padding-left: 14px;
+
+    &:before
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 11px;
+      top: 5px;
+      left: 0;
+      
+  & .info-color-1 .num-text:before
+    background-color: #114476;
+    
+  & .info-color-2 .num-text:before
+    background-color: #135788;
+    
+  & .info-color-3 .num-text:before
+    background-color: #08729a;
+    
+  & .info-color-4 .num-text:before
+    background-color: #32c1d0;
     
   & .quote
     border-top: 2px dotted white;
@@ -970,7 +983,8 @@ div.video-wrapper
     
   .stats
     & .circle-text
-      top: 222px;
+      top: 210px;
+      margin-left: -80px;
 
     & .speakers .columns:first-child
       margin-bottom: 0;
@@ -981,6 +995,10 @@ div.video-wrapper
       
     & .venue img
       margin-bottom: 0;
+      
+    & .venue-text
+      margin-top: -11px;
+      padding-left: 5px;
       
     & .next-year
       & .text

@@ -178,17 +178,19 @@ section.souvenirs-page.row:nth-child(odd){background:none}
 .stats > .row{padding:3rem 0;}
 .stats > .row:first-child{padding-top:0}
 .stats h1{font-size:1.5rem;margin:0 auto 1rem}
-.stats p{margin-bottom:.15rem;text-align:left}
-.stats .info-color-1{opacity:1;-ms-filter:none;filter:none}
-.stats .info-color-2{opacity:.8;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";filter:alpha(opacity=80)}
-.stats .info-color-3{opacity:.63;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=63)";filter:alpha(opacity=63)}
-.stats .info-color-4{opacity:.53;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=53)";filter:alpha(opacity=53)}
+.stats p{margin-bottom:.15rem;text-align:left;font-size:1rem}
 .stats span.percent{font-weight:200}
 .stats span.number{width:45px;display:inline-block;text-align:right;margin-right:.25rem}
 .stats .speakers .columns{position:relative;}
 .stats .speakers .columns:first-child{margin-bottom:3rem}
 .stats .speakers img{max-width:293px;width:100%}
-.stats .circle-text{position:absolute;top:202px;left:50%;margin-left:-70px}
+.stats .circle-text{position:absolute;top:190px;left:50%;margin-left:-74px}
+.stats .num-text{position:relative;padding-left:14px;}
+.stats .num-text:before{content:"";position:absolute;width:10px;height:11px;top:5px;left:0}
+.stats .info-color-1 .num-text:before{background-color:#114476}
+.stats .info-color-2 .num-text:before{background-color:#135788}
+.stats .info-color-3 .num-text:before{background-color:#08729a}
+.stats .info-color-4 .num-text:before{background-color:#32c1d0}
 .stats .quote{border-top:2px dotted #fff;border-bottom:2px dotted #fff;font-style:italic;font-weight:300;font-size:1.15rem;line-height:1.48;}
 .stats .quote:last-child{border-bottom:none}
 .stats .talks .speaker-img{width:75%;margin-right:1%;margin-left:1%;display:inline-block;position:relative;margin-bottom:1.5rem;}
@@ -224,10 +226,11 @@ section.row.hero .conference-data time,section.row.hero .conference-data span{di
 .team-table img [class*="column"]+[class*="column"]:last-child{float:left}
 #map{display:block}
 #hotels-right-section{left:65%;padding:87px 1em 2em}
-.stats .circle-text{top:222px}
+.stats .circle-text{top:210px;margin-left:-80px}
 .stats .speakers .columns:first-child{margin-bottom:0}
 .stats .talks .speaker-img{width:18%;margin-bottom:0}
 .stats .venue img{margin-bottom:0}
+.stats .venue-text{margin-top:-11px;padding-left:5px}
 .stats .next-year .text{margin-left:0}
 .stats .next-year p{display:inline-block;}
 .stats .next-year p:first-child{margin-left:4.5%;width:57.5%}
