@@ -754,9 +754,106 @@ section.souvenirs-page.row:nth-child(odd)
 
 #stats > .columns
   text-align: center;
-  
-.stats img
+
+
+.stats
   max-width: 750px;
+  
+  & > .row
+    padding: 3rem 0;
+    
+    &:first-child
+      padding-top: 0;
+
+  & h1
+    font-size: 1.5rem;
+    margin: 0 auto 1rem;
+    
+  & p
+    margin-bottom: 0.15rem;
+    text-align: left;
+    
+  & .info-color-1
+    opacity: 1;
+    
+  & .info-color-2
+    opacity: 0.8;
+    
+  & .info-color-3
+    opacity: 0.63;
+    
+  & .info-color-4
+    opacity: 0.53;
+    
+  & span.percent
+    font-weight: 200;
+    
+  & span.number
+    width: 45px;
+    display: inline-block;
+    text-align: right;
+    margin-right: 0.25rem;
+
+  & .speakers
+    & .columns
+      position: relative;
+      
+      &:first-child
+        margin-bottom: 3rem;
+
+    & img
+      max-width: 293px;
+      width: 100%;
+      
+  & .circle-text
+    position: absolute;
+    top: 202px;
+    left: 50%;
+    margin-left: -70px;
+    
+  & .quote
+    border-top: 2px dotted white;
+    border-bottom: 2px dotted white;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.15rem;
+    line-height: 1.48;
+    
+    &:last-child
+      border-bottom: none;
+    
+  & .talks .speaker-img
+    width: 75%;
+    margin-right: 1%
+    margin-left: 1%;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 1.5rem
+    
+    & img
+      opacity: 0.5;
+      
+  & .speaker-percent
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    font-size: 2rem;
+    margin-left: -46px;
+    font-weight: 600;
+    
+  & .venue img
+    max-width: 485px;
+    width: 100%;
+    margin-bottom: 1rem;
+      
+  & .next-year
+    & img
+      max-width: 90%;
+      margin-bottom: 1rem;
+    
+    & .text
+      text-align: left;
+      margin-left: 5%;
 
 div.video-wrapper
   position: relative;
@@ -871,6 +968,34 @@ div.video-wrapper
     left: 65%;
     padding: 87px 1em 2em;
     
+  .stats
+    & .circle-text
+      top: 222px;
+
+    & .speakers .columns:first-child
+      margin-bottom: 0;
+    
+    & .talks .speaker-img
+      width: 18%;
+      margin-bottom: 0;
+      
+    & .venue img
+      margin-bottom: 0;
+      
+    & .next-year
+      & .text
+        margin-left: 0;
+
+      & p
+        display: inline-block;
+        
+        &:first-child
+          margin-left: 4.5%;
+          width: 57.5%;
+          
+        &:nth-child(2)
+          width: 21.2%;
+    
 @media only screen and (min-width: 54.375em)
   .team-table .team-member
     max-width: 137px;
@@ -901,6 +1026,7 @@ div.video-wrapper
     
   #hotels-right-section
     padding: 130px 2em 2em;
+    
 // End Responsive styles
 
 .news-posts .post-summary { margin-top: 10px }
