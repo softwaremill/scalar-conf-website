@@ -842,13 +842,21 @@ section.souvenirs-page.row:nth-child(odd)
     display: inline-block;
     position: relative;
     margin-bottom: 1.5rem
+    vertical-align: top;
+    
+    & p
+      text-align: center;
     
     & img
       opacity: 0.5;
+      margin-bottom: 1rem;
+      
+    & p.speaker-name
+      font-weight: 600;
       
   & .speaker-percent
     position: absolute;
-    bottom: 5%;
+    top: 145px;
     left: 50%;
     font-size: 2rem;
     margin-left: -46px;
@@ -993,6 +1001,15 @@ div.video-wrapper
       width: 18%;
       margin-bottom: 0;
       
+      & img
+        margin-bottom: 0.5rem;
+      
+      & p
+        text-align: left;
+      
+    & .speaker-percent
+      top: 75px;
+      
     & .venue img
       margin-bottom: 0;
       
@@ -1017,6 +1034,9 @@ div.video-wrapper
 @media only screen and (min-width: 54.375em)
   .team-table .team-member
     max-width: 137px;
+    
+  .stats .speaker-percent
+    top: 97px;
 
 @media only screen and (min-width: 62.875em)
   .team-table .team-member

@@ -193,9 +193,11 @@ section.souvenirs-page.row:nth-child(odd){background:none}
 .stats .info-color-4 .num-text:before{background-color:#32c1d0}
 .stats .quote{border-top:2px dotted #fff;border-bottom:2px dotted #fff;font-style:italic;font-weight:300;font-size:1.15rem;line-height:1.48;}
 .stats .quote:last-child{border-bottom:none}
-.stats .talks .speaker-img{width:75%;margin-right:1%;margin-left:1%;display:inline-block;position:relative;margin-bottom:1.5rem;}
-.stats .talks .speaker-img img{opacity:.5;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";filter:alpha(opacity=50)}
-.stats .speaker-percent{position:absolute;bottom:5%;left:50%;font-size:2rem;margin-left:-46px;font-weight:600}
+.stats .talks .speaker-img{width:75%;margin-right:1%;margin-left:1%;display:inline-block;position:relative;margin-bottom:1.5rem;vertical-align:top;}
+.stats .talks .speaker-img p{text-align:center}
+.stats .talks .speaker-img img{opacity:.5;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";filter:alpha(opacity=50);margin-bottom:1rem}
+.stats .talks .speaker-img p.speaker-name{font-weight:600}
+.stats .speaker-percent{position:absolute;top:145px;left:50%;font-size:2rem;margin-left:-46px;font-weight:600}
 .stats .venue img{max-width:485px;width:100%;margin-bottom:1rem}
 .stats .next-year img{max-width:90%;margin-bottom:1rem}
 .stats .next-year .text{text-align:left;margin-left:5%}
@@ -228,7 +230,10 @@ section.row.hero .conference-data time,section.row.hero .conference-data span{di
 #hotels-right-section{left:65%;padding:87px 1em 2em}
 .stats .circle-text{top:210px;margin-left:-80px}
 .stats .speakers .columns:first-child{margin-bottom:0}
-.stats .talks .speaker-img{width:18%;margin-bottom:0}
+.stats .talks .speaker-img{width:18%;margin-bottom:0;}
+.stats .talks .speaker-img img{margin-bottom:.5rem}
+.stats .talks .speaker-img p{text-align:left}
+.stats .speaker-percent{top:75px}
 .stats .venue img{margin-bottom:0}
 .stats .venue-text{margin-top:-11px;padding-left:5px}
 .stats .next-year .text{margin-left:0}
@@ -236,6 +241,7 @@ section.row.hero .conference-data time,section.row.hero .conference-data span{di
 .stats .next-year p:first-child{margin-left:4.5%;width:57.5%}
 .stats .next-year p:nth-child(2){width:21.2%}
 }@media only screen and (min-width: 54.375em){.team-table .team-member{max-width:137px}
+.stats .speaker-percent{top:97px}
 }@media only screen and (min-width: 62.875em){.team-table .team-member{max-width:155px}
 }@media only screen and (min-width: 64.063em){.top-bar .name h1 a{padding:1em 0 0 1em;}
 .top-bar .name h1 a img{max-height:none}
