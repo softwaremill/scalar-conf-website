@@ -13,9 +13,11 @@ mixin header()
         section.top-bar-section
           ul.right
             li
-              a(data-scroll, href="http://blog.scalar-conf.com") Blog
+              a(data-scroll, href="#register") Register
             li
               a(data-scroll, href="https://docs.google.com/forms/d/e/1FAIpQLScTnyaCZq6WaeDFI_GUWFsV2dfNMLqIE4vRtFh7m1R6wh4JTg/viewform?c=0&w=1") C4P
+            li
+              a(data-scroll, href="http://blog.scalar-conf.com") Blog
 
             - var menu = Array.prototype.slice.call(arguments);
             for item in menu
