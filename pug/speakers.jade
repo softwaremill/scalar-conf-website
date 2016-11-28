@@ -1,234 +1,58 @@
-+section("agenda")
+section#agenda.row
+  a.to-top(data-scroll, href="#top")
+    img(src="images/icons/to-top.svg")
+    br
+    | to top
   header.section-title
-    h1 Agenda
+    h1 Speakers
   div.agenda-table.small-12.medium-12.large-12.columns
-    div.row.utility
-      div.time.small-12.medium-2.large-1.columns 8:00
-      div.description.small-12.medium-10.large-11.columns Registration
-    div.row.utility
-      div.time.small-12.medium-2.large-1.columns 8:50
-      div.description.small-12.medium-10.large-11.columns Welcome
     div.row
-      div.time.small-12.medium-2.large-1.columns 9:00
-      div.description.small-12.medium-10.large-11.columns
-        div.talk
-          h1 Having a cake and eating it too. Introduction to Typeclasses.
-          p Being in a Scala community, you've probably heard about type classes. Very basic concept that both commonly used among many Scala libraries and at the same time very fundamental to understand any theoretical concepts behind Functional Programming. This short talk is all about explaining what Type classes are, how to use them and how to create them, with strong emphasis on answering the question "why should I even care?". We will focus on both on prons and cons, however speaker will probably be a bit biased towards the former.
-          p We will follow story of couple of developers, struggling with conceptual design problem. As many before them, they will eventually reinvent the wheel. The solution they will end up with, is what we call a Type class.
-          p This is a "from zero to hero" talk. Preferable audience are people who want to:
-          p 1. understand any shapeless/scalaz/cats presentation out there (this presentation will give you ability to survive first 10 minutes of mentioned talks)
-          p 2. be enlightened that "monads are just type classes with some laws" (this is not a monad tutorial though)
-          p 3. get the "aha!" moment, realising that they've been using Type classes from time to time, without knowing it 
+      div.description.small-12.medium-12.large-12.columns
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/gurnell.png")
+          div.speaker-bio
+            h2 Dave Gurnell
+            a(href="https://twitter.com/davegurnell").speaker-link @davegurnell
+            p
+              | Dave is a developer, trainer, and partner at 
+              a(href="http://underscore.io") Underscore
+              |. He has spent over a decade creating software using functional programming, and has authored and co-authored several books about Scala. His current projects include 
+              a(href="http://github.com/underscoreio/shapeless-guide") taking short trips in his space ship 
+              | and  
+              a(href="http://meowsynth.com") creating synthesizers using cats
+              |.
+    div.row
+      div.description.small-12.medium-12.large-12.columns
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/seeberger.png")
+          div.speaker-bio
+            h2 Heiko Seeberger
+            a(href="https://twitter.com/hseeberger").speaker-link @hseeberger
+            p
+              | Heiko Seeberger is Fellow at codecentric and an internationally renowned expert on Scala and Akka. He has more than 20 years of experience in consulting and software development. Heiko tweets under @hseeberger and blogs under 
+              a(href="http://heikoseeberger.de") heikoseeberger.de
+              |.
+    div.row
+      div.description.small-12.medium-12.large-12.columns
         div.speaker
           div.speaker-photo
             img(src="images/speakers/szulc.png")
           div.speaker-bio
-            h2 Pawel Szulc
+            h2 Paweł Szulc
             a(href="https://twitter.com/rabbitonweb").speaker-link @rabbitonweb
-            p Pawel Szulc is primarily a programmer. Always was and always will be. Experienced professionally in JVM ecosystem, currently having tons of fun with Scala, Erlang, Clojure and Haskell. By day working on (not that) BigData problems with Akka Stream &mp; Apache Spark, by night hacking whatever he finds interesting at that given moment. Humble apprentice of Functional Programming. Runs a blog 
-              a(href="http://www.rabbitonweb.com") rabbitonweb.com
-              | .
-            p Github 
-              a(href="http://github.com/rabbitonweb") github.com/rabbitonweb
-              | .
+            p
+              | Pawel Szulc is primarily a programmer. Always was and always will be. Experienced professionally in JVM ecosystem, currently having tons of fun with Scala and Haskell. Humble apprentice of Functional Programming. Runs a blog 
+              a(href="http://rabbitonweb.com") rabbitonweb.com
+              |.
     div.row
-      div.time.small-12.medium-2.large-1.columns 9:30
-      div.description.small-12.medium-10.large-11.columns
-        div.talk
-          h1 Swave - a fresh Reactive Streams Implementation
-          p One of the most exciting developments of the last two years has been the advent of "Reactive Streams", a powerful new abstraction for defining and scaling pipelined processing logic in a fully asynchronous, non-blocking and generally *reactive* fashion.
-          p In this talk I'll introduce you to a new, fully-featured Reactive Streams infrastructure toolkit for Scala, called "Swave", which has been built from scratch with a special focus on maximum performance, a simple and powerful API as well as minimal dependencies.
-          p We'll look into the general design approach, feature set and core implementation choices as well as basic benchmark and performance figures.
-          p We'll also contrast with other Reactive Streams implementations and highlight pros and cons from a user's perspective.
-          p So the next time you are reaching for a Reactive Streams toolkit you'll have one more choice to pick from.
+      div.description.small-12.medium-12.large-12.columns
         div.speaker
           div.speaker-photo
-            img(src="images/speakers/doenitz.jpg")
+            img(src="images/speakers/leontiev.png")
           div.speaker-bio
-            h2 Mathias Doenitz
-            a(href="https://twitter.com/sirthias").speaker-link @sirthias
-            p Among many other things Mathias is the original author of 
-              a(href="http://spray.io/") spray.io
-              | , which was acquired by Typesafe in 2013.
-            p As a long-time and active member of the Java and Scala open-source communities he is especially excited about everything performance-, scalability- and web-related.
-    div.row.utility
-      div.time.small-12.medium-2.large-1.columns 10:00
-      div.description.small-12.medium-10.large-11.columns Coffee Break
-    div.row
-      div.time.small-12.medium-2.large-1.columns 10:30
-      div.description.small-12.medium-10.large-11.columns
-        div.talk
-          h1 The Eff monad, one monad to rule them all
-          p Monad transformers are a neat way to compose effectul computations: pass some configuration, read/write from disk, track errors... 
-          p However they can be a bit cumbersome to deal with, especially if you want to use different stacks sharing some common effects: for example a stack to interact with AWS and another one for Hadoop computations.
-          p This talk will shortly introduce monad transformers in Scala and their drawbacks then present the Eff monad.
-          p The Eff monad has some really interesting properties:
-          ul
-            li effects can be developed completely independently from each other
-            li effects can be interpreted in different ways and the interpreters can be composed together
-            li it is based on an efficient "Free monad" (avoiding the issue of quadratic flatMaps)
-            li with the Eff monad you will never have to re-implement the Monad operations (point / flatMap) again!
-        div.speaker
-          div.speaker-photo
-            img(src="images/speakers/torreborre.jpg")
-          div.speaker-bio
-            h2 Eric Torreborre
-            a(href="https://twitter.com/etorreborre").speaker-link @etorreborre
-            p I am a software developer living in Berlin, working for Zalando.
-            p I am the creator of the 
-              a(href="https://github.com/etorreborre/specs2") specs2  
-              | library for software specifications in Scala.
-            p Scala has been my gateway drug to functional programming and to many "unknown unknowns".
-            p When I manage to go from "unknown unknowns" to "known knowns" I try to spread the word.
-    div.row
-      div.time.small-12.medium-2.large-1.columns 11:00
-      div.description.small-12.medium-10.large-11.columns
-        div.talk
-          h1 Incremental compiler: taming scalac
-          p In the wild, Scalac  is an enormous beast. When run freely compilation takes ages even for simple changes in your project. Luckily, in the end of stone age of scala tooling first incremental compilers emerged and time spent on scala compilation’s become less and less noticeable...
-          p In this talk I want to explain what incremental compiler is and how it works in sbt world. Further down the road I will show how name hashing reduces amount of compiled files. In the end we will ask ourselves if we can do any better (and by what cost). 
-        div.speaker
-          div.speaker-photo
-            img(src="images/speakers/romanowski.png")
-          div.speaker-bio
-            h2 Krzysztof Romanowski
-            a(href="https://twitter.com/RomanowskiKr").speaker-link @RomanowskiKr
-            p Krzysztof is Scala specialist @ Virtuslab where he has spent endless hours debugging Scala IDE, SBT, IntelliJ or even Scala compiler itself. Author of expression evaluator engine for Scala IDE.
-            p Github 
-              a(href="https://github.com/romanowski") github.com/romanowski
-              | .
-            p Blog 
-              a(href="http://blog.typosafe.pl") typosafe.pl
-              | .
-    div.row
-      div.time.small-12.medium-2.large-1.columns 11:30
-      div.description.small-12.medium-10.large-11.columns
-        div.talk
-          h1 akka-cluster-etcd
-          p Modern container-based cluster computing frameworks like Mesos, Kubernetes, or EC2 Container Service usually execute services on nodes not known beforehand. This creates a problem for Akka Cluster deployments, where seed nodes need to be established.
-          p In this talk we present a zero-configuration deployment scenario for Akka Cluster using etc.d as a distributed configuration store.
-        div.speaker
-          div.speaker-photo
-            img(src="images/speakers/bilas.png")
-          div.speaker-bio
-            h2 Maciej Biłas
-            a(href="https://twitter.com/maciejb").speaker-link @maciejb
-            p Maciej Biłas is a software engineer at Adform Research. He spent over 3 years developing production Scala code and many more in the JVM ecosystem. Makes data run in the pipes during the day.
-    div.row.utility
-      div.time.small-12.medium-2.large-1.columns 12:00
-      div.description.small-12.medium-10.large-11.columns Lunch
-    div.row
-      div.time.small-12.medium-2.large-1.columns 13:30
-      div.description.small-12.medium-10.large-11.columns
-        div.talk
-          h1 Lift framework in 30 minutes
-          p In 30 minutes I want to build a full blown web app based on Lift framework.
-        div.speaker
-          div.speaker-photo
-            img(src="images/speakers/lenart.png")
-          div.speaker-bio
-            h2 Lukasz Lenart
-            a(href="https://twitter.com/lukaszlenart").speaker-link @lukaszlenart
-            p Life hacker with positive attitude but sometimes he's losing his faith in humanity. Still believes in good (people). Java coder coding in Scala on daily basis but without conviction. Fell in love with CSS and Javascript, especially in CoffeeScript. Apache Struts lead developer but no one knows why. Believing that all code you wrote is already @depreacted!
-    div.row
-      div.time.small-12.medium-2.large-1.columns 14:00
-      div.description.small-12.medium-10.large-11.columns
-        div.talk
-          h1 Shapeless ? Easy !
-          p Shapeless is known for being difficult to grasp, even for experienced Scala developers. In this talk, I will do my best to show you that this difficulty is somehow overrated. 
-          p Of course we'll only scratch the surface there. But hopefully, you'll take home enough hints to begin your own exploration of what this powerful tool enables.
-        div.speaker
-          div.speaker-photo
-            img(src="images/speakers/kasas.png")
-          div.speaker-bio
-            h2 Valentin Kasas
-            a(href="https://twitter.com/ValentinKasas").speaker-link @ValentinKasas
-            p After having spent half a dozen years writing boilerplatey C++ and Java code, discovering Scala was a bliss. Ever since, I look for every occasion to train my FP muscles, and to share my sheer enthusiasm about Scala.
-            p Blog at 
-              a(href="http://kanaka.io/blog") kanaka.io/blog
-              | .
-    div.row
-      div.time.small-12.medium-2.large-1.columns 14:30
-      div.description.small-12.medium-10.large-11.columns
-        div.talk
-          h1 IOT, timeseries and prediction with Android, Cassandra and Spark
-          p IOT has a massive potential and its impact in our daily life is important. Here is an exemple of using a connected object and analysing its data: we'll see how to collect data using the accelerometer sensor of your smartphone. Then, we'll store it in Cassandra as a Timeseries model. Finally, we'll analyse those data and predict the activity with Spark. We will see a live demo on stage to show this solution working in realtime.
-        div.speaker
-          div.speaker-photo
-            img(src="images/speakers/lakhal.jpg")
-          div.speaker-bio
-            h2 Amira Lakhal
-            a(href="https://twitter.com/MiraLak").speaker-link @MiraLak
-            p Amira Lakhal is an Agile Java Scala developer at Valtech France. She is passionate about functional languages and Big Data. She is one of the Duchess France leaders where she helps women in IT to became role models.
-    div.row.utility
-      div.time.small-12.medium-2.large-1.columns 15:00
-      div.description.small-12.medium-10.large-11.columns Break
-    div.row
-      div.time.small-12.medium-2.large-1.columns 15:30
-      div.description.small-12.medium-10.large-11.columns
-        div.talk
-          h1 Making sense of initialization order in Scala
-          p In this talk we will discuss in detail the current object initialization order scheme in Scala. 
-          p Though a fundamental and seemingly basic feature, the order in which class fields are initialized is often a source of bugs and frustration for users. We will demonstrate how apparently-innocent changes can lead to surprising behavior at runtime.
-          p Workarounds already exist in Scala—early initializers and lazy vals—and alternative compiler implementations could enhance the the safety guarantees provided at compile-time. We will look at some of these possibilities and will briefly discuss potential changes to initialization order in Dotty.
-        div.speaker
-          div.speaker-photo
-            img(src="images/speakers/petrashko.png")
-          div.speaker-bio
-            h2 Dmytro Petrashko
-            a(href="https://twitter.com/darkdimius").speaker-link @darkdimius
-            p Dmytro Petrashko is a programming languages and algorithms researcher and a doctoral assistant at EPFL. He is currently working on a doctorate as a research assistant in the School of Computer and Communication Sciences at the EPFL in Switzerland, on experimental Dotty compiler for Scala. Previously he was working on ScalaBlitz—macro generated collections for Scala.
-    div.row
-      div.time.small-12.medium-2.large-1.columns 16:00
-      div.description.small-12.medium-10.large-11.columns
-        div.talk
-          h1 Cool toolz in the Scalaz and Cats toolboxes
-          p In this talk we intend to show that the two libraries: Scalaz and Cats widely held to be cryptic, hermetic and full of scary Mooonads in reality contain lots of easy to use components ready to be embeded in your code to make it shorter, clearer and easier to maintain. We will look at certain constructs from pragmatic point of view as just "Design Patterns" that happen to match ideally functional programming style.
-        div.speaker
-          div.speaker-photo
-            img(src="images/speakers/pustelnik.png")
-          div.speaker-bio
-            h2 Jan Pustelnik
-            a(href="https://twitter.com/gosubpl").speaker-link @gosubpl
-            p Jan is a Scala &amp; Java developer at GFT Poland. He is very interested in how software works on low detail level and does not find big frameworks appealing. This is the main reason why he loves Scala, a very expressive language that allows one to build the right abstraction quickly without loosing the control on details.
-            p Github 
-              a(href="https://github.com/gosubpl") github.com/gosubpl
-              | .
-    div.row.utility
-      div.time.small-12.medium-2.large-1.columns 16:30
-      div.description.small-12.medium-10.large-11.columns Break
-    div.row
-      div.time.small-12.medium-2.large-1.columns 17:00
-      div.description.small-12.medium-10.large-11.columns
-        div.talk
-          h1 Contract First, Session Types Later!
-          p This talk's about how actors should communicate with the outside world as expressed in Joe Armstrongs proposed Erlang implementation of "UBF", the "Universal Binary Format" specification, a paper that let to the concept of Session Types.  What are Session Types?  What kind of a safety do they provide? We'll demo how "Session Types" can be unified with real world RESTFul applications, in an almost typesafe way.
-        div.speaker
-          div.speaker-photo
-            img(src="images/speakers/borst.png")
-            img(src="images/speakers/schmidt.png")
-          div.speaker-bio
-            h2 Marco Borst &amp; Slava Schmidt
-            a(href="https://twitter.com/nmcborst").speaker-link @nmcborst
-            p Marco Borst and Slava Schmidt are freelance Scala Developers.  For Zalando SE they created Play-Swagger, an open source plugin that lets Play developers treat Swagger API specifications as the single source of thruth. This work did fuel their interest in protocol languages, the state of the art in API specifications and the safety that this specifications can provide in real world scenarios.  They have experience presenting at multiple conferences and meetups from 2013 on, most notably the Java User Group Taiwan, Innovation Days, ScalaDay, QALab and JavaDay in the Ukraine, JavaDay in Belarus, the Scala User Group in Berlin and the Scala World Unconference in the UK.
-    div.row
-      div.time.small-12.medium-2.large-1.columns 17:30
-      div.description.small-12.medium-10.large-11.columns
-        div.talk
-          h1 Scala SWAT: Tackling 1 Billion Member Social Network
-          p Enabling blazing fast search on a 1 billion member social network demands special weapons and tactics. Let me take you on a journey around the edges of existing technologies. I'll tell you how we took advantage of the Scala ecosystem and modern tools to realize persistence and processing of such a data set.
-          p About this conversation:
-          p Case study focused on the client requirements and tools we have made use of to meet them. Thoughts, injuries and ideas about real life fast &amp; big data challenge brought to you directly from the trenches.
-        div.speaker
-          div.speaker-photo
-            img(src="images/speakers/bankowski.png")
-          div.speaker-bio
-            h2 Artur Bańkowski
-            a(href="https://twitter.com/abankowski").speaker-link @abankowski
-            p Artur is a software architect mainly focused on backend of Web applications and APIs. He’s fascinated with Fast Data challenges and distributed architecture. His current weapon of choice is Scala though can write either JavaScript or PHP when in danger. Artur works in Evojam, softwarehouse committed to quality and scalability.
-    div.row.utility
-      div.time.small-12.medium-2.large-1.columns 18:00
-      div.description.small-12.medium-10.large-11.columns Ending
-    div.row.utility
-      div.time.small-12.medium-2.large-1.columns 18:30
-      div.description.small-12.medium-10.large-11.columns Party!
+            h2 George Leontiev
+            a(href="https://twitter.com/folone").speaker-link @folone
+            p
+              | George is an engineer at SoundCloud where he's taking care of highload systems that power user feeds, notifications, and social interaction graph. In his spare time he likes exploring the world of type-level programming and does distance running.
