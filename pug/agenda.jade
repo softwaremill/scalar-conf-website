@@ -138,9 +138,13 @@ section#agenda.row
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
-            a(href="#owczarek") Kamil Owczarek 
-            | Continous Applications with Spark 2.0
-          p Spark 2.0 comes with a new, powerful feature - Continous Applications. Unifying the broad choice of inputs and data virtualization with streaming, it enables streaming structured and semi-structured data as DataFrames or Datasets. This, along with the recent developmenets in Spark ML and the introduction of GraphFrames, gives us new, exciting possibilities like building on-line and time-windowed machine learning pipelines and running analysis on graphs updated in real-time. During the presentation, I will present the broad possibilities of Continous Applications on an end-to-end example, from obtaining data to running it through a machine learning pipeline.
+            a(href="#ludwikowski") Andrzej Ludwikowski 
+            | Gatling distilled
+          p In 30 minutes I would like to show:
+          p 1. Why is it worth to spend some time and learn Gatling - a tool for integration/performance test of your web application?
+          p 2. Under what circumstances it is necessary to have Gatling in your toolbox?
+          p 3. What are Gatling cons and what kind of problems can you expect?
+          p For sure there is no silver bullet in testing tools area, but you will definitely love Gatling DSL.        
     div.row
       div.time.small-12.medium-2.large-1.columns 17:30
       div.description.small-12.medium-10.large-11.columns
@@ -163,11 +167,10 @@ section#agenda.row
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
-            a(href="#matejczyk") Szymon Matejczyk 
-            | How to extend map? ... or why we need collections redesign?
-          p The talk will be based on a puzzle that should be simple even for beginners: extend Map[(Int, Int), T] with method row(r: Int) -> Iterable[T].
-          p Turns out it's not. In Scala it's tricky in at last 3 places: understanding MapLike, GenLike, CanBuildFrom and type bounds.
-          p At the end I'll introduce some concepts of the new collections planned for Scala 2.13.
+            a(href="#sfregola") Daniela Sfregola 
+            | Random Data Generation with ScalaCheck
+          p ScalaCheck is a well-known library for property-base testing. However, property-base testing is not always possible when side effects are involved, for example when writing an integration test that involves data being stored in a database. When writing non-property-base tests, we often need to initialise some data and then verify some assertions on it. However, manual data generation can make our data biased and preventing us from spotting bugs in our code. Having our data generated randomly not only it would make our test less biased, but it will also make it a lot more readable by highlighting what part of our data are actually relevant in our test.
+          p In this talk we will discuss how to reuse some of the existing ScalaCheck code to generate random instances of given types and how  these can be combined to generate random case classes. We will analyse the properties of a ScalaCheck generator and provide examples of how we can manipulate existing generators to meet our needs.
     div.row
       div.time.small-12.medium-2.large-1.columns 9:30
       div.description.small-12.medium-10.large-11.columns
@@ -242,13 +245,9 @@ section#agenda.row
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
-            a(href="#ludwikowski") Andrzej Ludwikowski 
-            | Gatling distilled
-          p In 30 minutes I would like to show:
-          p 1. Why is it worth to spend some time and learn Gatling - a tool for integration/performance test of your web application?
-          p 2. Under what circumstances it is necessary to have Gatling in your toolbox?
-          p 3. What are Gatling cons and what kind of problems can you expect?
-          p For sure there is no silver bullet in testing tools area, but you will definitely love Gatling DSL.
+            a(href="#owczarek") Kamil Owczarek 
+            | Continous Applications with Spark 2.0
+          p Spark 2.0 comes with a new, powerful feature - Continous Applications. Unifying the broad choice of inputs and data virtualization with streaming, it enables streaming structured and semi-structured data as DataFrames or Datasets. This, along with the recent developmenets in Spark ML and the introduction of GraphFrames, gives us new, exciting possibilities like building on-line and time-windowed machine learning pipelines and running analysis on graphs updated in real-time. During the presentation, I will present the broad possibilities of Continous Applications on an end-to-end example, from obtaining data to running it through a machine learning pipeline.
     div.row
       div.time.small-12.medium-2.large-1.columns 14:00
       div.description.small-12.medium-10.large-11.columns
@@ -266,10 +265,11 @@ section#agenda.row
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
-            a(href="#sfregola") Daniela Sfregola 
-            | Random Data Generation with ScalaCheck
-          p ScalaCheck is a well-known library for property-base testing. However, property-base testing is not always possible when side effects are involved, for example when writing an integration test that involves data being stored in a database. When writing non-property-base tests, we often need to initialise some data and then verify some assertions on it. However, manual data generation can make our data biased and preventing us from spotting bugs in our code. Having our data generated randomly not only it would make our test less biased, but it will also make it a lot more readable by highlighting what part of our data are actually relevant in our test.
-          p In this talk we will discuss how to reuse some of the existing ScalaCheck code to generate random instances of given types and how  these can be combined to generate random case classes. We will analyse the properties of a ScalaCheck generator and provide examples of how we can manipulate existing generators to meet our needs.
+            a(href="#matejczyk") Szymon Matejczyk 
+            | How to extend map? ... or why we need collections redesign?
+          p The talk will be based on a puzzle that should be simple even for beginners: extend Map[(Int, Int), T] with method row(r: Int) -> Iterable[T].
+          p Turns out it's not. In Scala it's tricky in at last 3 places: understanding MapLike, GenLike, CanBuildFrom and type bounds.
+          p At the end I'll introduce some concepts of the new collections planned for Scala 2.13.
     div.row.utility
       div.time.small-12.medium-2.large-1.columns 15:00
       div.description.small-12.medium-10.large-11.columns Coffee
