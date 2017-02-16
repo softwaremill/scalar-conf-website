@@ -40,9 +40,10 @@ section#agenda.row
         div.talk
           h1
             | Workshop: 
-            a(href="#") TBA 
-            | TBA
-          p TBA
+            a(href="#kaeser") Justin Kaeser 
+            | Scary Build Tool? Automate more with sbt.
+          p Let's face it: You may be able to avoid using sbt to build your Scala projects, but you probably don't want to. It's the de-facto standard for Scala projects and is programmed and configured in Scala itself.
+          p We'll develop a simple sbt plugin together and explore some of the concepts of an sbt build's architecture. The goal is to help you better automate your builds in a single environment rather than stringing together scripts and tools.
     div.row
       div.time.small-12.medium-2.large-1.columns 10:30
       div.description.small-12.medium-10.large-11.columns
@@ -107,7 +108,7 @@ section#agenda.row
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
-            a(href="#hai") Raam Rosh Hai 
+            a(href="#raam") Raam Rosh Hai 
             | Tracing Akka Streams 
           p The google dapper paper laid the groundwork for distributed tracing systems. I will show how I implemented these ideas using htrace and zipkin and show the library I wrote for easy integration into your application akka streams & akka http applications.
     div.row.utility
@@ -212,8 +213,8 @@ section#agenda.row
         div.talk
           h1
             a(href="#szulc") Paweł Szulc 
-            | Paweł will surprise us with a talk on Monad Transfomers
-          p ???
+            | Getting more Mileage from your Monads with MTL
+          p TBA
     div.row.utility
       div.time.small-12.medium-2.large-1.columns 12:00
       div.description.small-12.medium-10.large-11.columns Lunch, then choose: 3 talks or 1 workshop
@@ -225,7 +226,17 @@ section#agenda.row
             | Workshop: 
             a(href="#gurnell") Dave Gurnell 
             | Shapeless beginner workshop 
-          p TBA
+          p This workshop will introduce shapeless, a library for generic programming in Scala. We will discover how to use shapeless to automatically create instances of type classes ("JSON encoder", "Equals", "Show", and so on) for any algebraic data type (case class or sealed trait) using a very small kernel of library code.
+          p
+            | The workshop is aimed at established Scala developers who haven't yet got to grips with shapeless. It will use material from Dave's open source ebook "The Type Astronaut's Guide to Shapeless", which you can download for free from
+            a(href="http://underscore.io/books/shapeless-guide") the Underscore web site
+            | or from
+            a(href="http://github.com/underscoreio/shapeless-guide") Github
+            |. The book is not required reading for the workshop, but it is a useful resource if you want to get into this fascinating and powerful style of Scala programming.
+          p
+            | You will need: a laptop, a copy of Scala, and a clone of the
+            a(href="http://github.com/underscoreio/shapeless-guide-code") exercises repo
+            |. Setup instructions are in the README on Github. Please grab these before the workshop if you can, to avoid unexpected last minute technical problems.
     div.row
       div.time.small-12.medium-2.large-1.columns 13:30
       div.description.small-12.medium-10.large-11.columns
