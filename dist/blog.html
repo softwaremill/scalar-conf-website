@@ -14,7 +14,7 @@
 <p>Can we do that with some simple Scala? With just case classes and traits used as interfaces? Or to put it differently: What’s wrong with constructor injection again?</p>
 <h2 id="define-components">Define components</h2>
 <p>With case classes and constructor injection we can declare our components like this:</p>
-<div class="highlight"><pre><span class="k">case</span> <span class="k">class</span> <span class="nc">ZalandoNotifier</span><span class="o">(</span><span class="n">config</span><span class="k">:</span> <span class="kt">NotifierConfig</span><span class="o">,</span> <span class="n">email</span><span class="k">:</span> <span class="kt">EmailService</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight"><pre><span></span><span class="k">case</span> <span class="k">class</span> <span class="nc">ZalandoNotifier</span><span class="o">(</span><span class="n">config</span><span class="k">:</span> <span class="kt">NotifierConfig</span><span class="o">,</span> <span class="n">email</span><span class="k">:</span> <span class="kt">EmailService</span><span class="o">)</span> <span class="o">{</span>
 
   <span class="c1">// we only send an email for orders having a high level of</span>
   <span class="c1">// priority as defined in the config file</span>
@@ -41,7 +41,7 @@
 </pre></div>
 <h2 id="create-components">Create components</h2>
 <p>Creating the <code>ZalandoNotifier</code> service from a configuration file is not very hard. Let’s pretend we have the following classes to read from configuration files:</p>
-<div class="highlight"><pre><span class="c1">// a configuration file</span>
+<div class="highlight"><pre><span></span><span class="c1">// a configuration file</span>
 <span class="k">trait</span> <span class="nc">Config</span> <span class="o">{</span>
   <span class="k">def</span> <span class="n">get</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">key</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">ConfigError</span> <span class="kt">Xor</span> <span class="kt">A</span>
 <span class="o">}</span>
@@ -62,7 +62,7 @@
 </pre></div>
 <p>The <code>Xor</code> type is an <code>Either</code> type from the cats library. See <a href="http://underscore.io/blog/posts/2015/06/10/an-introduction-to-cats.html">here</a> for an introduction to cats, <code>Xor</code> and the <code>|@|</code> notation used below.</p>
 <p>Creating the <code>ZalandoNotifier</code> service from the configuration file requires reading the <code>NotifierConfig</code>, the <code>EmailService</code>, and creating a <code>ZalandoNotifier</code> from those 2 instances:</p>
-<div class="highlight"><pre><span class="k">case</span> <span class="k">class</span> <span class="nc">NotifierConfig</span><span class="o">(</span><span class="n">priority</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight"><pre><span></span><span class="k">case</span> <span class="k">class</span> <span class="nc">NotifierConfig</span><span class="o">(</span><span class="n">priority</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="o">{</span>
   <span class="k">def</span> <span class="n">sendFor</span><span class="o">(</span><span class="n">p</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="n">p</span> <span class="o">&gt;=</span> <span class="n">priority</span>
 <span class="o">}</span>
 
@@ -95,7 +95,7 @@
 <p>We have now assembled components from values in a configuration file, taking care of possible configuration errors. What is the next difficulty?</p>
 <h2 id="testing">Testing</h2>
 <p>The next difficulty is this one. Suppose we have a bigger application using the <code>ZalandoNotifier</code> and we want to switch out the <code>JavaEmailService</code> with a mock implementation for testing. Using a naive approach for constructor injection, we might want to do this:</p>
-<div class="highlight"><pre><span class="k">def</span> <span class="n">createApplication</span><span class="o">(</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="n">createApplication</span><span class="o">(</span>
   <span class="n">orderService</span><span class="k">:</span> <span class="kt">OrderService</span><span class="o">,</span>
   <span class="n">notifierConfig</span><span class="k">:</span> <span class="kt">NotifierConfig</span><span class="o">,</span>
   <span class="n">emailService</span><span class="k">:</span> <span class="kt">EmailService</span><span class="o">)</span><span class="k">:</span> <span class="kt">Application</span> <span class="o">=</span>
@@ -114,7 +114,7 @@
 <p><a href="https://bitbucket.org/inkytonik/kiama">Kiama</a> is a library for language processing, a toolbox for parsing computer languages, analysing and interpreting them.</p>
 <p>We are going to use one feature of Kiama: Tree rewriting. As you probably know, computer languages are being parsed into <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">Abstract Syntax Trees</a> (ASTs). Most of the time these trees are being rewritten to simpler trees, in order to remove some syntactic sugar or to optimise some constructs. For example, a tree representing collection operations might rewrite two consecutive <code>map</code> operations into one for efficiency (a <em><a href="https://en.wikipedia.org/wiki/Map_(higher-order_function">fusion</a>#Optimizations)</em> operation).</p>
 <p>And what is an “application”, if not a tree of services and configuration objects? So, with the help of Kiama, we can “rewrite” the application to replace some of its parts:</p>
-<div class="highlight"><pre><span class="c1">// return true if A implements the list of types defined by a given class tag */</span>
+<div class="highlight"><pre><span></span><span class="c1">// return true if A implements the list of types defined by a given class tag */</span>
 <span class="k">def</span> <span class="n">implements</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">Any</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">ct</span><span class="k">:</span> <span class="kt">ClassTag</span><span class="o">[</span><span class="k">_</span><span class="o">])</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="o">{</span>
   <span class="k">val</span> <span class="n">types</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Class</span><span class="o">[</span><span class="k">_</span><span class="o">]]</span> <span class="k">=</span>
     <span class="n">ct</span><span class="o">.</span><span class="n">runtimeClass</span> <span class="o">+:</span> <span class="n">ct</span><span class="o">.</span><span class="n">runtimeClass</span><span class="o">.</span><span class="n">getInterfaces</span><span class="o">.</span><span class="n">toList</span>
@@ -131,18 +131,18 @@
   <span class="o">}</span>
 </pre></div>
 <p>A Strategy in Kiama is more or less a partial function taking one of the nodes in the tree and returning an <code>Option[A]</code> if it succeeds and <code>None</code> if it doesn’t. You can then use combinators to define where and how you want to apply this <code>Strategy</code>. For example:</p>
-<div class="highlight"><pre><span class="c1">// use the strategy everywhere you can, from top to down</span>
+<div class="highlight"><pre><span></span><span class="c1">// use the strategy everywhere you can, from top to down</span>
 <span class="k">def</span> <span class="n">replaceWithStrategy</span><span class="o">[</span><span class="kt">G</span><span class="o">](</span><span class="n">strategy</span><span class="k">:</span> <span class="kt">Strategy</span><span class="o">,</span> <span class="n">graph</span><span class="k">:</span> <span class="kt">G</span><span class="o">)</span><span class="k">:</span> <span class="kt">G</span> <span class="o">=</span>
   <span class="n">rewrite</span><span class="o">(</span><span class="n">everywheretd</span><span class="o">(</span><span class="n">strategy</span><span class="o">))(</span><span class="n">graph</span><span class="o">)</span>
 
 <span class="n">replaceWithStrategy</span><span class="o">(</span><span class="n">replaceStrategy</span><span class="o">[</span><span class="kt">EmailService</span><span class="o">](</span><span class="n">mock</span><span class="o">),</span> <span class="n">application</span><span class="o">)</span>
 </pre></div>
 <p>Or, with a bit of syntactic sugar:</p>
-<div class="highlight"><pre><span class="n">application</span><span class="o">.</span><span class="n">replace</span><span class="o">[</span><span class="kt">EmailService</span><span class="o">](</span><span class="n">mock</span><span class="o">)</span>
+<div class="highlight"><pre><span></span><span class="n">application</span><span class="o">.</span><span class="n">replace</span><span class="o">[</span><span class="kt">EmailService</span><span class="o">](</span><span class="n">mock</span><span class="o">)</span>
 </pre></div>
 <p>It really isn’t that difficult to write tests!</p>
 <p>You can also conceive much more targeted replacements:</p>
-<div class="highlight"><pre><span class="k">case</span> <span class="k">class</span> <span class="nc">Leg</span><span class="o">(</span><span class="n">foot</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span>
+<div class="highlight"><pre><span></span><span class="k">case</span> <span class="k">class</span> <span class="nc">Leg</span><span class="o">(</span><span class="n">foot</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span>
 <span class="k">case</span> <span class="k">class</span> <span class="nc">Robot</span><span class="o">(</span><span class="n">left</span><span class="k">:</span> <span class="kt">Leg</span><span class="o">,</span> <span class="n">right</span><span class="k">:</span> <span class="kt">Leg</span><span class="o">)</span>
 <span class="k">case</span> <span class="k">class</span> <span class="nc">Application</span><span class="o">(</span><span class="n">robot</span><span class="k">:</span> <span class="kt">Robot</span><span class="o">,</span> <span class="n">house</span><span class="k">:</span> <span class="kt">House</span><span class="o">)</span>
 
@@ -155,7 +155,7 @@
 <h2 id="singletons">Singletons</h2>
 <p>Applications are not just simple trees, but rather directed acyclic graphs where some nodes are being shared. For example, many Scala applications need to share an <code>ExecutionContext</code> (and / or an <code>ActionSystem</code>, a <code>Materializer</code> if working with <a href="http://akka.io/">Akka</a>). Duplicating these contexts would waste resources.</p>
 <p>When we build the application from the configuration file, we use independent <code>fromConfig</code> methods where each component knows how to read the file and create itself. What if 2 components need an <code>ExecutionContext</code>?</p>
-<div class="highlight"><pre><span class="c1">// Delay the evaluation of the ExecutionContext</span>
+<div class="highlight"><pre><span></span><span class="c1">// Delay the evaluation of the ExecutionContext</span>
 <span class="k">case</span> <span class="k">class</span> <span class="nc">ExecutionService</span><span class="o">(</span><span class="n">ec</span><span class="k">:</span> <span class="kt">Eval</span><span class="o">[</span><span class="kt">ExecutionContext</span><span class="o">])</span>
 
 <span class="k">object</span> <span class="nc">ExecutionService</span> <span class="o">{</span>
@@ -194,7 +194,7 @@
 </pre></div>
 <p>Here we are duplicating the <code>ExecutionService</code> component in the <code>Application</code> instance, this can’t be good.</p>
 <p>This could also be worse because at this stage we haven’t consumed any resource. The <code>ExecutionContext</code> is encapsulated in an <code>ExecutionService</code> using the <code>cats.Eval</code> type to delay any evaluation of the <code>ExecutionContext</code>. Is there a way to use only one instance of the <code>ExecutionService</code>? Yes, indeed, with one more <code>Strategy</code>:</p>
-<div class="highlight"><pre><span class="c1">// store the first instance of the target type and replace all nodes of the same type with that one</span>
+<div class="highlight"><pre><span></span><span class="c1">// store the first instance of the target type and replace all nodes of the same type with that one</span>
 <span class="k">def</span> <span class="n">singletonStrategy</span><span class="o">[</span><span class="kt">T</span> <span class="kt">:</span> <span class="kt">ClassTag</span><span class="o">]</span><span class="k">:</span> <span class="kt">Strategy</span> <span class="o">=</span> <span class="o">{</span>
   <span class="k">var</span> <span class="n">t</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="k">=</span> <span class="nc">None</span>
    <span class="n">strategy</span><span class="o">[</span><span class="kt">Any</span><span class="o">]</span> <span class="o">{</span>
@@ -210,7 +210,7 @@
 <span class="o">}</span>
 </pre></div>
 <p>And with a bit of syntactic sugar, creating the full application becomes:</p>
-<div class="highlight"><pre><span class="k">object</span> <span class="nc">Application</span> <span class="o">{</span>
+<div class="highlight"><pre><span></span><span class="k">object</span> <span class="nc">Application</span> <span class="o">{</span>
   <span class="k">def</span> <span class="n">fromConfig</span><span class="o">(</span><span class="n">config</span><span class="k">:</span> <span class="kt">Config</span><span class="o">)</span><span class="k">:</span> <span class="kt">ConfigError</span> <span class="kt">Xor</span> <span class="kt">Application</span> <span class="o">=</span>
     <span class="o">(</span><span class="nc">Service1</span><span class="o">.</span><span class="n">fromConfig</span><span class="o">(</span><span class="n">config</span><span class="o">)</span> <span class="o">|@|</span>
      <span class="nc">Service2</span><span class="o">.</span><span class="n">fromConfig</span><span class="o">(</span><span class="n">config</span><span class="o">)).</span><span class="n">map</span><span class="o">(</span><span class="nc">Application</span><span class="o">.</span><span class="n">apply</span><span class="o">).</span><span class="n">map</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">singleton</span><span class="o">[</span><span class="kt">ExecutionService</span><span class="o">])</span>
@@ -264,7 +264,7 @@ It handles more than 1 million QPS with capacity for more than 1.5 million. In t
 <h2 id="an-example">An example</h2>
 <p>A classic example of ADT is a linked list, which facilitates sum and product. Please consider the following implementation of it in Scala:
 ​</p>
-<div class="highlight"><pre><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">AdtList</span><span class="o">[</span><span class="kt">+A</span><span class="o">]</span>
+<div class="highlight"><pre><span></span><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">AdtList</span><span class="o">[</span><span class="kt">+A</span><span class="o">]</span>
 <span class="nc">case</span> <span class="k">object</span> <span class="nc">Nil</span> <span class="k">extends</span> <span class="nc">AdtList</span><span class="o">[</span><span class="kt">Nothing</span><span class="o">]</span>
 <span class="k">case</span> <span class="k">class</span> <span class="nc">El</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">value</span><span class="k">:</span> <span class="kt">A</span><span class="o">,</span> <span class="n">tail</span><span class="k">:</span> <span class="kt">AdtList</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span> <span class="k">extends</span> <span class="nc">AdtList</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
 </pre></div>
@@ -273,7 +273,7 @@ What the above is trying to express is the fact that <code>AdtList</code> is an 
 ​
 But having the above description of ADT in mind, the Scala implementation provided is somehow confusing. There is much more of classic object oriented concepts here than any other. Please compare with how this could be declared in Haskell:
 ​</p>
-<div class="highlight"><pre><span class="n">data</span> <span class="nc">AdtList</span> <span class="n">a</span> <span class="k">=</span> <span class="nc">Nil</span> <span class="o">|</span> <span class="nc">El</span> <span class="n">a</span> <span class="o">(</span><span class="nc">AdtList</span> <span class="n">a</span><span class="o">)</span>
+<div class="highlight"><pre><span></span><span class="n">data</span> <span class="nc">AdtList</span> <span class="n">a</span> <span class="k">=</span> <span class="nc">Nil</span> <span class="o">|</span> <span class="nc">El</span> <span class="n">a</span> <span class="o">(</span><span class="nc">AdtList</span> <span class="n">a</span><span class="o">)</span>
 </pre></div>
 <p>​
 Much simpler. And even if you are not familiar with Haskell, this should be rather easy to grasp. Most importantly, <code>|</code> is used to express an alternative of <code>Nil</code> and product of <code>El</code> and the rest of the list.
@@ -284,14 +284,14 @@ Let&#39;s go back to the above Scala implementation and the rationale behind it.
 <p>One of the key features of ADT is the ability to reason on the structure of it based solely on their definition. It is not possible with classes, because of inheritance. One never knows what inherits its type.
 This is where the <code>sealed</code> keyword becomes useful. It allows for a type to be extended by types declared in the same file only. The consequence of this is that the Scala compiler knows all possible types that are directly based on the type being extended. In our case, <code>Nil</code> and <code>El</code> are the only two types that can directly inherit from <code>AdtList</code>. When used with pattern matching, it allows the compiler to find out if the match/case clause handles all possible incarnations of a type. In the following example:
 ​</p>
-<div class="highlight"><pre><span class="k">val</span> <span class="n">list</span><span class="k">:</span> <span class="kt">AdtList</span><span class="o">[</span><span class="k">_</span><span class="o">]</span> <span class="k">=</span> <span class="nc">El</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="nc">El</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="nc">El</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="nc">Nil</span><span class="o">)))</span>
+<div class="highlight"><pre><span></span><span class="k">val</span> <span class="n">list</span><span class="k">:</span> <span class="kt">AdtList</span><span class="o">[</span><span class="k">_</span><span class="o">]</span> <span class="k">=</span> <span class="nc">El</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="nc">El</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="nc">El</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="nc">Nil</span><span class="o">)))</span>
 <span class="n">list</span> <span class="k">match</span> <span class="o">{</span>
   <span class="k">case</span> <span class="nc">Nil</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="s">&quot;Nil&quot;</span><span class="o">)</span>
 <span class="o">}</span>
 </pre></div>
 <p>, thanks to the <code>sealed</code> keyword, the compiler is able to raise a warning:
 ​</p>
-<div class="highlight"><pre>Warning:(20, 5) match may not be exhaustive.
+<div class="highlight"><pre><span></span>Warning:(20, 5) match may not be exhaustive.
 It would fail on the following input: El(_, _)
  list match {
  ^
@@ -315,17 +315,17 @@ It is going to get even worse, when we start to use our new AdtList and try to i
 <h2 id="methods-in-algebraic-data-types">Methods in algebraic data types</h2>
 <p>As already stated, ADTs do not feature methods (it simply is out of scope), but there is nothing that stops us from doing this in Scala. Please recall the above example of creation of <code>AdtList</code>:
 ​</p>
-<div class="highlight"><pre><span class="k">val</span> <span class="n">list</span><span class="k">:</span> <span class="kt">AdtList</span><span class="o">[</span><span class="k">_</span><span class="o">]</span> <span class="k">=</span> <span class="nc">El</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="nc">El</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="nc">El</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="nc">Nil</span><span class="o">)))</span>
+<div class="highlight"><pre><span></span><span class="k">val</span> <span class="n">list</span><span class="k">:</span> <span class="kt">AdtList</span><span class="o">[</span><span class="k">_</span><span class="o">]</span> <span class="k">=</span> <span class="nc">El</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="nc">El</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="nc">El</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="nc">Nil</span><span class="o">)))</span>
 </pre></div>
 <p>​
 This is not a very readable way to construct a list. The obvious solution here is introduction of infix operator, say <code>::</code>, to get right-associativity with a colon. The most natural place for it to reside is the <code>AdtList</code> trait, which becomes:
 ​</p>
-<div class="highlight"><pre><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">AdtList</span><span class="o">[</span><span class="kt">+A</span><span class="o">]</span> <span class="o">{</span>
+<div class="highlight"><pre><span></span><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">AdtList</span><span class="o">[</span><span class="kt">+A</span><span class="o">]</span> <span class="o">{</span>
   <span class="k">def</span> <span class="o">::[</span><span class="kt">B</span> <span class="k">&gt;:</span> <span class="kt">A</span><span class="o">](</span><span class="n">el</span><span class="k">:</span> <span class="kt">B</span><span class="o">)</span> <span class="k">=</span> <span class="nc">El</span><span class="o">(</span><span class="n">el</span><span class="o">,</span> <span class="k">this</span><span class="o">)</span>
 <span class="o">}</span>
 </pre></div>
 <p>The construction of <code>AdtList</code> can now be vastly simplified:</p>
-<div class="highlight"><pre><span class="k">val</span> <span class="n">list</span> <span class="k">=</span> <span class="mi">1</span> <span class="o">::</span> <span class="mi">2</span> <span class="o">::</span> <span class="mi">3</span> <span class="o">::</span> <span class="nc">Nil</span>
+<div class="highlight"><pre><span></span><span class="k">val</span> <span class="n">list</span> <span class="k">=</span> <span class="mi">1</span> <span class="o">::</span> <span class="mi">2</span> <span class="o">::</span> <span class="mi">3</span> <span class="o">::</span> <span class="nc">Nil</span>
 </pre></div>
 <p>Arguably, it takes us even further from the original ADT concept. Readability is much better, but there is code that exists only to improve the style.
 ​</p>
