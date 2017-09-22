@@ -12,26 +12,29 @@ mixin header()
 
         section.top-bar-section
           ul.right
-            li
-              a(data-scroll, href="#register") Register
-            li
-              a(data-scroll, href="#agenda") Agenda
+            // li
+              // a(data-scroll, href="#register") Register
+            // li
+              // a(data-scroll, href="#agenda") Agenda
             li
               a(data-scroll, href="http://blog.scalar-conf.com") Blog
 
             - var menu = Array.prototype.slice.call(arguments);
             for item in menu
               li
-                a(data-scroll, href="http://www.scalar-conf.com/#"+item)= item.charAt(0).toUpperCase() + item.slice(1)               
+                a(data-scroll, href="http://www.scalar-conf.com/#"+item)= item.charAt(0).toUpperCase() + item.slice(1)
+
+            li
+              a(href="http://scalar-conf.com/2017/") 2017
             li
               a(href="http://scalar-conf.com/2016/") 2016
             li
               a(href="http://scalar-conf.com/2015/") 2015
             li
               a(href="http://scalar-conf.com/2014/") 2014
-            li
-              a(data-scroll, href="#afterparty") Afterparty
+            // li
+              // a(data-scroll, href="#afterparty") Afterparty
             li
               a(data-scroll, href="#venue") Venue
             li.tweet-btn
-              a(href="https://twitter.com/share", class="twitter-share-button", data-url="http://scalar-conf.com/", data-text="Check out #Scala @scalarconf on 7-8th April 2017 in Warsaw, Poland!", data-hashtags="scalarconf") Tweet
+              a(href="https://twitter.com/share", class="twitter-share-button", data-url="http://scalar-conf.com/", data-text="Check out #Scala @scalarconf on 6-7th April 2018 in Warsaw, Poland!", data-hashtags="scalarconf") Tweet
