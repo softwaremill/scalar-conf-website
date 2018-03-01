@@ -4,75 +4,107 @@ section#agenda.row
     br
     | to top
   header.section-title
-    h1 Agenda: Friday, 7th April
+    h1 Wednesday, 4th April: trainings (separate tickets)
+  div.agenda-table.small-12.medium-12.large-12.columns
+    div.row
+      div.time.small-12.medium-2.large-1.columns 9:00
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1
+            TBA
+          p TBA
+  header.section-title
+    h1 Thursday, 5th April: long workshops (separate tickets)
+  div.agenda-table.small-12.medium-12.large-12.columns
+    div.row
+      div.time.small-12.medium-2.large-1.columns 9:00
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1
+            a(href="#ciesielski") Krzysztof Ciesielski 
+            | and 
+            a(href="#szulc") Paweł Szulc 
+            | Recursion Schemes
+          p An intense training introducing patterns for processing recursive data. We meet such data as JSON/XML objects or various kinds of trees. Recursion schemes focus on a functional approach, allowing us to do recursion in a very elegant and compositional way. This workshop will be based on the Scalaz and Matryoshka libraries. We will start with the basics (fixed-point datatypes), then we will cover basic processing with catamorphisms. Our next step will be some exploration of other kinds of useful morphisms, like paramorphisms, zygomorphisms, and a bunch of other transformations. Finally, we'll try to combine various morphisms together to understand the advantage of their composability.
+          p Requirements: intermediate experience with functional programming in Scala (higher-order functions, algebraic data types, higher-kinded types, functors, applicatives). Nice to have: knowledge of free monads.
+    div.row
+      div.time.small-12.medium-2.large-1.columns 9:00
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1
+            a(href="#matuszak") Marcin Matuszak 
+            | Typelevel workshop
+          p Cats library has finally reached stable release. It's a good opportunity to learn how to build a purely functional application using Typelevel stack. The goal of this workshop is to build small REST backend application using Typelevel libraries.
+          p This will be a mix of lecture, exercise and workshop. 
+  header.section-title
+    h1 Agenda: Friday, 6th April
   div.agenda-table.small-12.medium-12.large-12.columns
     div.row.utility
       div.time.small-12.medium-2.large-1.columns 8:00
       div.description.small-12.medium-10.large-11.columns Registration
     div.row.utility
       div.time.small-12.medium-2.large-1.columns 8:50
-      div.description.small-12.medium-10.large-11.columns Welcome
+      div.description.small-12.medium-10.large-11.columns Welcome, then first choice: 3 talks or 1 workshop
     div.row
       div.time.small-12.medium-2.large-1.columns 9:00
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
-            a(href="#gurnell") Dave Gurnell 
-            | Adventures in Meta-Programming
-          p In this talk we will compare three techniques for meta-programming in Scala: macros, shapeless, and code generation. Through a sequence of simple examples we will attempt to characterise the relative pros and cons of each each technique, where they become appropriate, and when they might turn around and bite you.
-          p We can solve many Scala programming problems using simple tools: algebraic data types, higher order functions, and type classes. Sometimes, however, the code becomes verbose or unwieldy, and we search for ways to make our code cleaner and more maintainable. “Meta-programming” is a broad term describing techniques for generating code using code, but the meta programming techniques listed above could not be more different. Sometimes, being able to identify the correct technique may save hours of frustration attempting to go down blind alleys. This is the problem we are trying to solve in this talk.
-          p The talk is aimed at intermediate Scala developers who have a basic awareness of each technique. You don’t need to know shapeless or macro programming to benefit.
+            a(href="#bernhardt") Manuel Bernhardt 
+            | Is there anybody out there?
+          p Welcome to the world as seen by a cluster node! This is a world full of changes in link quality, network partitions and outages. In this talk you will learn about failure detectors, gossip protocols and split brain resolvers in the context of Akka Cluster.
     div.row
       div.time.small-12.medium-2.large-1.columns 9:30
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
-            a(href="#lattuada") Andrea Lattuada 
-            | Typeclasses — a type system construct
-          p Typeclasses are widely in use on advanced Scala code and yet they are not a first class citizen of the language. This talk will introduce the concept of typeclasses from the ground up by looking at languages such as Haskell and Rust.
-          p Typeclass coherence (multiple instances of the same typeclass for the same type), effective namespacing and implicit resolution (in Scala) are some of the challenges that arise for extensive usage of this concept and language feature. We'll explore those issues and how to apply the learnings from other languages to improve the readability and usability of typeclasses in Scala by defining conventions (inspired by the Cats library) and relying on tools (e.g. Simulacrum).
-    div.row.utility
-      div.time.small-12.medium-2.large-1.columns 10:00
-      div.description.small-12.medium-10.large-11.columns Coffee break, then choose: 3 talks or 1 workshop
+            a(href="#koziarkiewicz") Mikołaj Koziarkiewicz 
+            | What I learned about Akka Streams by making a game with it
+          p Akka Streams is a versatile framework for creating reactive systems. Does it handle supporting an unusual use case of an arcade video game? In this presentation, I will show how such a game may be implemented, and how this kind of stack holds up in terms of scalability and development effort.
+          p Most importantly, I will highlight potentials pitfalls when using Akka Streams in low-latency, erratic-input applications.
     div.row
-      div.time.small-12.medium-2.large-1.columns 10:30-12:00
+      div.time.small-12.medium-2.large-1.columns 10:00
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1
+            a(href="#koziarkiewicz") Stefano Bonetti 
+            | Stream Driven Development - design your data pipeline with Akka Streams
+          p Akka Streams is a well-known Reactive Streams implementation that helps you build asynchronous, data-intensive applications with no predetermined data volumes. But how would you leverage its full power to design complex, Akka-backed reactive pipelines? At HomeAway.com we devised an approach to tackle this problem, combining elements of Domain-Driven Design with the abstraction power of the Akka Streams model. In this talk we'll present our approach by example, discussing useful patterns to (1) reason about your streaming application and identify its building blocks; (2) type-drive the implementation; (3) handle failure and (4) instrument your application for logging and monitoring purposes
+    div.row
+      div.time.small-12.medium-2.large-1.columns 9:00-10:30
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
             | Workshop: 
-            a(href="#kaeser") Justin Kaeser 
-            | Scary Build Tool? Automate more with sbt.
-          p Let's face it: You may be able to avoid using sbt to build your Scala projects, but you probably don't want to. It's the de-facto standard for Scala projects and is programmed and configured in Scala itself.
-          p We'll develop a simple sbt plugin together and explore some of the concepts of an sbt build's architecture. The goal is to help you better automate your builds in a single environment rather than stringing together scripts and tools.
-    div.row
+            a(href="#plachta") Michał Płachta 
+            | TDDing Functional Web Apps
+          p Get some theoretical and practical overview of the TDD approach & Functional Programming by creating the multiplayer Pac-Man game server: 
+          p * Test Driven Development (baby steps, starting with the game logic and moving towards HTTP).
+          p * Purely functional approach (separated data and behaviors, no exceptions, ADTs, Options).
+          p * Modeling using immutable structures.
+          p * Making impossible states impossible.
+          p * Using function composition.
+          p * Using Monix Atomic to handle state.
+          p * Separate concerns by using functions as input parameters.
+    div.row.utility
       div.time.small-12.medium-2.large-1.columns 10:30
-      div.description.small-12.medium-10.large-11.columns
-        div.talk
-          h1
-            a(href="#goes") John A. De Goes 
-            | Quark: A Purely-Functional Scala DSL for Data Processing & Analytics
-          p Quark is a new Scala DSL for data processing and analytics that runs on top of the Quasar Analytics compiler. Quark is adept at processing semi-structured data and compiles query plans to operations that run entirely inside a target data source. In this presentation, John A. De Goes provides an overview of the open source library, showing several use cases in data processing and analytics. John also demonstrates a powerful technique that every developer can use to create their own purely-functional, type-safe DSLs in the Scala programming language.
+      div.description.small-12.medium-10.large-11.columns Coffee break
     div.row
       div.time.small-12.medium-2.large-1.columns 11:00
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
-            a(href="#petronella") Gabriele Petronella 
-            | Practical Monad Transformers 
-          p "Monad Transformers. ""WAT?"" ""Exactly""
-          p In this session we'll see what monad transformers are, where their need comes from and how to use them effectively
-          p We'll walk through this rather complicated topic guided by real-life examples, with the noble intent of making our code more readable, maintainable and pleasant to work with.
-          p WARNING
-          p This talk contains slides that some viewers may find disturbing, most of them containing words like ""monad"" and/or ""functors""
-          p Listener discretion advised"
+            a(href="#goes") John A. De Goes 
+            | Scalaz 8 vs Akka Actors
+          p In this presentation, John A. De Goes looks at several concurrency and scalability problems similar to the ones all programmers have to face, and shows how purely functional solutions written using Scalaz 8 are shorter, faster, easier to test, and easier to understand than competing solutions written using Akka actors. Discover how functional programming can be your secret superpower when it comes to quickly building bullet-proof business applications!
     div.row
       div.time.small-12.medium-2.large-1.columns 11:30
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
             a(href="#pustelnik") Jan Pustelnik 
-            | Conscious consistency with Akka Cluster, CRDTs and Distributed Data
-          p Did you know that Akka Cluster contains tools for distributing your data making conscious decisions about the level of required consistency guarantees? Let's make a deep dive together into the world of Distributed Data with akka-distributed-data and its CRDTs.
+            | Real serverless with CRDTs and IPFS.
+          p You probably have heard the pun that serverless is just running software on another person's computer. In this talk we would like to show something else - "real serverless" which is running software without any servers in a fully distributed, peer-to-peer manner. The software stack for this example will consist of Scala, Akka's CRDTs and the Inter Planetary File System (ipfs).
     div.row.utility
       div.time.small-12.medium-2.large-1.columns 12:00
       div.description.small-12.medium-10.large-11.columns Lunch, then choose: 3 talks or 1 workshop
@@ -82,35 +114,35 @@ section#agenda.row
         div.talk
           h1
             | Workshop: 
-            a(href="#matuszak") Marcin Matuszak 
-            | The dark side of the moon. The introduction to optics.
-          p The aim of this workshop is to get familiar with optics in Scala. It will cover basic functional optics using Monocle library.
+            a(href="#owczarek") Kamil Owczarek 
+            | Introduction to Spark ML
+          p During the workshop I will explain the basic philosophy behind Spark ML and how it fits inside the larger Spark ecosysystem. The participants will learn how to perform single machine learning tasks, productionize and train simple ML models, as well as compose, train and cross-validate more complex Spark ML Pipelines. We will also go through the specifics of some of the useful out-of-the-box Spark ML components.
     div.row
       div.time.small-12.medium-2.large-1.columns 13:30
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
-            a(href="#seeberger") Heiko Seeberger 
-            | Learn you Akka Streams for great Good!
-          p Stream processing has become ubiquitous and Akka Streams, an implementation of the Reactive Streams specification, is one of the hottest kids on the block. In this talk we cover the essentials you have to know to get started. As we strongly believe in writing code as the best way to learn coding, we show zero slides, but a lot of live code and live demos instead.
+            a(href="#pavkin") Vladimir Pavkin 
+            | Leveraging Spire for complex time allocation logic
+          p Spire is a great toolkit of mathematical abstractions and algorithms. Despite mathematical "focus", many instruments in Spire are defined in an abstract, composable way. This allows to leverage the power of spire for tasks, that don't look like mathematical at first glance.
+          p In this talk we'll explore how Spire can help with solving various time resource allocation problems.
     div.row
       div.time.small-12.medium-2.large-1.columns 14:00
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
-            a(href="#will") Niko Will 
-            | Akka cluster management and split brain resolution
-          p Akka is a toolkit that brings the actor model to the JVM and helps developers to build scalable, resilient and responsive applications. With location transparency and asynchronous message passing it is designed to work distributed from the ground up.
-          p While distributed systems help to solve some problems like availability, a new set of problems arise. For example how do we scale the cluster up or down? What happens if the network is at least partially not available? Akka provides a comprehensive set of cluster features that enable developers to monitor and manage the cluster manually or in most cases even automatically.
-          p In this talk I will introduce some of these features and explain what you need to be aware of. You will learn how to start a cluster correctly and add / (gracefully) remove nodes to / from a running cluster. Additionally I will show how to handle failure scenarios like network partitions by using an existing or implementing a custom split brain resolver.
+            a(href="#pitula") Wojciech Pituła 
+            | Object algebras and why you won't touch http library ever again
+          p I would like to present the julienrf/endpoints library and a theory that stand behind its design, which is object algerbas.
     div.row
       div.time.small-12.medium-2.large-1.columns 14:30
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
-            a(href="#raam") Raam Rosh Hai 
-            | Tracing Akka Streams 
-          p The google dapper paper laid the groundwork for distributed tracing systems. I will show how I implemented these ideas using htrace and zipkin and show a live demo of the library I wrote for easy integration into your akka streams & http applications.
+            a(href="#grebennikov") Roman Grebennikov 
+            | Case classes ate my RAM
+          p Case class is a most widely used way to model your data. But when the data is huge, you can amazingly discover that only a tiny 10% of your precious RAM used for the data itself. But where is other 90%?
+          p During this talk, you will have a deep dive to the JVM internals learning about case class layout, Scala collections true memory overhead and ways to decrease it. We'll introduce a scala-packed, the project helped Findify to solve a real-life case of reducing memory usage by an order of magnitude by extending Scala collections with transparent Shapeless-based case class <-> Array[Byte] packing.
     div.row.utility
       div.time.small-12.medium-2.large-1.columns 15:00
       div.description.small-12.medium-10.large-11.columns Coffee
@@ -119,17 +151,19 @@ section#agenda.row
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
-            a(href="#guzik") Piotr Guzik 
-            | Real-time anomaly detection made easy
-          p Detecting anomalies is a quite hot topic right now. There are many algorithms to do so, yet they are difficult to reason about and math beyond them is complex. I will present simple statistical soultions that you can understand without phd in maths. I will show you how we did anomaly detection @Allegro in scale. I will talk about how to measure anomalies and how to apply proper machine learning in the streaming way. Last but not least I will present sample demo as a code.
+            a(href="#birchall") Chris Birchall 
+            | Bring Your Own Effect
+          p Recently there is a trend in Scala libraries abstracting over the effect container in which they wrap their computations, allowing users to choose the effect that makes sense for their program.
+          p I'll talk you through how I added this feature to the ScalaCache library, and explain how you can do the same for your own code and why it's a good idea.
     div.row
       div.time.small-12.medium-2.large-1.columns 16:00
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
-            a(href="#gorywoda") Maciej Gorywoda 
-            | Artificial Neural Networks in Akka
-          p A presentation planned as food for thought: How  we can use Akka for something totally different, achieve practical results, explore interesting features, as usage of time gaps between signal as a source of information, and still not to work our socks off.
+            a(href="#jacobowitz") Luka Jacobowitz 
+            | Traversals for all occasions
+          p One of the most important aspects of programming is iterating or traversing all sorts of collections. The Traversable type class is without a doubt one of the most useful gems of functional programming and, because of its vast versatility, also often the answer to "How do I..."-questions, but how many different kinds of traversals are there?
+          p This talks aims to showcase some of the lesser known facts of traversable functors and also a bunch of other related type classes and functions that exploit different properties of our data types. We'll see some more obscure things like requiring the commutative property to traverse unordered containers like Spark RDDs, or more straightforward ones like running a bunch of asynchronous actions in parallel, waiting for the results and accumulating errors along the way in a simple one-liner.
     div.row.utility
       div.time.small-12.medium-2.large-1.columns 16:30
       div.description.small-12.medium-10.large-11.columns Coffee
@@ -138,88 +172,91 @@ section#agenda.row
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
-            a(href="#ludwikowski") Andrzej Ludwikowski 
-            | Gatling distilled
-          p In 30 minutes I would like to show:
-          p 1. Why is it worth to spend some time and learn Gatling - a tool for integration/performance test of your web application?
-          p 2. Under what circumstances it is necessary to have Gatling in your toolbox?
-          p 3. What are Gatling cons and what kind of problems can you expect?
-          p For sure there is no silver bullet in testing tools area, but you will definitely love Gatling DSL.        
+            a(href="#uvarova") Inna Uvarova 
+            | and 
+            a(href="#grajek") Krzysztof Grajek 
+            | PW-SAT2
+          p TBA
     div.row
       div.time.small-12.medium-2.large-1.columns 17:30
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
-            a(href="#stan") Ionuț G. Stan 
-            | Modularity à la ML
-          p Scala might be a gateway drug to Haskell and a sizeable part of the community is trying to adopt and improve upon existing Haskell practices in Scala code. But Scala isn't Haskell and was never meant to be, instead it's more of an improvement over the ML family of languages than anything else.
-          p One salient feature of languages in the ML family is the module system — a tool for specifying and grouping collections of types and functions — which helps with programming in the large. Scala inherits this feature too, just under a different name: objects.
-          p During this talk we'll explore the ML module system — its features and limitations — and Scala's take on it.
+            a(href="#ratajski") Jarek Ratajski 
+            | ScalaJS - web without pain of JavaScript
+          p Are You  doing web applications but JavaScript holds You back?
+          p Maybe You want to use tools like Gulp, LessCSS, Sass, NPM and framework like Angular and React ,but for sure with something safer than JS?
+          p You no longer have to sacrifice Yourself and fight with stupid errors for days.
+          p You may use a decent language with typesafety and still use all the power of web developent.
+          p So lets discuss ScalaJS a JavaScript transpiler and see how to: efficiently develop web application using typesafety and; code AngularJS applications using Scala; use same datastructures and interfaces on client and server and reuse validation rules on both.
+          p Finally I will compare it to other simillar solutions like TypeScript, Elm, PureScript and discuss when and why could You use any of theese.
     div.row.utility
       div.time.small-12.medium-2.large-1.columns 18:30
       div.description.small-12.medium-10.large-11.columns Party!
-
   header.section-title
-    h1 Agenda: Saturday, 8th April
+    h1 Agenda: Saturday, 7th April    
   div.agenda-table.small-12.medium-12.large-12.columns
+    div.row.utility
+      div.time.small-12.medium-2.large-1.columns 
+      div.description.small-12.medium-10.large-11.columns Choose: 3 talks or 1 workshop
     div.row
       div.time.small-12.medium-2.large-1.columns 9:00
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
-            a(href="#sfregola") Daniela Sfregola 
-            | Random Data Generation with ScalaCheck
-          p ScalaCheck is a well-known library for property-base testing. However, property-base testing is not always possible when side effects are involved, for example when writing an integration test that involves data being stored in a database. When writing non-property-base tests, we often need to initialise some data and then verify some assertions on it. However, manual data generation can make our data biased and preventing us from spotting bugs in our code. Having our data generated randomly not only it would make our test less biased, but it will also make it a lot more readable by highlighting what part of our data are actually relevant in our test.
-          p In this talk we will discuss how to reuse some of the existing ScalaCheck code to generate random instances of given types and how  these can be combined to generate random case classes. We will analyse the properties of a ScalaCheck generator and provide examples of how we can manipulate existing generators to meet our needs.
+            a(href="#chrons") Otto Chrons 
+            | Many uses of ScalaFiddle
+          p ScalaFiddle is a popular playground for experimenting with and sharing Scala code online. It has a lot of use cases that go beyond the basic ones, including building interactive fiddles, integrating fiddles into documentation and utilizing HTML for visual output. This talk covers these different uses of ScalaFiddle and how they can enhance your productivity.
     div.row
       div.time.small-12.medium-2.large-1.columns 9:30
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
-            a(href="#leontiev") George Leontiev 
-            | Case study for a real-world type-level programming
-          p For a lot of people, type-level programming is a fascinating topic. It makes your brain work harder, opens new interesting possibilities where you did not expect them. One question that comes up more and more frequently though is – "so where and how exactly do I use this in my day job as a scala programmer?". In this talk, we will explore one such use case: generating json serializers/deserializers at compile-time, with the help of shapeless library.
-    div.row.utility
+            a(href="#gosk") Marcin Gosk 
+            | Blockchain for Scala lovers
+          p A live demo "how to start you own blockchain" based on Scorex framework. Optionally I will tell few words about rchain cooperative that building new smart contracts platform based on scala too.
+    div.row
       div.time.small-12.medium-2.large-1.columns 10:00
-      div.description.small-12.medium-10.large-11.columns Coffee break, then choose: 3 talks or 1 workshop
-    div.row
-      div.time.small-12.medium-2.large-1.columns 10:30-12:00
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
-            | Workshop: 
-            a(href="#matloka") Michał Matłoka 
-            | Machine learning by example
-          p Are the machines learning on their own? Wait, is Skynet already here? During this session we will tackle an easy Machine Learning problem, show how can it be processed on Spark including data cleaning, normalization and a learning process. Workshop-coding session, but only if the machines don’t rise against us.
+            a(href="#kowalczykiewicz") Michał Kowalczykiewicz 
+            | Rendezvous between functional & declarative programming
+          p In the presentation, I want to show how we combine declarative & functional programming.
+          p Many of our retail-apps run on LogicBlox (application framework) & are written in pure-declarative language LogiQL (implementation of first-order logic, superset of Prolog/Datalog).
+          p Both of these technologies are developed at Infor/Predictix.
+          p And what is interesting, some time ago we started to.... generate the declarative code.
+          p Next part of the speech will be about structure of code generators written in Scala (language grammar, AST, parsers...)
     div.row
+      div.time.small-12.medium-2.large-1.columns 9:00-10:30
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1
+            | Workshop:  
+            a(href="#ossa") Jeferson David Ossa 
+            | Akka Cluster Management on Kubernetes
+          p The aim of this workshop is to get familiar with Akka Mamagement Service Discovery using Kubernetes API, We will create a stateful distributed service  with persistent entities via sharding in persistence mode.
+    div.row.utility
       div.time.small-12.medium-2.large-1.columns 10:30
-      div.description.small-12.medium-10.large-11.columns
-        div.talk
-          h1
-            a(href="#klaehn") Rüdiger Klaehn 
-            | Designing data structures for the typelevel ecosystem
-          p
-            | The 
-            a(href="https://github.com/rklaehn/radixtree") radixtree 
-            | library provides a generic data structure for the typelevel ecosystem. Using this library as an example, I am going to show how to write data structure libraries that work well with typelevel typeclasses such as the ones from the cats library.
+      div.description.small-12.medium-10.large-11.columns Coffee break
     div.row
       div.time.small-12.medium-2.large-1.columns 11:00
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
-            a(href="#kogut") Tomasz Kogut 
-            | Taking your side-effects aside
-          p Scala as a hybrid language does not impose purity on us and the responsibility of keeping rigor lays on the programmer. In this talk, we’re going to explore how to build a special type that allows controlling when side-effects happen. We'll start with a simple naive implementation, make it stack-safe, and on top add support for asynchronous processing. We'll also compare it with what the open source has to offer in that regard and explain why some of the implementations just don't cut it. The listener needs to understand Scala syntax to make the most of the presentation. 
+            a(href="#pretty") Jon Pretty 
+            | Lifting Data Structures to the Type-level
+          p Many of us have seen how a List in Scala - a value representing a list of different values - can be lifted to the type-level to become an HList, that is, a type representing a list of different types.
+          p But can we lift other data structures like Set and Map to the type-level, and perform useful operations on them? Can we do so while maintaining their performance characteristics at compile time?
+          p The answer is "yes"!
     div.row
       div.time.small-12.medium-2.large-1.columns 11:30
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
-            a(href="#szulc") Paweł Szulc 
-            | Getting more Mileage from your Monads with MTL
-          p MTL stands for Monads Transformers Library, but it has barely little in common with monad transformers. Well that's confusing, right? To be honest, in the ancient times, in some long forgotten, prehistoric version of Haskell, MTL was a library holding monad transformers - but those times are long forgoten.
-          p In a nutshell, MTL provides set of abstractions (defined as typeclasses) over many useful patterns that can be applied to types. This allows to write a lot more generic & maintainable code, with noticeably less amount of boilerplatte. MTL brings a a breath of fresh air to pure FP projects that heavly rely on effectful computations closed over monads.
-          p Intrigued? Confused? Or maybe both? You should see my talk, it will be fun & instructive.
+            a(href="#gurnell") Dave Gurnell 
+            | TBA
+          p TBA
     div.row.utility
       div.time.small-12.medium-2.large-1.columns 12:00
       div.description.small-12.medium-10.large-11.columns Lunch, then choose: 3 talks or 1 workshop
@@ -229,49 +266,34 @@ section#agenda.row
         div.talk
           h1
             | Workshop: 
-            a(href="#gurnell") Dave Gurnell 
-            | Shapeless beginner workshop 
-          p This workshop will introduce shapeless, a library for generic programming in Scala. We will discover how to use shapeless to automatically create instances of type classes ("JSON encoder", "Equals", "Show", and so on) for any algebraic data type (case class or sealed trait) using a very small kernel of library code.
-          p
-            | The workshop is aimed at established Scala developers who haven't yet got to grips with shapeless. It will use material from Dave's open source ebook "The Type Astronaut's Guide to Shapeless", which you can download for free from
-            a(href="http://underscore.io/books/shapeless-guide") the Underscore web site
-            | or from
-            a(href="http://github.com/underscoreio/shapeless-guide") Github
-            |. The book is not required reading for the workshop, but it is a useful resource if you want to get into this fascinating and powerful style of Scala programming.
-          p
-            | You will need: a laptop, a copy of Scala, and a clone of the
-            a(href="http://github.com/underscoreio/shapeless-guide-code") exercises repo
-            |. Setup instructions are in the README on Github. Please grab these before the workshop if you can, to avoid unexpected last minute technical problems.
+            a(href="#dorrell") Greg Dorrell 
+            | Fullstack Scala with Play and Scala.js
+          p We will build a rich interactive website with Play and Scala.js.
+          p We'll start with some background about Play and Scala.js. Then we will build a fullstack Scala project from scratch, so you can go away start using it yourself. We will get hands on experience with Scala.js specific libraries, and wrappers around JavaScript libraries - specifically the Google Maps API. 
     div.row
       div.time.small-12.medium-2.large-1.columns 13:30
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
             a(href="#owczarek") Kamil Owczarek 
-            | Continous Applications with Spark 2.0
-          p Spark 2.0 comes with a new, powerful feature - Continous Applications. Unifying the broad choice of inputs and data virtualization with streaming, it enables streaming structured and semi-structured data as DataFrames or Datasets. This, along with the recent developmenets in Spark ML and the introduction of GraphFrames, gives us new, exciting possibilities like building on-line and time-windowed machine learning pipelines and running analysis on graphs updated in real-time. During the presentation, I will present the broad possibilities of Continous Applications on an end-to-end example, from obtaining data to running it through a machine learning pipeline.
+            | Spark and Akka for Big Data systems, in practice
+          p If you ask a Scala / Big Data developer about the two major frameworks / toolkits written in and for the language, the answer will likely be: Akka and Spark. From the perspective of data-driven applications and systems, both are productive tools, whose possibilities (batch jobs, streaming, data ingestion) can sometimes overlap. So how to incorporate Spark and Akka in one Big Data system and delineate between them to make the most of them both? The author will attempt to answer that question, based on his experience with designing and developing such systems, going through frequent concerns, such as: data ingestion, complex transformations, constructing machine learning pipelines and exposing transformed data. 
     div.row
       div.time.small-12.medium-2.large-1.columns 14:00
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
-            a(href="#westheide") Daniel Westheide 
-            | kontextfrei: A new approach to testable Spark applications
-          p Apache Spark has become the de-facto standard for writing big data processing pipelines. While the business logic of Spark applications is often at least as complex as what we have been dealing with in a pre-big data world, enabling developers to write comprehensive, fast unit test suites has not been a priority in the design of Spark. The main problem is that you cannot test your code without at least running a local SparkContext. These tests are not really unit tests, and they are too slow for pursuing a test-driven development approach.
-          p
-            | In this talk, I will introduce the
-            a(href="https://dwestheide.github.io/kontextfrei") kontextfrei 
-            | library, which aims to liberate you from the chains of the SparkContext. I will show how it helps restoring the fast feedback loop we are taking for granted. In addition, I will explain how kontextfrei is implemented and discuss some of the design decisions made and look at alternative approaches and current limitations.
+            a(href="#kunicki") Jacek Kunicki 
+            | Practical Reactive Streams with Monix
+          p Stream processing is a hot topic today and it's easy to get lost among all the possibilities. In this live coding session we will explore the Reactive Streams approach used by the Monix project - one of the Scala implementations of the Reactive Streams concepts. On an almost real-life example we're going to walk through both the basics and some more advanced usages of the library.
     div.row
       div.time.small-12.medium-2.large-1.columns 14:30
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
-            a(href="#matejczyk") Szymon Matejczyk 
-            | How to extend map? ... or why we need collections redesign?
-          p The talk will be based on a puzzle that should be simple even for beginners: extend Map[(Int, Int), T] with method row(r: Int) -> Iterable[T].
-          p Turns out it's not. In Scala it's tricky in at last 3 places: understanding MapLike, GenLike, CanBuildFrom and type bounds.
-          p At the end I'll introduce some concepts of the new collections planned for Scala 2.13.
+            a(href="#przewoznik") Maciej Przewoźnik 
+            | Russian Roulette with Scala: six things that may hurt your project.
+          p Trendy and new language features are often tempting and attractive. Sometimes, they are also dangerous, but it may not be obvious from the beginning. For example, what may be possibly wrong with Scala List? When does your really smart Scala code become unreadable to others or just inefficient? What are the language gotchas? What may go wrong as the project grows? The presentation will focus on such questions in order to help developers avoid certain Scala pitfalls.
     div.row.utility
       div.time.small-12.medium-2.large-1.columns 15:00
       div.description.small-12.medium-10.large-11.columns Coffee
@@ -280,19 +302,17 @@ section#agenda.row
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
-            a(href="#johnson") Alan Johnson 
-            | Building a Real-time Auction Engine Using Event Sourcing
-          p In barely half a year, my team of four launched a product that lets Artsy users bid in global sales hosted by our auction house partners in real-time. One of the core pieces of this system is a bidding engine, written in Scala and the Akka Framework. We created small open source library called Atomic Store, which builds upon Akka Persistence, to process bids in the event sourcing paradigm. This talk discusses how all the pieces fit together, in a use case in which consistency trumps availability.
+            a(href="#jankiewicz") Bartosz Jankiewicz 
+            | Scala based services resilience in the real world
+          p At Ocado we need to orchestrate tens of micro-services. In my team we have been using Scala stack for the past few years to successfully deliver quality products to our customers. I would like to bring some lessons we have learnt when building one of the biggest e-commerce systems. The lessons include some known patterns and principles applied to service communication such as timeouts, retries, circuit-breakers, speculative tasks. I will present the caveats of services communication along with the methods of detecting the issues and Scala tools we used to address them including AWS Beanstalk, Akka, Monix, Sttp and more.
     div.row
       div.time.small-12.medium-2.large-1.columns 16:00
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
-            a(href="#cavalcanti") Renato Cavalcanti 
-            | Functional Foundation of Event Sourced Application
-          p It's often said in the CQRS community that frameworks are not needed because the basic operations are quite trivial. This is true, as we are going to see during the talk. However, it's not that trivial to deal with failure, asynchronicity, concurrency, IO, etc.
-          p It turns out that functional programming offers many constructs that can help us to deal with all those aspects while staying pure and principled.
-          p We are convinced that a solid functional foundation for CQRS/ES can lay the path for better abstractions and more expressive modelling.
+            a(href="#kittel") Katarzyna Kittel 
+            | Experience report: Evolving architectures for modifying production code at runtime
+          p UX Forms lets customers deploy custom code on the fly. During this talk I will show how we created our microservices platform in Scala (based on Docker & Kubernetes), that is also asynchronous, testable and secure.
     div.row.utility
       div.time.small-12.medium-2.large-1.columns 16:30
       div.description.small-12.medium-10.large-11.columns Coffee
@@ -301,20 +321,17 @@ section#agenda.row
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
-            a(href="#kasas") Valentin Kasas 
-            | Carpenters and Cartographers
-          p To help themselves deal with complexity, programmers have a long tradition of using metaphors that map the abstract concepts they wield onto concrete object and activities of the everyday life.
-          p Some of these metaphors are so powerful that they gave birth to entire programming cultures — like Object Oriented Programming — or programming techniques — like the Actor Model.
-          p However, an overused metaphor can end up hiding the reality it was supposed to help grasp in the first place ; it becomes an illusion.
-          p In this talk, I try to describe how the construction-related metaphors — the “carpenter’s mindset” — can mislead us into believing that programming is a creative activity, and why this can lead to unwanted effects. In contrast, I’ll introduce the “cartographer's mindset”, the idea that programming is first and foremost a matter of discovering abstractions, and show how we can make both the carpenter and the cartographer to work together and produce better software.
+            a(href="#kasas") Valentin Kasas  
+            | Those 10000 classes I never wrote
+          p When validating data with Spark, or read/writing it to Kafka topics, the go-to solution is to write a Scala case class or a Java Bean. But what if you had only 5 developers, 10000+ data structures and only a few months to ship your project? Let me show you how the power of hylomorphisms combined with expressive schemas allowed us to write the code that validates and transforms data from dozens of tables from a hundred of data sources, and ship our project in time and on budget. 
     div.row
       div.time.small-12.medium-2.large-1.columns 17:30
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
-            a(href="#ratajski") Jarosław Ratajski 
-            | Lambda Core – HardCore
-          p You all use lambda expressions. But what does it mean... Lambda? The talk will be about story behind this term, from a little bit more scientific point of view. Church Lambda calculus, Entscheidungsproblem and incompleteness theorem. Almost all of that will be presented in Scala. And of course you can later impress your friends with some impressive math tricks.  There are going to be shown some very crazy code pieces such as  perfectly unusable implementation of boolean (based on lambda expressions).  Come and see what purely functional really means.
+            a(href="#szulc") Paweł Szulc 
+            | TBA
+          p 
     div.row.utility
       div.time.small-12.medium-2.large-1.columns 18:00
       div.description.small-12.medium-10.large-11.columns Ending
