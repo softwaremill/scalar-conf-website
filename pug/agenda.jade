@@ -4,15 +4,21 @@ section#agenda.row
     br
     | to top
   header.section-title
-    h1 Wednesday, 4th April: trainings (separate tickets)
+    h1 Wednesday, 4th April: training (separate tickets)
   div.agenda-table.small-12.medium-12.large-12.columns
     div.row
       div.time.small-12.medium-2.large-1.columns 9:00
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
-            TBA
-          p TBA
+            a(href="#goes") John A. De Goes 
+            | Applied Functional Programming in Scala
+          p Introduction
+          p Applied Functional Programming in Scala is an intensive, two-day workshop that teaches attendees to effectively use functional programming in Scala to build high-performance, correct-by-construction software that's easier to reason about, easier to test, easier to compose, and easier to change safely. Taught by John A. De Goes, a CTO whose company is built on functional programming in Scala, attendees will gain mastery of practical techniques in functional programming. If you are struggling with effectively using functional programming in Scala to solve real world problems, then this is the workshop for you.
+          p Relevancy
+          p Adoption of the Scala programming language has grown tremendously in recent years, partially because of the number and quality of libraries written in Scala (including Spark, Akka, Play, Shapeless, scodec, and many others). Yet, the language is broad and complex, containing many features not present in many other common programming languages (implicits, higher-kinded types, declaration-site variance, type lambdas). Most problems have many different and completely incompatible solutions, and the best choice is not obvious. Although the majority of Scala developers know the basics of the programming language, they struggle to translate simple examples of functional programming (like pattern matching and collection processing) into the large-scale code bases and real world problems they work on every day. This course is designed to help Scala developers tackle the most complex problems in the largest code bases using the tremendous real world power of functional programming.
+          p Benefits
+          p After attending this workshop, attendees will understand how to scale functional programming techniques to real-world problems, including complex state management, input/output, concurrency, resource management, and much more. Attendees will develop a newfound appreciation for how to write simpler code that is correct-by-construction, using techniques in functional programming and the strong type system of the Scala programming language. Companies whose Scala teams are struggling to feel comfortable with the complex language, or who have yet to attain the mastery required to reduce defects and increase productivity, are encouraged to send their developers to this workshop. Functional programming in Scala can be a tremendous competitive advantage for developers who have been properly trained.
   header.section-title
     h1 Thursday, 5th April: long workshops (separate tickets)
   div.agenda-table.small-12.medium-12.large-12.columns
@@ -33,7 +39,20 @@ section#agenda.row
             a(href="#matuszak") Marcin Matuszak 
             | Typelevel workshop
           p Cats library has finally reached stable release. It's a good opportunity to learn how to build a purely functional application using Typelevel stack. The goal of this workshop is to build small REST backend application using Typelevel libraries.
-          p This will be a mix of lecture, exercise and workshop. 
+          p This will be a mix of lecture, exercise and workshop.
+          p Prerequisites:
+          p * to benefit from this workshop it's advised to have about a year's experience in Scala (or equivalent language)
+          p * be familiar with Scala syntax 
+          p * laptop with favourite editor and sbt (preferred 1.0.x version)
+          p Outcomes:
+          p * Understand benefits of building purely functional application
+          p * Learn the basic type classes (Functor, Monad, Applicative) and its practical application
+          p * Learn how to use libraries: cats, http4s, circe, monocle
+          p * Have fun
+          p
+            | Resources: 
+            a(href="https://github.com/mrcmatuszak/scalar-2018-typelevel-workshop") https://github.com/mrcmatuszak/scalar-2018-typelevel-workshop
+          p This will not be an introduction to Scala. 
   header.section-title
     h1 Agenda: Friday, 6th April
   div.agenda-table.small-12.medium-12.large-12.columns
