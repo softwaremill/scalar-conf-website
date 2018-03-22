@@ -41,6 +41,15 @@ In console navigate to `scalar-conf-website` folder and run
 
 This will install all required dependencies for this project.
 
+## Pygments
+
+Page build uses the `pygmentize` command. Use 
+
+```
+pip install Pygments
+``` 
+
+to install this tool. Sudo may be required (`sudo pip install Pygments`).
 
 ### GruntJS
 
@@ -51,7 +60,7 @@ It is advised to install Grunt.js globally. In order to do that, please run
   npm install -g grunt-cli
 ```
 
-This will install grunt command globally and make it available.
+This will install grunt command globally and make it available. Sudo may be required (`sudo npm install -g grunt-cli`).
 
 **NOTE: All described above you need to do only once - when you try to run project for the first time. Any next time you'll have everything installed already, so you just need to proceed to development.**
 
