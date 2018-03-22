@@ -41,7 +41,7 @@ In console navigate to `scalar-conf-website` folder and run
 
 This will install all required dependencies for this project.
 
-## Pygments
+#### Pygments
 
 Page build uses the `pygmentize` command. Use 
 
