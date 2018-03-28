@@ -130,7 +130,7 @@ section#agenda.row
         div.talk#talk-pustelnik
           h1
             a(href="#pustelnik") Jan Pustelnik 
-            | Real serverless with CRDTs and IPFS.
+            | Real serverless with CRDTs and IPFS
           p You probably have heard the pun that serverless is just running software on another person's computer. In this talk we would like to show something else - "real serverless" which is running software without any servers in a fully distributed, peer-to-peer manner. The software stack for this example will consist of Scala, Akka's CRDTs and the Inter Planetary File System (ipfs).
     div.row.utility
       div.time.small-12.medium-2.large-1.columns 12:00
@@ -203,8 +203,10 @@ section#agenda.row
             a(href="#uvarova") Inna Uvarova 
             | and 
             a(href="#grajek") Krzysztof Grajek 
-            | PW-SAT2
-          p TBA
+            | PW-Sat2 - Polish CubeSat project
+          p PW-Sat2 is the project held by Warsaw University of Technology in Students' Space Association at Faculty of Power and Aeronautical Engineering. The project had started in Q1 2013, one year after the launch of the first Polish satellite PW-Sat. As a continuation of the space debris mitigation subject, the second satellite main payload is a deorbit sail fully designed and developed by students. Several additional payloads and been proposed and chosen as a secondary mission goals. 
+          p The primary PW-Sat2 mission is to test our two innovative engineering solutions: a deorbitation system and a sun sensor device.
+          p SoftwareMill's engineers bring to the table the software project for radioamateur community to support communication for PW-Sat2
     div.row
       div.time.small-12.medium-2.large-1.columns 17:30
       div.description.small-12.medium-10.large-11.columns
@@ -284,8 +286,19 @@ section#agenda.row
         div.talk#talk-gurnell
           h1
             a(href="#gurnell") Dave Gurnell 
-            | TBA
-          p TBA
+            | Atlas: A voyage of discovery on the high seas of scripting
+          p
+            | In this talk Dave will describe the design, motivation, and implementation of 
+            a(href="https://github.com/cartographerio/atlas") Atlas
+            | , a scripting language written in Scala. He'll discuss the use of functional techniques to implement some interesting details including parsing, sandboxing, monitoring, and interaction with the host environment. It'll be a chance to look at Scala for an interesting and slightly out-of-the-ordinary application.
+          p
+            | What enterprise software is complete without scripting support? When checkboxes and sliders aren't flexible enough, simply embed 
+            a(href="http://www.jython.org/") Python 
+            | or 
+            a(href="http://openjdk.java.net/projects/nashorn/") JavaScript 
+            | to give your users all the power in the world!
+          p All that power will go to their heads, though. The code will need to be sandboxed and monitored so scripts can't consume too many resources. And it'll need to talk to the database so it'll have to be asynchronous and non-blocking. We can't expose any of that complexity to the user, though, so we'll need to take care of unwanted effects in the interpreter. And don't even get me started on endorsing an imperative scripting language in our beautiful Scala codebase.
+          p No. JavaScript and Python won't do. What we need is a *new* scripting language. Something shiny. Something invented here. How could this possibly be a bad idea?
     div.row.utility
       div.time.small-12.medium-2.large-1.columns 12:00
       div.description.small-12.medium-10.large-11.columns Lunch, then choose: 3 talks or 1 workshop
@@ -321,7 +334,7 @@ section#agenda.row
         div.talk#talk-przewoznik
           h1
             a(href="#przewoznik") Maciej Przewoźnik 
-            | Russian Roulette with Scala: six things that may hurt your project.
+            | Russian Roulette with Scala: six things that may hurt your project
           p Trendy and new language features are often tempting and attractive. Sometimes, they are also dangerous, but it may not be obvious from the beginning. For example, what may be possibly wrong with Scala List? When does your really smart Scala code become unreadable to others or just inefficient? What are the language gotchas? What may go wrong as the project grows? The presentation will focus on such questions in order to help developers avoid certain Scala pitfalls.
     div.row.utility
       div.time.small-12.medium-2.large-1.columns 15:00
