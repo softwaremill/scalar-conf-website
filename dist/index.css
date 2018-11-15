@@ -114,7 +114,7 @@ section.header li.tweet-btn iframe{margin-top:.75rem}
 .contact-links .columns{padding:0 .5em 1em;text-align:center}
 .contact-links img{margin-right:.4em;vertical-align:middle}
 .team-table{margin-bottom:4rem;text-align:center;}
-.team-table .team-member{padding:.5rem;width:13.3333%;display:inline-block;vertical-align:top;max-width:65px;text-align:left}
+.team-table .team-member{padding:.5rem;width:13.3333%;display:inline-block;vertical-align:top;max-width:65px;text-align:center}
 .team-table img{border:1px solid #fff;margin-bottom:.5rem}
 .team-table h2{font-size:.75em;text-transform:uppercase;margin-top:0;margin-bottom:0}
 #register .big-button{background:#002447;border-color:#002447;border-width:3px;color:#fff;padding-top:.75rem;padding-bottom:.75rem;}
