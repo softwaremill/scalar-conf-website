@@ -24,8 +24,8 @@ $(() => {
   };
 
   const scrollScalar = () => {
-    const cycle = (tick / 2) % 1345
-    const sinusoid = Math.sin(cycle * Math.PI / 1345 * 2) * 50
+    const cycle = (tick / 4) % 1345
+    const sinusoid = Math.sin(cycle * Math.PI / 1345 * 4) * 50
     scalarElement.style.transform = `translate(${-1 * cycle}px, ${-pageYOffset / 3 + sinusoid}px)`;
   };
 
