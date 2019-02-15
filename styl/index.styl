@@ -152,12 +152,12 @@ a:focus img
   color: #fc4349;
 
 section.row
-  background: url('images/anchor-left.png') center top no-repeat, url('images/line.png') center top no-repeat;
+  background: url('images/anchor-left.png') center top no-repeat;
   padding: 9.125em 1em 1em;
   margin: 0 auto ;
   position: relative;
   &:nth-child(odd)
-    background: url('images/anchor-right.png') center top no-repeat, url('images/line.png') center top no-repeat;
+    background: url('images/anchor-right.png') center top no-repeat;
 
   &.header
     background-image: none;
@@ -924,6 +924,19 @@ div.video-wrapper
 .after-party-img
   padding: 1rem;
 
+.fading
+  transition: opacity .5s ease-out .2s, transform .5s ease-out .2s;
+
+.faded-down
+  opacity: 0
+  transform: translateY(50px);
+  transition: none;
+
+.faded-up
+  opacity: 0
+  transform: translateY(-50px);
+  transition: none;
+
 #bubbles
   position: fixed;
   top: 0;
@@ -965,6 +978,7 @@ div.video-wrapper
   width: calc(100vw)
   height: calc(100vh)
   background: url('images/top.png') center top no-repeat;
+  opacity: .5;
 
 #bottom
   position: fixed;

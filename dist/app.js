@@ -16,11 +16,12 @@ $(() => {
   let tick = 0;
 
   const bubblesElement = document.getElementById("bubbles");
-  const bubbles2Element = document.getElementById("bubbles2");
   const scalarElement = document.getElementById("scalar");
   const scalar2Element = document.getElementById("scalar2");
-  const bottomElement = document.getElementById("bottom");
-  const lightElement = document.getElementById("light");
+
+  let fadingElements = Array.from(document.getElementsByTagName("section")).map(
+    element => ({ element })
+  );
 
   let docHeight = getDocHeight();
   let { pageYOffset, innerHeight } = window;
@@ -29,42 +30,53 @@ $(() => {
     bubblesElement.style.transform = `translateY(${-pageYOffset / 4}px)`;
   };
 
-  const scrollBubbles2 = () => {
-    bubbles2Element.style.transform = `translateY(${-pageYOffset / 1.5}px)`;
-  };
-
   const scrollScalar = () => {
-    const cycle = (tick * .66) % 1345
-    const sinusoid = Math.sin(cycle * Math.PI / 1345 * 2) * 50
-    scalarElement.style.transform = `translate(${-1 * cycle}px, ${-pageYOffset / 3 + sinusoid}px)`;
+    const cycle = (tick * 0.1) % 1345;
+    const sinusoid = Math.sin(((cycle * Math.PI) / 1345) * 2) * 50;
+    scalarElement.style.transform = `translate(${-1 * cycle}px, ${-pageYOffset /
+      3}px)`;
   };
 
   const scrollScalar2 = () => {
-    const cycle = (tick * .5) % 1345
-    const sinusoid = Math.sin(cycle * Math.PI / 1345 * 2) * 50
-    scalar2Element.style.transform = `translate(${-1345 + cycle}px, ${-pageYOffset / 2 + sinusoid}px)`;
+    const cycle = (tick * 0.05) % 1345;
+    const sinusoid = Math.sin(((cycle * Math.PI) / 1345) * 2) * 50;
+    scalar2Element.style.transform = `translate(${-1345 +
+      cycle}px, ${-pageYOffset / 2}px)`;
   };
 
-  const scrollLight = () => {
-    lightElement.style.transform = `translateY(${-pageYOffset / 20}px)`;
-  };
+  const handleFading = () => {
+    const { innerHeight } = window;
 
-  const scrollBottom = () => {
-    bottomElement.style.transform = `translateY(${(docHeight -
-      pageYOffset -
-      innerHeight) /
-      30}px)`;
+    fadingElements.forEach(({ element, bcr }) => {
+      if (!bcr) {
+        element.classList.remove("faded-down", "faded-up");
+        return;
+      }
+
+      const { y, height } = bcr;
+
+      if (y - pageYOffset > innerHeight) {
+        element.classList.add("faded-down");
+      } else if (y - pageYOffset < innerHeight * 0.75) {
+        element.classList.remove("faded-down");
+      }
+
+      if (y - pageYOffset + height < 0) {
+        element.classList.add("faded-up");
+      } else if (y - pageYOffset + height > innerHeight * 0.25) {
+        element.classList.remove("faded-up");
+      }
+    });
   };
 
   const handleScroll = () => {
     pageYOffset = window.pageYOffset;
+    tick = pageYOffset;
     innerHeight = window.innerHeight;
     scrollBubbles();
-    scrollBubbles2();
     scrollScalar();
     scrollScalar2();
-    scrollBottom();
-    scrollLight();
+    handleFading();
   };
 
   const handleFrame = () => {
@@ -73,17 +85,39 @@ $(() => {
     scrollScalar2();
   };
 
-  const setBubbles = () => {
+  const setParalax = () => {
     docHeight = getDocHeight();
     bubblesElement.style.height = `${docHeight}px`;
-    bubbles2Element.style.height = `${docHeight}px`;
     scalarElement.style.height = `${docHeight}px`;
     scalar2Element.style.height = `${docHeight}px`;
     handleScroll();
   };
 
-  setBubbles();
-  setInterval(handleFrame, 1000 / 40);
+  const setFading = () => {
+    fadingElements.forEach(({ element }) => {
+      element.classList.add("fading");
+    });
+  };
+
+  const setFadingBCR = () => {
+    pageYOffset = window.pageYOffset;
+    fadingElements = fadingElements.map(({ element }) => {
+      const bcr = element.getBoundingClientRect();
+      bcr.y = bcr.y + pageYOffset;
+
+      return {
+        element,
+        bcr
+      };
+    });
+  };
+
+  setFading();
+  setFadingBCR();
+  setParalax();
+  // setInterval(handleFrame, 1000 / 40);
+  // setInterval(handleFading, 100);
+  setInterval(setFadingBCR, 1500);
   window.addEventListener("scroll", handleScroll, false);
-  window.addEventListener("resize", setBubbles);
+  window.addEventListener("resize", setParalax);
 });
