@@ -13,8 +13,6 @@ void 0!==c?null===c?void r.removeAttr(a,b):e&&"set"in e&&void 0!==(d=e.set(a,c,b
   );
 
 $(() => {
-  let tick = 0;
-
   const bubblesElement = document.getElementById("bubbles");
   const scalarElement = document.getElementById("scalar");
   const scalar2Element = document.getElementById("scalar2");
@@ -24,22 +22,20 @@ $(() => {
   );
 
   let docHeight = getDocHeight();
-  let { pageYOffset, innerHeight } = window;
+  let { pageYOffset } = window;
 
   const scrollBubbles = () => {
     bubblesElement.style.transform = `translateY(${-pageYOffset / 4}px)`;
   };
 
   const scrollScalar = () => {
-    const cycle = (tick * 0.1) % 1345;
-    const sinusoid = Math.sin(((cycle * Math.PI) / 1345) * 2) * 50;
+    const cycle = (pageYOffset * 0.2) % 1345;
     scalarElement.style.transform = `translate(${-1 * cycle}px, ${-pageYOffset /
       3}px)`;
   };
 
   const scrollScalar2 = () => {
-    const cycle = (tick * 0.05) % 1345;
-    const sinusoid = Math.sin(((cycle * Math.PI) / 1345) * 2) * 50;
+    const cycle = (pageYOffset * 0.1) % 1345;
     scalar2Element.style.transform = `translate(${-1345 +
       cycle}px, ${-pageYOffset / 2}px)`;
   };
@@ -71,18 +67,11 @@ $(() => {
 
   const handleScroll = () => {
     pageYOffset = window.pageYOffset;
-    tick = pageYOffset;
     innerHeight = window.innerHeight;
     scrollBubbles();
     scrollScalar();
     scrollScalar2();
     handleFading();
-  };
-
-  const handleFrame = () => {
-    tick++;
-    scrollScalar();
-    scrollScalar2();
   };
 
   const setParalax = () => {
@@ -115,8 +104,7 @@ $(() => {
   setFading();
   setFadingBCR();
   setParalax();
-  // setInterval(handleFrame, 1000 / 40);
-  // setInterval(handleFading, 100);
+  handleScroll();
   setInterval(setFadingBCR, 1500);
   window.addEventListener("scroll", handleScroll, false);
   window.addEventListener("resize", setParalax);
