@@ -16,6 +16,7 @@ $(() => {
   let tick = 0;
 
   const bubblesElement = document.getElementById("bubbles");
+  const bubbles2Element = document.getElementById("bubbles2");
   const scalarElement = document.getElementById("scalar");
   const scalar2Element = document.getElementById("scalar2");
   const bottomElement = document.getElementById("bottom");
@@ -26,6 +27,10 @@ $(() => {
 
   const scrollBubbles = () => {
     bubblesElement.style.transform = `translateY(${-pageYOffset / 4}px)`;
+  };
+
+  const scrollBubbles2 = () => {
+    bubbles2Element.style.transform = `translateY(${-pageYOffset / 1.5}px)`;
   };
 
   const scrollScalar = () => {
@@ -55,6 +60,7 @@ $(() => {
     pageYOffset = window.pageYOffset;
     innerHeight = window.innerHeight;
     scrollBubbles();
+    scrollBubbles2();
     scrollScalar();
     scrollScalar2();
     scrollBottom();
@@ -70,6 +76,7 @@ $(() => {
   const setBubbles = () => {
     docHeight = getDocHeight();
     bubblesElement.style.height = `${docHeight}px`;
+    bubbles2Element.style.height = `${docHeight}px`;
     scalarElement.style.height = `${docHeight}px`;
     scalar2Element.style.height = `${docHeight}px`;
     handleScroll();
