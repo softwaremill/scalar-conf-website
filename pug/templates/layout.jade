@@ -1,5 +1,6 @@
 include header.jade
 include section-layout.jade
+include background.jade
 
 doctype html
 html(lang="en", itemscope, itemtype="http://schema.org/EducationEvent")
@@ -21,9 +22,9 @@ html(lang="en", itemscope, itemtype="http://schema.org/EducationEvent")
       script(src="vendor/modernizr.js")
 
   body#top
+    +background()
     //+header("stats", "sponsors", "team")
     +header()
-
 
     block content
 
