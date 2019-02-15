@@ -17,6 +17,7 @@ $(() => {
 
   const bubblesElement = document.getElementById("bubbles");
   const scalarElement = document.getElementById("scalar");
+  const scalar2Element = document.getElementById("scalar2");
   const bottomElement = document.getElementById("bottom");
   const lightElement = document.getElementById("light");
 
@@ -28,9 +29,15 @@ $(() => {
   };
 
   const scrollScalar = () => {
-    const cycle = (tick / 4) % 1345
-    const sinusoid = Math.sin(cycle * Math.PI / 1345 * 4) * 50
+    const cycle = (tick * .66) % 1345
+    const sinusoid = Math.sin(cycle * Math.PI / 1345 * 2) * 50
     scalarElement.style.transform = `translate(${-1 * cycle}px, ${-pageYOffset / 3 + sinusoid}px)`;
+  };
+
+  const scrollScalar2 = () => {
+    const cycle = (tick * .5) % 1345
+    const sinusoid = Math.sin(cycle * Math.PI / 1345 * 2) * 50
+    scalar2Element.style.transform = `translate(${-1345 + cycle}px, ${-pageYOffset / 2 + sinusoid}px)`;
   };
 
   const scrollLight = () => {
@@ -49,6 +56,7 @@ $(() => {
     innerHeight = window.innerHeight;
     scrollBubbles();
     scrollScalar();
+    scrollScalar2();
     scrollBottom();
     scrollLight();
   };
@@ -56,12 +64,14 @@ $(() => {
   const handleFrame = () => {
     tick++;
     scrollScalar();
+    scrollScalar2();
   };
 
   const setBubbles = () => {
     docHeight = getDocHeight();
     bubblesElement.style.height = `${docHeight}px`;
     scalarElement.style.height = `${docHeight}px`;
+    scalar2Element.style.height = `${docHeight}px`;
     handleScroll();
   };
 
