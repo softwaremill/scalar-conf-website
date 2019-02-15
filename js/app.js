@@ -38,6 +38,7 @@ $(() => {
 
   const handleFading = () => {
     const { innerHeight } = window;
+    pageYOffset = window.pageYOffset;
 
     fadingElements.forEach(({ element, bcr }) => {
       if (!bcr) {
@@ -67,7 +68,6 @@ $(() => {
     scrollBubbles();
     scrollScalar();
     scrollScalar2();
-    handleFading();
   };
 
   const setParalax = () => {
@@ -97,11 +97,32 @@ $(() => {
     });
   };
 
-  setFading();
-  setFadingBCR();
-  setParalax();
-  handleScroll();
-  setInterval(setFadingBCR, 1500);
-  window.addEventListener("scroll", handleScroll, false);
-  window.addEventListener("resize", setParalax);
+  const activate = () => {
+    setFading();
+    setFadingBCR();
+    setParalax();
+    handleScroll();
+    setInterval(setFadingBCR, 1500);
+
+    if (
+      navigator &&
+      navigator.userAgent &&
+      navigator.userAgent.indexOf("Firefox") === -1 &&
+      navigator.userAgent.indexOf("Android") === -1 &&
+      navigator.userAgent.indexOf("IPhone") === -1
+    ) {
+      window.addEventListener("scroll", handleScroll, false);
+      window.addEventListener("resize", setParalax);
+    }
+    if (
+      navigator &&
+      navigator.userAgent &&
+      navigator.userAgent.indexOf("Android") === -1 &&
+      navigator.userAgent.indexOf("IPhone") === -1
+    ) {
+      window.addEventListener("scroll", handleFading, false);
+    }
+  };
+
+  activate();
 });
