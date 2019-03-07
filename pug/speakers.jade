@@ -5,159 +5,247 @@ section#speakers.row
     | to top
   header.section-title
     h1 Speakers
-        div.single-speaker
-          div.single-speaker-photo
-            img(src="images/speakers/degoes.jpg")
-          div.single-speaker-bio
-            h2#goes John A. De Goes
-            h3(href="http://degoes.net", target="_blank").speaker-link degoes.net
+  div.agenda-table.small-12.medium-12.large-12.columns
+    div.row
+      div.description.small-12.medium-12.large-12.columns
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/wiem.png")
+          div.speaker-bio
+            h2#wiem Wiem Zine El Abidine
+            a(href="https://twitter.com/wiemzin").speaker-link @WiemZin
             p
-              | A mathematician by training but a software engineer by vocation, John A. De Goes has been professionally writing software for more than 20 years. John has contributed to dozens of open source projects written in functional programming languages. In addition to speaking at Strata, OSCON, BigData TechCon, NEScala, and many other conferences, John also published a variety of books on programming. Currently, John consults at De Goes Consulting, a consultancy committed to solving hard business problems using the power of pure functional programming.
-              div.small-12.medium-8.medium-centered.large-8.large-centered.columns
-        div.single-speaker
-          div.single-speaker-photo
+              |An enthusiastic functional programmer from Tunisia, working at
+              a(href="https://www.moia.io/en") MOIA
+              |, Hamburg
+              |.
+    div.row
+      div.description.small-12.medium-12.large-12.columns
+        div.speaker
+          div.speaker-photo
             img(src="images/speakers/szulc.png")
-          div.single-speaker-bio
+          div.speaker-bio
             h2#szulc Paweł Szulc
+            a(href="https://twitter.com/rabbitonweb").speaker-link @rabbitonweb
             p
               | Paweł is a Software Engineer, Programmer, Developer, experienced with Java ecosystem. Currently having tons of fun at work with Scala, Akka, Apache Spark and distributed cloud computing.
-              div.small-12.medium-8.medium-centered.large-8.large-centered.columns
-       div.single-speaker
-         div.single-speaker-photo
-           img(src="images/speakers/wiem.png")
-         div.single-speaker-bio
-           h2#wiem Wiem Zine El Abidine
-           p
-             | An enthusiastic functional programmer from Tunisia, working at MOIA, Hamburg.
-            div.small-12.medium-8.medium-centered.large-8.large-centered.columns
-       div.single-speaker
-         div.single-speaker-photo
-           img(src="images/speakers/kubuszok.png")
-         div.single-speaker-bio
-           h2#kubuszok Mateusz Kubuszok
-           p
-             | A rank and file programmer, who loves math and hates difficult things. After searching for inner peace and tranquility finally settled down with Scala. Codes, blogs and thinks how to make things easier for himself without making things harder for everyone else.
-             div.small-12.medium-8.medium-centered.large-8.large-centered.columns
-       div.single-speaker
-         div.single-speaker-photo
-           img(src="images/speakers/kozlowski.png")
-         div.single-speaker-bio
-           h2#kozlowski Jakub Kozłowski
-           p
-             | A young Scala hAkker who spends his days writing code, running and lifting in the late evenings. In his free time, if he has any, Jakub explores his other interests, which include coffee, playing bass and watching outstanding TV series. He works at Ocado Technology, where he develops the software for the world's most advanced warehouses, powered by functional programming and distributed systems.
-             div.small-12.medium-8.medium-centered.large-8.large-centered.columns
-       div.single-speaker
-         div.single-speaker-photo
-           img(src="images/speakers/pretty.png")
-         div.single-speaker-bio
-           h2#pretty Jon Pretty
-           p
-             | Jon has been having fun riding the bleeding edge of Scala for nearly fifteen years, and he's not finished yet. When he's not travelling the world attending Scala conferences, or organizing Scala World, he devotes his time to a variety of open-source Scala tools and libraries, and providing professional training services to the Scala industry.
-             div.small-12.medium-8.medium-centered.large-8.large-centered.columns
-      div.single-speaker
-        div.single-speaker-photo
-          img(src="images/speakers/ratajski.png")
-        div.single-speaker-bio
-          h2#ratajski Jarek Ratajski
-          p
-            | An architect, wizard, coder.
-            div.small-12.medium-8.medium-centered.large-8.large-centered.columns
-      div.single-speaker
-        div.single-speaker-photo
-          img(src="images/speakers/volpe.png")
-       div.single-speaker-bio
-         h2#volpe Gabriel Volpe
-         p
-           | Passionate software engineer, open source contributor and co-organizer of the Scala Tokyo meetup. Currently leading a Scala dev team at Paidy Inc, Tokyo, Japan.  Gabriel has been given FP talks for the last two years in both Scala and Haskell and has been very active in the open source community, sharing his knowledge as well as learning from the best developers out there.
-           div.small-12.medium-8.medium-centered.large-8.large-centered.columns
-      div.single-speaker
-        div.single-speaker-photo
-          img(src="images/speakers/owczarek.png")
-        div.single-speaker-bio
-          h2#owczarek Kamil Owczarek
-          p
-            | Lead Big Data Developer @ GFT. Specializes in Big Data projects involving Data Warehousing & Machine Learning. Personal motto: 'Data is always more valuable than you recognize it to be'.
-      div.single-speaker
-        div.single-speaker-photo
-          img(src="images/speakers/jura.png")
-        div.single-speaker-bio
-          h2#jura Markus Jura
-          p
-            | Markus is the Scala Lead at MOIA. The past 7 years ago his focus was to design and build real-world distributed systems based on Akka. He is co-organizing the Scala and Reactive Systems user group in Hamburg and shares his knowledge regularly at conferences. Markus is also the co-founder and former CTO of Y-Combinator funded startup.
-      div.single-speaker
-        div.single-speaker-photo
-          img(src="images/speakers/byczynski.png")
-        div.single-speaker-bio
-          h2#byczynski Łukasz Byczyński
-          p
-            | I started as coder since from I get my first 8-bit computer - C64. It was a long journey for me, from a machine assembly code to the pure functional constructs. Right now, I'm passionate about designing pure architectures with reasonable costs. I'm a part of the team responsible for build the platform for implementing machine learning algorithms in Adform.
-      div.single-speaker
-       div.single-speaker-photo
-         img(src="images/speakers/ludwikowski.jpg")
-       div.single-speaker-bio
-         h2#ludwikowski Andrzej Ludwikowski
-         p
-           | Software Journeyman with over 8 years of experience in commercial software development. Conference speaker and open source contributor. Devotee of DDD, Event Sourcing and Polyglot Persistence. System performance bottlenecks validator. Continuously chasing the dream of a perfect software architecture, fulfilling all of the requirements and trends, even the strangest ones.  Currently one of the Millers in SoftwareMill.
-      div.single-speaker
-       div.single-speaker-photo
-         img(src="images/speakers/koziarkiewicz.png")
-       div.single-speaker-bio
-         h2#koziarkiewicz Mikołaj Koziarkiewicz
-         p
-           | Currently at SoftwareMill, Mikołaj is an alumni of the Vienna University of Technology's Computational Intelligence programme. As such, he feels at home to different language paradigms, and therefore enjoys the current technology boom in the JVM ecosystem. He strongly believes that taking lazy shortcuts backfires on a programmer sooner or later, and is committed to doing things 'the right way'.
-      div.single-speaker
-       div.single-speaker-photo
-         img(src="images/speakers/kopec.png")
-       div.single-speaker-bio
-         h2#kopec Andrzej Kopeć
-         p
-           | Programmer always looking for newer, better, different solutions in different languages and fields - currently doing Scala @ Scalac. A purist when it comes to code readability and work/process automation.
-     div.single-speaker
-      div.single-speaker-photo
-        img(src="images/speakers/gawrys.png")
-      div.single-speaker-bio
-        h2#gawrys Piotr Gawryś
-        p
-          | Frequent contributor to Open Source projects in Scala ecosystem who’s doing his best to make pure FP a little bit more approachable. One of the maintainers of Monix and Kraków Scala User Group co-organizers.
-     div.single-speaker
-      div.single-speaker-photo
-        img(src="images/speakers/otrebski.png")
-      div.single-speaker-bio
-        h2#otrebski Krzysztof Otrębski
-        p
-          | Krzysztof is a software developer with 10 years of professional experience. Having spent many years on Java programming and problem solving, he has developed useful tools that make a programmer’s life easier. He is also a founder of a few open-source projects.
-      div.single-speaker
-       div.single-speaker-photo
-         img(src="images/speakers/kunicki.png")
-      div.single-speaker-bio
-        h2#kunicki Jacek Kunicki
-        p
-          | I'm a passionate software engineer living in the JVM land - mainly, but not limited to. I also tend to play with electronics and hardware. When sharing my knowlegde, I always keep in mind that a working example is worth a thousand words.
-      div.single-speaker
-       div.single-speaker-photo
-         img(src="images/speakers/arora.png")
-      div.single-speaker-bio
-        h2#arora Himanshu Arora
-        p
-          | Himanshu Arora is a passionate Senior Data Engineer from Paris. He has been using Scala, Reactive systems and Big data stack for a few years now in production to help enterprises accelerate digital transformation. He is a Lightbend certified expert on Scala, Play, Akka and FastData and Databricks certified Spark developer. He loves to be a reactive and FP advocate. He contributes time to time in open source community and participates in scala, FP and reactive system conferences around the globe. Nitya Nand Yadav is a Senior Data Engineer as well. He has a lot of significant production experience with hadoop and spark big data stack. He has been helping different French big data players with his expertise.
-      div.single-speaker
-       div.single-speaker-photo
-         img(src="images/speakers/pavkin.jpg")
-       div.single-speaker-bio
-         h2#pavkin Vladimir Pavkin
-         p
-           | Scala developer at Evotor. Functional Programming enthusiast.
-      div.single-speaker
-       div.single-speaker-photo
-         img(src="images/speakers/janusz.png")
-      div.single-speaker-bio
-        h2#janusz Roman Janusz
-        p
-          | Scala Software Engineer at AVSystem, Cracow
-      div.single-speaker
-       div.single-speaker-photo
-         img(src="images/speakers/kaeser.png")
-       div.single-speaker-bio
-         h2#kaeser Justin Kaeser
-         p
-           | Justin believes in "Tools before Rules":  automating the development toolchain to remove the friction of dealing with manual processes. He works on this goal as part of the IntelliJ Scala plugin team.
+    div.row
+      div.description.small-12.medium-12.large-12.columns
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/degoes.jpg")
+          div.speaker-bio
+            h2#goes John A. De Goes
+            a(href="http://degoes.net", target="_blank").speaker-link degoes.net
+            p
+              | A mathematician by training but a software engineer by vocation, John A. De Goes has been professionally writing software for more than 20 years. John has contributed to dozens of open source projects written in functional programming languages. In addition to speaking at Strata, OSCON, BigData TechCon, NEScala, and many other conferences, John also published a variety of books on programming. Currently, John consults at De Goes Consulting, a consultancy committed to solving hard business problems using the power of pure functional programming.
+    div.row
+      div.description.small-12.medium-12.large-12.columns
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/ludwikowski.jpg")
+          div.speaker-bio
+            h2#ludwikowski Andrzej Ludwikowski
+            a(href="https://twitter.com/aludwikowski").speaker-link @aludwikowski
+            p
+              | Software Journeyman with over 8 years of experience in commercial software development. Conference speaker and open source contributor. Devotee of DDD, Event Sourcing and Polyglot Persistence. System performance bottlenecks validator. Continuously chasing the dream of a perfect software architecture, fulfilling all of the requirements and trends, even the strangest ones. Currently one of the Millers in SoftwareMill.
+    div.row
+      div.description.small-12.medium-12.large-12.columns
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/kubuszok.png")
+          div.speaker-bio
+            h2#kubuszok Mateusz Kubuszok
+            a(href="https://twitter.com/MateuszKubuszok").speaker-link @MateuszKubuszok
+            p
+              | A rank and file programmer, who loves math and hates difficult things. After searching for inner peace and tranquility finally settled down with Scala. Codes, blogs and thinks how to make things easier for himself without making things harder for everyone else.
+    div.row
+      div.description.small-12.medium-12.large-12.columns
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/byczynski.png")
+          div.speaker-bio
+            h2#byczynski Łukasz Byczyński
+            a(href="https://twitter.com/LukaszByczynski").speaker-link @LukaszByczynski
+            p
+              | I became a coder when I got my first 8-bit computer - C64. It was a long journey for me, from a machine assembly code to the pure functional constructs. Right now, I'm passionate about designing pure architectures at reasonable costs. I'm a part of the team responsible for building the platform for implementing machine learning algorithms in Adform.
+    div.row
+      div.description.small-12.medium-12.large-12.columns
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/jura.png")
+          div.speaker-bio
+            h2#jura Markus Jura
+            a(href="https://twitter.com/MarkusJura").speaker-link @MarkusJura
+            p
+              | Markus is the Scala Lead at MOIA. The past 7 years ago his focus was to design and build real-world distributed systems based on Akka. He is co-organizing the Scala and Reactive Systems user group in Hamburg and shares his knowledge regularly at conferences. Markus is also the co-founder and former CTO of Y-Combinator funded startup.
+    div.row
+      div.description.small-12.medium-12.large-12.columns
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/kasas.png")
+          div.speaker-bio
+            h2#kasas Valentin Kasas
+            a(href="https://twitter.com/ValentinKasas").speaker-link @ValentinKasas
+            p
+              | Valentin has come a long way from C++ programming on little machines with 4 MB of unmanaged memory to big clusters with terabytes of RAM. Along the way, he progressively abandoned his old imperative habits to embrace the functional way - a journey that seems to never come to an end.
+    div.row
+      div.description.small-12.medium-12.large-12.columns
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/pretty.png")
+          div.speaker-bio
+            h2#pretty Jon Pretty
+            a(href="https://twitter.com/pretty").speaker-link @pretty
+            p
+              | Jon has been having fun riding the bleeding edge of Scala for nearly fifteen years, and he's not finished yet. When he's not travelling the world attending Scala conferences, or organizing Scala World, he devotes his time to a variety of open-source Scala tools and libraries, and providing professional training services to the Scala industry.
+    div.row
+      div.description.small-12.medium-12.large-12.columns
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/kopec.png")
+          div.speaker-bio
+            h2#kopec Andrzej Kopeć
+            a(href="https://twitter.com/kapke_").speaker-link @kapke_
+            p
+              | Programmer always looking for newer, better, different solutions in different languages and fields - currently doing Scala @ Scalac. A purist when it comes to code readability and work/process automation.
+    div.row
+      div.description.small-12.medium-12.large-12.columns
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/kaeser.png")
+          div.speaker-bio
+            h2#kaeser Justin Kaeser
+            a(href="https://twitter.com/ebenwert").speaker-link @ebenwert
+            p
+              | Justin believes in "Tools before Rules": automating the development toolchain to remove the friction of dealing with manual processes. He works on this goal as part of the IntelliJ Scala plugin team.
+    div.row
+      div.description.small-12.medium-12.large-12.columns
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/gawrys.png")
+          div.speaker-bio
+            h2#gawrys Piotr Gawryś
+            a(href="https://twitter.com/p_gawrys").speaker-link @p_gawrys
+            p
+              | Frequent contributor to Open Source projects in Scala ecosystem who’s doing his best to make pure FP a little bit more approachable. One of the maintainers of Monix and Kraków Scala User Group co-organizers.
+    div.row
+      div.description.small-12.medium-12.large-12.columns
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/volpe.png")
+          div.speaker-bio
+            h2#volpe Gabriel Volpe
+            a(href="https://www.linkedin.com/in/gmvolpe").speaker-link @gmvolpe
+            p
+              | Passionate software engineer, open source contributor and co-organizer of the Scala Tokyo meetup. Currently leading a Scala dev team at Paidy Inc, Tokyo, Japan. Gabriel has been given FP talks for the last two years in both Scala and Haskell and has been very active in the open source community, sharing his knowledge as well as learning from the best developers out there.
+    div.row
+      div.description.small-12.medium-12.large-12.columns
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/otrebski.png")
+          div.speaker-bio
+            h2#otrebski Krzysztof Otrębski
+            a(href="https://twitter.com/kotrebski").speaker-link @kotrebski
+            p
+              | Krzysztof is a software developer with 10 years of professional experience. Having spent many years on Java programming and problem solving, he has developed useful tools that make a programmer’s life easier. He is also a founder of a few open-source projects.
+    div.row
+      div.description.small-12.medium-12.large-12.columns
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/kozlowski.png")
+          div.speaker-bio
+            h2#kozlowski Jakub Kozłowski
+            a(href="https://twitter.com/kubukoz").speaker-link @kubukoz
+            p
+              | A young Scala hAkker who spends his days writing code, running and lifting in the late evenings. In his free time, if he has any, Jakub explores his other interests, which include coffee, playing bass and watching outstanding TV series. He works at Ocado Technology, where he develops the software for the world's most advanced warehouses, powered by functional programming and distributed systems.
+    div.row
+      div.description.small-12.medium-12.large-12.columns
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/janusz.png")
+          div.speaker-bio
+            h2#janusz Roman Janusz
+            a(href="https://twitter.com/rjghik").speaker-link @rjghik
+            p
+              | Scala Software Engineer at AVSystem, Cracow.
+    div.row
+      div.description.small-12.medium-12.large-12.columns
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/yadav.png")
+          div.speaker-bio
+            h2#yadav Nitya Nand Yadav
+            a(href="https://www.linkedin.com/in/nityany/").speaker-link @nityany
+            p
+              | Nitya Nand Yadav is a data engineer based in Paris and currently at NeoLynk. He has been working in the domain of Big Data since last few years and worked with different French companies as a software developer on Hadoop stack. He worked on several projects in different sectors as a data engineer and helped build software of production level from scratch. He is a Big Data enthusiast, he believes in learning, sharing and encouraging people to learn and adopt modern technologies.
+    div.row
+      div.description.small-12.medium-12.large-12.columns
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/arora.png")
+          div.speaker-bio
+            h2#arora Himanshu Arora
+            a(href="https://www.linkedin.com/in/himanshu-arora-78709156/").speaker-link @himanshu-arora
+            p
+              | Himanshu Arora is a passionate Senior Data Engineer from Paris working at NeoLynk. He has been using Scala, Reactive systems and Big data stack for a few years now in production to help enterprises accelerate digital transformation. He is a Lightbend certified expert on Scala, Play, Akka and FastData and Databricks certified Spark developer. He loves to be a reactive and FP advocate. He contributes time to time in open source community and participates in scala, FP and reactive conferences. Nitya Nand YADAV is a data engineer based in Paris and currently at NeoLynk. He has been working in the domain of Big Data since last few years and worked with different French companies as a software developer on Hadoop stack. He worked on several projects in different sectors as a data engineer and helped build software of production level from scratch.  He is a Big Data enthusiast, he believes in learning, sharing and encouraging people to learn and adopt modern technologies.
+    div.row
+      div.description.small-12.medium-12.large-12.columns
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/ratajski.png")
+          div.speaker-bio
+            h2#ratajski Jarek Ratajski
+            a(href="https://twitter.com/jarek000000").speaker-link @jarek000000
+            p
+              | Commodore 64 programmer.
+    div.row
+      div.description.small-12.medium-12.large-12.columns
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/pawelec.png")
+          div.speaker-bio
+            h2#pawelec Przemysław Pawelec
+            a(href="https://www.linkedin.com/in/przemyslaw-pawelec-579308129/").speaker-link @przemyslaw-pawelec
+            p
+              | Software developer at deepsense.ai with background in maths and logic.
+    div.row
+      div.description.small-12.medium-12.large-12.columns
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/owczarek.png")
+          div.speaker-bio
+            h2#owczarek Kamil Owczarek
+            a(href="https://twitter.com/owczarek_kamil").speaker-link @owczarek_kamil
+            p
+              | Big Data Developer / Team Leader @ IQVIA. Specializes in Big Data projects involving Data Warehousing & Machine Learning. Active member of JUG Łódź. 'Data is always more valuable than you recognize it to be'.
+    div.row
+      div.description.small-12.medium-12.large-12.columns
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/koziarkiewicz.png")
+          div.speaker-bio
+            h2#koziarkiewicz Mikołaj Koziarkiewicz
+            a(href="https://twitter.com/mikolak_net").speaker-link @mikolak_net
+            p
+              | Currently at SoftwareMill, Mikołaj is an alumni of the Vienna University of Technology's Computational Intelligence programme. As such, he feels at home to different language paradigms, and therefore enjoys the current technology boom in the JVM ecosystem. He strongly believes that taking lazy shortcuts backfires on a programmer sooner or later, and is committed to doing things 'the right way'.
+    div.row
+      div.description.small-12.medium-12.large-12.columns
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/kunicki.png")
+          div.speaker-bio
+            h2#kunicki Jacek Kunicki
+            a(href="https://twitter.com/rucek").speaker-link @rucek
+            p
+              | I'm a passionate software engineer living in the JVM land - mainly, but not limited to. I also tend to play with electronics and hardware. When sharing my knowlegde, I always keep in mind that a working example is worth a thousand words.
+    div.row
+      div.description.small-12.medium-12.large-12.columns
+        div.speaker
+          div.speaker-photo
+            img(src="images/speakers/pavkin.jpg")
+          div.speaker-bio
+            h2#pavkin Vladimir Pavkin
+            a(href="https://twitter.com/vlpavkin").speaker-link @vlpavkin
+            p
+              | Vladimir is a Scala developer from Riga, Latvia, who is currently building software in Evolution Gaming. Along with large event-sourced backend systems, Vladimir uses his extensive Javascript background to develop complex frontends with Scala.js.
