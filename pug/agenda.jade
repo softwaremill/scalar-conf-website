@@ -30,9 +30,9 @@ section#agenda.row
         div.talk#talk-goes
           h1
             a(href="#goes") John A. De Goes, with participation from Wiem Zine Elabadine
-            |  Master Concurrent Programming in 30 Minutes
-          p While Moore's Law is dead, CPUs continue acquire more cores. If you want your application to be high-performance and high-throughput, you need to use every last core. Semaphores, mutexes, and locks usually block and are prone to deadlocks and leaks, and while actor's provide an alternative, actors compose poorly and are at best weakly-typed.
-          p In this presentation, John introduces an alternative to both traditional concurrency primitives and actors, one that is type-safe, with a simple, declarative API. Witness the power of declarative concurrency and learn how functional programming is the most pragmatic way of solving the tough challenges of concurrent programming.
+            |  atomically { delete your actors }
+          p Moore's Law may be dead, but CPUs acquire more cores every year. If you want to minimize response latency in your application, you need to use every last core - without wasting resources that would destroy performance and throughput. Traditional locks grind threads to a halt and are prone to deadlocks, and although actors provide a saner alternative, they compose poorly and are at best weakly-typed.
+          p In this presentation, created exclusively for Scalar Conf, John reveals a new alternative to the horrors of traditional concurrency, directly comparing it to other leading approaches in Scala. Witness the beauty, simplicity, and power of declarative concurrency, as you discover how functional programming is the most practical solution to solving the tough challenges of concurrency.
     div.row
       div.time.small-12.medium-2.large-1.columns 10:00
       div.description.small-12.medium-10.large-11.columns
