@@ -1,0 +1,83 @@
+section#agenda.row
+  a.to-top(data-scroll, href="#top")
+    img(src="images/icons/to-top.svg")
+    br
+    | to top
+  header.section-title
+    h1 Confirmed workshops
+  div.agenda-table.small-12.medium-12.large-12.columns
+    div.row
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1
+            a(href="#bialy-gawrys") Łukasz Biały & Piotr Gawryś
+            |  Getting work done with Monix
+          p Monix is one of the most mature functional libraries for concurrency in Scala and we will explore it together!
+          p We will start with learning the basics of Task and Observable and then use them to solve increasingly harder problems to accommodate new business requirements. We will also look at some tools that could help us with testing and debugging our application.
+          p By the end of the workshop, any attendee should have a good idea how to use Monix and connect its pieces to write purely functional applications.
+    div.row
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1
+            a(href="#wiem") Wiem Zine Elabidine
+            |  Friendly Functional Programming
+          p Scala is a multi-paradigm programming language, incorporating features from both object-oriented programming and functional programming. But most object-oriented programmers who write code using Scala struggle to understand functional concepts, so they only use Scala as a better Java. In this workshop, you will learn how to write purely functional code using Scala, you will also learn about the common functional abstractions, including semigroup, monoid, functor, applicative, and monad.
+          p At the end Wiem will cover the purpose behind the IO Monads and she will cover simple examples to get started using a functional programming Scala library called ZIO.
+    div.row
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1
+            a(href="#figueiredo") Rafael Saraiva Figueiredo
+            |  Fork Your Fibers, Terminate Your Threads
+          p Thanks to the rise of functional effect systems like ZIO, fiber-based concurrency models have become popular in Scala. However, few people understand what fibers are, how fibers are different than JVM threads, what problems you can solve with fibers, and how to diagnose problems with fiber-based code.
+          p In this two hour, hands-on workshop, ZIO contributor Rafael Saraiva will compare fibers and threads, explore various means of composing fibers, show how to use fibers to solve basic problems in concurrency and parallelism, and discuss ZIO-specific features like auto-supervision and programmable interruption. Lastly,  attendees will learn how to debug async code using fiber-based execution traces and fiber dumps.
+          p Attendees will leave the workshop with a clear understanding of the advantages of fibers over threads, with an excellent working knowledge of how to use them to their full potential (in new, unparalleled ways) and with new critical skills in diagnosing production issues for fiber-based code.
+    div.row
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1
+            a(href="#fraser") Adam Fraser
+            |  ZIO Test For Everyone
+          p Writing tests is no fun! You have to deal with non-blocking async tests, finicky concurrent tests, nondeterministic flaky tests, and tests dependent on platform or environment settings. You have to test code that depends on external services, code that requires costly test fixtures, and code that needs mocks or test implementations. While existing Scala testing libraries have partial solutions to these problems, none of them has been built on a modern functional effect system like ZIO, which provides a fully-integrated solution to async, concurrency, flakiness, testability, and resource management.
+          p In this two-hour workshop, Adam Fraser, one of the authors of ZIO Test, will show attendees how to use ZIO Test to solve common pain points that everyone has with Scala testing libraries—whether they use ZIO, another functional effect system, or no functional effect system at all! In addition to solving common pain points, attendees will learn how to test functional effects (include async and concurrent effects), how to test third-party software like Akka and Spark, and how to define their own composable test aspects to weave custom logic into individual tests or across suites of tests.
+          p Discover how the functional side of Scala can make writing the trickiest tests fun again with ZIO Test!
+    div.row
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1
+            a(href="#degoes") John A. de Goes
+            |  Hands-On Functional Design
+          p Functional design is the science and art of using functional tools at your disposal—from functions to ADTs to algebraic structure—to craft domain-specific solutions to problems that are simple, composable, and testable. In this workshop with John A. De Goes, you will get a chance to hone your own skills in functional design, as you are presented with an imperative solution to a problem, and charged with building a functional alternative that shows the power of functional design to solve the everyday problems of commercial software development.
+    div.row
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1
+            a(href="gutowski") Michał Gutowski
+            |  Introduction to property based testing
+          p I want to show how to use property testing in scala test from the very beginning. We will start with simple generators, which comes with scalatest and write our own basing on those. After we go through basics, we will move  to the concrete cases where I will show how properties can save us from bugs that are not easy to spot when writing unit tests.
+          p For the workshops Michał requites basic scala and scalatest knowledge.
+    div.row
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1
+            a(href="#kubuszok") Mateusz Kubuszok
+            |  Type-class derivation for newcomers
+          p This workshop is about helping people (who already have the understanding of syntax!): how implicits work; how implicits are used to implement type classes (type class instance + extension methods); how to do some hardcoded derivation on build-in type; how to do in in a generic way: shapeless vs magnolia; how to debug some most common issues with implicits.
+    div.row
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1
+            a(href="#makhasoeva") Oli Makhasoeva
+            |  An introduction to recursion schemes
+          p "Oli will start the discussion with the recursive data structure which everyone uses at every project!
+          p We are going to talk about a list. We will copy-paste two functions `foldRight` and `unfold` from the Scala standard library and start our exploration from scratch.
+          p How do these functions relate to recursion schemes? They are in fact mere special cases of more general functions that are named `cata` and `ana`!
+          p To see convincing proof of this, please attend the workshop and follow the steps of refactoring.
+          p We will also explore how recursion schemes are used in practice!"
+    div.row
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1
+            a(href="#merritt") Alex Merritt
+            |  Bringing deep learning models to production with ONNX-Scala
+          p The workshop will be centered on ONNX-Scala: An ONNX (Open Neural Network eXchange) API, Code Generator and Backend for Typeful, Numerically Generic, Functional Deep Learning in Scala.
