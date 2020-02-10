@@ -4,7 +4,7 @@ section#agenda.row
     br
     | to top
   header.section-title
-    h1 Confirmed workshops
+    h1 Workshops details
   div.agenda-table.small-12.medium-12.large-12.columns
     div.row
       div.description.small-12.medium-10.large-11.columns
@@ -15,6 +15,15 @@ section#agenda.row
           p Monix is one of the most mature functional libraries for concurrency in Scala and we will explore it together!
           p We will start with learning the basics of Task and Observable and then use them to solve increasingly harder problems to accommodate new business requirements. We will also look at some tools that could help us with testing and debugging our application.
           p By the end of the workshop, any attendee should have a good idea how to use Monix and connect its pieces to write purely functional applications.
+    div.row
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1
+            a(href="#ciesielski-ludwikowski") Krzysztof Ciesielski & Andrzej Ludwikowski
+            |  Akka Typed fundamentals
+          p One of the biggest drawbacks of Akka Actors - the lack of type safety is finally addressed. Since the 2.6.0 release Akka Typed is stable and recommended as the default choice when working with the Akka stack.
+          p Let's play with the new actors API, walk through the basics of behaviors, learn about actor lifecycle, supervision, scheduling and other fundamental concepts. Then we’ll compare it to the classical approach. Of course not everybody is lucky enough to work on a greenfield project, so we'll also show you how to introduce Akka Typed to existing sources and combine two worlds of actors within a single application.
+          p During this workshop we'll explore important patterns and takeaways we’ve learned while introducing typed actors to our system. 
     div.row
       div.description.small-12.medium-10.large-11.columns
         div.talk
@@ -60,6 +69,16 @@ section#agenda.row
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
+            a(href="#warski") Kasper Kondzielski & Adam Warski
+            |  Programmer-friendly, type-safe HTTP API descriptions
+          p It might seem that defining HTTP APIs in Scala is a solved problem. Or is it? Tasks such as generating OpenAPI documentation or auto-generating clients have always been a challenge.
+          p Let's fix this! We'll apply an approach of separating the **description** of a problem from its **interpretation**. This has proven to be a powerful tool in other domains (such as modelling concurrently running processes), so let's see how it works for HTTP APIs, using the [sttp tapir](https://github.com/softwaremill/tapir) library.
+          p In the workshop we'll start by creating a simple application exposing an HTTP API. Next, we'll expose documentation using the Swagger UI. Then we'll proceed to more advanced topics, such as supporting custom types, validation, authentication, error handling and re-usable endpoint descriptions. Along the way, we'll discuss some of the design decisions and challenges, demonstrate the type-safety and how it impacts the "approachability" aspect of the API.
+          p After the workshop, you'll not only be able to build a self-documenting Scala HTTP API, but you might also get a tapir mascot!
+    div.row
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1
             a(href="#kubuszok") Mateusz Kubuszok
             |  Type-class derivation for newcomers
           p This workshop is about helping people (who already have the understanding of syntax!): how implicits work; how implicits are used to implement type classes (type class instance + extension methods); how to do some hardcoded derivation on build-in type; how to do in in a generic way: shapeless vs magnolia; how to debug some most common issues with implicits.
@@ -101,6 +120,14 @@ section#agenda.row
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
+            a(href="#owczarek") Kamil Owczarek
+            | 
+          p DAML, while being a relative newcomer in the blockchain world, is already stirring some waves within the community. With the ability to run on different physical blockchains (Hyperledger Sawtooth & Fabric, VMWare Blockchain and others), it includes a simple smart contract modelling language, functional & highly type safe programming lingo and native integration with Scala. With those impressive facilities, DAML is still one of the easiest blockchain environments to master. 
+          p During this workshop, you will learn: basic operating principles and philosophy of DAML; Smart contract modelling; Akka - based Scala integration and how to use it to create applications; Contract modelling patterns to solve problems common in blockchain applications; architecture patterns for different flavours of DLT.
+    div.row
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1
             a(href="#plachta") Michał Płachta
             |  Programming IO using the MTL style
           p The objective of the workshop is to get some theoretical and practical overview of the functional approach to IO-based programming. You will learn how to program real applications using Scala, Cats, Cats Effect, Cats MTL, Meow MTL, and others.
@@ -118,6 +145,26 @@ section#agenda.row
       div.description.small-12.medium-10.large-11.columns
         div.talk
           h1
+            a(href"#rey") Daniel Rey
+            |  A tale of Either and friends
+          p Have you ever wondered what is needed to gather all touristic information of an entire country? Or do you want to give your head a break while glancing at some beautiful pictures from Switzerland? This workshop is made for you. I will introduce you to the problems we had to tackle for the relaunch of www.myswitzerland.com and which solutions we tried. 
+          p You will learn about event-carried state transfer and idempotency. Challenges when mixing functional and object-oriented programming. Tasks for which functional programming was a natural match and which Scala features made the difference for our project. For each of those Scala features we will have solve exercises, partially as a group and partially everyone on there own. Last but not least, we will talk about why Either is such beautiful construct, that I devoted the title of this talk to it.
+    div.row
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1
+            a(href"#schenk") Simon Schenk
+            |  Building an Effect Runtime
+          p You are convinced side effects should be modeled in a functional way. You use a functional effect system such as Cats IO, Monix or ZIO. Now your program is a value and does not actually do anything unless you unsafeRun it at the end of the world. At that point in time all side effects and concurrency will manifest. How does that actually work?
+          p During this workshop, we will build a minimal effect runtime similar to the one used in ZIO and interpreting the ZIO API. We will learn how effects can get executed and how parallelism and concurrency can be implemented using fibers aka green threads.
+          p We will start from a very simple runtime, which does not implement any concurrency or advanced features and just provides a trampoline for stack safe execution of effects. From there, we will add more primitives until we can support concurrency including forking and joining, cooperative and preemptive scheduling, interruption, and modeling of, and recovering from errors.
+          p The focus will be on explaining, how the individual primitives can be built and composed into a runtime. We will not focus on performance or feature completeness. 
+          p Basics of functional effect systems will be explained briefly, but this workshop is not meant as an introduction to IO monads / bifunctors. Some basic prior knowledge will be helpful for following the workshop.
+          p The presenter had the idea for this workshop while fixing a bug in the ZIO runtime and realizing that it actually is quite easy to understand once you peel away a few advanced features and some low level optimizations. 
+    div.row
+      div.description.small-12.medium-10.large-11.columns
+        div.talk
+          h1
             a(href="#rooding-rosenberg") Marc Rooding & Jeroen Rosenberg
             |  Building a streaming Stock Market Analysis tool on Kubernetes with Cloudflow
           p So, you want to build a stream processing pipeline to do some serious data crunching on a massive data feed. Of course, it should be scalable and resilient to data loss. Easy, we'll use Kafka and Kubernetes of course, but having to manage and integrate with tools like Kafka is complex and time-consuming. Not to mention the YAML-hell that a platform like Kubernetes introduces.
@@ -129,3 +176,4 @@ section#agenda.row
             a(href"#szatan") Konrad Szatan
             |  Absorb and manipulate your data with Kafka Connect and Kafka Streams
           p We will learn what is and how to use Kafka Connect to absorb data from various databases, we will cover how to use that ETL tool to make our data flow continously to Apache Kafka cluster. We will have fun with its REST API and databases queries observing changes on Kafka topics, talking mostly about what kind of mechanims do connectors use in different databases. Main part of workshop will be focused on Kafka Streams API and using it to manipulate data absorbed by Kafka Connect in real time. We will start from streaming basics then we will take tour through Kafka Streams API learning by example how that toolset work with our data, at the end we will put all that knowledge together to tackle some more complex situation still having fun. All of that of course using Scala.
+    
