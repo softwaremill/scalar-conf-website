@@ -30,8 +30,9 @@ If you see version - than you have it installed.
 
 If not - go to [http://nodejs.org/](nodejs.org) and install it from there.
 
+### How to run?
 
-### Install dependencies
+#### Install dependencies
 
 In console navigate to `scalar-conf-website` folder and run 
 
@@ -51,18 +52,10 @@ pip install Pygments
 
 to install this tool. Sudo may be required (`sudo pip install Pygments`).
 
-### GruntJS
+#### Run
 
-There is Getting Started guide for grunt [gruntjs.com/getting-started](http://gruntjs.com/getting-started).
-It is advised to install Grunt.js globally. In order to do that, please run
-
-```
-  npm install -g grunt-cli
-```
-
-This will install grunt command globally and make it available. Sudo may be required (`sudo npm install -g grunt-cli`).
-
-**NOTE: All described above you need to do only once - when you try to run project for the first time. Any next time you'll have everything installed already, so you just need to proceed to development.**
+In your terminal, run the command `npm run start:dev`. This will compile & watch for changes in files.
+Open another terminal window and run `npm run serve`. This will run a small http server on `localhost:8080`, where you can lookup the application.
 
 
 ## Updating news
@@ -71,7 +64,7 @@ This will install grunt command globally and make it available. Sudo may be requ
 In console navigate to `scalar-conf-website` folder and run 
 
 ```
-  grunt watch
+  npm run start:dev
 ```
 
 This command tells grunt to watch for any changes in forlders `jade`, `styl`, `js` and compile new versions of HTML, CSS, JS into `dist` folder. Leave it running while you change, write or update files.
