@@ -32,7 +32,7 @@ module.exports = function(grunt) {
           'dist/hotels.html': ['pug/hotels.pug'],
           'dist/support.html': ['pug/support.pug'],
           'dist/events-2020.html': ['pug/events-2020.pug'],
-          'dist/2020-workshop.html': ['pug/2020-workshop.pug']
+          'dist/2020-workshops.html': ['pug/2020-workshops.pug']
         },
         filters: {
           marked: marked
