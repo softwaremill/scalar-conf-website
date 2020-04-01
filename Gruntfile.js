@@ -73,7 +73,7 @@ module.exports = function(grunt) {
 
     watch: {
       src: {
-        files: ['pug/*.jade', 'pug/*.pug', 'pug/news-posts/*.jade', 'pug/blog-posts/*.jade', 'styl/*.styl', 'js/*.js'],
+        files: ['pug/*.jade', 'pug/*.pug', 'pug/**/*.jade', 'pug/**/*.jade', 'styl/*.styl', 'js/*.js'],
         tasks: ['build']
       }
     }
