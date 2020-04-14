@@ -1,0 +1,23 @@
+<div style="width: 100%">
+  <iframe
+    src=""
+    width="100%"
+    scrolling="no"
+    style="border: 0;"
+    id="evenea_event_iframe"
+  ></iframe>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script type="text/javascript">
+    var eveneaEventIframeUrl =
+      "https://app.evenea.pl/event/scalaronline2020/?out=1&source=event_iframe";
+    setTimeout(function () {
+      if ($("#evenea_event_iframe").attr("src") != eveneaEventIframeUrl) {
+        $("#evenea_event_iframe").attr("src", eveneaEventIframeUrl);
+      }
+    }, 4000);
+  </script>
+  <script
+    type="text/javascript"
+    src="https://app.evenea.pl/js/iframe/new/iframeResizer2.js"
+  ></script>
+</div>
