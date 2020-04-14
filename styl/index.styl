@@ -96,19 +96,35 @@ fieldset
 .orbit-timer
   opacity: 0;
 
-.section__scalar-in-short .columns {
-  padding: 0 15px;
-}
-
 .orbit-container .orbit-prev:hover, .orbit-container .orbit-next:hover
   background-color: rgba(255, 255, 255, 0.3);
 // End fixing Foundation styles
+
+.row .section__scalar-in-short {
+  margin-top: 10px;
+}
+
+.section__scalar-in-short .columns {
+  padding: 0 10px;
+}
 
 .height-equalizer {
   display: flex;
   overflow: hidden;
   align-items: stretch;
   flex-wrap: wrap;
+
+  @media only screen and (min-width: 64.063em) {
+    .columns {
+      width: 49%
+    }
+  }
+
+  @media only screen and (min-width: 40.063em) {
+    .columns {
+      width: 49%
+    }
+  }
 }
 
 // Mailchimp form
