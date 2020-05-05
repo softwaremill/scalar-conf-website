@@ -1,3 +1,24 @@
+<script>
+  var firstTime = true;
+
+  function srcChanged() {
+    var iframe = document.getElementById('evenea_event_iframe');
+
+    if (!iframe.src.startsWith('https://app.evenea.pl')) {
+      return;
+    } 
+    if (firstTime) {
+      firstTime = false;
+      return;
+    }
+    scrollIntoView();
+  }
+  
+  function scrollIntoView() {
+    const evIframe = document.getElementById('evenea_event_iframe');
+    evIframe.scrollIntoView({behavior: 'smooth'});
+  }
+</script>
 <div style="width: 100%">
   <iframe
     src=""
@@ -5,6 +26,7 @@
     scrolling="no"
     style="border: 0;"
     id="evenea_event_iframe"
+    onload="srcChanged()"
   ></iframe>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script type="text/javascript">
