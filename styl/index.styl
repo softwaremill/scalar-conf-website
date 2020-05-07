@@ -366,6 +366,12 @@ section.row
   margin-bottom: 1rem;
 
   & .row
+    display: flex;
+
+    @media only screen and (max-width: 40.063em) {
+      flex-direction: column;
+    }
+
     border-top: 1px dotted white;
     border-left: 1px dotted white;
     border-right: 1px dotted white;
@@ -382,9 +388,15 @@ section.row
 
     & .time
       border-bottom: 1px dotted white;
-      padding: 1em;
+      padding: 1em 0 ;
       text-transform: uppercase;
       text-align: center;
+
+    & .timezone
+      &:not(last-of-type)
+        padding-bottom: 0.5em;
+      sub, sup
+        font-size: 60%;
 
     & .description
       padding: 1em;
@@ -1088,6 +1100,8 @@ div.video-wrapper
         width: 125px;
 
     & .time
+      display: flex;
+      flex-direction: column;
       border-bottom: none;
 
   .team-table img

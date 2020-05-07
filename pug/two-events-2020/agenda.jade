@@ -8,22 +8,40 @@ section#agenda.row
     h1 Agenda
   div.agenda-table.small-12.medium-12.large-12.columns
     div.row.utility
-      div.time.small-12.medium-2.large-1.columns 6:00
+      div.time.small-12.medium-2.large-1.columns
+        div.timezone 13:00
+          sup (JST)
+        div.timezone 6:00
+          sup (CEST)
+        div.timezone 0:00
+          sup (EDT)
       div.description.small-12.medium-10.large-11.columns Welcome
     div.row
-      div.time.small-12.medium-2.large-1.columns 6:10
+      div.time.small-12.medium-2.large-1.columns
+        div.timezone 13:10
+          sup (JST)
+        div.timezone 6:10
+          sup (CEST)
+        div.timezone 0:10
+          sup (EDT)
       div.small-12.medium-10.large-11.columns
         div.description.large-12.small-12.column
-          div.talk#talk-warski    
+          div.talk#talk-shevchenko    
             h1
               a(href="#shevchenko") Ruslan Shevchenko
               |  dotty-cps-async: can we free concurrent programming from the monadic style
             p Eliminating of explicit monadic wrapping of each async operation with help of continuations and tasty reflection in dotty. Now its possible to write an ideal async/await which works with any monad.
     div.row
-      div.time.small-12.medium-2.large-1.columns 7:00
+      div.time.small-12.medium-2.large-1.columns
+        div.timezone 14:00
+          sup (JST)
+        div.timezone 7:00
+          sup (CEST)
+        div.timezone 1:00
+          sup (EDT)
       div.small-12.medium-10.large-11.columns
         div.description.large-12.small-12.column
-          div.talk#talk-warski
+          div.talk#talk-rinaudo
             h1
               a(href="#rinaudo") Nicolas Rinaudo
               |  Type classes from the ground up
@@ -31,10 +49,16 @@ section#agenda.row
             p The purpose of this talk is to demystify Scala type classes and show how functional code naturally evolves towards them, and how they compose implicitly to buy developers a lot of "free" functionalities.
 
     div.row
-      div.time.small-12.medium-2.large-1.columns 8:00
+      div.time.small-12.medium-2.large-1.columns 
+        div.timezone 15:00
+          sup (JST)
+        div.timezone 8:00
+          sup (CEST)
+        div.timezone 2:00
+          sup (EDT)
       div.small-12.medium-10.large-11.columns
         div.description.large-12.small-12.column
-          div.talk#talk-warski    
+          div.talk#talk-silnitsky    
             h1
               a(href="#silnitsky") Natan Silnitsky
               |  10 lessons learned from using Kafka in 1000 Scala microservices
@@ -48,42 +72,40 @@ section#agenda.row
                 li How to support growing amount of traffic and developers.
                 li How to tackle multiple DCs environment.
     div.row
-      div.time.small-12.medium-2.large-1.columns 9:00
+      div.time.small-12.medium-2.large-1.columns
+        div.timezone 16:00
+          sup (JST)
+        div.timezone 9:00
+          sup (CEST)
+        div.timezone 3:00
+          sup (EDT)
       div.small-12.medium-10.large-11.columns
         div.description.large-12.small-12.column
-          div.talk#talk-warski    
+          div.talk#talk-tiriticco    
             h1
               a(href="#tiriticco") Fabio Tiriticco
               |  From Zero To Deep Learning With Scala
             p Deep learning is awesome, trendy and… mysterious for many. This talk introduces AI / deep learning from scratch to an audience familiar with Scala and provides a unique case (dataset + code) for attendees to start experimenting!
     div.row.utility
-      div.time.small-12.medium-2.large-1.columns 10:00
+      div.time.small-12.medium-2.large-1.columns
+        div.timezone 17:00
+          sup (JST)
+        div.timezone 10:00
+          sup (CEST)
+        div.timezone 4:00
+          sup (EDT)
       div.description.small-12.medium-10.large-11.columns Networking
     div.row
-      div.time.small-12.medium-2.large-1.columns 11:00
+      div.time.small-12.medium-2.large-1.columns
+        div.timezone 18:00
+          sup (JST)
+        div.timezone 11:00
+          sup (CEST)
+        div.timezone 5:00
+          sup (EDT)
       div.small-12.medium-10.large-11.columns
         div.description.large-12.small-12.column
-          div.talk#talk-warski    
-            h1
-              a(href="#kunicki") Jacek Kunicki
-              |  How I Understood Monad Transformers
-            p Do you know that feeling when you hear about a new tool and you get excited because you seem to see how it is going to solve your problems? Yet, if you were to explain it to someone shortly thereafter, you would realize that you have almost no idea how it worked? This was my story with many concepts of functional programming, including monad transformers.
-            p A moment of enlightenment came only when I needed to solve a seemingly unrelated problem: mixing Options and Futures in a for-comprehension. I had a feeling that the task was pretty generic and that for sure someone had already solved it.
-            p In this live coding session I'd like to show you the path that I followed - from a common problem, through some more and more universal solutions that have naturally evolved into something we know as a monad transformer.
-    div.row
-      div.time.small-12.medium-2.large-1.columns 12:00
-      div.small-12.medium-10.large-11.columns
-        div.description.large-12.small-12.column
-          div.talk#talk-warski    
-            h1
-              a(href="#vanderbij") Dennis van der Bij
-              |  Lithium: an OSS split-brain resolver for Akka-Cluster
-            p When some nodes become unreachable in your Akka-Cluster no nodes can take over their work or even leave the cluster anymore. To bring it back to a fully working state the unreachable nodes must be downed. However, if done incorrectly it could lead to data corruption, a split-brain, and a headache fixing it. In this talk, the open-source split-brain resolver called Lithium will be introduced. I will explain why unreachable nodes affect the cluster, the risks of downing nodes, and how Lithium recovers the cluster so it can proceed with all its duties.
-    div.row
-      div.time.small-12.medium-2.large-1.columns 13:00
-      div.small-12.medium-10.large-11.columns
-        div.description.large-12.small-12.column
-          div.talk#talk-warski    
+          div.talk#talk-calves    
             h1
               a(href="#calves") Christophe Calvès
               |  10 tips to write fast stack-safe functional code in Scala: the automatic-batching library experience report
@@ -92,40 +114,102 @@ section#agenda.row
             p These 10 tips will cover the whole story of how we solve this use case, from designing the user API to ensuring the performance and safety of the execution engine. They will be presented in context: what was the business needs?, what were the technical requirements? With a strong emphasis on the problems we faced and how we managed to solve them.
             p Among the subjects discussed are : what `@tailrec` really means and how to bypass it, how to make most functions tail-recursive, how to be sure your code is really stack-safe, how to design your own data-structure that fits your needs, how to use smart constructors to speed things up, why parametricity is your friend, are Generalized Algebraic Data Types (GADT) really useful? (spoiler alert, they are!), is there a concrete use-case of continuation-passing style?, …
     div.row
-      div.time.small-12.medium-2.large-1.columns 14:00
+      div.time.small-12.medium-2.large-1.columns
+        div.timezone 19:00
+          sup (JST)
+        div.timezone 12:00
+          sup (CEST)
+        div.timezone 6:00
+          sup (EDT)
       div.small-12.medium-10.large-11.columns
         div.description.large-12.small-12.column
-          div.talk#talk-warski    
+          div.talk#talk-vanderbij    
+            h1
+              a(href="#vanderbij") Dennis van der Bij
+              |  Lithium: an OSS split-brain resolver for Akka-Cluster
+            p When some nodes become unreachable in your Akka-Cluster no nodes can take over their work or even leave the cluster anymore. To bring it back to a fully working state the unreachable nodes must be downed. However, if done incorrectly it could lead to data corruption, a split-brain, and a headache fixing it. In this talk, the open-source split-brain resolver called Lithium will be introduced. I will explain why unreachable nodes affect the cluster, the risks of downing nodes, and how Lithium recovers the cluster so it can proceed with all its duties.
+    div.row
+      div.time.small-12.medium-2.large-1.columns
+        div.timezone 20:00
+          sup (JST)
+        div.timezone 13:00
+          sup (CEST)
+        div.timezone 7:00
+          sup (EDT)
+      div.small-12.medium-10.large-11.columns
+        div.description.large-12.small-12.column
+          div.talk#talk-kunicki    
+            h1
+              a(href="#kunicki") Jacek Kunicki
+              |  How I Understood Monad Transformers
+            p Do you know that feeling when you hear about a new tool and you get excited because you seem to see how it is going to solve your problems? Yet, if you were to explain it to someone shortly thereafter, you would realize that you have almost no idea how it worked? This was my story with many concepts of functional programming, including monad transformers.
+            p A moment of enlightenment came only when I needed to solve a seemingly unrelated problem: mixing Options and Futures in a for-comprehension. I had a feeling that the task was pretty generic and that for sure someone had already solved it.
+            p In this live coding session I'd like to show you the path that I followed - from a common problem, through some more and more universal solutions that have naturally evolved into something we know as a monad transformer.
+    div.row
+      div.time.small-12.medium-2.large-1.columns
+        div.timezone 21:00
+          sup (JST)
+        div.timezone 14:00
+          sup (CEST)
+        div.timezone 8:00
+          sup (EDT)
+      div.small-12.medium-10.large-11.columns
+        div.description.large-12.small-12.column
+          div.talk#talk-owczarek    
             h1
               a(href="#owczarek") Kamil Owczarek
               |  Spark-Cypher: How we will be doing graph analytics from 2020 onwards
             p A practical overview of Spark-Cypher, the soon-to-be-official API of Spark for graph processing and how it vastly expands on Spark’s current capabilities in graph analytics
     div.row.utility
-      div.time.small-12.medium-2.large-1.columns 15:00
+      div.time.small-12.medium-2.large-1.columns
+        div.timezone 22:00
+          sup (JST)
+        div.timezone 15:00
+          sup (CEST)
+        div.timezone 9:00
+          sup (EDT)
       div.description.small-12.medium-10.large-11.columns Networking
     div.row
-      div.time.small-12.medium-2.large-1.columns 16:00
+      div.time.small-12.medium-2.large-1.columns
+        div.timezone 23:00
+          sup (JST)
+        div.timezone 16:00
+          sup (CEST)
+        div.timezone 10:00
+          sup (EDT)
       div.small-12.medium-10.large-11.columns
         div.description.large-12.small-12.column
-          div.talk#talk-warski    
+          div.talk#talk-mittal    
             h1
               a(href="#mittal") Ayush Mittal
               |  A trace to remember: Compositional Tracing
             p Distributed systems are awesome and have a lot to offer. However for programmers they present a challenge to monitor and debug. Frameworks such as OpenTracing offer a solution. We look at how to use tracing while keeping our functional programming code base "pure" and "composable".
     div.row
-      div.time.small-12.medium-2.large-1.columns 17:00
+      div.time.small-12.medium-2.large-1.columns
+        div.timezone 0:00
+          sup (JST)
+        div.timezone 17:00
+          sup (CEST)
+        div.timezone 11:00
+          sup (EDT)
       div.small-12.medium-10.large-11.columns
         div.description.large-12.small-12.column
-          div.talk#talk-warski    
+          div.talk#talk-covaci    
             h1
               <a href="#covaci">Kim Covaci</a>, <a href="#coll">Jordan Coll</a>
               |  Type-Safe Error Handling in the Age of Dotty
             p Java’s checked exceptions provide a form of type-safety when handling errors, but sacrifice composability and referential transparency. These have been largely replaced by Either-like return types. Using Dotty Union Types, we demonstrate an approach that aims to combine the best of both worlds.
     div.row
-      div.time.small-12.medium-2.large-1.columns 18:00
+      div.time.small-12.medium-2.large-1.columns
+        div.timezone 1:00
+          sup (JST)
+        div.timezone 18:00
+          sup (CEST)
+        div.timezone 12:00
+          sup (EDT)
       div.small-12.medium-10.large-11.columns
         div.description.large-12.small-12.column
-          div.talk#talk-warski    
+          div.talk#talk-ratajski    
             h1
               a(href="#ratajski") Jarek Ratajski
               |  From Scala to assembly the cost of abstaction revisited
@@ -134,49 +218,69 @@ section#agenda.row
             p We will however try to this and check few interesting examples scala code snippets down to the "bare metal". We will use recent JVM versions including graal and some useful tools such as jitwatch, javap, gc logs, jmh, performance counters. 
             p The next time someone claims something about performance you can measure and check it yourself.
     div.row
-      div.time.small-12.medium-2.large-1.columns 19:00
+      div.time.small-12.medium-2.large-1.columns
+        div.timezone 2:00
+          sup (JST)
+        div.timezone 19:00
+          sup (CEST)
+        div.timezone 13:00
+          sup (EDT)
       div.small-12.medium-10.large-11.columns
         div.description.large-12.small-12.column
-          div.talk#talk-warski    
+          div.talk#talk-wiem    
             h1
-              <a href="#wiem">Wiem Zine El Abidine</a>, <a href="fraser">Adam Fraser</a>
+              <a href="#wiem">Wiem Zine El Abidine</a>, <a href="#fraser">Adam Fraser</a>
               |  Fiber Supervision in ZIO: Bringing Structured Concurrency to Scala
             p What are fibers? What is fiber supervision? And how do they make it easier for us to write safe concurrent code? Learn the answers to these questions and more from ZIO contributors Wiem and Adam!
     div.row.utility
-      div.time.small-12.medium-2.large-1.columns 20:00
+      div.time.small-12.medium-2.large-1.columns
+        div.timezone 3:00
+          sup (JST)
+        div.timezone 20:00
+          sup (CEST)
+        div.timezone 14:00
+          sup (EDT)
       div.description.small-12.medium-10.large-11.columns Networking
     div.row
-      div.time.small-12.medium-2.large-1.columns 21:00
+      div.time.small-12.medium-2.large-1.columns
+        div.timezone 4:00
+          sup (JST)
+        div.timezone 21:00
+          sup (CEST)
+        div.timezone 15:00
+          sup (EDT)
       div.small-12.medium-10.large-11.columns
         div.description.large-12.small-12.column
-          div.talk#talk-warski    
+          div.talk#talk-pretty    
             h1
               a(href="#pretty") Jon Pretty
               |  Probing the Unprovable and Proving the Improbable
             p Writing robust, reliable software is the goal of most developers. Scala's type system provides a framework in which many desirable invariants can be proven at compile-time, while the JVM offers the means to probe the runtime to check that all inputs produce the expected results.
             p This talk will reveal and compare two new libraries, Quarantine and Probably, which approach this broad goal from these two orthogonal directions, each introducing a novel idea with the potential to change the way you write tests and handle exceptions.
-    //- div.row
-    //-   div.time.small-12.medium-2.large-1.columns 22:00
-    //-   div.small-12.medium-10.large-11.columns
-    //-     div.description.large-12.small-12.column
-    //-       div.talk#talk-warski    
-    //-         h1
-    //-           a(href="#warski") Oli
-    //-           |  Category Theory?
-    //- div.row
-    //-   div.time.small-12.medium-2.large-1.columns 19:00
-    //-   div.small-12.medium-10.large-11.columns
-    //-     div.description.large-12.small-12.column
-    //-       div.talk#talk-warski    
-    //-         h1
-    //-           a(href="#warski") Devon Miller
-    //-           |  Integrating scala.js into an existing full stack app?
     div.row
-      div.time.small-12.medium-2.large-1.columns 22:00
+      div.time.small-12.medium-2.large-1.columns
+        div.timezone 5:00
+          sup (JST)
+        div.timezone 22:00
+          sup (CEST)
+        div.timezone 16:00
+          sup (EDT)
       div.description.small-12.medium-10.large-11.columns TBA
     div.row
-      div.time.small-12.medium-2.large-1.columns 23:00
+      div.time.small-12.medium-2.large-1.columns
+        div.timezone 6:00
+          sup (JST)
+        div.timezone 23:00
+          sup (CEST)
+        div.timezone 17:00
+          sup (EDT)
       div.description.small-12.medium-10.large-11.columns TBA               
     div.row.utility
-      div.time.small-12.medium-2.large-1.columns 0:00
+      div.time.small-12.medium-2.large-1.columns
+        div.timezone 7:00
+          sup (JST)
+        div.timezone 0:00
+          sup (CEST)
+        div.timezone 18:00
+          sup (EDT)
       div.description.small-12.medium-10.large-11.columns Ending
