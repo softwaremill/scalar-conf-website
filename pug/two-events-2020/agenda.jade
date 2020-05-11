@@ -209,14 +209,19 @@ section#agenda.row
           sup (EDT)
       div.small-12.medium-10.large-11.columns
         div.description.large-12.small-12.column
-          div.talk#talk-ratajski    
+          div.talk#talk-warski    
             h1
-              a(href="#ratajski") Jarek Ratajski
-              |  From Scala to assembly the cost of abstaction revisited
-            p When it comes to performance a lot of developers take as granted statements (myths) that are not always valid, not anymore valid or were never valid. 
-            p Performance and benchmarking were always tough topics and in languages such as scala there so many layers between code and machine that any analysis seems futile.
-            p We will however try to this and check few interesting examples scala code snippets down to the "bare metal". We will use recent JVM versions including graal and some useful tools such as jitwatch, javap, gc logs, jmh, performance counters. 
-            p The next time someone claims something about performance you can measure and check it yourself.
+              a(href="#warski") Adam Warski
+              |  A functional Scala stack for 2020
+            p How to write a basic backend application in Scala? Which libraries to pick? There's a couple of possibilities, and choosing can be overwhelming!
+            p In the talk I'd like to present one approach and one set of libraries, which are used in the Bootzooka template project. During the live-coding session, we'll add a complete feature to the application, taking advantage of:
+            ul
+              li trait-as-modules for code organisation
+              li constructors for "dependency injection"
+              li tapir with http4s for exposing http endpoints
+              li doobie for database access
+              li monix with cats-effect for managing side-effects
+            p Along the way, we'll see both practical benefits of functional programming, and features of the libraries used. Come and see how to do functional Scala in 2020 (and beyond)!
     div.row
       div.time.small-12.medium-2.large-1.columns
         div.timezone 2:00
@@ -227,11 +232,14 @@ section#agenda.row
           sup (EDT)
       div.small-12.medium-10.large-11.columns
         div.description.large-12.small-12.column
-          div.talk#talk-wiem    
+          div.talk#talk-ratajski    
             h1
-              <a href="#wiem">Wiem Zine El Abidine</a>, <a href="#fraser">Adam Fraser</a>
-              |  Fiber Supervision in ZIO: Bringing Structured Concurrency to Scala
-            p What are fibers? What is fiber supervision? And how do they make it easier for us to write safe concurrent code? Learn the answers to these questions and more from ZIO contributors Wiem and Adam!
+              a(href="#ratajski") Jarek Ratajski
+              |  From Scala to assembly the cost of abstaction revisited
+            p When it comes to performance a lot of developers take as granted statements (myths) that are not always valid, not anymore valid or were never valid. 
+            p Performance and benchmarking were always tough topics and in languages such as scala there so many layers between code and machine that any analysis seems futile.
+            p We will however try to this and check few interesting examples scala code snippets down to the "bare metal". We will use recent JVM versions including graal and some useful tools such as jitwatch, javap, gc logs, jmh, performance counters. 
+            p The next time someone claims something about performance you can measure and check it yourself.        
     div.row.utility
       div.time.small-12.medium-2.large-1.columns
         div.timezone 3:00
@@ -265,7 +273,13 @@ section#agenda.row
           sup (CEST)
         div.timezone 16:00
           sup (EDT)
-      div.description.small-12.medium-10.large-11.columns TBA
+      div.small-12.medium-10.large-11.columns
+        div.description.large-12.small-12.column
+          div.talk#talk-wiem    
+            h1
+              <a href="#wiem">Wiem Zine El Abidine</a>, <a href="#fraser">Adam Fraser</a>
+              |  Fiber Supervision in ZIO: Bringing Structured Concurrency to Scala
+            p What are fibers? What is fiber supervision? And how do they make it easier for us to write safe concurrent code? Learn the answers to these questions and more from ZIO contributors Wiem and Adam!
     div.row
       div.time.small-12.medium-2.large-1.columns
         div.timezone 6:00
@@ -274,7 +288,13 @@ section#agenda.row
           sup (CEST)
         div.timezone 17:00
           sup (EDT)
-      div.description.small-12.medium-10.large-11.columns TBA               
+      div.small-12.medium-10.large-11.columns
+        div.description.large-12.small-12.column
+          div.talk#talk-miller    
+            h1
+              <a href="#miller">Devon Miller</a>
+              |  Integrating scala.js into an existing full stack app
+            p An example of integrating scala.js into a full-stack app using apollo graphql, reactjs server, and react.
     div.row.utility
       div.time.small-12.medium-2.large-1.columns
         div.timezone 7:00
