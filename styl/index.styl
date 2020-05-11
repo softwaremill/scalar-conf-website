@@ -1284,16 +1284,28 @@ div.video-wrapper
 }
 
 .list-header {
-  font-size: larger;
+  font-size: 1.75em;
   border-bottom: 1px solid white;
+  margin: 2rem 0;
 }
 
-.instr {
+.instructions, .instructions-detailed {
   a {
-    color: #9becf4;
+    color: #155380;
     transition: color 250ms;
   }
   a:hover {
     color: #ffffff;
+  }
+}
+
+.instructions-detailed {
+  ol {
+    list-style: none;
+    counter-reset: item;
+  }
+
+  ol li::before {
+    font-size: 1.75em;
   }
 }
