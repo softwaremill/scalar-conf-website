@@ -546,16 +546,18 @@ section.row
     vertical-align: middle;
 
 .team-table
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
   margin-bottom: 4rem;
   text-align: center;
+  width: 100%;
 
   & .team-member
+    display: flex;
+    flex-direction: column;
     padding: 0.5rem;
-    width: 13.3333%;
-    display: inline-block;
-    vertical-align: top;
-    max-width: 65px;
-    text-align: center;
+    align-items: center;
 
   & img
     border: 1px solid white;
