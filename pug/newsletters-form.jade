@@ -1,6 +1,6 @@
 section#newsletters-form.row
   div#mc_embed_signup.small-12.medium-12.large-12.columns
-    form#mc-embedded-subscribe-form.validate(action='http://scalar-conf.us2.list-manage1.com/subscribe/post?u=ba834c562d82d9aba5eaf90ba&id=d075d2cd7b', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='novalidate')
+    form#mc-embedded-subscribe-form.validate(action='https://scalar-conf.us2.list-manage.com/subscribe/post?u=ba834c562d82d9aba5eaf90ba&amp;id=767e720b9d', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='novalidate')
       fieldset.row(class="info_fieldset")
         div#fields.small-12.medium-9.medium-centered.large-6.large-centered.columns
           div.row.collapse
@@ -14,7 +14,7 @@ section#newsletters-form.row
             div#mce-success-response.response(style='display: none;')
           //- real people should not fill this in and expect good things - do not remove this or risk form bot signups
         div(style='position: absolute; left: -5000px;')
-          input(type='text', name='b_ba834c562d82d9aba5eaf90ba_d075d2cd7b', value='')
+          input(type='text', name='b_ba834c562d82d9aba5eaf90ba_767e720b9d', value='')
 
   script(type='text/javascript').
     var fnames = new Array();var ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';
@@ -74,12 +74,13 @@ section#newsletters-form.row
       }
       mce_init_form();
     }
+    //https://scalar-conf.us2.list-manage.com/subscribe/post?u=ba834c562d82d9aba5eaf90ba&amp;id=767e720b9d
     function mce_init_form(){
       jQuery(document).ready( function($) {
         var options = { errorClass: 'mce_inline_error', errorElement: 'div', onkeyup: function(){}, onfocusout:function(){}, onblur:function(){} };
         var mce_validator = $("#mc-embedded-subscribe-form").validate(options);
         $("#mc-embedded-subscribe-form").unbind('submit');//remove the validator so we can get into beforeSubmit on the ajaxform, which then calls the validator
-        options = { url: 'http://scalar-conf.us2.list-manage1.com/subscribe/post-json?u=ba834c562d82d9aba5eaf90ba&id=d075d2cd7b&c=?', type: 'GET', dataType: 'json', contentType: "application/json; charset=utf-8",
+        options = { url: 'http://scalar-conf.us2.list-manage.com/subscribe/post-json?u=ba834c562d82d9aba5eaf90ba&id=767e720b9d&c=?', type: 'GET', dataType: 'json', contentType: "application/json; charset=utf-8",
           beforeSubmit: function(){
             $('#mce_tmp_error_msg').remove();
             $('.datefield','#mc_embed_signup').each(
