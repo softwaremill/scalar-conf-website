@@ -5,12 +5,12 @@ try {
   jqueryLoaded=true;
 } catch(err) {
   var jqueryLoaded=false;
-}
+} 
 var head= document.getElementsByTagName('head')[0];
 if (!jqueryLoaded) {
   var script = document.createElement('script');
   script.type = 'text/javascript';
-  script.src = 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js';
+  script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js';
   head.appendChild(script);
   if (script.readyState && script.onload!==null){
     script.onreadystatechange= function () {
@@ -46,7 +46,7 @@ function mce_preload_check(){
   }
   var script = document.createElement('script');
   script.type = 'text/javascript';
-  script.src = 'http://downloads.mailchimp.com/js/jquery.form-n-validate.js';
+  script.src = 'https://downloads.mailchimp.com/js/jquery.form-n-validate.js';
   head.appendChild(script);
   try {
     var validatorLoaded=jQuery("#fake-form").validate({});
@@ -62,7 +62,7 @@ function mce_init_form(){
     var options = { errorClass: 'mce_inline_error', errorElement: 'div', onkeyup: function(){}, onfocusout:function(){}, onblur:function(){} };
     var mce_validator = $("#mc-embedded-subscribe-form").validate(options);
     $("#mc-embedded-subscribe-form").unbind('submit');//remove the validator so we can get into beforeSubmit on the ajaxform, which then calls the validator
-    options = { url: 'http://scalar-conf.us2.list-manage.com/subscribe/post-json?u=ba834c562d82d9aba5eaf90ba&id=767e720b9d&c=?', type: 'GET', dataType: 'json', contentType: "application/json; charset=utf-8",
+    options = { url: 'https://scalar-conf.us2.list-manage.com/subscribe/post-json?u=ba834c562d82d9aba5eaf90ba&id=767e720b9d&c=?', type: 'GET', dataType: 'json', contentType: "application/json; charset=utf-8",
       beforeSubmit: function(){
         $('#mce_tmp_error_msg').remove();
         $('.datefield','#mc_embed_signup').each(
