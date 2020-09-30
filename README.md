@@ -1,7 +1,7 @@
 Scalar Conference Website
 ===================
 
-Scalar - one-day free-to-attend conference about Scala. 
+Scalar - one-day free-to-attend conference about Scalar. 
 Held in Warsaw Poland, on April 5, 2014.
 
 Want to become sponsor?
@@ -24,7 +24,7 @@ This website uses [Grunt](http://gruntjs.com/0)+[Jade](http://jade-lang.com/)+[S
 
 ### NodeJS
 
-To work on project (update anyhting on website) first you need [Node.js](http://nodejs.org/) to be installed. 
+To work on project (update anything on website) first you need [Node.js](http://nodejs.org/) to be installed. 
 To check, if it's installed, run command `node -v` in console. 
 If you see version - than you have it installed. 
 
@@ -89,7 +89,7 @@ Right at the top you have:
 - `title` - title of the blog post
 - `permalink` - identifier for this particular post. Should start with `#` and do not contain any spaces
 - `date` - date, when news is posted
-- `dateISO` - smae date, but in ISO 8601 format - YYYY-MM-DD
+- `dateISO` - same date, but in ISO 8601 format - YYYY-MM-DD
 
 After this is updated go to line
 
