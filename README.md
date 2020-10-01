@@ -1,4 +1,4 @@
-Scalar Conference Website
+Scalar Conference Website...an amazing project
 ===================
 
 Scalar - one-day free-to-attend conference about Scala. 
