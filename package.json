@@ -17,7 +17,7 @@
     "grunt-contrib-watch": "^1.1.0",
     "http-server": "^0.12.1",
     "jstransformer-marked": "^1.0.1",
-    "marked": "^0.3.5",
+    "marked": "^4.0.10",
     "pug": "^2.0.0-alpha6",
     "pygmentize": "^0.5.3",
     "pygmentize-bundled": "^2.3.0",
